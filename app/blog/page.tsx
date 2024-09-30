@@ -23,7 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: new URL(`${process.env.NEXT_PUBLIC_BASE_API_URL}`),
     title: "Blog",
     description:
-      "Enjoy access to the complete Word of Many's archived articles—every post and every page we have ever published.",
+      "Enjoy access to the complete archive of SavoryTouch's articles—every post and every page we've ever published, all dedicated to food and drink.",
     alternates: {
       canonical: "/blog",
     },
@@ -82,7 +82,7 @@ async function Blog({ searchParams }: { searchParams: { pageNo: string } }) {
   return (
     <>
       {" "}
-      <Navbar  decodedslug={slugs} home={true} />
+      <Navbar decodedslug={slugs} home={true} />
       <div className="mt-28 px-4">
         <h1 className="text-center  text-2xl font-semibold tracking-wider pb-4">
           The Latest News - Page 1

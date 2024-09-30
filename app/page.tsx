@@ -10,7 +10,7 @@ export const revalidate = 86400;
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Word of Many | The latest in Products, Culture & Style",
+    title: "Savory Touch | The Latest in Food & Drink Delights",
   };
 }
 const slugs = [
