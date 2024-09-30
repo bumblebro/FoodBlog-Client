@@ -53,11 +53,11 @@ function Footer() {
           </div>
         </div>
         <p className="font-light text-sm italic px-4 text-center">
-          WordofMany offers general content intended solely for informational
-          purposes. The information provided is not a substitute for
-          professional medical advice, diagnosis, treatment, or financial
-          consultation. Always seek the advice of qualified professionals
-          regarding any medical or financial decisions.
+          SavoryTouch offers general content intended solely for informational
+          purposes. The information provided on this site is not a substitute
+          for professional nutritional, dietary, or culinary advice. Always seek
+          the advice of qualified professionals regarding any dietary concerns,
+          health conditions, or food-related decisions.
         </p>
         <p className="font-light text-sm text-[#757577] xl:w-[50%] text-center mx-auto">
           © 2024 SavoryTouch. All Rights Reserved.
