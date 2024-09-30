@@ -168,7 +168,7 @@ function page() {
       </p>
       <a
         className="underline text-center text-blue-700 "
-        href="mailto:wordofmany@gmail.com?"
+        href="mailto:savorytouch@gmail.com?"
       >
         Please click here to mail
       </a>

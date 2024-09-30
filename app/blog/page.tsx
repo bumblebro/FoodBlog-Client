@@ -1,4 +1,4 @@
-import { Blogs } from "@prisma/client";
+import { FoodBlogs } from "@prisma/client";
 import BlogList from "@/components/bloglist/BlogList";
 import Paginationblog from "@/components/pagination/Paginationblog";
 import GETBLOG from "../api/blogs/GETBLOG";
@@ -32,7 +32,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 async function Blog({ searchParams }: { searchParams: { pageNo: string } }) {
   let sidebar = false;
-  let posts: Blogs[] = [];
+  let posts: FoodBlogs[] = [];
   let pageNo = "1";
   let totalPages = 1;
   let hasNextPage = false;

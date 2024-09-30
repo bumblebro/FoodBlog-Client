@@ -1,4 +1,4 @@
-import { Blogs } from "@prisma/client";
+import { FoodBlogs } from "@prisma/client";
 import axios from "axios";
 import Link from "next/link";
 import CopyBtn from "../ClientComponents/CopyBtn";
@@ -40,9 +40,9 @@ interface BlogDisp {
   //   seo: JsonValue;
   //   creationDate: Date;
   // };
-  currentPost: Blogs;
-  posts: Blogs[];
-  latposts: Blogs[];
+  currentPost: FoodBlogs;
+  posts: FoodBlogs[];
+  latposts: FoodBlogs[];
 }
 function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
   const date = new Date(currentPost.creationDate);

@@ -13,7 +13,7 @@ export default async function GETBLOG({ pageNo }: { pageNo: string }) {
   const take = pageSize;
   const skip = (pageNum - 1) * pageSize;
 
-  const blogs = await prisma.blogs.findMany({
+  const blogs = await prisma.foodBlogs.findMany({
     skip,
     take,
     orderBy: {
@@ -23,7 +23,7 @@ export default async function GETBLOG({ pageNo }: { pageNo: string }) {
     // cacheStrategy: { ttl: 86400 },
   });
 
-  const totalBlogs = await prisma.blogs.count();
+  const totalBlogs = await prisma.foodBlogs.count();
   return {
     blogs: blogs,
     metaData: {

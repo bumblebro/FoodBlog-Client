@@ -5,7 +5,7 @@ import { withAccelerate } from "@prisma/extension-accelerate";
 const prisma = new PrismaClient();
 
 export default async function GETBLOGALL(page = 0, pageSize = 100) {
-  const blogs = await prisma.blogs.findMany({
+  const blogs = await prisma.foodBlogs.findMany({
     select: {
       section: true,
       subsection: true,

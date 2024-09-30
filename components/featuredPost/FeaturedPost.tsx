@@ -1,10 +1,10 @@
 import { shimmer, toBase64 } from "@/libs/Shimmer";
-import { Blogs } from "@prisma/client";
+import { FoodBlogs } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
 
 interface posts {
-  posts: Blogs[];
+  posts: FoodBlogs[];
 }
 function FeaturedPost({ posts }: posts) {
   let randomNum = Math.floor(Math.random() * posts.length) + 1;
@@ -42,7 +42,7 @@ function FeaturedPost({ posts }: posts) {
             )}`}
           />{" "}
         </Link>{" "}
-        <div className="bg-black text-white left-[5%]  text-center  w-[90%] py-6 absolute top-[80%] px-6 md:relative md:h-full md:top-0 md:flex md:flex-col md:justify-center md:left-0 md:w-full   ">
+        <div className="bg-[#333333] text-white left-[5%]  text-center  w-[90%] py-6 absolute top-[80%] px-6 md:relative md:h-full md:top-0 md:flex md:flex-col md:justify-center md:left-0 md:w-full   ">
           {/* <h1 className="pb-3 text-[#6594F1] font-semibold md:text-lg md:pb-5">
             {posts[randomNum].section
               ? posts[randomNum].section

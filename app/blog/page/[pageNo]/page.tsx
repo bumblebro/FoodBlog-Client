@@ -4,7 +4,7 @@ import Footer from "@/components/footer/Footer";
 import Navbar from "@/components/navbar/Navbar";
 import Paginationblog from "@/components/pagination/Paginationblog";
 import Sidebar from "@/components/sidebar/Sidebar";
-import { Blogs } from "@prisma/client";
+import { FoodBlogs } from "@prisma/client";
 import { Metadata } from "next";
 import { stringify } from "querystring";
 import { useEffect, useState } from "react";
@@ -55,7 +55,7 @@ export async function generateMetadata({ params }: params): Promise<Metadata> {
 
 async function BlogPage({ params }: params) {
   let sidebar = false;
-  let posts: Blogs[] = [];
+  let posts: FoodBlogs[] = [];
   // const [pageNo, setPageNo] = useState("1");
   let totalPages = 1;
   let hasNextPage = false;

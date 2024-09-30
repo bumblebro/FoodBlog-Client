@@ -3,7 +3,7 @@ import GETBLOG from "./api/blogs/GETBLOG";
 import GenerateSlugs from "@/libs/GenerateSlugs";
 import { subSections } from "@/libs/Section";
 import GETBLOGALL from "./api/blogsall/GETBLOGALL";
-import { Blogs } from "@prisma/client";
+import { FoodBlogs } from "@prisma/client";
 import { url } from "inspector";
 
 export const revalidate = 86400; // 1 day in seconds

@@ -31,7 +31,7 @@ export default async function GETBLOGSLAYER({
     const take = pagSize;
     const skip = (pageNum - 1) * take;
 
-    const whereClause: Prisma.BlogsWhereInput = {};
+    const whereClause: Prisma.FoodBlogsWhereInput = {};
 
     if (category) {
       whereClause.section = {
@@ -54,7 +54,7 @@ export default async function GETBLOGSLAYER({
       };
     }
 
-    const blogs = await prisma.blogs.findMany({
+    const blogs = await prisma.foodBlogs.findMany({
       skip, // Number of records to skip
       take, // Number of records to take
       where: whereClause,
@@ -65,7 +65,7 @@ export default async function GETBLOGSLAYER({
       // cacheStrategy: { ttl: 86400 },
     });
 
-    const totalBlogs = await prisma.blogs.count({
+    const totalBlogs = await prisma.foodBlogs.count({
       where: whereClause,
       // cacheStrategy: { ttl: 86400 },
     });

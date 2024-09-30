@@ -14,7 +14,7 @@ datasource db {
   // directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 
-model Blogs {
+model FoodBlogs {
   id        String   @id @default(uuid())
   author    String 
   title     String     @unique

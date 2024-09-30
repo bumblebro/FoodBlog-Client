@@ -5,38 +5,75 @@ import { useEffect, useState } from "react";
 import Footer from "../footer/Footer";
 import DeSlugify from "@/libs/DeSlugify";
 import { subSections } from "@/libs/Section";
+import { slugify } from "markdown-to-jsx";
 
-const Tech = ["Apple", "Audio", "Cameras", "Computers", "Smartphones", "TVs"];
-const Fashion = [
-  "Men's-Fashion-Advice",
-  "Men's-Fashion-Trends",
-  "Men's-Fragrances",
-  "Men's-Hairstyles",
-  "Sneakers-&-Shoes",
-  "Watches",
+const CuisineTypes = [
+  "Italian",
+  "Mexican",
+  "Asian",
+  "Mediterranean",
+  "American",
 ];
-const Rides = ["Boats", "Cars", "Cycling", "Flying", "Motorcycles"];
-const Lifestyle = [
-  "Advice",
-  "Drinks",
-  "Fitness",
-  "Finance",
-  "Food",
-  "Grooming",
-  "Sex-&-Dating",
-  "Travel",
+
+const MealTypes = ["Breakfast", "Lunch", "Dinner", "Snacks", "Desserts"];
+
+const DietaryPreferences = [
+  "Vegetarian",
+  "Vegan",
+  "Gluten-Free",
+  "Keto",
+  "Paleo",
 ];
-const Entertainment = [
-  "Art",
-  "Books",
-  "Gaming",
-  "Movies-&-TV",
-  "Music",
-  "Sport",
+
+const CookingTechniques = [
+  "Baking",
+  "Grilling",
+  "Roasting",
+  "Sautéing",
+  "Boiling",
 ];
-const Living = ["Appliances", "Architecture", "Furniture", "Homewares"];
-const Outdoors = ["Camping", "Snow", "Surfing", "Skate", "Hiking"];
-const News = ["World-News", "Tech-News", "Sports-News", "Entertainment-News"];
+
+const Ingredients = [
+  "Fruits",
+  "Vegetables",
+  "Proteins",
+  "Grains",
+  "Spices-and-Herbs",
+];
+
+const Drinks = ["Non-Alcoholic", "Cocktails", "Wine", "Beer", "Coffee-and-Tea"];
+
+const SpecialOccasions = [
+  "Holidays",
+  "Parties",
+  "Weekends",
+  "Healthy-Eating",
+  "Festivals",
+];
+
+const RecipeFormats = [
+  "Quick-Meals",
+  "Slow-Cooker",
+  "Instant-Pot",
+  "Batch-Cooking",
+  "No-Cook",
+];
+
+const CookingTips = [
+  "Meal-Prepping",
+  "Flavor-Enhancement",
+  "Kitchen-Skills",
+  "Health-Tips",
+  "Sustainable-Cooking",
+];
+
+const FoodCulture = [
+  "Food-History",
+  "Culinary-Regions",
+  "Food-Photography",
+  "Culinary-Techniques",
+  "Food-Pairings",
+];
 
 function Navbar({
   decodedslug,
@@ -78,6 +115,7 @@ function Navbar({
             setCategoryList(items);
           }
         }
+
         if (categoryList.length == 0) {
           // setLastElement(true);
 
@@ -102,9 +140,9 @@ function Navbar({
   };
 
   return (
-    <nav className="  w-full z-20 top-0 start-0 fixed bg-black h-[72px] md:h-[80px]">
+    <nav className="  w-full z-20 top-0 start-0 fixed bg-[#333333] h-[72px] md:h-[80px]">
       <div className="  items-center justify-between mx-auto  py-2 md:py-3 ">
-        <div className="bg-black  grid grid-cols-3 px-3 xl:px-0 xl:max-w-[73rem] mx-auto  my-auto h-full text-white w-full ">
+        <div className="bg-[#333333]  grid grid-cols-3 px-3 xl:px-0 xl:max-w-[73rem] mx-auto  my-auto h-full text-white w-full ">
           {" "}
           <div className="flex items-center gap-2 ">
             {sidebar ? (
@@ -170,7 +208,7 @@ function Navbar({
           <div className="flex justify-center items-center">
             <Link href="/" onClick={handleSidebar}>
               <h1 className="uppercase font-[650] tracking-[4px] text-xl   lg:text-[1.4rem] xl:text-[1.7rem] text-center  ">
-                WordofMany
+                savorytouch
               </h1>
             </Link>
           </div>
@@ -211,7 +249,7 @@ function Navbar({
                         <Link
                           className="hover:text-[#004ff2] "
                           key={i}
-                          href={`/${item.toLowerCase()}`}
+                          href={`/${slugify(item.toLowerCase())}`}
                         >
                           {DeSlugify(item)}
                         </Link>
@@ -226,7 +264,7 @@ function Navbar({
                           <Link
                             className=" hover:text-[#004ff2]"
                             key={i}
-                            href={`/${item.toLowerCase()}`}
+                            href={`/${slugify(item.toLowerCase())}`}
                           >
                             {DeSlugify(item)}
                           </Link>
@@ -242,7 +280,7 @@ function Navbar({
                         <Link
                           className="hover:text-[#004ff2] "
                           key={i}
-                          href={`${url}/${item.toLowerCase()}`}
+                          href={`${url}/${slugify(item.toLowerCase())}`}
                         >
                           {DeSlugify(item)}
                         </Link>
@@ -256,7 +294,7 @@ function Navbar({
                           <Link
                             className="hover:text-[#004ff2] "
                             key={i}
-                            href={`${url}/${item.toLowerCase()}`}
+                            href={`${url}/${slugify(item.toLowerCase())}`}
                           >
                             {DeSlugify(item)}
                           </Link>
@@ -283,9 +321,11 @@ function Navbar({
                             key={i}
                             href={
                               lastElement == true
-                                ? `${item.toLowerCase()}`
+                                ? `${slugify(item.toLowerCase())}`
                                 : `
-                  ${decodedslug[decodedslug.length - 1]}/${item.toLowerCase()}`
+                  ${decodedslug[decodedslug.length - 1]}/${slugify(
+                                    item.toLowerCase()
+                                  )}`
                             }
                           >
                             {DeSlugify(item)}
@@ -303,11 +343,11 @@ function Navbar({
                               key={i}
                               href={
                                 lastElement == true
-                                  ? `${item.toLowerCase()}`
+                                  ? `${slugify(item.toLowerCase())}`
                                   : `
-                    ${
-                      decodedslug[decodedslug.length - 1]
-                    }/${item.toLowerCase()}`
+                    ${decodedslug[decodedslug.length - 1]}/${slugify(
+                                      item.toLowerCase()
+                                    )}`
                               }
                             >
                               {DeSlugify(item)}
@@ -327,29 +367,29 @@ function Navbar({
             </ul>
           </div>
         </div>
-        <div className="bg-black w-full px-4">
+        <div className="bg-[#333333] w-full px-4">
           <div
             className={`  w-full ${
               !sidebar && "hidden"
             }    text-white  tracking-wider 2xl:px-44 lg:pt-8 mx-auto  xl:max-w-[73rem] px-3"
-          id="navbar-sticky overflow-y-auto h-screen animate-fadein bg-black`}
+          id="navbar-sticky overflow-y-auto h-screen animate-fadein bg-[#333333]`}
           >
             <h1 className="text-2xl font-semibold py-6">Sections</h1>
             <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 ">
               <div>
                 <Link
                   onClick={handleSidebar}
-                  href={"/tech"}
+                  href={"/cuisine-types"}
                   className="font-semibold hover:text-[#004ff2] "
                 >
-                  Tech
+                  Cuisine Types
                 </Link>
                 <ul className="font-light flex flex-col gap-3 pt-4">
-                  {Tech.map((item, index) => (
+                  {CuisineTypes.map((item, index) => (
                     <li key={index}>
                       <Link
                         onClick={handleSidebar}
-                        href={`/tech/${item.toLowerCase()}`}
+                        href={`/cuisine-types/${item.toLowerCase()}`}
                         key={index}
                         className="hover:text-[#004ff2]"
                       >
@@ -362,17 +402,17 @@ function Navbar({
               <div>
                 <Link
                   onClick={handleSidebar}
-                  href={"/fashion"}
+                  href={"/meal-types"}
                   className="font-semibold hover:text-[#004ff2]"
                 >
-                  Fashion
+                  Meal Types
                 </Link>
                 <ul className="font-light flex flex-col gap-3  pt-4">
-                  {Fashion.map((item, index) => (
+                  {MealTypes.map((item, index) => (
                     <li key={index}>
                       <Link
                         onClick={handleSidebar}
-                        href={`/fashion/${item.toLowerCase()}`}
+                        href={`/meal-types/${item.toLowerCase()}`}
                         key={index}
                         className="hover:text-[#004ff2]"
                       >
@@ -385,17 +425,17 @@ function Navbar({
               <div>
                 <Link
                   onClick={handleSidebar}
-                  href={"/rides"}
+                  href={"/dietary-preferences"}
                   className="font-semibold hover:text-[#004ff2]"
                 >
-                  Rides
+                  Dietary Preferences
                 </Link>
                 <ul className="font-light flex flex-col gap-3   pt-4">
-                  {Rides.map((item, index) => (
+                  {DietaryPreferences.map((item, index) => (
                     <li key={index}>
                       <Link
                         onClick={handleSidebar}
-                        href={`/rides/${item.toLowerCase()}`}
+                        href={`/dietary-preferences/${item.toLowerCase()}`}
                         key={index}
                         className="hover:text-[#004ff2]"
                       >
@@ -408,17 +448,17 @@ function Navbar({
               <div>
                 <Link
                   onClick={handleSidebar}
-                  href={"/lifestyle"}
+                  href={"/cooking-techniques"}
                   className="font-semibold  hover:text-[#004ff2]"
                 >
-                  Lifestyle
+                  Cooking Techniques
                 </Link>
                 <ul className="font-light flex flex-col gap-3   pt-4">
-                  {Lifestyle.map((item, index) => (
+                  {CookingTechniques.map((item, index) => (
                     <li key={index}>
                       <Link
                         onClick={handleSidebar}
-                        href={`/lifestyle/${item.toLowerCase()}`}
+                        href={`/cooking-techniques/${item.toLowerCase()}`}
                         key={index}
                         className="hover:text-[#004ff2]"
                       >
@@ -431,17 +471,17 @@ function Navbar({
               <div>
                 <Link
                   onClick={handleSidebar}
-                  href={"/entertainment"}
+                  href={"/ingredients"}
                   className="font-semibold  hover:text-[#004ff2]"
                 >
-                  Entertainment
+                  Ingredients
                 </Link>
                 <ul className="font-light flex flex-col gap-3   pt-4">
-                  {Entertainment.map((item, index) => (
+                  {Ingredients.map((item, index) => (
                     <li key={index}>
                       <Link
                         onClick={handleSidebar}
-                        href={`/entertainment/${item.toLowerCase()}`}
+                        href={`/ingredients/${item.toLowerCase()}`}
                         key={index}
                         className="hover:text-[#004ff2]"
                       >
@@ -454,17 +494,17 @@ function Navbar({
               <div>
                 <Link
                   onClick={handleSidebar}
-                  href={"/living"}
+                  href={"/drinks"}
                   className="font-semibold hover:text-[#004ff2]"
                 >
-                  Living
+                  Drinks
                 </Link>
                 <ul className="font-light flex flex-col gap-3  pt-4 ">
-                  {Living.map((item, index) => (
+                  {Drinks.map((item, index) => (
                     <li key={index}>
                       <Link
                         onClick={handleSidebar}
-                        href={`/living/${item.toLowerCase()}`}
+                        href={`/drinks/${item.toLowerCase()}`}
                         key={index}
                         className="hover:text-[#004ff2]"
                       >
@@ -477,17 +517,17 @@ function Navbar({
               <div>
                 <Link
                   onClick={handleSidebar}
-                  href={"/outdoors"}
+                  href={"/special-occasions"}
                   className="font-semibold hover:text-[#004ff2]"
                 >
-                  Outdoors
+                  Special Occasions
                 </Link>
                 <ul className="font-light flex flex-col gap-3   pt-4">
-                  {Outdoors.map((item, index) => (
+                  {SpecialOccasions.map((item, index) => (
                     <li key={index}>
                       <Link
                         onClick={handleSidebar}
-                        href={`/outdoors/${item.toLowerCase()}`}
+                        href={`/special-occasions/${item.toLowerCase()}`}
                         key={index}
                         className="hover:text-[#004ff2]"
                       >
@@ -500,17 +540,63 @@ function Navbar({
               <div>
                 <Link
                   onClick={handleSidebar}
-                  href={"/news"}
+                  href={"/recipe-formats"}
                   className="font-semibold hover:text-[#004ff2]"
                 >
-                  News
+                  Recipe Formats
                 </Link>
                 <ul className="font-light flex flex-col gap-3   pt-4">
-                  {News.map((item, index) => (
+                  {RecipeFormats.map((item, index) => (
                     <li key={index}>
                       <Link
                         onClick={handleSidebar}
-                        href={`/news/${item.toLowerCase()}`}
+                        href={`/recipe-formats/${item.toLowerCase()}`}
+                        key={index}
+                        className="hover:text-[#004ff2]"
+                      >
+                        {DeSlugify(item)}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <Link
+                  onClick={handleSidebar}
+                  href={"/cooking-tips"}
+                  className="font-semibold hover:text-[#004ff2]"
+                >
+                  Cooking Tips
+                </Link>
+                <ul className="font-light flex flex-col gap-3   pt-4">
+                  {CookingTips.map((item, index) => (
+                    <li key={index}>
+                      <Link
+                        onClick={handleSidebar}
+                        href={`/cooking-tips/${item.toLowerCase()}`}
+                        key={index}
+                        className="hover:text-[#004ff2]"
+                      >
+                        {DeSlugify(item)}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <Link
+                  onClick={handleSidebar}
+                  href={"/food-culture"}
+                  className="font-semibold hover:text-[#004ff2]"
+                >
+                  Food Culture
+                </Link>
+                <ul className="font-light flex flex-col gap-3   pt-4">
+                  {FoodCulture.map((item, index) => (
+                    <li key={index}>
+                      <Link
+                        onClick={handleSidebar}
+                        href={`/food-culture/${item.toLowerCase()}`}
                         key={index}
                         className="hover:text-[#004ff2]"
                       >

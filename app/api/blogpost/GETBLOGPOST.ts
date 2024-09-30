@@ -9,7 +9,7 @@ export default async function GETBLOGPOST({ title }: { title: string }) {
   // const { searchParams } = new URL(req.url);
   try {
     const titlename = title || undefined;
-    const blogs = await prisma.blogs.findFirst({
+    const blogs = await prisma.foodBlogs.findFirst({
       where: {
         title: {
           equals: titlename,

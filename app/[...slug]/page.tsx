@@ -7,7 +7,7 @@ import Navbar from "@/components/navbar/Navbar";
 import Paginationbloglist from "@/components/pagination/Paginationbloglist";
 import Sidebar from "@/components/sidebar/Sidebar";
 import Delay from "@/libs/Delay";
-import { Blogs } from "@prisma/client";
+import { FoodBlogs } from "@prisma/client";
 import { Metadata } from "next";
 import { useEffect, useState } from "react";
 import GETBLOGSLAYER from "../api/blogslayer/GETBLOGSLAYER";
@@ -94,7 +94,7 @@ export async function generateMetadata({ params }: params): Promise<Metadata> {
   let pageIndex = decodedslug.indexOf("page");
   let page = 1;
 
-  let currentPost: Blogs | null = null;
+  let currentPost: FoodBlogs | null = null;
 
   const input = decodedslug[decodedslug.length - 1]?.trim().toLowerCase();
 
@@ -232,9 +232,9 @@ function validateCategoryPath(pathArray: string[], sections: object) {
 
 async function BlogCategory({ params }: params) {
   let sidebar = false;
-  let posts: Blogs[] = [];
-  let relposts: Blogs[] = [];
-  let latposts: Blogs[] = [];
+  let posts: FoodBlogs[] = [];
+  let relposts: FoodBlogs[] = [];
+  let latposts: FoodBlogs[] = [];
   let totalPages = 1;
   let totalBlogs: number = 1;
   let hasNextPage = false;
@@ -253,7 +253,7 @@ async function BlogCategory({ params }: params) {
   //   seo: JsonValue;
   //   creationDate: Date;
   // } | null = null;
-  let currentPost: Blogs | null = null;
+  let currentPost: FoodBlogs | null = null;
 
   let slugs: string[] = [];
   let navslugs: string[] = [];

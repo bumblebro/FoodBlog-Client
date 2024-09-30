@@ -1,12 +1,12 @@
 import DeSlugify from "@/libs/DeSlugify";
 import { shimmer, toBase64 } from "@/libs/Shimmer";
-import { Blogs } from "@prisma/client";
+import { FoodBlogs } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
 
 type JsonValue = string | number | boolean | null;
 interface posts {
-  posts: Blogs[];
+  posts: FoodBlogs[];
 }
 
 function BlogList({ posts }: posts) {

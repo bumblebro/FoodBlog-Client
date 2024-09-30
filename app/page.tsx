@@ -1,6 +1,6 @@
 import BlogList from "@/components/bloglist/BlogList";
 import Paginationblog from "@/components/pagination/Paginationblog";
-import { Blogs } from "@prisma/client";
+import { FoodBlogs } from "@prisma/client";
 import GETBLOG from "./api/blogs/GETBLOG";
 import FeaturedPost from "@/components/featuredPost/FeaturedPost";
 import { Metadata } from "next";
@@ -14,17 +14,19 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 const slugs = [
-  "Tech",
-  "Fashion",
-  "Rides",
-  "Lifestyle",
-  "Entertainment",
-  "Living",
-  "Outdoors",
-  "News",
+  "Cuisine Types",
+  "Meal Types",
+  "Dietary Preferences",
+  "Cooking Techniques",
+  "Ingredients",
+  "Drinks",
+  "Special Occasions",
+  "Recipe Formats",
+  "Cooking Tips",
+  "Food Culture",
 ];
 async function Home({ searchParams }: { searchParams: { pageNo: string } }) {
-  let posts: Blogs[] = [];
+  let posts: FoodBlogs[] = [];
   let pageNo = "1";
   let totalPages = 1;
   let hasNextPage = false;
