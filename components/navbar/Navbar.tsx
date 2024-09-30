@@ -29,7 +29,7 @@ const CookingTechniques = [
   "Baking",
   "Grilling",
   "Roasting",
-  "Sautéing",
+  "Sauteing",
   "Boiling",
 ];
 

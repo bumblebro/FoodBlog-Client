@@ -6,14 +6,16 @@ import { Metadata } from "next";
 import Navbar from "@/components/navbar/Navbar";
 
 const slugs = [
-  "Tech",
-  "Fashion",
-  "Rides",
-  "Lifestyle",
-  "Entertainment",
-  "Living",
-  "Outdoors",
-  "News",
+  "Cuisine Types",
+  "Meal Types",
+  "Dietary Preferences",
+  "Cooking Techniques",
+  "Ingredients",
+  "Drinks",
+  "Special Occasions",
+  "Recipe Formats",
+  "Cooking Tips",
+  "Food Culture",
 ];
 
 export const revalidate = 86400;

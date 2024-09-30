@@ -68,7 +68,7 @@ export const subSections = {
     Baking: ["Cakes", "Bread", "Pastries", "Cookies", "Muffins"],
     Grilling: ["Steaks", "Vegetables", "Chicken-Wings", "Fish-Fillets"],
     Roasting: ["Vegetables", "Meats", "Nuts", "Potatoes"],
-    Sautéing: ["Stir-Fries", "Sautéed-Vegetables", "Egg-Dishes", "Seafood"],
+    Sauteing: ["Stir-Fries", "Sauteed-Vegetables", "Egg-Dishes", "Seafood"],
     Boiling: ["Pasta", "Rice", "Soups", "Eggs", "Potatoes"],
   },
   Ingredients: {
