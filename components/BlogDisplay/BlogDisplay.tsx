@@ -9,6 +9,7 @@ import Image from "next/image";
 import { shimmer, toBase64 } from "@/libs/Shimmer";
 import RecipePage from "../RecipePage";
 import Buttons from "../Buttons";
+// import Buttons from "../Buttons";
 
 interface JsonValue {
   [key: string]: any;
@@ -155,7 +156,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
           <button className="px-5 py-2 bg-[#6b4226] text-white font-serif rounded-full shadow-md hover:bg-[#4e2f1d] transition-all">
             💾 Save Recipe
           </button> */}
-            <Buttons />
+          <Buttons />
           {currentPost.content?.map((item, i) => {
             const contentItem = item as ContentItem;
             return (

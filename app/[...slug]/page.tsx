@@ -76,6 +76,7 @@ export async function generateStaticParams() {
     const sortedArray = paramsArray.sort((a: any, b: any) => b - a);
     const slicedArray = sortedArray;
     return [...sluglayer, ...slicedArray];
+    // return [...slicedArray];
   } catch (error) {
     // console.error("Error fetching blogs:", error);
     return [];
@@ -160,7 +161,6 @@ export async function generateMetadata({ params }: params): Promise<Metadata> {
       });
       if (response) {
         currentPost = response;
-
       }
 
       return {
