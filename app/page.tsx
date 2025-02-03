@@ -13,18 +13,32 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Savory Touch | The Latest in Food & Drink Delights",
   };
 }
+// const slugs = [
+//   "Cuisine Types",
+//   "Meal Types",
+//   "Dietary Preferences",
+//   "Cooking Techniques",
+//   "Ingredients",
+//   "Drinks",
+//   "Special Occasions",
+//   "Recipe Formats",
+//   "Cooking Tips",
+//   "Food Culture",
+// ];
+
 const slugs = [
-  "Cuisine Types",
-  "Meal Types",
-  "Dietary Preferences",
-  "Cooking Techniques",
+  "Cuisine-Types",
+  "Meal-Types",
+  "Dietary-Preferences",
+  "Cooking-Techniques",
   "Ingredients",
-  "Drinks",
-  "Special Occasions",
-  "Recipe Formats",
-  "Cooking Tips",
-  "Food Culture",
+  "Recipe-Formats",
+  "Modern-Trends",
+  "Seasonal-Recipes",
+  "Global-Flavors",
+  "Special-Occasions",
 ];
+
 async function Home({ searchParams }: { searchParams: { pageNo: string } }) {
   let posts: FoodBlogs[] = [];
   let pageNo = "1";

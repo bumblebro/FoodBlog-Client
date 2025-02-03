@@ -15,17 +15,30 @@ interface params {
   };
 }
 
+// const slugs = [
+//   "Cuisine Types",
+//   "Meal Types",
+//   "Dietary Preferences",
+//   "Cooking Techniques",
+//   "Ingredients",
+//   "Drinks",
+//   "Special Occasions",
+//   "Recipe Formats",
+//   "Cooking Tips",
+//   "Food Culture",
+// ];
+
 const slugs = [
-  "Cuisine Types",
-  "Meal Types",
-  "Dietary Preferences",
-  "Cooking Techniques",
+  "Cuisine-Types",
+  "Meal-Types",
+  "Dietary-Preferences",
+  "Cooking-Techniques",
   "Ingredients",
-  "Drinks",
-  "Special Occasions",
-  "Recipe Formats",
-  "Cooking Tips",
-  "Food Culture",
+  "Recipe-Formats",
+  "Modern-Trends",
+  "Seasonal-Recipes",
+  "Global-Flavors",
+  "Special-Occasions",
 ];
 
 export const revalidate = 86400;
