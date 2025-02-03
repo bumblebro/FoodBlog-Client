@@ -160,6 +160,7 @@ export async function generateMetadata({ params }: params): Promise<Metadata> {
       });
       if (response) {
         currentPost = response;
+
       }
 
       return {

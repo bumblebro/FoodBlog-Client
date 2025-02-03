@@ -7,6 +7,7 @@ import DeSlugify from "@/libs/DeSlugify";
 import MarkdownComponent from "../Markdown";
 import Image from "next/image";
 import { shimmer, toBase64 } from "@/libs/Shimmer";
+import RecipePage from "../RecipePage";
 
 interface JsonValue {
   [key: string]: any;
@@ -178,25 +179,16 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                         )}`}
                       />
                     </div>
-                    {/* <img
-                      // className="h-[17rem] object-contain md:h-[21rem] lg:h-[31.5rem] xl:h-[39.5rem] sm:h-[28.5rem] 2xl:h-[38rem]"
-                      className="max-h-[17rem] object-contain md:max-h-[21rem] lg:max-h-[31.5rem] xl:max-h-[39.5rem] sm:max-h-[28.5rem] 2xl:max-h-[38rem]"
-                      src={contentItem.url}
-                      alt=""
-                    /> */}
+
                     <p className="text-gray-500 font-light text-sm">
                       {contentItem.alt} | Image: Supplied
                     </p>
                   </div>
                 )}
-                {/* {i == 2 && (
-                  <h1 className="px-4 py-4 mt-4 italic bg-[#eeeff1]">
-                    {currentPost.quote}
-                  </h1>
-                )}{" "} */}
               </div>
             );
           })}{" "}
+          <RecipePage currentPost={currentPost} />
           <h1 className="px-4 py-4 my-4 italic bg-[#eeeff1]">
             {currentPost.quote}
           </h1>

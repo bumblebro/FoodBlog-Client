@@ -7,15 +7,95 @@ import DeSlugify from "@/libs/DeSlugify";
 import { subSections } from "@/libs/Section";
 import { slugify } from "markdown-to-jsx";
 
+// const CuisineTypes = [
+//   "Italian",
+//   "Mexican",
+//   "Asian",
+//   "Mediterranean",
+//   "American",
+// ];
+
+// const MealTypes = ["Breakfast", "Lunch", "Dinner", "Snacks", "Desserts"];
+
+// const DietaryPreferences = [
+//   "Vegetarian",
+//   "Vegan",
+//   "Gluten-Free",
+//   "Keto",
+//   "Paleo",
+// ];
+
+// const CookingTechniques = [
+//   "Baking",
+//   "Grilling",
+//   "Roasting",
+//   "Sauteing",
+//   "Boiling",
+// ];
+
+// const Ingredients = [
+//   "Fruits",
+//   "Vegetables",
+//   "Proteins",
+//   "Grains",
+//   "Spices-and-Herbs",
+// ];
+
+// const Drinks = ["Non-Alcoholic", "Cocktails", "Wine", "Beer", "Coffee-and-Tea"];
+
+// const SpecialOccasions = [
+//   "Holidays",
+//   "Parties",
+//   "Weekends",
+//   "Healthy-Eating",
+//   "Festivals",
+// ];
+
+// const RecipeFormats = [
+//   "Quick-Meals",
+//   "Slow-Cooker",
+//   "Instant-Pot",
+//   "Batch-Cooking",
+//   "No-Cook",
+// ];
+
+// const CookingTips = [
+//   "Meal-Prepping",
+//   "Flavor-Enhancement",
+//   "Kitchen-Skills",
+//   "Health-Tips",
+//   "Sustainable-Cooking",
+// ];
+
+// const FoodCulture = [
+//   "Food-History",
+//   "Culinary-Regions",
+//   "Food-Photography",
+//   "Culinary-Techniques",
+//   "Food-Pairings",
+// ];
+
 const CuisineTypes = [
   "Italian",
   "Mexican",
   "Asian",
   "Mediterranean",
   "American",
+  "Indian",
+  "French",
+  "Japanese",
+  "Greek",
+  "Spanish",
 ];
 
-const MealTypes = ["Breakfast", "Lunch", "Dinner", "Snacks", "Desserts"];
+const MealTypes = [
+  "Breakfast",
+  "Lunch",
+  "Dinner",
+  "Snacks",
+  "Desserts",
+  "Brunch",
+];
 
 const DietaryPreferences = [
   "Vegetarian",
@@ -23,16 +103,20 @@ const DietaryPreferences = [
   "Gluten-Free",
   "Keto",
   "Paleo",
+  "Low-Carb",
+  "Dairy-Free",
 ];
 
 const CookingTechniques = [
   "Baking",
   "Grilling",
   "Roasting",
-  "Sauteing",
+  "Sautéing",
   "Boiling",
+  "Steaming",
+  "Frying",
+  "Smoking",
 ];
-
 const Ingredients = [
   "Fruits",
   "Vegetables",
@@ -41,38 +125,40 @@ const Ingredients = [
   "Spices-and-Herbs",
 ];
 
-const Drinks = ["Non-Alcoholic", "Cocktails", "Wine", "Beer", "Coffee-and-Tea"];
-
-const SpecialOccasions = [
-  "Holidays",
-  "Parties",
-  "Weekends",
-  "Healthy-Eating",
-  "Festivals",
-];
-
 const RecipeFormats = [
   "Quick-Meals",
   "Slow-Cooker",
   "Instant-Pot",
   "Batch-Cooking",
   "No-Cook",
+  "One-Bowl-Meals",
+  "Kid-Friendly",
 ];
 
-const CookingTips = [
-  "Meal-Prepping",
-  "Flavor-Enhancement",
-  "Kitchen-Skills",
-  "Health-Tips",
-  "Sustainable-Cooking",
+const ModernTrends = [
+  "Plant-Based",
+  "Fusion-Cuisine",
+  "Healthy-Swaps",
+  "Fermented-Foods",
+  "Zero-Waste-Cooking",
 ];
 
-const FoodCulture = [
-  "Food-History",
-  "Culinary-Regions",
-  "Food-Photography",
-  "Culinary-Techniques",
-  "Food-Pairings",
+const SeasonalRecipes = ["Spring", "Summer", "Fall", "Winter", "Holiday"];
+
+const GlobalFlavors = [
+  "Middle-Eastern",
+  "South-American",
+  "African",
+  "Caribbean",
+  "Nordic",
+];
+
+const SpecialOccasions = [
+  "Birthday",
+  "Anniversary",
+  "Picnic",
+  "Potluck",
+  "Game-Day",
 ];
 
 function Navbar({
@@ -494,17 +580,86 @@ function Navbar({
               <div>
                 <Link
                   onClick={handleSidebar}
-                  href={"/drinks"}
+                  href={"/recipe-formats"}
                   className="font-semibold hover:text-[#004ff2]"
                 >
-                  Drinks
+                  Recipe Formats
                 </Link>
                 <ul className="font-light flex flex-col gap-3  pt-4 ">
-                  {Drinks.map((item, index) => (
+                  {RecipeFormats.map((item, index) => (
                     <li key={index}>
                       <Link
                         onClick={handleSidebar}
-                        href={`/drinks/${item.toLowerCase()}`}
+                        href={`/recipe-formats/${item.toLowerCase()}`}
+                        key={index}
+                        className="hover:text-[#004ff2]"
+                      >
+                        {DeSlugify(item)}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <Link
+                  onClick={handleSidebar}
+                  href={"/modern-trends"}
+                  className="font-semibold hover:text-[#004ff2]"
+                >
+                  Modern Trends
+                </Link>
+                <ul className="font-light flex flex-col gap-3  pt-4 ">
+                  {ModernTrends.map((item, index) => (
+                    <li key={index}>
+                      <Link
+                        onClick={handleSidebar}
+                        href={`/modern-trends/${item.toLowerCase()}`}
+                        key={index}
+                        className="hover:text-[#004ff2]"
+                      >
+                        {DeSlugify(item)}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <Link
+                  onClick={handleSidebar}
+                  href={"/seasonal-recipes"}
+                  className="font-semibold hover:text-[#004ff2]"
+                >
+                  Seasonal Recipes
+                </Link>
+                <ul className="font-light flex flex-col gap-3  pt-4 ">
+                  {SeasonalRecipes.map((item, index) => (
+                    <li key={index}>
+                      <Link
+                        onClick={handleSidebar}
+                        href={`/seasonal-recipes/${item.toLowerCase()}`}
+                        key={index}
+                        className="hover:text-[#004ff2]"
+                      >
+                        {DeSlugify(item)}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <Link
+                  onClick={handleSidebar}
+                  href={"/global-flavors"}
+                  className="font-semibold hover:text-[#004ff2]"
+                >
+                  Global Flavors
+                </Link>
+                <ul className="font-light flex flex-col gap-3  pt-4 ">
+                  {GlobalFlavors.map((item, index) => (
+                    <li key={index}>
+                      <Link
+                        onClick={handleSidebar}
+                        href={`/global-flavors/${item.toLowerCase()}`}
                         key={index}
                         className="hover:text-[#004ff2]"
                       >
@@ -528,75 +683,6 @@ function Navbar({
                       <Link
                         onClick={handleSidebar}
                         href={`/special-occasions/${item.toLowerCase()}`}
-                        key={index}
-                        className="hover:text-[#004ff2]"
-                      >
-                        {DeSlugify(item)}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <Link
-                  onClick={handleSidebar}
-                  href={"/recipe-formats"}
-                  className="font-semibold hover:text-[#004ff2]"
-                >
-                  Recipe Formats
-                </Link>
-                <ul className="font-light flex flex-col gap-3   pt-4">
-                  {RecipeFormats.map((item, index) => (
-                    <li key={index}>
-                      <Link
-                        onClick={handleSidebar}
-                        href={`/recipe-formats/${item.toLowerCase()}`}
-                        key={index}
-                        className="hover:text-[#004ff2]"
-                      >
-                        {DeSlugify(item)}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <Link
-                  onClick={handleSidebar}
-                  href={"/cooking-tips"}
-                  className="font-semibold hover:text-[#004ff2]"
-                >
-                  Cooking Tips
-                </Link>
-                <ul className="font-light flex flex-col gap-3   pt-4">
-                  {CookingTips.map((item, index) => (
-                    <li key={index}>
-                      <Link
-                        onClick={handleSidebar}
-                        href={`/cooking-tips/${item.toLowerCase()}`}
-                        key={index}
-                        className="hover:text-[#004ff2]"
-                      >
-                        {DeSlugify(item)}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <Link
-                  onClick={handleSidebar}
-                  href={"/food-culture"}
-                  className="font-semibold hover:text-[#004ff2]"
-                >
-                  Food Culture
-                </Link>
-                <ul className="font-light flex flex-col gap-3   pt-4">
-                  {FoodCulture.map((item, index) => (
-                    <li key={index}>
-                      <Link
-                        onClick={handleSidebar}
-                        href={`/food-culture/${item.toLowerCase()}`}
                         key={index}
                         className="hover:text-[#004ff2]"
                       >
