@@ -130,7 +130,19 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                 />
                 <ShareBtn
                   text={(currentPost?.seo as SEOType).ogDescription}
-                  url={currentPost.imageurl}
+                  url={`${process.env.NEXT_PUBLIC_BASE_API_URL}/${
+                    currentPost.section !== "null"
+                      ? currentPost.section + "/"
+                      : ""
+                  }${
+                    currentPost.subsection !== "null"
+                      ? currentPost.subsection + "/"
+                      : ""
+                  }${
+                    currentPost.subsubsection !== "null"
+                      ? currentPost.subsubsection + "/"
+                      : ""
+                  }${currentPost.title}`}
                   title={currentPost.title}
                 />
               </div>
@@ -179,10 +191,10 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                         )}`}
                       />
                     </div>
-
+                    {/* 
                     <p className="text-gray-500 font-light text-sm">
                       {contentItem.alt} | Image: Supplied
-                    </p>
+                    </p> */}
                   </div>
                 )}
               </div>
