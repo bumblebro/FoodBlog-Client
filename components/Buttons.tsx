@@ -13,7 +13,7 @@ function Buttons() {
       const ScrollLink = Scroll.Link;
 
       setComponent(
-        <div className=" text-xs font-medium tracking-wider my-4 px-3 lg:w-[45%] xl:px-0 ">
+        <div className=" text-xs font-medium tracking-wider py-6 lg:py-4 px-3 lg:w-[45%] xl:px-0 ">
           {/* Jump to Recipe Button */}
           <ScrollLink
             to="recipeSection"
