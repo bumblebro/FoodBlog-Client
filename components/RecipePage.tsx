@@ -6,14 +6,14 @@ import { useState, useRef, useEffect } from "react";
 const RecipePage = ({ currentPost }: any) => {
   const [selectedQuantity, setSelectedQuantity] = useState("1X");
   const recipeRef = useRef(null);
-  const [html2pdf, setHtml2pdf] = useState<any>(null);
+  const [html2pdf, setHtml2pdf] = useState<Function | null>(null); // State to hold the html2pdf function
 
   useEffect(() => {
     async function loadModule() {
       const impmodule = await import("html2pdf.js");
-      setHtml2pdf(impmodule);
+      setHtml2pdf(() => impmodule.default); // Set the html2pdf function
     }
-    void loadModule();
+    loadModule();
   }, []);
 
   const recipeDetails = currentPost.recipedetails?.[selectedQuantity] || {
@@ -46,7 +46,7 @@ const RecipePage = ({ currentPost }: any) => {
 
   const downloadPDF = async () => {
     const content = recipeRef.current;
-    html2pdf().set(options).from(content).save();
+    html2pdf?.().set(options).from(content).save();
   };
 
   return (
