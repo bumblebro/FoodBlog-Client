@@ -134,7 +134,7 @@ const RecipePage = ({ currentPost }: any) => {
           <h2 className="text-xl font-serif text-[#6b4226] mb-3">
             🍽 Ingredients
           </h2>
-          <ul className="list-disc pl-5 space-y-2 text-lg">
+          <ul className="  space-y-2 text-lg">
             {recipeDetails.ingredients.map((ingredient: any, index: any) => (
               <li
                 key={index}
