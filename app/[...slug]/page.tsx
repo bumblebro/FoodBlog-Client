@@ -75,8 +75,8 @@ export async function generateStaticParams() {
     console.log(`paramsArray`, paramsArray.length);
     const sortedArray = paramsArray.sort((a: any, b: any) => b - a);
     const slicedArray = sortedArray;
-    return [...sluglayer, ...slicedArray];
-    // return [...slicedArray];
+    // return [...sluglayer, ...slicedArray];
+    return [...slicedArray];
   } catch (error) {
     // console.error("Error fetching blogs:", error);
     return [];
