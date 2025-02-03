@@ -4,7 +4,7 @@ import Scroll from "react-scroll";
 
 const ScrollLink = Scroll.Link;
 
-function Buttons(downloadPDF: any) {
+function Buttons() {
   return (
     <div className=" text-xs font-medium tracking-wider my-4 px-3 lg:w-[45%] xl:px-0 ">
       {/* Jump to Recipe Button */}
