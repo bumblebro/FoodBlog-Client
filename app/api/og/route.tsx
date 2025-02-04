@@ -21,6 +21,7 @@ export async function GET(req: NextRequest) {
 
   return new ImageResponse(
     (
+      // (
       //   (
       //     <div tw="w-full h-full flex flex-col justify-end items-stretch justify-end bg-slate-200">
       //       {coverUrl && (
@@ -36,9 +37,6 @@ export async function GET(req: NextRequest) {
       //         <div tw="text-2xl">{description}</div>
       //       </div>
       //     </div>
-      //   ),
-      //   { width: 1200, height: 628 }
-      // );
 
       //   <div tw="w-full h-full relative flex items-center justify-center bg-gradient-to-b from-purple-600 via-pink-500 to-yellow-400">
       //     {coverUrl && (
@@ -62,8 +60,6 @@ export async function GET(req: NextRequest) {
       //       </div>
       //     </div>
       //   </div>
-      // ),
-      // { width: 1000, height: 1500 }
 
       //   <div tw="w-full h-full relative flex items-center justify-center bg-black">
       //     {coverUrl && (
@@ -121,8 +117,43 @@ export async function GET(req: NextRequest) {
       //       🚀 Must See!
       //     </div>
       //   </div>
-      // ),
-      // { width: 1000, height: 1500 }
+
+      // <div tw="w-full h-full relative flex items-center justify-center">
+      //   {coverUrl && (
+      //     <img
+      //       src={coverUrl}
+      //       alt=""
+      //       tw="absolute inset-0 w-full h-full"
+      //       style={{
+      //         objectFit: "cover",
+      //         objectPosition: "center",
+      //         filter: "contrast(1.2) saturate(1.2) brightness(90%)",
+      //       }}
+      //     />
+      //   )}
+      //   {/* Overlay */}
+      //   <div tw="absolute inset-0 bg-black bg-opacity-50 mix-blend-multiply"></div>
+
+      //   {/* Funky Text Layout */}
+      //   <div tw="relative z-10 flex flex-col items-center text-center p-12">
+      //     <div tw="text-7xl font-extrabold text-yellow-400 drop-shadow-lg uppercase tracking-wide transform -rotate-6">
+      //       {title}
+      //     </div>
+      //     <div tw="text-3xl font-bold text-white bg-pink-600 bg-opacity-80 px-6 py-3 mt-4 rounded-lg shadow-lg transform rotate-3">
+      //       {description}
+      //     </div>
+      //   </div>
+
+      //   {/* Sticker Element */}
+      //   <div tw="absolute top-5 right-5 bg-white text-black px-5 py-2 text-lg font-bold uppercase rounded-full shadow-lg rotate-[15deg]">
+      //     🔥 Hot Pick!
+      //   </div>
+
+      //   {/* Abstract Shapes */}
+      //   <div tw="absolute left-10 top-10 w-16 h-16 bg-yellow-400 rounded-full opacity-80"></div>
+      //   <div tw="absolute right-10 bottom-10 w-24 h-24 bg-blue-500 rounded-full opacity-70"></div>
+      //   <div tw="absolute bottom-20 left-20 w-10 h-10 bg-white rounded-full opacity-60"></div>
+      // </div>
 
       <div tw="w-full h-full relative flex items-center justify-center">
         {coverUrl && (
@@ -133,32 +164,33 @@ export async function GET(req: NextRequest) {
             style={{
               objectFit: "cover",
               objectPosition: "center",
-              filter: "contrast(1.2) saturate(1.2) brightness(90%)",
+              filter: "contrast(1.2) saturate(1.4) brightness(80%)",
             }}
           />
         )}
-        {/* Overlay */}
-        <div tw="absolute inset-0 bg-black bg-opacity-50 mix-blend-multiply"></div>
 
-        {/* Funky Text Layout */}
-        <div tw="relative z-10 flex flex-col items-center text-center p-12">
-          <div tw="text-7xl font-extrabold text-yellow-400 drop-shadow-lg uppercase tracking-wide transform -rotate-6">
+        {/* Overlay with Neon Glow Effect */}
+        <div tw="absolute inset-0 bg-black/50 backdrop-blur-md"></div>
+
+        {/* Bold Text Layout */}
+        <div tw="relative z-10 flex flex-col items-center text-center p-10">
+          <div tw="text-6xl font-extrabold text-white bg-pink-500 px-6 py-3 rounded-lg shadow-lg transform -rotate-2 tracking-widest">
             {title}
           </div>
-          <div tw="text-3xl font-bold text-white bg-pink-600 bg-opacity-80 px-6 py-3 mt-4 rounded-lg shadow-lg transform rotate-3">
+          <div tw="text-3xl font-bold text-black bg-yellow-300 px-6 py-2 mt-4 rounded-md shadow-md transform rotate-3">
             {description}
           </div>
         </div>
 
-        {/* Sticker Element */}
-        <div tw="absolute top-5 right-5 bg-white text-black px-5 py-2 text-lg font-bold uppercase rounded-full shadow-lg rotate-[15deg]">
-          🔥 Hot Pick!
+        {/* Sticker Badge */}
+        <div tw="absolute top-6 right-6 bg-white text-black px-4 py-2 text-xl font-bold uppercase rounded-full shadow-xl rotate-[10deg] border border-black">
+          ⚡ Must-See!
         </div>
 
-        {/* Abstract Shapes */}
-        <div tw="absolute left-10 top-10 w-16 h-16 bg-yellow-400 rounded-full opacity-80"></div>
-        <div tw="absolute right-10 bottom-10 w-24 h-24 bg-blue-500 rounded-full opacity-70"></div>
-        <div tw="absolute bottom-20 left-20 w-10 h-10 bg-white rounded-full opacity-60"></div>
+        {/* Funky Abstract Elements */}
+        <div tw="absolute left-8 bottom-12 w-14 h-14 bg-blue-400 rounded-full opacity-75 shadow-xl"></div>
+        <div tw="absolute right-16 top-16 w-20 h-20 bg-red-500 rounded-full opacity-80 shadow-lg"></div>
+        <div tw="absolute bottom-24 right-24 w-10 h-10 bg-white rounded-full opacity-60"></div>
       </div>
     ),
     { width: 1000, height: 1500 }
