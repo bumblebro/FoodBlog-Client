@@ -17,7 +17,6 @@ import GenerateSlugs from "../../libs/GenerateSlugs";
 import { subSections } from "@/libs/Section";
 import DeSlugify from "@/libs/DeSlugify";
 import { notFound } from "next/navigation";
-import { ImageResponse } from "next/og";
 
 interface params {
   params: {
@@ -193,32 +192,6 @@ export async function generateMetadata({ params }: params): Promise<Metadata> {
       return {};
     }
   }
-}
-
-export async function GET() {
-  return new ImageResponse(
-    (
-      <div
-        style={{
-          fontSize: 40,
-          color: "black",
-          background: "white",
-          width: "100%",
-          height: "100%",
-          padding: "50px 200px",
-          textAlign: "center",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        👋 Hello
-      </div>
-    ),
-    {
-      width: 1200,
-      height: 630,
-    }
-  );
 }
 
 function validateCategoryPath(pathArray: string[], sections: object) {
