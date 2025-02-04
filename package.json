@@ -18,6 +18,7 @@
     "@prisma/adapter-neon": "^5.20.0",
     "@prisma/client": "^6.2.1",
     "@prisma/extension-accelerate": "^1.1.0",
+    "@vercel/og": "^0.6.5",
     "async-g-i-s": "^1.5.4",
     "axios": "^1.7.5",
     "clipboard-copy": "^4.0.1",
