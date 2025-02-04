@@ -162,7 +162,16 @@ export async function generateMetadata({ params }: params): Promise<Metadata> {
       if (response) {
         currentPost = response;
       }
-
+      const imageUrl =
+        process.env.NEXT_PUBLIC_BASE_API_URL +
+        "/api/og?" +
+        "title=" +
+        encodeURIComponent((currentPost?.seo as SEOType)?.ogTitle || "") +
+        "&description=" +
+        encodeURIComponent((currentPost?.seo as SEOType)?.ogDescription || "") +
+        "&cover=" +
+        encodeURIComponent(currentPost?.imageurl || "");
+      console.log(`url`, imageUrl);
       return {
         title: DeSlugify(currentPost?.title || ""),
         description: (currentPost?.seo as SEOType)?.metaDescription,
@@ -177,7 +186,7 @@ export async function generateMetadata({ params }: params): Promise<Metadata> {
         openGraph: {
           images: [
             {
-              url: currentPost?.imageurl || "",
+              url: imageUrl || "",
             },
           ],
         },
