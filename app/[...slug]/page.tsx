@@ -188,7 +188,6 @@ export async function generateMetadata({ params }: params): Promise<Metadata> {
             : []),
         ],
         openGraph: {
-          title: imageUrl,
           images: [
             {
               url: imageUrl || "",
