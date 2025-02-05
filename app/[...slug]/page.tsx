@@ -443,7 +443,10 @@ async function BlogCategory({ params }: params) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Recipe",
-    author: currentPost?.author,
+    author: {
+      "@type": "Person",
+      givenName: currentPost?.author,
+    },
     cookTime: recipeDetails.cookTime,
     datePublished: currentPost?.creationDate,
     description: currentPost?.recipedescription,
