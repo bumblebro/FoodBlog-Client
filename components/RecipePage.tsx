@@ -66,12 +66,18 @@ const RecipePage = ({ currentPost }: any) => {
         className="w-full max-w-4xl bg-white shadow-lg rounded-xl p-4 border border-gray-300"
       >
         {/* Recipe Title */}
-        <h1 className="text-3xl font-serif text-center font-bold mb-6 text-[#6b4226]">
+        <h1
+          itemProp="name"
+          className="text-3xl font-serif text-center font-bold mb-6 text-[#6b4226]"
+        >
           {currentPost.title}
         </h1>
 
         {/* Recipe Description */}
-        <p className=" text-gray-600 text-center italic mb-6 text-base">
+        <p
+          itemProp="description"
+          className=" text-gray-600 text-center italic mb-6 text-base"
+        >
           {currentPost.recipedescription}
         </p>
 
@@ -80,16 +86,16 @@ const RecipePage = ({ currentPost }: any) => {
           <h2 className="text-xl font-serif text-[#6b4226] mb-3">
             ⏳ Yield & Time
           </h2>
-          <p className="text-base">
+          <p itemProp="recipeYield" className="text-base">
             <strong>Yield:</strong> {recipeDetails.yield}
           </p>
-          <p className="text-base">
+          <p itemProp="prepTime" className="text-base">
             <strong>Preparation Time:</strong> {recipeDetails.preparationTime}
           </p>
-          <p className="text-base">
+          <p itemProp="cookTime" className="text-base">
             <strong>Cook Time:</strong> {recipeDetails.cookTime}
           </p>
-          <p className="text-base">
+          <p itemProp="totalTime" className="text-base">
             <strong>Total Time:</strong> {recipeDetails.totalTime}
           </p>
         </div>
@@ -149,7 +155,7 @@ const RecipePage = ({ currentPost }: any) => {
                     onChange={() => handleCheck(index)}
                     className="h-4 w-4 text-[#b5651d] checked:bg-[#b5651d] border-[#b5651d] focus:ring-[#b5651d]"
                   />
-                  <span>
+                  <span itemProp="ingredients">
                     {ingredient.quantity} {ingredient.name}
                   </span>
                 </label>
