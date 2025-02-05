@@ -440,28 +440,28 @@ async function BlogCategory({ params }: params) {
     preparationTime: "",
   };
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Recipe",
-    author: currentPost?.author,
-    cookTime: currentPost?.recipedetails,
-    datePublished: currentPost?.creationDate,
-    description: currentPost?.recipedescription,
-    image: currentPost?.imageurl,
-    recipeIngredient: [recipeDetails.ingredients.map((e: any) => e.name)],
-    name: currentPost?.title,
-    prepTime: recipeDetails.preparationTime,
-    recipeYield: recipeDetails.yield,
-  };
+  // const jsonLd = {
+  //   "@context": "https://schema.org",
+  //   "@type": "Recipe",
+  //   author: currentPost?.author,
+  //   cookTime: currentPost?.recipedetails,
+  //   datePublished: currentPost?.creationDate,
+  //   description: currentPost?.recipedescription,
+  //   image: currentPost?.imageurl,
+  //   recipeIngredient: [recipeDetails.ingredients.map((e: any) => e.name)],
+  //   name: currentPost?.title,
+  //   prepTime: recipeDetails.preparationTime,
+  //   recipeYield: recipeDetails.yield,
+  // };
 
   return (
     <>
       {currentPost ? (
         <>
-          <script
+          {/* <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-          />
+          /> */}
           <Navbar decodedslug={navslugs} ispost={true} />
           <CategoryPost decodedslug={slugs} totalBlogs={totalBlogs} />
           <BlogDisplay
