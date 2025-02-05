@@ -83,10 +83,7 @@ const RecipePage = ({ currentPost }: any) => {
           <h2 className="text-xl font-serif text-[#6b4226] mb-3">
             ⏳ Yield & Time
           </h2>
-          <p
-            className="text-base p-yield
-"
-          >
+          <p className="text-base p-yield">
             <strong>Yield:</strong> {recipeDetails.yield}
           </p>
           <p className="text-base">
@@ -95,10 +92,7 @@ const RecipePage = ({ currentPost }: any) => {
           <p className="text-base">
             <strong>Cook Time:</strong> {recipeDetails.cookTime}
           </p>
-          <p
-            className="text-base dt-duration
-"
-          >
+          <p className="text-base dt-duration">
             <strong>Total Time:</strong> {recipeDetails.totalTime}
           </p>
         </div>
@@ -177,7 +171,11 @@ const RecipePage = ({ currentPost }: any) => {
           </h2>
           <ol className="list-decimal pl-5 space-y-2 text-lg">
             {currentPost.instructions?.map((instruction: any, index: any) => (
-              <li key={index} className="text-gray-700 text-base">
+              <li
+                key={index}
+                className="text-gray-700 text-base e-instructions
+"
+              >
                 {instruction}
               </li>
             ))}
