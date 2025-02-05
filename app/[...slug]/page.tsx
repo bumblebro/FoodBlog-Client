@@ -162,8 +162,12 @@ export async function generateMetadata({ params }: params): Promise<Metadata> {
       if (response) {
         currentPost = response;
       }
+      const domain = process.env.NEXT_PUBLIC_BASE_API_URL?.replace(
+        /^https:/,
+        "http:"
+      );
       const imageUrl =
-        process.env.NEXT_PUBLIC_BASE_API_URL +
+        domain +
         "/api/og?" +
         "title=" +
         encodeURIComponent((currentPost?.seo as SEOType)?.ogTitle || "") +
