@@ -429,10 +429,21 @@ async function BlogCategory({ params }: params) {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Product",
-    name: "product.name",
-    image: "product.image",
-    description: "product.description",
+    "@type": "Recipe",
+    author: "John Smith",
+    cookTime: "PT1H",
+    datePublished: "2009-05-08",
+    description:
+      "This classic banana bread recipe comes from my mom -- the walnuts add a nice texture and flavor to the banana bread.",
+    image: "bananabread.jpg",
+    recipeIngredient: [
+      "3 or 4 ripe bananas, smashed",
+      "1 egg",
+      "3/4 cup of sugar",
+    ],
+    name: "Mom's World Famous Banana Bread",
+    prepTime: "PT15M",
+    recipeYield: "1 loaf",
   };
 
   return (
