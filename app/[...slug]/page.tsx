@@ -454,6 +454,7 @@ async function BlogCategory({ params }: params) {
     name: currentPost?.title,
     prepTime: recipeDetails.preparationTime,
     recipeYield: recipeDetails.yield,
+    totalTime: recipeDetails.totalTime,
   };
 
   return (
