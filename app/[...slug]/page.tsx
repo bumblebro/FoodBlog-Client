@@ -427,8 +427,20 @@ async function BlogCategory({ params }: params) {
 
   navslugs = await slugs.slice(0, 3);
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: "product.name",
+    image: "product.image",
+    description: "product.description",
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {currentPost ? (
         <>
           <Navbar decodedslug={navslugs} ispost={true} />
