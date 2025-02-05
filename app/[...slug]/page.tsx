@@ -455,6 +455,7 @@ async function BlogCategory({ params }: params) {
     prepTime: recipeDetails.preparationTime,
     recipeYield: recipeDetails.yield,
     totalTime: recipeDetails.totalTime,
+    recipeInstructions: currentPost?.instructions.map((e) => e),
   };
 
   return (
