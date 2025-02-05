@@ -75,8 +75,8 @@ export async function generateStaticParams() {
     console.log(`paramsArray`, paramsArray.length);
     const sortedArray = paramsArray.sort((a: any, b: any) => b - a);
     const slicedArray = sortedArray;
-    return [...sluglayer, ...slicedArray];
-    // return [...slicedArray];
+    // return [...sluglayer, ...slicedArray];
+    return [...slicedArray];
   } catch (error) {
     // console.error("Error fetching blogs:", error);
     return [];
@@ -427,33 +427,41 @@ async function BlogCategory({ params }: params) {
 
   navslugs = await slugs.slice(0, 3);
 
+  const recipeDetails = (currentPost?.recipedetails as Record<string, any>)?.[
+    "1X"
+  ] || {
+    ingredients: [],
+    instructions: [],
+    nutrition: {},
+    notes: [],
+    yield: "",
+    cookTime: "",
+    totalTime: "",
+    preparationTime: "",
+  };
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Recipe",
-    author: "John Smith",
-    cookTime: "PT1H",
-    datePublished: "2009-05-08",
-    description:
-      "This classic banana bread recipe comes from my mom -- the walnuts add a nice texture and flavor to the banana bread.",
-    image: "bananabread.jpg",
-    recipeIngredient: [
-      "3 or 4 ripe bananas, smashed",
-      "1 egg",
-      "3/4 cup of sugar",
-    ],
-    name: "Mom's World Famous Banana Bread",
-    prepTime: "PT15M",
-    recipeYield: "1 loaf",
+    author: currentPost?.author,
+    cookTime: currentPost?.recipedetails,
+    datePublished: currentPost?.creationDate,
+    description: currentPost?.recipedescription,
+    image: currentPost?.imageurl,
+    recipeIngredient: [recipeDetails.ingredients.map((e: any) => e.name)],
+    name: currentPost?.title,
+    prepTime: recipeDetails.preparationTime,
+    recipeYield: recipeDetails.yield,
   };
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       {currentPost ? (
         <>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
           <Navbar decodedslug={navslugs} ispost={true} />
           <CategoryPost decodedslug={slugs} totalBlogs={totalBlogs} />
           <BlogDisplay
