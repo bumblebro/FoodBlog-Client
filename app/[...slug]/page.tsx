@@ -444,11 +444,13 @@ async function BlogCategory({ params }: params) {
     "@context": "https://schema.org",
     "@type": "Recipe",
     author: currentPost?.author,
-    cookTime: currentPost?.recipedetails,
+    cookTime: recipeDetails.cookTime,
     datePublished: currentPost?.creationDate,
     description: currentPost?.recipedescription,
     image: currentPost?.imageurl,
-    recipeIngredient: recipeDetails.ingredients.map((e: any) => e.name),
+    recipeIngredient: recipeDetails.ingredients.map(
+      (ingredient: any) => `${ingredient.quantity} ${ingredient.name}`
+    ),
     name: currentPost?.title,
     prepTime: recipeDetails.preparationTime,
     recipeYield: recipeDetails.yield,
