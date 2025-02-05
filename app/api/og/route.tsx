@@ -4,9 +4,7 @@ import { ImageResponse } from "@vercel/og";
 // export const config = {
 //   runtime: "experimental-edge",
 // };
-export const config = {
-  runtime: "experimental-edge",
-};
+export const runtime = "experimental-edge";
 
 export async function GET(req: NextRequest) {
   const { searchParams, protocol, host } = new URL(req.url);
