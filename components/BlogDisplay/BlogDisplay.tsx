@@ -103,9 +103,12 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
             <div className="lg:flex lg:pb-4">
               <div className="mx-4 text-xs tracking-wider flex flex-col gap-2 pb-4 xl:mx-0">
                 <h1 className="font-semibold">
-                  By <span className="underline ">{currentPost.author}</span>
+                  By{" "}
+                  <span className="underline p-author ">
+                    {currentPost.author}
+                  </span>
                 </h1>
-                <h2 className=" font-normal text-gray-600">
+                <h2 className=" font-normal text-gray-600 dt-published">
                   Published:{" "}
                   {date.toLocaleDateString("en-GB", {
                     day: "2-digit",

@@ -201,23 +201,41 @@ const RecipePage = ({ currentPost }: any) => {
           <h2 className="text-xl font-serif text-[#6b4226] mb-3">
             🍎 Nutrition
           </h2>
-          <p className="text-base">
+          <p
+            className="text-base p-nutrition
+"
+          >
             <strong>Calories:</strong> {recipeDetails.nutrition.calories}
           </p>
-          <p className="text-base">
+          <p
+            className="text-base p-nutrition
+"
+          >
             <strong>Protein:</strong> {recipeDetails.nutrition.protein}
           </p>
-          <p className="text-base">
+          <p
+            className="text-base p-nutrition
+"
+          >
             <strong>Fat:</strong> {recipeDetails.nutrition.fat}
           </p>
-          <p className="text-base">
+          <p
+            className="text-base p-nutrition
+"
+          >
             <strong>Carbohydrates:</strong>{" "}
             {recipeDetails.nutrition.carbohydrates}
           </p>
-          <p className="text-base">
+          <p
+            className="text-base p-nutrition
+"
+          >
             <strong>Fiber:</strong> {recipeDetails.nutrition.fiber}
           </p>
-          <p className="text-base">
+          <p
+            className="text-base p-nutrition
+"
+          >
             <strong>Calcium:</strong> {recipeDetails.nutrition.calcium}
           </p>
         </div>
