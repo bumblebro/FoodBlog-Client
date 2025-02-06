@@ -10,9 +10,7 @@ export async function GET(req: NextRequest) {
   const { searchParams, protocol, host } = new URL(req.url);
   const title = searchParams.get("title");
   const description = searchParams.get("description");
-  const cover =
-    searchParams.get("cover") ||
-    "http://localhost:3003/_next/image?url=https%3A%2F%2Fcdn.prod.website-files.com%2F65ef2fec8eeef9e7a31b03f9%2F6626d204aea7d43caf33079f_660f6869495c0226b21fe93e_Peach-Tart-5-1200x1798.webp&w=1200&q=75";
+  const cover = searchParams.get("cover");
 
   const coverUrl =
     cover &&
@@ -25,7 +23,7 @@ export async function GET(req: NextRequest) {
       <div tw="w-full h-full flex flex-col justify-end items-stretch justify-end bg-slate-200">
         {coverUrl && (
           <img
-            src={coverUrl}
+            src={cover}
             alt=""
             tw="w-full h-full"
             style={{ objectFit: "cover", objectPosition: "center" }}
