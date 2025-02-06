@@ -181,7 +181,8 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
           <button className="px-5 py-2 bg-[#6b4226] text-white font-serif rounded-full shadow-md hover:bg-[#4e2f1d] transition-all">
             💾 Save Recipe
           </button> */}
-          <Buttons /> <ShareButtons urllink={urllink} imageUrl={imageUrl} />
+          <Buttons />
+          {/* <ShareButtons urllink={urllink} imageUrl={imageUrl} /> */}
           {/* <button className="bg-red-400">
             {" "}
             <a
@@ -193,7 +194,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
               Pin
             </a>
           </button> */}
-          <img src={imageUrl} alt="" />
+          <img className="hidden" src={imageUrl} alt="" />
           {currentPost.content?.map((item, i) => {
             const contentItem = item as ContentItem;
             return (
