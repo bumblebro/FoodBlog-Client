@@ -9,7 +9,6 @@ import Image from "next/image";
 import { shimmer, toBase64 } from "@/libs/Shimmer";
 import RecipePage from "../RecipePage";
 import Buttons from "../Buttons";
-import { ExpandableContent } from "../ExpandableContent";
 import { FAQSection } from "../FAQSection";
 // import Buttons from "../Buttons";
 
