@@ -48,8 +48,23 @@ interface BlogDisp {
   posts: FoodBlogs[];
   latposts: FoodBlogs[];
 }
+
 function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
   const date = new Date(currentPost.creationDate);
+
+  const domain = process.env.NEXT_PUBLIC_BASE_API_URL?.replace(
+    /^https:/,
+    "http:"
+  );
+  const imageUrl =
+    domain +
+    "/api/og?" +
+    "title=" +
+    encodeURIComponent((currentPost?.seo as SEOType)?.ogTitle || "") +
+    "&description=" +
+    encodeURIComponent((currentPost?.seo as SEOType)?.ogDescription || "") +
+    "&cover=" +
+    encodeURIComponent(currentPost?.imageurl || "");
 
   return (
     <div className=" xl:max-w-[73rem] mx-auto  mb-10 md:grid md:grid-cols-[56.7%_auto] lg:grid-cols-[67.5%_auto] xl:grid-cols-[74.25%_auto] xl:gap-2 2xl:grid-cols-[71.5%_auto]">
@@ -161,6 +176,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
             💾 Save Recipe
           </button> */}
           <Buttons />
+          <img src={imageUrl} alt="" />
           {currentPost.content?.map((item, i) => {
             const contentItem = item as ContentItem;
             return (
