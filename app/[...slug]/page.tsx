@@ -194,7 +194,7 @@ export async function generateMetadata({ params }: params): Promise<Metadata> {
             },
           ],
         },
-        // metadataBase: new URL(`${process.env.NEXT_PUBLIC_BASE_API_URL}`),
+        metadataBase: new URL(`${process.env.NEXT_PUBLIC_BASE_API_URL}`),
 
         alternates: {
           canonical: `/${url}`,
