@@ -1,10 +1,10 @@
 "use client";
 import { PinterestIcon, PinterestShareButton } from "react-share";
 
-function ShareButtons({ urllink }: any) {
+function ShareButtons({ urllink, imageUrl }: any) {
   return (
     <div>
-      <PinterestShareButton url={urllink} media={urllink}>
+      <PinterestShareButton url={urllink} media={imageUrl}>
         {" "}
         <PinterestIcon />
       </PinterestShareButton>
