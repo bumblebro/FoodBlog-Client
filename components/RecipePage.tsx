@@ -94,12 +94,15 @@ const RecipePage = ({ currentPost }: any) => {
             <strong>Cook Time:</strong>{" "}
             {Math.floor(parseInt(recipeDetails?.cookTime) / 60)} minutes
           </p>
-          <p className="text-base dt-duration  ">
+          {/* <p className="text-base dt-duration  ">
             <strong>Total Time:</strong>{" "}
             <time className="dt-duration" dateTime="1H">
               {Math.floor(parseInt(recipeDetails?.totalTime) / 60)} minutes
             </time>
-          </p>
+          </p> */}
+          <time className="dt-duration" dateTime="1H">
+            15 min
+          </time>
         </div>
 
         {/* Quantity Selector */}
