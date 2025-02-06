@@ -9,6 +9,8 @@ import Image from "next/image";
 import { shimmer, toBase64 } from "@/libs/Shimmer";
 import RecipePage from "../RecipePage";
 import Buttons from "../Buttons";
+import { ExpandableContent } from "../ExpandableContent";
+import { FAQSection } from "../FAQSection";
 // import Buttons from "../Buttons";
 
 interface JsonValue {
@@ -212,7 +214,27 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
               </div>
             );
           })}{" "}
+          {currentPost.equipments && currentPost.equipments.length > 0 && (
+            <div className="px-6 py-5 bg-white shadow-md rounded-2xl mb-2">
+              <h2 className="text-xl font-medium text-gray-900 pb-3">
+                Required Equipments
+              </h2>
+              <ul className="bg-gray-100 rounded-lg py-3  flex flex-col gap-2">
+                {currentPost.equipments.map((equipment, i) => (
+                  <li
+                    key={i}
+                    className="flex items-center text-gray-700  px-4  "
+                  >
+                    <span className="font-normal">{equipment}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
           <RecipePage currentPost={currentPost} />
+          {currentPost.faq && (currentPost.faq as any[]).length > 0 && (
+            <FAQSection faqs={currentPost.faq} />
+          )}
           <h1 className="px-4 py-4 my-4 italic bg-[#eeeff1]">
             {currentPost.quote}
           </h1>

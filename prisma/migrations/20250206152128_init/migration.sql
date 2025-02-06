@@ -15,6 +15,8 @@ CREATE TABLE "FoodBlogs" (
     "recipedescription" TEXT NOT NULL,
     "recipedetails" JSONB NOT NULL,
     "seo" JSONB NOT NULL,
+    "faq" JSONB NOT NULL,
+    "equipments" TEXT[],
     "creationDate" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT "FoodBlogs_pkey" PRIMARY KEY ("id")

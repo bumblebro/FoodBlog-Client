@@ -67,7 +67,7 @@ const RecipePage = ({ currentPost }: any) => {
       >
         {/* Recipe Title */}
         <h1 className="text-3xl font-serif text-center font-bold mb-6 text-[#6b4226] p-name">
-          {currentPost.title}
+          {currentPost?.title}
         </h1>
 
         {/* Recipe Description */}
@@ -75,7 +75,7 @@ const RecipePage = ({ currentPost }: any) => {
           className=" text-gray-600 text-center italic mb-6 text-base p-summary
 "
         >
-          {currentPost.recipedescription}
+          {currentPost?.recipedescription}
         </p>
 
         {/* Yield & Time Info */}
@@ -84,19 +84,19 @@ const RecipePage = ({ currentPost }: any) => {
             ⏳ Yield & Time
           </h2>
           <p className="text-base p-yield">
-            <strong>Yield:</strong> {recipeDetails.yield} servings
+            <strong>Yield:</strong> {recipeDetails?.yield} servings
           </p>
           <p className="text-base">
             <strong>Preparation Time:</strong>{" "}
-            {Math.floor(parseInt(recipeDetails.preparationTime) / 60)} minutes
+            {Math.floor(parseInt(recipeDetails?.preparationTime) / 60)} minutes
           </p>
           <p className="text-base">
             <strong>Cook Time:</strong>{" "}
-            {Math.floor(parseInt(recipeDetails.cookTime) / 60)} minutes
+            {Math.floor(parseInt(recipeDetails?.cookTime) / 60)} minutes
           </p>
           <p className="text-base dt-duration">
             <strong>Total Time:</strong>{" "}
-            {Math.floor(parseInt(recipeDetails.totalTime) / 60)} minutes
+            {Math.floor(parseInt(recipeDetails?.totalTime) / 60)} minutes
           </p>
         </div>
 
@@ -108,7 +108,7 @@ const RecipePage = ({ currentPost }: any) => {
               onClick={() => {
                 setSelectedQuantity(qty);
                 setCheckedItems(
-                  new Array(recipeDetails.ingredients.length).fill(false)
+                  new Array(recipeDetails?.ingredients?.length).fill(false)
                 );
               }}
               className={`px-5 py-2 rounded-lg text-base font-semibold transition-all ${
@@ -141,7 +141,7 @@ const RecipePage = ({ currentPost }: any) => {
             🍽 Ingredients
           </h2>
           <ul className="  space-y-2 text-lg">
-            {recipeDetails.ingredients.map((ingredient: any, index: any) => (
+            {recipeDetails?.ingredients?.map((ingredient: any, index: any) => (
               <li
                 key={index}
                 className={`text-gray-700 text-base ${
@@ -159,7 +159,7 @@ const RecipePage = ({ currentPost }: any) => {
                     className="p-ingredient
 "
                   >
-                    {ingredient.quantity} {ingredient.name}
+                    {ingredient?.quantity} {ingredient?.name}
                   </span>
                 </label>
               </li>
@@ -172,8 +172,8 @@ const RecipePage = ({ currentPost }: any) => {
           <h2 className="text-xl font-serif text-[#6b4226] mb-3">
             📖 Instructions
           </h2>
-          <ol className="list-decimal pl-5 space-y-2 text-lg">
-            {currentPost.instructions?.map((instruction: any, index: any) => (
+          <ol className="list-decimal pl-5 space-y-2 text-lg ">
+            {currentPost?.instructions?.map((instruction: any, index: any) => (
               <li
                 key={index}
                 className="text-gray-700 text-base e-instructions
@@ -189,7 +189,7 @@ const RecipePage = ({ currentPost }: any) => {
         <div className="bg-[#f9f5f0] p-6 rounded-lg shadow-md border border-gray-300 mb-6">
           <h2 className="text-xl font-serif text-[#6b4226] mb-3">📝 Notes</h2>
           <ul className="list-disc pl-5 space-y-2 text-lg">
-            {recipeDetails.notes.map((note: any, index: any) => (
+            {recipeDetails?.notes?.map((note: any, index: any) => (
               <li key={index} className="text-gray-700 text-base">
                 {note}
               </li>
@@ -206,38 +206,38 @@ const RecipePage = ({ currentPost }: any) => {
             className="text-base p-nutrition
 "
           >
-            <strong>Calories:</strong> {recipeDetails.nutrition.calories}
+            <strong>Calories:</strong> {recipeDetails?.nutrition?.calories}
           </p>
           <p
             className="text-base p-nutrition
 "
           >
-            <strong>Protein:</strong> {recipeDetails.nutrition.protein}
+            <strong>Protein:</strong> {recipeDetails?.nutrition?.protein}
           </p>
           <p
             className="text-base p-nutrition
 "
           >
-            <strong>Fat:</strong> {recipeDetails.nutrition.fat}
+            <strong>Fat:</strong> {recipeDetails?.nutrition?.fat}
           </p>
           <p
             className="text-base p-nutrition
 "
           >
             <strong>Carbohydrates:</strong>{" "}
-            {recipeDetails.nutrition.carbohydrates}
+            {recipeDetails?.nutrition?.carbohydrates}
           </p>
           <p
             className="text-base p-nutrition
 "
           >
-            <strong>Fiber:</strong> {recipeDetails.nutrition.fiber}
+            <strong>Fiber:</strong> {recipeDetails?.nutrition?.fiber}
           </p>
           <p
             className="text-base p-nutrition
 "
           >
-            <strong>Calcium:</strong> {recipeDetails.nutrition.calcium}
+            <strong>Calcium:</strong> {recipeDetails?.nutrition?.calcium}
           </p>
         </div>
       </div>
