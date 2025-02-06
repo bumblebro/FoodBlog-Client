@@ -94,12 +94,11 @@ const RecipePage = ({ currentPost }: any) => {
             <strong>Cook Time:</strong>{" "}
             {Math.floor(parseInt(recipeDetails?.cookTime) / 60)} minutes
           </p>
-          {/* <p className="text-base dt-duration  ">
-            <strong>Total Time:</strong>{" "}
-            {Math.floor(parseInt(recipeDetails?.totalTime) / 60)} minutes
-          </p> */}
           <p className="text-base dt-duration  ">
-            <strong>Total Time:</strong> PT25M
+            <strong>Total Time:</strong>{" "}
+            <time className="dt-duration" dateTime="1H">
+              {Math.floor(parseInt(recipeDetails?.totalTime) / 60)} minutes
+            </time>
           </p>
         </div>
 
