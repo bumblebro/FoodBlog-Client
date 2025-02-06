@@ -190,11 +190,11 @@ export async function generateMetadata({ params }: params): Promise<Metadata> {
         openGraph: {
           images: [
             {
-              url: imageUrl || "",
+              url: currentPost?.imageurl || "",
             },
           ],
         },
-        metadataBase: new URL(`${process.env.NEXT_PUBLIC_BASE_API_URL}`),
+        // metadataBase: new URL(`${process.env.NEXT_PUBLIC_BASE_API_URL}`),
 
         alternates: {
           canonical: `/${url}`,
