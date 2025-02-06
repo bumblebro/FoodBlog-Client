@@ -1,5 +1,4 @@
 import { FoodBlogs } from "@prisma/client";
-import axios from "axios";
 import Link from "next/link";
 import CopyBtn from "../ClientComponents/CopyBtn";
 import ShareBtn from "../ClientComponents/ShareBtn";
@@ -10,6 +9,7 @@ import { shimmer, toBase64 } from "@/libs/Shimmer";
 import RecipePage from "../RecipePage";
 import Buttons from "../Buttons";
 import { FAQSection } from "../FAQSection";
+import ShareButtons from "../ShareButtons";
 // import Buttons from "../Buttons";
 
 interface JsonValue {
@@ -65,6 +65,12 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
     encodeURIComponent((currentPost?.seo as SEOType)?.ogDescription || "") +
     "&cover=" +
     encodeURIComponent(currentPost?.imageurl || "");
+
+  const urllink = `${process.env.NEXT_PUBLIC_BASE_API_URL}/${
+    currentPost.section !== "null" ? currentPost.section + "/" : ""
+  }${currentPost.subsection !== "null" ? currentPost.subsection + "/" : ""}${
+    currentPost.subsubsection !== "null" ? currentPost.subsubsection + "/" : ""
+  }${currentPost.title}`;
 
   return (
     <div className=" xl:max-w-[73rem] mx-auto  mb-10 md:grid md:grid-cols-[56.7%_auto] lg:grid-cols-[67.5%_auto] xl:grid-cols-[74.25%_auto] xl:gap-2 2xl:grid-cols-[71.5%_auto]">
@@ -175,7 +181,18 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
           <button className="px-5 py-2 bg-[#6b4226] text-white font-serif rounded-full shadow-md hover:bg-[#4e2f1d] transition-all">
             💾 Save Recipe
           </button> */}
-          <Buttons />
+          <Buttons /> <ShareButtons urllink={urllink}  />
+          {/* <button className="bg-red-400">
+            {" "}
+            <a
+              href="https://www.pinterest.com/pin/create/button/"
+              data-pin-do="buttonBookmark"
+              target="_blank"
+              rel="noopener"
+            >
+              Pin
+            </a>
+          </button> */}
           <img src={imageUrl} alt="" />
           {currentPost.content?.map((item, i) => {
             const contentItem = item as ContentItem;
