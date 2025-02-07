@@ -17,12 +17,6 @@ export async function GET(req: NextRequest) {
   const description = searchParams.get("description");
   const cover = searchParams.get("cover");
 
-  const font1 = fetch(new URL("https://www.bargpt.app/Dosis-Medium.ttf")).then(
-    (res) => res.arrayBuffer()
-  );
-
-  const [font1Data] = await Promise.all([font1]);
-
   const coverUrl =
     cover &&
     `${protocol}//${host}/_next/image?url=${encodeURIComponent(
@@ -31,69 +25,23 @@ export async function GET(req: NextRequest) {
 
   return new ImageResponse(
     (
-      <div
-        style={{
-          height: "100%",
-          width: "100%",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "flex-start",
-          backgroundColor: "#fff",
-          fontSize: 90,
-          fontWeight: 600,
-          fontFamily: "MyFont",
-          backgroundImage:
-            "radial-gradient(circle, rgba(8,8,8,1) 50%, rgba(67,69,73,1) 100%)",
-        }}
-      >
-        <div
-          style={{
-            paddingTop: "25px",
-            paddingBottom: "25px",
-            color: "white",
-            textAlign: "center",
-            paddingRight: "5px",
-            paddingLeft: "5px",
-          }}
-        >
-          {title}
-        </div>
-        <img
-          src={cover || ""}
-          alt="test"
-          height={1000}
-          width={1000}
-          style={{
-            width: "100%",
-            objectFit: `contain`,
-            objectPosition: "center",
-          }}
-        />
-        <div
-          style={{
-            paddingTop: "35px",
-            textAlign: "center",
-            fontSize: "54px",
-            color: "white",
-            paddingRight: "5px",
-            paddingLeft: "5px",
-          }}
-        >
-          {description}
+      <div tw="w-full h-full flex flex-col justify-end items-stretch justify-end bg-slate-200">
+        {cover && (
+          <img
+            src={cover}
+            alt=""
+            tw="w-full h-full"
+            style={{ objectFit: "cover", objectPosition: "center" }}
+          />
+        )}
+        <div tw="bg-white flex flex-col p-8">
+          <div tw="text-5xl mb-2">{title}</div>
+          <div tw="text-2xl">{description}</div>
         </div>
       </div>
     ),
     {
       ...size,
-      fonts: [
-        {
-          name: "MyFont",
-          data: font1Data,
-          style: "normal",
-          weight: 400,
-        },
-      ],
     }
   );
 }
