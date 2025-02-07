@@ -194,7 +194,11 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
               Pin
             </a>
           </button> */}
-          <img className="hidden" src={imageUrl} alt="" />
+          <img
+            className="w-[358px] sm:w-[608px] md:w-[403px] lg:w-[659px] xl:w-[867px] 2xl:w-[835px]"
+            src={imageUrl}
+            alt="ssss"
+          />
           {currentPost.content?.map((item, i) => {
             const contentItem = item as ContentItem;
             return (
