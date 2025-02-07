@@ -6,7 +6,8 @@ import { url } from "inspector";
 //   runtime: "experimental-edge",
 // };
 export const runtime = "edge";
-export const size = {
+
+const size = {
   width: 1000,
   height: 1500,
 };
