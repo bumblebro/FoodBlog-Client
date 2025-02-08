@@ -4,7 +4,9 @@ import { ImageResponse } from "@vercel/og";
 export const runtime = "experimental-edge";
 
 async function loadGoogleFont() {
-  const url = "https://fonts.googleapis.com/css2?family=Pacifico&display=swap";
+  // const url = "https://fonts.googleapis.com/css2?family=Pacifico&display=swap";
+  // const url = "https://fonts.googleapis.com/css2?family=Knewave&display=swap";
+  const url = "https://fonts.googleapis.com/css2?family=Aclonica&display=swap";
   const css = await (await fetch(url)).text();
   const resource = css.match(
     /src: url\((.+)\) format\('(opentype|truetype)'\)/
