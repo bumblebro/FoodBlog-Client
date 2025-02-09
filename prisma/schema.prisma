@@ -49,4 +49,5 @@ model FoodBlogs {
   faq               Json     // FAQ data (an array of objects with "question" and "answer" fields)
   equipments         String[]     // Equipment names (an array of strings)
   creationDate      DateTime @default(now()) // Date the blog was created
+  reviews           Json[]
 }

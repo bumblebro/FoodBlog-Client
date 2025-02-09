@@ -1,21 +1,5 @@
 const templates = [
-  <div tw="w-full h-full flex items-center justify-center">
-    {cover && (
-      <img
-        src={cover}
-        alt=""
-        tw="absolute w-full h-full object-cover"
-        style={{ objectPosition: "center" }}
-      />
-    )}
-    <div tw="flex flex-col items-center bg-white  px-6 py-4 rounded-lg ">
-      <div tw="text-white text-8xl font-bold text-black">{title}</div>
-      <div tw="text-white text-2xl font-semibold mt-2 text-black">
-        Savory Touch
-      </div>
-    </div>
-  </div>,
-  <div tw="w-full h-full flex items-center justify-center">
+  <div key={"2"} tw="w-full h-full flex items-center justify-center">
     {cover && (
       <img
         src={cover}
@@ -29,7 +13,7 @@ const templates = [
       <div tw="flex text-xl font-medium mt-3 text-gray-800">Savory Touch</div>
     </div>
   </div>,
-  <div tw="w-full h-full flex items-center justify-center relative">
+  <div key={"3"} tw="w-full h-full flex items-center justify-center relative">
     {cover && (
       <img
         src={cover}
@@ -43,7 +27,7 @@ const templates = [
       <div tw="flex text-2xl font-semibold mt-3 text-white">Savory Touch</div>
     </div>
   </div>,
-  <div tw="w-full h-full flex relative">
+  <div key={"4"} tw="w-full h-full flex relative">
     {cover && (
       <img
         src={cover}
@@ -61,7 +45,7 @@ const templates = [
       </div>
     </div>
   </div>,
-  <div tw="w-full h-full flex relative overflow-hidden">
+  <div key={"5"} tw="w-full h-full flex relative overflow-hidden">
     {cover && (
       <img
         src={cover}
@@ -78,7 +62,7 @@ const templates = [
       <div tw="flex text-2xl font-semibold mt-2 text-white">Savory Touch</div>
     </div>
   </div>,
-  <div tw="w-full h-full flex relative overflow-hidden">
+  <div key={"6"} tw="w-full h-full flex relative overflow-hidden">
     {cover && (
       <img
         src={cover}
@@ -100,7 +84,7 @@ const templates = [
       <div tw="flex text-2xl font-semibold mt-2 text-white">Savory Touch</div>
     </div>
   </div>,
-  <div tw="w-full h-full flex relative overflow-hidden">
+  <div key={"7"} tw="w-full h-full flex relative overflow-hidden">
     {cover && (
       <img
         src={cover}
@@ -116,7 +100,7 @@ const templates = [
       </div>
     </div>
   </div>,
-  <div tw="w-full h-full flex relative overflow-hidden">
+  <div key={"8"} tw="w-full h-full flex relative overflow-hidden">
     {cover && (
       <img
         src={cover}
@@ -134,7 +118,7 @@ const templates = [
       </div>
     </div>
   </div>,
-  <div tw="w-full h-full flex relative overflow-hidden">
+  <div key={"9"} tw="w-full h-full flex relative overflow-hidden">
     {cover && (
       <img
         src={cover}
@@ -154,7 +138,7 @@ const templates = [
       </div>
     </div>
   </div>,
-  <div tw="w-full h-full flex relative overflow-hidden">
+  <div key={"10"} tw="w-full h-full flex relative overflow-hidden">
     {cover && (
       <img
         src={cover}
@@ -174,7 +158,7 @@ const templates = [
       </div>
     </div>
   </div>,
-  <div tw="w-full h-full flex relative overflow-hidden">
+  <div key={"11"} tw="w-full h-full flex relative overflow-hidden">
     {cover && (
       <img
         src={cover}
@@ -194,7 +178,7 @@ const templates = [
       </div>
     </div>
   </div>,
-  <div tw="w-full h-full flex relative overflow-hidden">
+  <div key={"12"} tw="w-full h-full flex relative overflow-hidden">
     {cover && (
       <img
         src={cover}
@@ -214,7 +198,7 @@ const templates = [
       </div>
     </div>
   </div>,
-  <div tw="w-full h-full flex relative overflow-hidden">
+  <div key={"13"} tw="w-full h-full flex relative overflow-hidden">
     {cover && (
       <img
         src={cover}
@@ -235,7 +219,7 @@ const templates = [
       </div>
     </div>
   </div>,
-  <div tw="w-full h-full flex relative overflow-hidden">
+  <div key={"14"} tw="w-full h-full flex relative overflow-hidden">
     {cover && (
       <img
         src={cover}
@@ -256,7 +240,7 @@ const templates = [
       </div>
     </div>
   </div>,
-  <div tw="w-full h-full flex relative overflow-hidden">
+  <div key={"15"} tw="w-full h-full flex relative overflow-hidden">
     {cover && (
       <img
         src={cover}
@@ -277,7 +261,7 @@ const templates = [
       </div>
     </div>
   </div>,
-  <div tw="w-full h-full flex relative overflow-hidden">
+  <div key={"16"} tw="w-full h-full flex relative overflow-hidden">
     {cover && (
       <img
         src={cover}
@@ -298,7 +282,7 @@ const templates = [
       </div>
     </div>
   </div>,
-  <div tw="w-full h-full flex relative overflow-hidden">
+  <div key={"17"} tw="w-full h-full flex relative overflow-hidden">
     {cover && (
       <img
         src={cover}
@@ -330,7 +314,7 @@ const templates = [
       </div>
     </div>
   </div>,
-  <div tw="w-full h-full flex relative overflow-hidden">
+  <div key={"18"} tw="w-full h-full flex relative overflow-hidden">
     {cover && (
       <img
         src={cover}
@@ -362,7 +346,7 @@ const templates = [
       </div>
     </div>
   </div>,
-  <div tw="w-full h-full flex relative overflow-hidden">
+  <div key={"19"} tw="w-full h-full flex relative overflow-hidden">
     {cover && (
       <img
         src={cover}
@@ -394,7 +378,7 @@ const templates = [
       </div>
     </div>
   </div>,
-  <div tw="w-full h-full flex relative overflow-hidden">
+  <div key={"20"} tw="w-full h-full flex relative overflow-hidden">
     {cover && (
       <img
         src={cover}
@@ -431,7 +415,7 @@ const templates = [
       </div>
     </div>
   </div>,
-  <div tw="w-full h-full flex relative overflow-hidden">
+  <div key={"21"} tw="w-full h-full flex relative overflow-hidden">
     {cover && (
       <img
         src={cover}
@@ -463,7 +447,7 @@ const templates = [
       </div>
     </div>
   </div>,
-  <div tw="w-full h-full flex relative overflow-hidden">
+  <div key={"22"} tw="w-full h-full flex relative overflow-hidden">
     {cover && (
       <img
         src={cover}
@@ -500,7 +484,7 @@ const templates = [
       </div>
     </div>
   </div>,
-  <div tw="w-full h-full flex relative overflow-hidden">
+  <div key={"23"} tw="w-full h-full flex relative overflow-hidden">
     {cover && (
       <img
         src={cover}
@@ -538,7 +522,7 @@ const templates = [
       </div>
     </div>
   </div>,
-  <div tw="w-full h-full flex relative overflow-hidden">
+  <div key={"24"} tw="w-full h-full flex relative overflow-hidden">
     {cover && (
       <img
         src={cover}
@@ -567,7 +551,7 @@ const templates = [
       </div>
     </div>
   </div>,
-  <div tw="w-full h-full flex relative overflow-hidden">
+  <div key={"25"} tw="w-full h-full flex relative overflow-hidden">
     {cover && (
       <img
         src={cover}
@@ -609,7 +593,7 @@ const templates = [
       </div>
     </div>
   </div>,
-  <div tw="w-full h-full flex relative overflow-hidden">
+  <div key={"26"} tw="w-full h-full flex relative overflow-hidden">
     {cover && (
       <img
         src={cover}
@@ -641,7 +625,7 @@ const templates = [
       </div>
     </div>
   </div>,
-  <div tw="w-full h-full flex relative overflow-hidden">
+  <div key={"27"} tw="w-full h-full flex relative overflow-hidden">
     {cover && (
       <img
         src={cover}

@@ -18,6 +18,7 @@ CREATE TABLE "FoodBlogs" (
     "faq" JSONB NOT NULL,
     "equipments" TEXT[],
     "creationDate" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "reviews" JSONB[],
 
     CONSTRAINT "FoodBlogs_pkey" PRIMARY KEY ("id")
 );

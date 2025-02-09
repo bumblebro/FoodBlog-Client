@@ -158,18 +158,35 @@ const imageUrl =
   domain +
   "/api/og?" +
   "title=Kiwi Mint Cooler Smoothie" +
-  // "&num=0" +
+  "&num=5" +
   // "&description=Well, this Kiwi Mint Cooler Smoothie recipe is the answer to all your hot-weather woes. I developed this recipe one sweltering summer in my small apartment. My AC had broken down, of course, and I needed a really serious way to cool off. Trust me when I say this combination of fresh kiwi " +
   "&cover=" +
   encodeURIComponent(
     "https://images.pexels.com/photos/1109197/pexels-photo-1109197.jpeg"
   );
 
+// function page() {
+//   return (
+//     <div className="w-72 flex ">
+//       {Array.from({ length: 50 }, (_, i) => {
+//         return (
+//           <img
+//             src={`${domain}/api/og?title=Kiwi Mint Cooler Smoothie&num=${i}&cover=https://images.pexels.com/photos/1109197/pexels-photo-1109197.jpeg`}
+//             alt={i + "num"}
+//           />
+//         );
+//       })}
+//       {/* <img src={imageUrl} alt="" /> */}
+//     </div>
+//   );
+// }
 function page() {
   return (
-    <div className="w-72">
-      {}
-      <img src={imageUrl} alt="" />
+    <div className="w-72 flex ">
+      {Array.from({ length: 1 }, (_, i) => {
+        return <img src={imageUrl} alt={i + "num"} />;
+      })}
+      {/* <img src={imageUrl} alt="" /> */}
     </div>
   );
 }

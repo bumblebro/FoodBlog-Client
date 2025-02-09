@@ -43,6 +43,7 @@ function generateRSSFeed(recipes: any) {
       json: `${siteURL}/rss/feed.json`, // json fromat
     },
     author,
+    language: "en-us",
   });
 
   recipes.map((r: any, i: any) => {
@@ -52,11 +53,11 @@ function generateRSSFeed(recipes: any) {
       `title=${r.title}` +
       `&cover=${r.imageurl}`;
     console.log(`urllll`, imageUrl);
-
+    const category = [r.section, r.subsection];
     const url = siteURL + "/" + r.slug;
     if (imageUrl) {
       feed.addItem({
-        title: r.name,
+        title: r.title,
         id: url,
         link: url,
         description: r.recipedescription,
@@ -64,9 +65,14 @@ function generateRSSFeed(recipes: any) {
         author: [author],
         contributor: [author],
         date: r.creationDate,
+        category,
         image: {
           type: "image/png",
-          url: domain + `/api/og?title=${r.title}&amp;cover=${r.imageurl}`,
+          url:
+            domain +
+            `/api/og?title=${r.title}&amp;cover=${encodeURIComponent(
+              r.imageurl
+            )}`,
         },
       });
     }
