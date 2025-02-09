@@ -30,7 +30,6 @@ export async function GET(req: NextRequest) {
   const num = searchParams.get("num") || "0";
 
   const templates = [
-    
     <div key={"2"} tw="w-full h-full flex items-center justify-center">
       {cover && (
         <img

@@ -184,7 +184,7 @@ function page() {
   return (
     <div className="w-72 flex ">
       {Array.from({ length: 1 }, (_, i) => {
-        return <img src={imageUrl} alt={i + "num"} />;
+        return <img key={i} src={imageUrl} alt={i + "num"} />;
       })}
       {/* <img src={imageUrl} alt="" /> */}
     </div>
