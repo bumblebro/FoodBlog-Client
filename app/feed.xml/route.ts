@@ -60,7 +60,7 @@ function generateRSSFeed(recipes: any) {
         id: url,
         link: url,
         description: r.recipedescription,
-        content: r.description,
+        content: r.recipedescription,
         author: [author],
         contributor: [author],
         date: r.creationDate,
