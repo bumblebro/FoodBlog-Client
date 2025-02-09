@@ -35,7 +35,7 @@ function generateRSSFeed(recipes: any) {
     link: siteURL,
     image: `${siteURL}/opengraph-image.png`,
     favicon: `${siteURL}/favicon.ico`,
-    copyright: `All rights reserved ${date.getFullYear()},`,
+    copyright: `All rights reserved ${date.getFullYear()}`,
     updated: date, // today's date
     generator: "Feed",
     feedLinks: {
@@ -60,7 +60,7 @@ function generateRSSFeed(recipes: any) {
         id: url,
         link: url,
         description: r.recipedescription,
-        content: r.recipedescription,
+        // content: r.recipedescription,
         author: [author],
         contributor: [author],
         date: r.creationDate,
