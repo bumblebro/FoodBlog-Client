@@ -4,9 +4,9 @@ import { ImageResponse } from "@vercel/og";
 export const runtime = "experimental-edge";
 
 async function loadGoogleFont() {
-  // const url = "https://fonts.googleapis.com/css2?family=Pacifico&display=swap";
+  const url = "https://fonts.googleapis.com/css2?family=Pacifico&display=swap";
   // const url = "https://fonts.googleapis.com/css2?family=Knewave&display=swap";
-  const url = "https://fonts.googleapis.com/css2?family=Aclonica&display=swap";
+  // const url = "https://fonts.gogleapis.com/css2?family=Aclonica&display=swap";
   const css = await (await fetch(url)).text();
   const resource = css.match(
     /src: url\((.+)\) format\('(opentype|truetype)'\)/
@@ -27,15 +27,15 @@ export async function GET(req: NextRequest) {
   const title = searchParams.get("title") || "Default Title";
   // const description = searchParams.get("description") || "Default Description";
   const cover = searchParams.get("cover") || "";
-  const num = searchParams.get("num") || "0";
+  const num = searchParams.get("num") || "3";
 
   const templates = [
-    <div key={"2"} tw="w-full h-full flex items-center justify-center">
+    <div key={"2"} tw="w-full h-full flex items-center justify-center ">
       {cover && (
         <img
           src={cover}
           alt=""
-          tw="absolute w-full h-full object-cover"
+          tw="absolute h-full "
           style={{ objectPosition: "center", filter: "brightness(0.95)" }}
         />
       )}
@@ -49,7 +49,7 @@ export async function GET(req: NextRequest) {
         <img
           src={cover}
           alt=""
-          tw="absolute w-full h-full object-cover"
+          tw="absolute  h-full "
           style={{ objectPosition: "center", filter: "brightness(0.9)" }}
         />
       )}
@@ -63,7 +63,7 @@ export async function GET(req: NextRequest) {
         <img
           src={cover}
           alt=""
-          tw="absolute w-full h-full object-cover"
+          tw="absolute  h-full "
           style={{ objectPosition: "center" }}
         />
       )}
@@ -81,7 +81,7 @@ export async function GET(req: NextRequest) {
         <img
           src={cover}
           alt=""
-          tw="absolute w-full h-full object-cover"
+          tw="absolute  h-full "
           style={{ objectPosition: "center" }}
         />
       )}
@@ -98,7 +98,7 @@ export async function GET(req: NextRequest) {
         <img
           src={cover}
           alt=""
-          tw="absolute w-full h-full object-cover"
+          tw="absolute w-full h-full object-cover inset-0"
           style={{ objectPosition: "center" }}
         />
       )}
@@ -120,7 +120,7 @@ export async function GET(req: NextRequest) {
         <img
           src={cover}
           alt=""
-          tw="absolute w-full h-full object-cover"
+          tw="absolute w-full h-full object-cover inset-0"
           style={{ objectPosition: "center" }}
         />
       )}
@@ -138,7 +138,7 @@ export async function GET(req: NextRequest) {
         <img
           src={cover}
           alt=""
-          tw="absolute w-full h-full object-cover"
+          tw="absolute w-full h-full object-cover inset-0"
           style={{ objectPosition: "center" }}
         />
       )}
@@ -156,7 +156,7 @@ export async function GET(req: NextRequest) {
         <img
           src={cover}
           alt=""
-          tw="absolute w-full h-full object-cover"
+          tw="absolute w-full h-full object-cover inset-0"
           style={{ objectPosition: "center" }}
         />
       )}
@@ -176,7 +176,7 @@ export async function GET(req: NextRequest) {
         <img
           src={cover}
           alt=""
-          tw="absolute w-full h-full object-cover"
+          tw="absolute w-full h-full object-cover inset-0"
           style={{ objectPosition: "center" }}
         />
       )}
@@ -196,7 +196,7 @@ export async function GET(req: NextRequest) {
         <img
           src={cover}
           alt=""
-          tw="absolute w-full h-full object-cover"
+          tw="absolute w-full h-full object-cover inset-0"
           style={{ objectPosition: "center" }}
         />
       )}
@@ -216,7 +216,7 @@ export async function GET(req: NextRequest) {
         <img
           src={cover}
           alt=""
-          tw="absolute w-full h-full object-cover"
+          tw="absolute w-full h-full object-cover inset-0"
           style={{ objectPosition: "center" }}
         />
       )}
@@ -236,7 +236,7 @@ export async function GET(req: NextRequest) {
         <img
           src={cover}
           alt=""
-          tw="absolute w-full h-full object-cover"
+          tw="absolute w-full h-full object-cover inset-0"
           style={{ objectPosition: "center" }}
         />
       )}
@@ -257,7 +257,7 @@ export async function GET(req: NextRequest) {
         <img
           src={cover}
           alt=""
-          tw="absolute w-full h-full object-cover"
+          tw="absolute w-full h-full object-cover inset-0"
           style={{ objectPosition: "center" }}
         />
       )}
@@ -278,7 +278,7 @@ export async function GET(req: NextRequest) {
         <img
           src={cover}
           alt=""
-          tw="absolute w-full h-full object-cover"
+          tw="absolute w-full h-full object-cover inset-0"
           style={{ objectPosition: "center" }}
         />
       )}
@@ -299,7 +299,7 @@ export async function GET(req: NextRequest) {
         <img
           src={cover}
           alt=""
-          tw="absolute w-full h-full object-cover"
+          tw="absolute w-full h-full object-cover inset-0"
           style={{ objectPosition: "center" }}
         />
       )}
@@ -320,7 +320,7 @@ export async function GET(req: NextRequest) {
         <img
           src={cover}
           alt=""
-          tw="absolute w-full h-full object-cover"
+          tw="absolute w-full h-full object-cover inset-0"
           style={{ objectPosition: "center" }}
         />
       )}
@@ -352,7 +352,7 @@ export async function GET(req: NextRequest) {
         <img
           src={cover}
           alt=""
-          tw="absolute w-full h-full object-cover"
+          tw="absolute w-full h-full object-cover inset-0"
           style={{ objectPosition: "center" }}
         />
       )}
@@ -384,7 +384,7 @@ export async function GET(req: NextRequest) {
         <img
           src={cover}
           alt=""
-          tw="absolute w-full h-full object-cover"
+          tw="absolute w-full h-full object-cover inset-0"
           style={{ objectPosition: "center" }}
         />
       )}
@@ -416,7 +416,7 @@ export async function GET(req: NextRequest) {
         <img
           src={cover}
           alt=""
-          tw="absolute w-full h-full object-cover"
+          tw="absolute w-full h-full object-cover inset-0"
           style={{ objectPosition: "center" }}
         />
       )}
@@ -453,7 +453,7 @@ export async function GET(req: NextRequest) {
         <img
           src={cover}
           alt=""
-          tw="absolute w-full h-full object-cover"
+          tw="absolute w-full h-full object-cover inset-0"
           style={{ objectPosition: "center" }}
         />
       )}
@@ -485,7 +485,7 @@ export async function GET(req: NextRequest) {
         <img
           src={cover}
           alt=""
-          tw="absolute w-full h-full object-cover"
+          tw="absolute w-full h-full object-cover inset-0"
           style={{ objectPosition: "center" }}
         />
       )}
@@ -522,7 +522,7 @@ export async function GET(req: NextRequest) {
         <img
           src={cover}
           alt=""
-          tw="absolute w-full h-full object-cover"
+          tw="absolute w-full h-full object-cover inset-0"
           style={{ objectPosition: "center" }}
         />
       )}
@@ -560,7 +560,7 @@ export async function GET(req: NextRequest) {
         <img
           src={cover}
           alt=""
-          tw="absolute w-full h-full object-cover"
+          tw="absolute w-full h-full object-cover inset-0"
           style={{ objectPosition: "center" }}
         />
       )}
@@ -592,7 +592,7 @@ export async function GET(req: NextRequest) {
         <img
           src={cover}
           alt=""
-          tw="absolute w-full h-full object-cover"
+          tw="absolute w-full h-full object-cover inset-0"
           style={{ objectPosition: "center" }}
         />
       )}
@@ -634,7 +634,7 @@ export async function GET(req: NextRequest) {
         <img
           src={cover}
           alt=""
-          tw="absolute w-full h-full object-cover"
+          tw="absolute w-full h-full object-cover inset-0"
           style={{ objectPosition: "center" }}
         />
       )}
@@ -666,7 +666,7 @@ export async function GET(req: NextRequest) {
         <img
           src={cover}
           alt=""
-          tw="absolute w-full h-full object-cover"
+          tw="absolute w-full h-full object-cover inset-0"
           style={{ objectPosition: "center" }}
         />
       )}

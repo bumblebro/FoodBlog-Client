@@ -52,9 +52,21 @@ function generateRSSFeed(recipes: any) {
       `/api/og?` +
       `title=${r.title}` +
       `&cover=${r.imageurl}`;
+
     console.log(`urllll`, imageUrl);
-    const category = [r.section, r.subsection];
+
     const url = siteURL + "/" + r.slug;
+
+    const cat1 = {
+      name: r.section,
+    };
+    const cat2 = {
+      name: r.subsection,
+    };
+    const cat3 = {
+      name: r.subsubsection,
+    };
+
     if (imageUrl) {
       feed.addItem({
         title: r.title,
@@ -65,7 +77,7 @@ function generateRSSFeed(recipes: any) {
         author: [author],
         contributor: [author],
         date: r.creationDate,
-        category,
+        category: [cat1, cat2, cat3],
         image: {
           type: "image/png",
           url:
