@@ -2,7 +2,7 @@ import BLOGCOMPLETE from "@/app/api/blogscomplete/BLOGCOMPLETE";
 import { FoodBlogs } from "@prisma/client";
 import { Feed } from "feed";
 
-export const revalidate = 1; // revalidate at most every hour
+export const revalidate = 86400; // revalidate at most every hour
 
 const domain =
   process.env.NEXT_PUBLIC_BASE_API_URL?.replace(/^https:/, "http:") || "";
