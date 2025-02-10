@@ -111,7 +111,8 @@ const RecipePage = ({ currentPost }: any) => {
             ⏳ Yield & Time
           </h2>
           <p className="text-base p-yield">
-            <strong>Yield:</strong> {recipeDetails?.yield} servings
+            <strong>Yield:</strong>{" "}
+            <span className="p-yield">{recipeDetails?.yield}</span> servings
           </p>
           <p className="text-base">
             <strong>Preparation Time:</strong>{" "}

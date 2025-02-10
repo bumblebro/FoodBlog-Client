@@ -59,7 +59,7 @@ async function Home({ searchParams }: { searchParams: { pageNo: string } }) {
       <FeaturedPost posts={posts || []} />
       <div className="mt-32 md:mt-10 lg:mt-8 ">
         <h1 className="text-center  text-lg font-semibold tracking-wider">
-          The Latest News
+          The Latest Recipes
         </h1>
         <BlogList posts={posts || []} />
         <Paginationblog
