@@ -3,6 +3,33 @@
 import { useState, useRef, useEffect } from "react";
 // import html2pdf from "html2pdf.js";
 
+function timeToISO8601Duration(seconds: number) {
+  const units = [
+    { symbol: "Y", value: 365 * 24 * 3600 },
+    { symbol: "D", value: 24 * 3600 },
+    { symbol: "H", value: 3600 },
+    { symbol: "M", value: 60 },
+    { symbol: "S", value: 1 },
+  ];
+
+  let duration = "P";
+  let hasTime = false;
+
+  for (const { symbol, value } of units) {
+    const quotient = Math.floor(seconds / value);
+    if (quotient > 0) {
+      seconds -= quotient * value;
+      if (!hasTime && ["H", "M", "S"].includes(symbol)) {
+        duration += "T";
+        hasTime = true;
+      }
+      duration += `${quotient}${symbol}`;
+    }
+  }
+
+  return duration;
+}
+
 const RecipePage = ({ currentPost }: any) => {
   const [selectedQuantity, setSelectedQuantity] = useState("1X");
   const recipeRef = useRef(null);
@@ -14,6 +41,8 @@ const RecipePage = ({ currentPost }: any) => {
       setHtml2pdf(() => impmodule.default); // Set the html2pdf function
     }
     loadModule();
+
+    console.log(`timeeee`, timeToISO8601Duration(36000));
   }, []);
 
   const recipeDetails = currentPost.recipedetails?.[selectedQuantity] || {
@@ -96,7 +125,10 @@ const RecipePage = ({ currentPost }: any) => {
           </p>
           <p className="text-base dt-duration  ">
             <strong>Total Time:</strong>{" "}
-            <time className="dt-duration" dateTime="1H">
+            <time
+              className="dt-duration"
+              dateTime={timeToISO8601Duration(recipeDetails?.totalTime)}
+            >
               {Math.floor(parseInt(recipeDetails?.totalTime) / 60)} minutes
             </time>
           </p>
