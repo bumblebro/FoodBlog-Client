@@ -81,7 +81,7 @@ export async function GET(req: NextRequest) {
         <img
           src={cover}
           alt=""
-          tw="absolute  h-full "
+          tw="absolute w-full h-full object-cover inset-0"
           style={{ objectPosition: "center" }}
         />
       )}
@@ -690,9 +690,9 @@ export async function GET(req: NextRequest) {
     </div>,
   ];
 
-  // const randomTemplate =
-  //   templates[Math.floor(Math.random() * templates.length)];
-  const randomTemplate = templates[parseInt(num)];
+  const randomTemplate =
+    templates[Math.floor(Math.random() * templates.length)];
+  // const randomTemplate = templates[parseInt(num)];
 
   return new ImageResponse(randomTemplate, {
     width: 1000,
