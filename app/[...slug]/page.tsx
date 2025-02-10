@@ -39,6 +39,33 @@ type SEOType = {
 
 export const revalidate = 86400;
 
+function timeToISO8601Duration(seconds: number) {
+  const units = [
+    { symbol: "Y", value: 365 * 24 * 3600 },
+    { symbol: "D", value: 24 * 3600 },
+    { symbol: "H", value: 3600 },
+    { symbol: "M", value: 60 },
+    { symbol: "S", value: 1 },
+  ];
+
+  let duration = "P";
+  let hasTime = false;
+
+  for (const { symbol, value } of units) {
+    const quotient = Math.floor(seconds / value);
+    if (quotient > 0) {
+      seconds -= quotient * value;
+      if (!hasTime && ["H", "M", "S"].includes(symbol)) {
+        duration += "T";
+        hasTime = true;
+      }
+      duration += `${quotient}${symbol}`;
+    }
+  }
+
+  return duration;
+}
+
 export async function generateStaticParams() {
   const sluglayer = await GenerateSlugs(subSections);
 
@@ -455,9 +482,9 @@ async function BlogCategory({ params }: params) {
       (ingredient: any) => `${ingredient.quantity} ${ingredient.name}`
     ),
     name: currentPost?.title,
-    prepTime: recipeDetails.preparationTime,
-    recipeYield: recipeDetails.yield,
-    totalTime: recipeDetails.totalTime,
+    prepTime: timeToISO8601Duration(recipeDetails?.preparationTime),
+    recipeYield: timeToISO8601Duration(recipeDetails?.yield),
+    totalTime: timeToISO8601Duration(recipeDetails?.totalTime),
     recipeInstructions: currentPost?.instructions.map((e) => e),
   };
 

@@ -41,8 +41,6 @@ const RecipePage = ({ currentPost }: any) => {
       setHtml2pdf(() => impmodule.default); // Set the html2pdf function
     }
     loadModule();
-
-    console.log(`timeeee`, timeToISO8601Duration(36000));
   }, []);
 
   const recipeDetails = currentPost.recipedetails?.[selectedQuantity] || {
