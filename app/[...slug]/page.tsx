@@ -474,7 +474,7 @@ async function BlogCategory({ params }: params) {
       "@type": "Person",
       givenName: currentPost?.author,
     },
-    cookTime: recipeDetails.cookTime,
+    cookTime: timeToISO8601Duration(recipeDetails.cookTime),
     datePublished: currentPost?.creationDate,
     description: currentPost?.recipedescription,
     image: currentPost?.imageurl,
