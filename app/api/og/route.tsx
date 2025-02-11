@@ -4,9 +4,12 @@ import { ImageResponse } from "@vercel/og";
 export const runtime = "experimental-edge";
 
 async function loadGoogleFont() {
-  const url = "https://fonts.googleapis.com/css2?family=Pacifico&display=swap";
+  // const url = "https://fonts.googleapis.com/css2?family=Pacifico&display=swap";
   // const url = "https://fonts.googleapis.com/css2?family=Knewave&display=swap";
   // const url = "https://fonts.gogleapis.com/css2?family=Aclonica&display=swap";
+
+  const url = "https://fonts.googleapis.com/css2?family=Anton+SC&display=swap";
+
   const css = await (await fetch(url)).text();
   const resource = css.match(
     /src: url\((.+)\) format\('(opentype|truetype)'\)/
@@ -40,7 +43,7 @@ export async function GET(req: NextRequest) {
         />
       )}
       <div tw="flex flex-col items-center bg-white px-8 py-6 rounded-lg shadow-lg border border-gray-200">
-        <div tw="flex text-7xl font-extrabold text-black">{title}</div>
+        <div tw="flex text-7xl font-extrabold text-black ">{title}</div>
         <div tw="flex text-xl font-medium mt-3 text-gray-800">Savory Touch</div>
       </div>
     </div>,
@@ -93,28 +96,28 @@ export async function GET(req: NextRequest) {
         <div tw="flex text-2xl font-semibold mt-2 text-white">Savory Touch</div>
       </div>
     </div>,
-    <div key={"6"} tw="w-full h-full flex relative overflow-hidden">
-      {cover && (
-        <img
-          src={cover}
-          alt=""
-          tw="absolute w-full h-full object-cover inset-0"
-          style={{ objectPosition: "center" }}
-        />
-      )}
-      <div
-        tw="absolute left-0 top-0 h-full flex flex-col justify-center items-center"
-        style={{
-          width: "40%",
-          backgroundColor: "#002244",
-          zIndex: 2,
-          padding: "1rem",
-        }}
-      >
-        <div tw="flex text-8xl font-bold text-white">{title}</div>
-        <div tw="flex text-2xl font-semibold mt-2 text-white">Savory Touch</div>
-      </div>
-    </div>,
+    // <div key={"6"} tw="w-full h-full flex relative overflow-hidden">
+    //   {cover && (
+    //     <img
+    //       src={cover}
+    //       alt=""
+    //       tw="absolute w-full h-full object-cover inset-0"
+    //       style={{ objectPosition: "center" }}
+    //     />
+    //   )}
+    //   <div
+    //     tw="absolute left-0 top-0 h-full flex flex-col justify-center items-center"
+    //     style={{
+    //       width: "40%",
+    //       backgroundColor: "#002244",
+    //       zIndex: 2,
+    //       padding: "1rem",
+    //     }}
+    //   >
+    //     <div tw="flex text-8xl font-bold text-white">{title}</div>
+    //     <div tw="flex text-2xl font-semibold mt-2 text-white">Savory Touch</div>
+    //   </div>
+    // </div>,
     <div key={"7"} tw="w-full h-full flex relative overflow-hidden">
       {cover && (
         <img
@@ -690,9 +693,9 @@ export async function GET(req: NextRequest) {
     </div>,
   ];
 
-  const randomTemplate =
-    templates[Math.floor(Math.random() * templates.length)];
-  // const randomTemplate = templates[parseInt(num)];
+  // const randomTemplate =
+  //   templates[Math.floor(Math.random() * templates.length)];
+  const randomTemplate = templates[parseInt(6)];
 
   return new ImageResponse(randomTemplate, {
     width: 1000,
