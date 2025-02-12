@@ -157,8 +157,8 @@ const domain = process.env.NEXT_PUBLIC_BASE_API_URL?.replace(
 const imageUrl =
   domain +
   "/api/og?" +
-  "title=Kiwi Mint Cooler Smoothie" +
-  "&num=0" +
+  "title=sun dried tomato and spinach gluten free pasta" +
+  "&num=1" +
   // "&description=Well, this Kiwi Mint Cooler Smoothie recipe is the answer to all your hot-weather woes. I developed this recipe one sweltering summer in my small apartment. My AC had broken down, of course, and I needed a really serious way to cool off. Trust me when I say this combination of fresh kiwi " +
   "&cover=" +
   encodeURIComponent(

@@ -1,15 +1,15 @@
 const templates = [
-  <div key={"2"} tw="w-full h-full flex items-center justify-center">
+  <div key={"2"} tw="w-full h-full flex items-center justify-center ">
     {cover && (
       <img
         src={cover}
         alt=""
-        tw="absolute w-full h-full object-cover"
+        tw="absolute h-full "
         style={{ objectPosition: "center", filter: "brightness(0.95)" }}
       />
     )}
     <div tw="flex flex-col items-center bg-white px-8 py-6 rounded-lg shadow-lg border border-gray-200">
-      <div tw="flex text-7xl font-extrabold text-black">{title}</div>
+      <div tw="flex text-7xl font-extrabold text-black ">{title}</div>
       <div tw="flex text-xl font-medium mt-3 text-gray-800">Savory Touch</div>
     </div>
   </div>,
@@ -18,7 +18,7 @@ const templates = [
       <img
         src={cover}
         alt=""
-        tw="absolute w-full h-full object-cover"
+        tw="absolute  h-full "
         style={{ objectPosition: "center", filter: "brightness(0.9)" }}
       />
     )}
@@ -32,7 +32,7 @@ const templates = [
       <img
         src={cover}
         alt=""
-        tw="absolute w-full h-full object-cover"
+        tw="absolute  h-full "
         style={{ objectPosition: "center" }}
       />
     )}
@@ -50,7 +50,7 @@ const templates = [
       <img
         src={cover}
         alt=""
-        tw="absolute w-full h-full object-cover"
+        tw="absolute w-full h-full object-cover inset-0"
         style={{ objectPosition: "center" }}
       />
     )}
@@ -62,34 +62,34 @@ const templates = [
       <div tw="flex text-2xl font-semibold mt-2 text-white">Savory Touch</div>
     </div>
   </div>,
-  <div key={"6"} tw="w-full h-full flex relative overflow-hidden">
-    {cover && (
-      <img
-        src={cover}
-        alt=""
-        tw="absolute w-full h-full object-cover"
-        style={{ objectPosition: "center" }}
-      />
-    )}
-    <div
-      tw="absolute left-0 top-0 h-full flex flex-col justify-center items-center"
-      style={{
-        width: "40%",
-        backgroundColor: "#002244",
-        zIndex: 2,
-        padding: "1rem",
-      }}
-    >
-      <div tw="flex text-8xl font-bold text-white">{title}</div>
-      <div tw="flex text-2xl font-semibold mt-2 text-white">Savory Touch</div>
-    </div>
-  </div>,
+  // <div key={"6"} tw="w-full h-full flex relative overflow-hidden">
+  //   {cover && (
+  //     <img
+  //       src={cover}
+  //       alt=""
+  //       tw="absolute w-full h-full object-cover inset-0"
+  //       style={{ objectPosition: "center" }}
+  //     />
+  //   )}
+  //   <div
+  //     tw="absolute left-0 top-0 h-full flex flex-col justify-center items-center"
+  //     style={{
+  //       width: "40%",
+  //       backgroundColor: "#002244",
+  //       zIndex: 2,
+  //       padding: "1rem",
+  //     }}
+  //   >
+  //     <div tw="flex text-8xl font-bold text-white">{title}</div>
+  //     <div tw="flex text-2xl font-semibold mt-2 text-white">Savory Touch</div>
+  //   </div>
+  // </div>,
   <div key={"7"} tw="w-full h-full flex relative overflow-hidden">
     {cover && (
       <img
         src={cover}
         alt=""
-        tw="absolute w-full h-full object-cover"
+        tw="absolute w-full h-full object-cover inset-0"
         style={{ objectPosition: "center" }}
       />
     )}
@@ -105,7 +105,7 @@ const templates = [
       <img
         src={cover}
         alt=""
-        tw="absolute w-full h-full object-cover"
+        tw="absolute w-full h-full object-cover inset-0"
         style={{ objectPosition: "center" }}
       />
     )}
@@ -123,7 +123,7 @@ const templates = [
       <img
         src={cover}
         alt=""
-        tw="absolute w-full h-full object-cover"
+        tw="absolute w-full h-full object-cover inset-0"
         style={{ objectPosition: "center" }}
       />
     )}
@@ -143,7 +143,7 @@ const templates = [
       <img
         src={cover}
         alt=""
-        tw="absolute w-full h-full object-cover"
+        tw="absolute w-full h-full object-cover inset-0"
         style={{ objectPosition: "center" }}
       />
     )}
@@ -163,7 +163,7 @@ const templates = [
       <img
         src={cover}
         alt=""
-        tw="absolute w-full h-full object-cover"
+        tw="absolute w-full h-full object-cover inset-0"
         style={{ objectPosition: "center" }}
       />
     )}
@@ -183,7 +183,7 @@ const templates = [
       <img
         src={cover}
         alt=""
-        tw="absolute w-full h-full object-cover"
+        tw="absolute w-full h-full object-cover inset-0"
         style={{ objectPosition: "center" }}
       />
     )}
@@ -203,7 +203,7 @@ const templates = [
       <img
         src={cover}
         alt=""
-        tw="absolute w-full h-full object-cover"
+        tw="absolute w-full h-full object-cover inset-0"
         style={{ objectPosition: "center" }}
       />
     )}
@@ -224,7 +224,7 @@ const templates = [
       <img
         src={cover}
         alt=""
-        tw="absolute w-full h-full object-cover"
+        tw="absolute w-full h-full object-cover inset-0"
         style={{ objectPosition: "center" }}
       />
     )}
@@ -245,7 +245,7 @@ const templates = [
       <img
         src={cover}
         alt=""
-        tw="absolute w-full h-full object-cover"
+        tw="absolute w-full h-full object-cover inset-0"
         style={{ objectPosition: "center" }}
       />
     )}
@@ -266,7 +266,7 @@ const templates = [
       <img
         src={cover}
         alt=""
-        tw="absolute w-full h-full object-cover"
+        tw="absolute w-full h-full object-cover inset-0"
         style={{ objectPosition: "center" }}
       />
     )}
@@ -287,7 +287,7 @@ const templates = [
       <img
         src={cover}
         alt=""
-        tw="absolute w-full h-full object-cover"
+        tw="absolute w-full h-full object-cover inset-0"
         style={{ objectPosition: "center" }}
       />
     )}
@@ -319,7 +319,7 @@ const templates = [
       <img
         src={cover}
         alt=""
-        tw="absolute w-full h-full object-cover"
+        tw="absolute w-full h-full object-cover inset-0"
         style={{ objectPosition: "center" }}
       />
     )}
@@ -351,7 +351,7 @@ const templates = [
       <img
         src={cover}
         alt=""
-        tw="absolute w-full h-full object-cover"
+        tw="absolute w-full h-full object-cover inset-0"
         style={{ objectPosition: "center" }}
       />
     )}
@@ -383,7 +383,7 @@ const templates = [
       <img
         src={cover}
         alt=""
-        tw="absolute w-full h-full object-cover"
+        tw="absolute w-full h-full object-cover inset-0"
         style={{ objectPosition: "center" }}
       />
     )}
@@ -420,7 +420,7 @@ const templates = [
       <img
         src={cover}
         alt=""
-        tw="absolute w-full h-full object-cover"
+        tw="absolute w-full h-full object-cover inset-0"
         style={{ objectPosition: "center" }}
       />
     )}
@@ -452,7 +452,7 @@ const templates = [
       <img
         src={cover}
         alt=""
-        tw="absolute w-full h-full object-cover"
+        tw="absolute w-full h-full object-cover inset-0"
         style={{ objectPosition: "center" }}
       />
     )}
@@ -489,7 +489,7 @@ const templates = [
       <img
         src={cover}
         alt=""
-        tw="absolute w-full h-full object-cover"
+        tw="absolute w-full h-full object-cover inset-0"
         style={{ objectPosition: "center" }}
       />
     )}
@@ -527,7 +527,7 @@ const templates = [
       <img
         src={cover}
         alt=""
-        tw="absolute w-full h-full object-cover"
+        tw="absolute w-full h-full object-cover inset-0"
         style={{ objectPosition: "center" }}
       />
     )}
@@ -556,7 +556,7 @@ const templates = [
       <img
         src={cover}
         alt=""
-        tw="absolute w-full h-full object-cover"
+        tw="absolute w-full h-full object-cover inset-0"
         style={{ objectPosition: "center" }}
       />
     )}
@@ -598,7 +598,7 @@ const templates = [
       <img
         src={cover}
         alt=""
-        tw="absolute w-full h-full object-cover"
+        tw="absolute w-full h-full object-cover inset-0"
         style={{ objectPosition: "center" }}
       />
     )}
@@ -630,7 +630,7 @@ const templates = [
       <img
         src={cover}
         alt=""
-        tw="absolute w-full h-full object-cover"
+        tw="absolute w-full h-full object-cover inset-0"
         style={{ objectPosition: "center" }}
       />
     )}
