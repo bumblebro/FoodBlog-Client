@@ -110,10 +110,10 @@ export async function GET(req: NextRequest) {
         style={{
           // height: "60px", // Fixed height for footer text
           textAlign: "center",
-          fontSize: "45px",
+          fontSize: "50px",
           color: "black",
-          paddingRight: "20px",
-          paddingLeft: "20px",
+          paddingRight: "30px",
+          paddingLeft: "30px",
           fontStyle: "normal",
           backgroundColor: "#FFFFF7",
           fontWeight: 100,
