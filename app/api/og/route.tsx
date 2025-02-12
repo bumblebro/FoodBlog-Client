@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { ImageResponse } from "@vercel/og";
 import { url } from "inspector";
+import DeSlugify from "@/libs/DeSlugify";
 
 export const runtime = "experimental-edge";
 
@@ -99,7 +100,7 @@ export async function GET(req: NextRequest) {
           fontFamily: "Lato",
         }}
       >
-        {title}
+        {DeSlugify(title)}
       </div>{" "}
       <div
         style={{
