@@ -53,10 +53,16 @@ export default function RootLayout({
           src="https://www.googletagmanager.com/gtag/js?id=G-5RNXYBZTK0"
         ></script>
         <script>
-          {`window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-          gtag('config', 'G-5RNXYBZTK0');`}
+          dangerouslySetInnerHTML=
+          {{
+            __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-5RNXYBZTK0');
+        `,
+          }}
         </script>
       </head>
       <body className={inter.className}>
