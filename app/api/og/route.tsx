@@ -32,11 +32,14 @@ async function loadFonts() {
     new URL("./SoinSansPro-Bold.ttf", import.meta.url)
   ).then((res) => res.arrayBuffer());
 
-  // const boldFontData = await fetch(
-  //   new URL("@/assets/Lato-Bold.ttf", import.meta.url)
-  // ).then((res) => res.arrayBuffer());
+  const boldFontData = await fetch(
+    new URL("./source-sans-pro.black.ttf", import.meta.url)
+  ).then((res) => res.arrayBuffer());
+  const lightFontData = await fetch(
+    new URL("./source-sans-pro.extralight.ttf", import.meta.url)
+  ).then((res) => res.arrayBuffer());
 
-  return { regularFontData };
+  return { regularFontData, boldFontData, lightFontData };
 }
 
 const phrases = [
@@ -48,7 +51,7 @@ const phrases = [
 ];
 
 export async function GET(req: NextRequest) {
-  const { regularFontData } = await loadFonts();
+  const { regularFontData, boldFontData, lightFontData } = await loadFonts();
 
   const { searchParams } = new URL(req.url);
   const title = searchParams.get("title") || "Default Title";
@@ -73,15 +76,15 @@ export async function GET(req: NextRequest) {
       <div
         style={{
           // height: "200px", // Fixed height for title
-          paddingTop: "10px",
+          // paddingTop: "5px",
           // paddingBottom: "25px",
           color: "white",
           textAlign: "center",
-          paddingRight: "5px",
-          paddingLeft: "5px",
-          fontSize: "70px",
+          paddingRight: "10px",
+          paddingLeft: "10px",
+          fontSize: "120px",
           fontWeight: "900",
-          fontFamily: "Lato",
+          fontFamily: "source-sans-pro.black",
           textTransform: "uppercase",
         }}
       >
@@ -91,13 +94,14 @@ export async function GET(req: NextRequest) {
         style={{
           // height: "200px", // Fixed height for title
           // paddingTop: "25px",
-          // paddingBottom: "25px",
+          paddingBottom: "25px",
           color: "white",
           textAlign: "center",
-          paddingRight: "5px",
-          paddingLeft: "5px",
-          fontSize: "54px",
-          fontFamily: "Lato",
+          paddingRight: "10px",
+          paddingLeft: "10px",
+          fontSize: "75px",
+          fontFamily: "SoinSansPro-Bold",
+          textTransform: "capitalize",
         }}
       >
         {DeSlugify(title)}
@@ -106,12 +110,14 @@ export async function GET(req: NextRequest) {
         style={{
           // height: "60px", // Fixed height for footer text
           textAlign: "center",
-          fontSize: "40px",
+          fontSize: "45px",
           color: "black",
-          paddingRight: "5px",
-          paddingLeft: "5px",
+          paddingRight: "20px",
+          paddingLeft: "20px",
           fontStyle: "normal",
           backgroundColor: "#FFFFF7",
+          fontWeight: 100,
+          fontFamily: "source-sans-pro.extralight",
         }}
       >
         savorytouch.com
@@ -119,7 +125,7 @@ export async function GET(req: NextRequest) {
       <img
         src={cover}
         alt="test"
-        height={1200}
+        height={900}
         width={1000}
         style={{
           flexGrow: 1, // Ensures the image takes available space
@@ -129,21 +135,6 @@ export async function GET(req: NextRequest) {
         }}
       />
     </div>,
-    // <div
-    //   style={{
-    //     fontSize: 40,
-    //     color: "black",
-    //     background: "white",
-    //     width: "100%",
-    //     height: "100%",
-    //     padding: "50px 200px",
-    //     textAlign: "center",
-    //     justifyContent: "center",
-    //     alignItems: "center",
-    //   }}
-    // >
-    //   👋 Hello
-    // </div>,
   ];
 
   const randomTemplate =
@@ -152,14 +143,26 @@ export async function GET(req: NextRequest) {
 
   return new ImageResponse(randomTemplate, {
     width: 1000,
-    height: 1500,
+    height: 2000,
 
     fonts: [
       {
-        name: "Lato",
+        name: "SoinSansPro-Bold",
         data: regularFontData,
         style: "normal",
-        weight: 800,
+        // weight: 900,
+      },
+      {
+        name: "source-sans-pro.black",
+        data: boldFontData,
+        style: "normal",
+        // weight: 900,
+      },
+      {
+        name: "source-sans-pro.extralight",
+        data: lightFontData,
+        style: "normal",
+        // weight: 900,
       },
       {
         name: "Geist",
