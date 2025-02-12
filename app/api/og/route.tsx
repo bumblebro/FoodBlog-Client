@@ -57,6 +57,7 @@ export async function GET(req: NextRequest) {
 
   const templates = [
     <div
+      key={"1"}
       style={{
         height: "100vh", // Fixed height for the container
         width: "100%",
@@ -144,9 +145,9 @@ export async function GET(req: NextRequest) {
     // </div>,
   ];
 
-  // const randomTemplate =
-  //   templates[Math.floor(Math.random() * templates.length)];
-  const randomTemplate = templates[parseInt(0)];
+  const randomTemplate =
+    templates[Math.floor(Math.random() * templates.length)];
+  // const randomTemplate = templates[parseInt(0)];
 
   return new ImageResponse(randomTemplate, {
     width: 1000,
