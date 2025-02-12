@@ -36,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* <Script
+        <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-5RNXYBZTK0"
         ></Script>
@@ -46,7 +46,7 @@ export default function RootLayout({
   gtag('js', new Date());
 
   gtag('config', 'G-5RNXYBZTK0');`}
-        </Script> */}
+        </Script>
       </head>
       <body className={inter.className}>
         <NextTopLoader showSpinner={false} color="#0050f0" crawlSpeed={50} />
