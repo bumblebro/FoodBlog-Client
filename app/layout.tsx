@@ -48,7 +48,7 @@ export default function RootLayout({
   gtag('config', 'G-5RNXYBZTK0');`}
         </Script> */}
 
-        <script
+        {/* <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-5RNXYBZTK0"
         ></script>
@@ -63,7 +63,7 @@ export default function RootLayout({
           gtag('config', 'G-5RNXYBZTK0');
         `,
           }}
-        </script>
+        </script> */}
       </head>
       <body className={inter.className}>
         <NextTopLoader showSpinner={false} color="#0050f0" crawlSpeed={50} />
@@ -71,7 +71,7 @@ export default function RootLayout({
         {children}
         <Footer />
       </body>
-      {/* <GoogleAnalytics gaId="G-GR0NLTCFVB" /> */}
+      <GoogleAnalytics gaId="G-5RNXYBZTK0" />
     </html>
   );
 }
