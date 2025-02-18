@@ -20,6 +20,10 @@ export default async function BLOGCOMPLETE() {
       recipedetails: true, // Recipe details for different serving sizes (1X, 2X, 3X, 4X)
       creationDate: true, // Date the blog was created
     },
+    orderBy: {
+      // Replace 'createdAt' with the actual name of your date field
+      creationDate: "desc",
+    },
 
     // cacheStrategy: { ttl: 86400 },
   });
