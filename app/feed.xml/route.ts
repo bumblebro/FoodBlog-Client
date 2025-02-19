@@ -68,7 +68,7 @@ function generateRSSFeed(recipes: any) {
       name: r.subsubsection,
     };
 
-    if (imageUrl) {
+    // if (imageUrl) {
       feed.addItem({
         title: DeSlugify(r.title),
         id: url,
@@ -88,7 +88,7 @@ function generateRSSFeed(recipes: any) {
             )}`,
         },
       });
-    }
+    // }
   });
 
   return feed.rss2();
