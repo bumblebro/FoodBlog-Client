@@ -9,7 +9,7 @@ const domain =
   process.env.NEXT_PUBLIC_BASE_API_URL?.replace(/^https:/, "http:") || "";
 
 export async function GET(request: Request, response: Response) {
-  const recipes = await GETBLOGBYSECTION({ subCategory: "American" });
+  const recipes = await GETBLOGBYSECTION({ subCategory: "Japanese" });
   console.log(`rec`, recipes);
 
   const rss = generateRSSFeed(recipes);
