@@ -101,7 +101,9 @@ export async function generateStaticParams() {
     console.log(`sluglayer`, sluglayer.length);
     console.log(`paramsArray`, paramsArray.length);
     const sortedArray = paramsArray.sort((a: any, b: any) => b - a);
-    const slicedArray = sortedArray;
+    // const slicedArray = sortedArray;
+    const slicedArray = sortedArray.slice(0, 100);
+    console.log(`lengthh`, slicedArray.length());
     return [...sluglayer, ...slicedArray];
     // return [...slicedArray];
   } catch (error) {

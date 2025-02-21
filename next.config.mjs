@@ -24,6 +24,10 @@ const nextConfig = {
   experimental: {
     nextScriptWorkers: true,
   },
+  // webpack: (config) => {
+  //   config.externals = { sharp: "commonjs sharp" };
+  //   return config;
+  // },
 };
 
 export default nextConfig;
