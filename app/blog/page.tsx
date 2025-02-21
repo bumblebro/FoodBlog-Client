@@ -100,10 +100,10 @@ async function Blog({ searchParams }: { searchParams: { pageNo: string } }) {
       <Navbar decodedslug={slugs} home={true} />
       <div className="mt-28 px-4">
         <h1 className="text-center  text-2xl font-semibold tracking-wider pb-4">
-          The Latest News - Page 1
+          The Latest Recipes - Page 1
         </h1>
         <h1 className="text-center  text-sm font-semibold tracking-wider">
-          {totalBlogs} Latest Posts Articles Published
+          {totalBlogs} Latest Recipes Published
         </h1>
         <BlogList posts={posts || []} />
         <Paginationblog

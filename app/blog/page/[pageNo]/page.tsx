@@ -125,10 +125,10 @@ async function BlogPage({ params }: params) {
       <Navbar decodedslug={slugs} home={true} />
       <div className="mt-32 md:mt-22 lg:mt-13">
         <h1 className="text-center  text-2xl font-semibold tracking-wider pb-4">
-          The Latest News - Page {params.pageNo.toString()}
+          The Latest Recipes - Page {params.pageNo.toString()}
         </h1>
         <h1 className="text-center  text-sm font-semibold tracking-wider">
-          {totalBlogs} Latest Posts Articles Published
+          {totalBlogs} Latest Recipes Published
         </h1>
         <BlogList posts={posts || []} />
         <Paginationblog
