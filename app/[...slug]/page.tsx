@@ -204,7 +204,7 @@ export async function generateMetadata({ params }: params): Promise<Metadata> {
         encodeURIComponent((currentPost?.seo as SEOType)?.ogDescription || "") +
         "&cover=" +
         encodeURIComponent(currentPost?.imageurl || "");
-      console.log(`url`, imageUrl);
+      // console.log(`url`, imageUrl);
       return {
         title: DeSlugify(currentPost?.title || ""),
         description: (currentPost?.seo as SEOType)?.metaDescription,

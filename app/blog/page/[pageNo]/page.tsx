@@ -52,7 +52,7 @@ export async function generateStaticParams() {
       slug: ["page", i],
     });
   }
-  console.log(`blogpageslug`, arr.length);
+  // console.log(`blogpageslug`, arr.length);
   return arr;
 }
 
