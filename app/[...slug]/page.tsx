@@ -219,7 +219,7 @@ export async function generateMetadata({ params }: params): Promise<Metadata> {
         openGraph: {
           images: [
             {
-              url: currentPost.imageurl || "",
+              url: currentPost?.imageurl || "",
             },
           ],
         },
