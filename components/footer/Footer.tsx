@@ -60,7 +60,7 @@ function Footer() {
           health conditions, or food-related decisions.
         </p>
         <p className="font-light text-sm text-[#757577] xl:w-[50%] text-center mx-auto">
-          © 2024 SavoryTouch. All Rights Reserved.
+          © 2025 SavoryTouch. All Rights Reserved.
         </p>
       </div>
     </div>
