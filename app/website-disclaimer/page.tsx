@@ -14,7 +14,7 @@ function page() {
       <h1 className="text-center text-3xl font-semibold py-6">
         Website Disclaimer
       </h1>
-      <p>Last updated: 2024-09-10</p>
+      <p>Last updated: 2025-02-10</p>
       <p className="text-lg font-semibold">Website Disclaimer</p>
       <p>
         The information provided by <b>SavoryTouch</b> (“Company”, “we”, “our”,

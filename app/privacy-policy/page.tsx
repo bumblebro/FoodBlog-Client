@@ -14,7 +14,7 @@ function page() {
       <h1 className="text-center text-3xl font-semibold py-6">
         Privacy Policy
       </h1>
-      <p>Last updated: 2024-09-10</p>
+      <p>Last updated: 2025-02-10</p>
 
       <p>
         At Word of Many, accessible from www.wordofmany.com, one of our main
