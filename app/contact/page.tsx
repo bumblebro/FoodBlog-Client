@@ -163,15 +163,43 @@ function page() {
       <p>
         We would love to hear from you! Whether you have a question, feedback,
         or simply want to connect, feel free to reach out. Our team is here to
-        assist you and ensure that your experience on WordofMany is as seamless
+        assist you and ensure that your experience on SavoryTouch is as seamless
         and enjoyable as possible.
       </p>
-      <a
+      {/* <a
         className="underline text-center text-blue-700 "
         href="mailto:savorytouch@gmail.com?"
       >
         Please click here to mail
-      </a>
+      </a>{" "} */}
+      <ul>
+        <li>
+          📧 <strong>Email:</strong>{" "}
+          <a rel="noopener" href="mailto:wordofmany@gmail.com">
+            wordofmany@gmail.com
+          </a>
+        </li>
+        <li>
+          📘 <strong>Facebook:</strong>{" "}
+          <a
+            rel="noopener"
+            href="https://www.facebook.com/profile.php?id=61574819005948"
+            target="_blank"
+          >
+            facebook.com/profile.php?id=61574819005948
+          </a>
+        </li>
+        <li>
+          📌 <strong>Pinterest:</strong>{" "}
+          <a
+            rel="noopener"
+            href="https://in.pinterest.com/SavoryTouchBlog/"
+            target="_blank"
+          >
+            in.pinterest.com/SavoryTouchBlog/
+          </a>
+        </li>
+      </ul>
     </div>
   );
 }
