@@ -175,7 +175,7 @@ function Navbar({
   const [lastElement, setLastElement] = useState(false);
 
   useEffect(() => {
-    console.log(`SLUGGGGG`, decodedslug);
+    // console.log(`SLUGGGGG`, decodedslug);
     setLastElement(false);
 
     if (decodedslug.length == 3) {
@@ -218,7 +218,7 @@ function Navbar({
         }
       }
     }
-    console.log(`lastElement`, lastElement);
+    // console.log(`lastElement`, lastElement);
   }, []);
 
   const handleSidebar = () => {

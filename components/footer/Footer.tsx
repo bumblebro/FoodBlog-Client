@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FacebookIcon, PinterestIcon, TwitterIcon } from "react-share";
 
 function Footer() {
   return (
@@ -33,23 +34,38 @@ function Footer() {
             <Link className="hover:text-[#004ff2]" href={"/about"}>
               About Us
             </Link>
-            <Link className="hover:text-[#004ff2]" href={"/advertise"}>
+            {/* <Link className="hover:text-[#004ff2]" href={"/advertise"}>
               Advertise With Us
-            </Link>
-            <Link className="hover:text-[#004ff2]" href={"/contact"}>
-              Contact Us
-            </Link>
+            </Link> */}{" "}
           </div>
           <div className="gap-4 flex flex-col md:text-end">
             <Link className="hover:text-[#004ff2]" href={"/privacy-policy"}>
               Privacy Policy
             </Link>
-            <Link className="hover:text-[#004ff2]" href={"/website-disclaimer"}>
+            {/* <Link className="hover:text-[#004ff2]" href={"/website-disclaimer"}>
               Disclaimer
+            </Link>{" "} */}
+            <Link className="hover:text-[#004ff2]" href={"/contact"}>
+              Contact Us
             </Link>
-            <Link className="hover:text-[#004ff2]" href={"/terms"}>
+            {/* <Link className="hover:text-[#004ff2]" href={"/terms"}>
               Terms and Conditions
-            </Link>
+            </Link> */}
+          </div>
+        </div>{" "}
+        <div className="flex flex-row items-center gap-3 mx-auto md:mx-0">
+          <h1 className="flex justify-start text-sm font-semibold">FOLLOW US</h1>
+          <div className="flex gap-4  ">
+            <a
+              href="https://www.facebook.com/profile.php?id=61574819005948"
+              target="_blank"
+            >
+              <FacebookIcon size={32} round={true} />
+            </a>{" "}
+            <a href="https://in.pinterest.com/SavoryTouchBlog/" target="_blank">
+              {" "}
+              <PinterestIcon size={32} round={true} />
+            </a>
           </div>
         </div>
         <p className="font-light text-sm italic px-4 text-center">
@@ -58,7 +74,7 @@ function Footer() {
           for professional nutritional, dietary, or culinary advice. Always seek
           the advice of qualified professionals regarding any dietary concerns,
           health conditions, or food-related decisions.
-        </p>
+        </p>{" "}
         <p className="font-light text-sm text-[#757577] xl:w-[50%] text-center mx-auto">
           © 2025 SavoryTouch. All Rights Reserved.
         </p>

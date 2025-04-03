@@ -98,12 +98,12 @@ export async function generateStaticParams() {
       paramsArray = [...paramsArray, ...titleArray];
       page++; // Move to the next page
     }
-    console.log(`sluglayer`, sluglayer.length);
-    console.log(`paramsArray`, paramsArray.length);
+    // console.log(`sluglayer`, sluglayer.length);
+    // console.log(`paramsArray`, paramsArray.length);
     const sortedArray = paramsArray.sort((a: any, b: any) => b - a);
     // const slicedArray = sortedArray;
     const slicedArray = sortedArray.slice(0, 100);
-    console.log(`lengthh`, slicedArray.length());
+    // console.log(`lengthh`, slicedArray.length());
     return [...sluglayer, ...slicedArray];
     // return [...slicedArray];
   } catch (error) {
@@ -230,7 +230,7 @@ export async function generateMetadata({ params }: params): Promise<Metadata> {
         },
       };
     } catch (e) {
-      console.log(`errrorr`, e);
+      // console.log(`errrorr`, e);
       return {};
     }
   }
