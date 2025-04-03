@@ -175,8 +175,8 @@ function page() {
       <ul>
         <li>
           📧 <strong>Email:</strong>{" "}
-          <a rel="noopener" href="mailto:wordofmany@gmail.com">
-            wordofmany@gmail.com
+          <a rel="noopener" href="mailto:savorytouch13@gmail.com">
+          savorytouch13@gmail.com
           </a>
         </li>
         <li>

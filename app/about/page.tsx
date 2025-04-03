@@ -1,4 +1,7 @@
 import { Metadata } from "next";
+import { FacebookIcon, PinterestIcon } from "react-share";
+import imgurl from "../../public/photo.jpg";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -11,54 +14,124 @@ export const metadata: Metadata = {
 function page() {
   return (
     <div className="flex flex-col  gap-4 px-4 pb-3 my-[130px] md:my-[105px]   md:max-w-[45rem] mx-auto w-full leading-[1.7rem] font-[330] text-black ">
-      <h1 className="text-center text-3xl font-semibold py-6">About Us</h1>
-      <p>
-        Welcome to SavoryTouch, your go-to destination for all things food and
-        drink. Here, we celebrate the joys of culinary exploration, where every
-        dish tells a story and every flavor brings an experience to life.
-        Whether you&apos;re a passionate home cook, a curious foodie, or someone
-        who just loves to savor the art of dining, you&apos;ve found the perfect
-        place.
-      </p>
+      <div className="container mx-auto px-4 py-12 text-left">
+        <h1 className="text-3xl font-extrabold pb-6">About Savory Touch</h1>
+        <p className="mb-4">By Team Savory Touch</p>
+        <p className="mb-4">
+          To our wonderful community of home cooks, food lovers, and culinary
+          adventurers: Welcome to Savory Touch!
+        </p>
+        <p className="mb-4">
+          We believe that food is more than just sustenance—it&apos;s an
+          experience, a story, and a passion. Our goal is simple:
+        </p>
+        <h2 className="text-2xl font-semibold mb-4">
+          ALL THE RECIPES YOU&apos;LL EVER NEED. PERIOD.
+        </h2>
+        <p className="mb-4">
+          Savory Touch brings together a rich collection of flavorful recipes,
+          creative cooking ideas, and an enthusiastic community that shares a
+          love for great food. Here&apos;s what you can expect:
+        </p>
+        <ul className="list-disc pl-6 mb-4">
+          <li className="mb-2">
+            Thousands of carefully curated recipes, with new dishes added
+            regularly.
+          </li>
+          <li className="mb-2">
+            A vibrant community where you can share your experiences, post
+            reviews, and ask cooking-related questions.
+          </li>
+        </ul>
+        <p className="mb-4">
+          Whether you&apos;re a seasoned chef or just getting started in the
+          kitchen, we&apos;re here to make cooking fun, easy, and delicious. If
+          you&apos;re looking for inspiration, check out our{" "}
+          <strong>Recipes Section</strong>, featuring everything from comforting
+          classics to bold, innovative dishes.
+        </p>
+        <p className="mb-4">
+          Got any questions or need assistance? Our support team is here to
+          help. Reach out to us at{" "}
+        </p>
 
-      <p>
-        At SavoryTouch, we believe that food is more than just
-        nourishment&mdash; it&apos;s an adventure for the senses. Our mission is
-        to inspire, inform, and share the love of food by providing a diverse
-        range of recipes, cooking tips, and food culture insights. From easy
-        weeknight dinners and gourmet meals to the latest trends in the culinary
-        world, we have something for every taste.
-      </p>
+        <ul>
+          <li>
+            📧 <strong>Email:</strong>{" "}
+            <a rel="noopener" href="mailto:savorytouch13@gmail.com">
+              savorytouch13@gmail.com
+            </a>
+          </li>
+          <li>
+            📘 <strong>Facebook:</strong>{" "}
+            <a
+              rel="noopener"
+              href="https://www.facebook.com/profile.php?id=61574819005948"
+              target="_blank"
+            >
+              facebook.com/profile.php?id=61574819005948
+            </a>
+          </li>
+          <li>
+            📌 <strong>Pinterest:</strong>{" "}
+            <a
+              rel="noopener"
+              href="https://in.pinterest.com/SavoryTouchBlog/"
+              target="_blank"
+            >
+              in.pinterest.com/SavoryTouchBlog/
+            </a>
+          </li>
+        </ul>
 
-      <p>
-        What sets SavoryTouch apart is our dedication to crafting content that
-        speaks to both seasoned chefs and casual kitchen experimenters alike.
-        Whether it&rsquo;s uncovering the secrets of traditional dishes or
-        showcasing modern twists on classic flavors, our goal is to make cooking
-        approachable, enjoyable, and delicious for everyone.
-      </p>
+        <h2 className="text-2xl font-semibold mt-8 mb-4">Meet the Admin</h2>
 
-      <p>
-        SavoryTouch is more than just a blog&mdash;it&rsquo;s a community for
-        those who find joy in sharing meals, discovering new flavors, and
-        learning the stories behind the food. We invite you to dive into our
-        collection of recipes, culinary stories, and expert tips, and join us in
-        celebrating the art of eating well.
-      </p>
+        <Image
+          src={imgurl}
+          alt="Shreyas M S - Admin of Savory Touch"
+          width="200"
+          height="200"
+          className="my-4"
+        />
 
-      <p>
-        Whether you&rsquo;re here to improve your cooking skills, get inspired
-        for your next meal, or simply discover the best new places to eat and
-        drink, SavoryTouch is your companion in the kitchen and beyond.
-        We&apos;re constantly adding fresh, flavorful content that will inspire
-        you to explore, create, and indulge in the richness of food and drink.
-      </p>
+        {/* Admin Image */}
+        <div className="flex items-center gap-4">
+          <div>
+            <p className="mb-4">
+              <strong>Shreyas M S</strong> - Founder & Admin of Savory Touch
+            </p>
+            <p className="mb-4">
+              Hi, I&apos;m Shreyas, the creator of Savory Touch! As a passionate
+              foodie and tech enthusiast, I built this platform to share amazing
+              recipes with the world. My goal is to bring together a community
+              that loves cooking and experimenting with flavors. Whether you&apos;re
+              looking for easy meal ideas or gourmet delights, I&apos;ve got you
+              covered!
+            </p>
+            <p className="mb-4">
+              Want to connect? Feel free to reach out via{" "}
+              <a href="mailto:shreyasms660@gmail.com" className="underline">
+                Email
+              </a>
+              .
+            </p>
+            <p className="mb-4">
+              🔗 <strong>LinkedIn:</strong>{" "}
+              <a
+                href="https://www.linkedin.com/in/shreyasms660/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
+                linkedin.com/in/shreyasms660/
+              </a>
+            </p>
+          </div>
+        </div>
 
-      <p>
-        Welcome to SavoryTouch&mdash;where every recipe is an adventure, and
-        every meal is an opportunity to savor the moment. Let&apos;s cook, eat,
-        and discover together.
-      </p>
+        <p className="mb-4">Happy cooking,</p>
+        <p className="font-semibold">Team Savory Touch</p>
+      </div>
     </div>
   );
 }

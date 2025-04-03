@@ -18,7 +18,7 @@ function page() {
         Privacy Policy for SavoryTouch
       </h1>
       <h1>SavoryTouch Privacy Policy</h1>
-      <h2>Effective Date: April 1st, 2023</h2>
+      <h2>Effective Date: April 1st, 2024</h2>
       <div className="container mx-auto py-12 text-left">
         <p className="mb-4">
           Welcome to SavoryTouch (&quot;we,&quot; &quot;us,&quot; &quot;our&quot;). This privacy policy outlines
@@ -57,10 +57,8 @@ function page() {
           </li>
           <li className="mb-2">
             <strong>
-              b. Send you newsletters, promotional materials, or other
-              information you have requested. If you wish to not have your email
-              used in newsletters and promotional emails you can OPT-OUT on your
-              Account Page.
+            b. Send you newsletters, promotional materials, or other
+            information you have requested. If you wish to opt out of receiving promotional emails, you can do so by contacting us.
             </strong>
           </li>
           <li className="mb-2">
