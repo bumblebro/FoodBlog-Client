@@ -43,13 +43,38 @@ async function loadFonts() {
   return { regularFontData, boldFontData, lightFontData };
 }
 
+// const phrases = [
+//   "The Most Amazing",
+//   "The Best",
+//   "Easy & Simple",
+//   "The Ultimate",
+//   "Simple & Easy",
+// ];
+
 const phrases = [
   "The Most Amazing",
   "The Best",
   "Easy & Simple",
   "The Ultimate",
   "Simple & Easy",
+  "Quick & Easy",
+  "Super Delicious",
+  "Really Good",
+  "Tried & Tested",
+  "Fast & Easy",
+  "So Tasty",
+  "The Greatest",
+  "Top Rated",
+  "Most Loved",
+  "All-Time Favorite",
+  "Easy & Tasty",
+  "Highly Recommended",
+  "Best Ever",
+  "The Classic",
+  "Go-To Recipe",
 ];
+
+
 
 export async function GET(req: NextRequest) {
   const { regularFontData, boldFontData, lightFontData } = await loadFonts();
