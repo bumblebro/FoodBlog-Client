@@ -73,7 +73,14 @@ function generateRSSFeed(recipes: any) {
       title: DeSlugify(r.title),
       id: url,
       link: url,
-      description: r.recipedescription,
+      description:
+        r.recipedescription +
+        "\n" +
+        r?.seo?.primaryKeywords
+          ?.map((keyword: string) => `#${keyword}`)
+          .join(" ") +
+        "\n" +
+        "→ Click to learn more!",
       // content: r.recipedescription,
       author: [author],
       contributor: [author],

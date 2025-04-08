@@ -10,7 +10,7 @@ const domain =
 
 export async function GET(request: Request, response: Response) {
   const recipes = await BLOGCOMPLETE();
-  console.log(`rec`, recipes);
+  // console.log(`rec`, recipes);
 
   const rss = generateRSSFeed(recipes);
 
@@ -54,7 +54,7 @@ function generateRSSFeed(recipes: any) {
       `title=${r.title}` +
       `&cover=${r.imageurl}`;
 
-    console.log(`urllll`, imageUrl);
+    // console.log(`urllll`, imageUrl);
 
     const url = siteURL + "/" + r.slug;
 
@@ -68,26 +68,42 @@ function generateRSSFeed(recipes: any) {
       name: r.subsubsection,
     };
 
+    // const keywordString =
+    //   r.recipedescription +
+    //   "\n" +
+    //   r?.seo?.primaryKeywords
+    //     ?.map((keyword: string) => `#${keyword}`)
+    //     .join(" ") +
+    //   "\n" +
+    //   "→ Click to learn more!";
+    // console.log(keywordString);
     // if (imageUrl) {
-      feed.addItem({
-        title: DeSlugify(r.title),
-        id: url,
-        link: url,
-        description: r.recipedescription,
-        // content: r.recipedescription,
-        author: [author],
-        contributor: [author],
-        date: r.creationDate,
-        category: [cat1, cat2, cat3],
-        image: {
-          type: "image/png",
-          url:
-            domain +
-            `/api/og?title=${r.title}&amp;cover=${encodeURIComponent(
-              r.imageurl
-            )}`,
-        },
-      });
+    feed.addItem({
+      title: DeSlugify(r.title),
+      id: url,
+      link: url,
+      description:
+        r.recipedescription +
+        "\n" +
+        r?.seo?.primaryKeywords
+          ?.map((keyword: string) => `#${keyword}`)
+          .join(" ") +
+        "\n" +
+        "→ Click to learn more!",
+      // content: r.recipedescription,
+      author: [author],
+      contributor: [author],
+      date: r.creationDate,
+      category: [cat1, cat2, cat3],
+      image: {
+        type: "image/png",
+        url:
+          domain +
+          `/api/og?title=${r.title}&amp;cover=${encodeURIComponent(
+            r.imageurl
+          )}`,
+      },
+    });
     // }
   });
 
