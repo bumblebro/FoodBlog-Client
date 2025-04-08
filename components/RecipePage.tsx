@@ -78,7 +78,7 @@ const RecipePage = ({ currentPost }: any) => {
 
   return (
     <div
-      className="flex flex-col items-center min-h-screen px-4 py-4 w-full"
+      className="flex flex-col items-center min-h-screen  py-4 w-full"
       id="recipeSection"
     >
       <button
@@ -90,7 +90,7 @@ const RecipePage = ({ currentPost }: any) => {
 
       <div
         ref={recipeRef}
-        className="w-full max-w-4xl bg-white shadow-lg rounded-xl p-4 border border-gray-300"
+        className="w-full max-w-4xl bg-white shadow-lg rounded-xl p-3 border border-gray-300"
       >
         {/* Recipe Title */}
         <h1 className="text-3xl font-serif text-center font-bold mb-6 text-[#6b4226] p-name">
@@ -106,7 +106,7 @@ const RecipePage = ({ currentPost }: any) => {
         </p>
 
         {/* Yield & Time Info */}
-        <div className="bg-[#f9f5f0] p-6 rounded-lg shadow-md border border-gray-300 mb-6">
+        <div className="bg-[#f9f5f0] p-4 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6">
           <h2 className="text-xl font-serif text-[#6b4226] mb-3">
             ⏳ Yield & Time
           </h2>
@@ -172,7 +172,7 @@ const RecipePage = ({ currentPost }: any) => {
           </ul>
         </div> */}
 
-        <div className="bg-[#f9f5f0] p-6 rounded-lg shadow-md border border-gray-300 mb-6">
+        <div className="bg-[#f9f5f0] p-4 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6">
           <h2 className="text-xl font-serif text-[#6b4226] mb-3">
             🍽 Ingredients
           </h2>
@@ -204,7 +204,7 @@ const RecipePage = ({ currentPost }: any) => {
         </div>
 
         {/* Instructions */}
-        <div className="bg-[#f9f5f0] p-6 rounded-lg shadow-md border border-gray-300 mb-6">
+        <div className="bg-[#f9f5f0] p-4 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6">
           <h2 className="text-xl font-serif text-[#6b4226] mb-3">
             📖 Instructions
           </h2>
@@ -222,7 +222,7 @@ const RecipePage = ({ currentPost }: any) => {
         </div>
 
         {/* Notes */}
-        <div className="bg-[#f9f5f0] p-6 rounded-lg shadow-md border border-gray-300 mb-6">
+        <div className="bg-[#f9f5f0] p-4 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6">
           <h2 className="text-xl font-serif text-[#6b4226] mb-3">📝 Notes</h2>
           <ul className="list-disc pl-5 space-y-2 text-lg">
             {recipeDetails?.notes?.map((note: any, index: any) => (
@@ -234,7 +234,7 @@ const RecipePage = ({ currentPost }: any) => {
         </div>
 
         {/* Nutrition Info */}
-        <div className="bg-[#f9f5f0] p-6 rounded-lg shadow-md border border-gray-300">
+        <div className="bg-[#f9f5f0] p-4 sm:p-6 rounded-lg shadow-md border border-gray-300 text-">
           <h2 className="text-xl font-serif text-[#6b4226] mb-3">
             🍎 Nutrition
           </h2>

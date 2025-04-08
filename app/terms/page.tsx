@@ -11,11 +11,11 @@ export const metadata: Metadata = {
 function page() {
   return (
     <div className="flex flex-col gap-4 px-4 pb-3 my-[130px] md:my-[105px] md:max-w-[45rem] mx-auto w-full leading-[1.7rem] font-[330] text-black">
-      <h1 className="text-center text-3xl font-semibold py-6">
-        Terms and Conditions
+    
+      <h1 className="text-3xl font-extrabold pb-6">
+      Terms and Conditions
       </h1>
-      <p>Last updated: 2025-02-10</p>
-
+      <h2>Effective Date: April 1st, 2024</h2>
       <p>
         These terms and conditions outline the rules and regulations for the use
         of Savory Touch&apos;s Website, located at https://www.savorytouch.com.

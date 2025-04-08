@@ -303,7 +303,7 @@ function Navbar({
               Subscribe
             </h1>
           </div> */}
-          <button
+          {/* <button
             type="button"
             title="SearchBtn"
             aria-label="Search"
@@ -323,7 +323,7 @@ function Navbar({
                 d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
               />
             </svg>
-          </button>
+          </button> */}
         </div>
         <div className="flex justify-center w-[90%] mx-auto">
           <div className="overflow-scroll  no-scrollbar w-full xl:max-w-[73rem] text-white text-xs tracking-widest font-light py-2 pt-2">

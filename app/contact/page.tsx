@@ -175,14 +175,14 @@ function page() {
       <ul>
         <li>
           📧 <strong>Email:</strong>{" "}
-          <a rel="noopener" href="mailto:savorytouch13@gmail.com">
+          <a rel="noopener" className="underline" href="mailto:savorytouch13@gmail.com">
           savorytouch13@gmail.com
           </a>
         </li>
         <li>
           📘 <strong>Facebook:</strong>{" "}
           <a
-            rel="noopener"
+            rel="noopener" className="underline"
             href="https://www.facebook.com/profile.php?id=61574819005948"
             target="_blank"
           >
@@ -192,7 +192,7 @@ function page() {
         <li>
           📌 <strong>Pinterest:</strong>{" "}
           <a
-            rel="noopener"
+            rel="noopener" className="underline"
             href="https://in.pinterest.com/SavoryTouchBlog/"
             target="_blank"
           >

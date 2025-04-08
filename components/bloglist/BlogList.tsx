@@ -12,12 +12,12 @@ interface posts {
 function BlogList({ posts }: posts) {
   return (
     <div className="  mx-auto mb-10   w-full px-4">
-      <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4 lg:gap-4   xl:max-w-[73rem] mx-auto w-full lg:gap-x-5 xl:gap-y-14">
+      <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-4 lg:gap-4   xl:max-w-[73rem] mx-auto w-full lg:gap-x-2 xl:gap-y-10">
         {posts.map((item, index) => {
           // const myBlurDataUrl = await getBase64(item.imageurl);
 
           return (
-            <div key={index} className="pt-4 ">
+            <div key={index} className="pt-4 bg-[#eeeff16b] p-2 rounded-md">
               <Link
                 href={`/${
                   item.section !== "null"
@@ -59,27 +59,28 @@ function BlogList({ posts }: posts) {
                 src={item.imageurl}
                 alt={item.imagealt}
               /> */}
-              </Link>
-              <Link
-                href={`/${
-                  item.section !== "null"
-                    ? item.section.toLowerCase() + "/"
-                    : ""
-                }${
-                  item.subsection !== "null"
-                    ? item.subsection.toLowerCase() + "/"
-                    : ""
-                }${
-                  item.subsubsection !== "null"
-                    ? item.subsubsection.toLowerCase() + "/"
-                    : ""
-                }`}
-              >
-                <h1 className="text-sm text-[#004ff2] font-semibold pb-2 tracking-wider pt-4 hover:text-[#3a8cfb]">
-                  {DeSlugify(item.subsection)}
-                </h1>
-              </Link>
-
+              </Link>{" "}
+              <div className="flex pt-4 pb-1 ">
+                <Link
+                  href={`/${
+                    item.section !== "null"
+                      ? item.section.toLowerCase() + "/"
+                      : ""
+                  }${
+                    item.subsection !== "null"
+                      ? item.subsection.toLowerCase() + "/"
+                      : ""
+                  }${
+                    item.subsubsection !== "null"
+                      ? item.subsubsection.toLowerCase() + "/"
+                      : ""
+                  }`}
+                >
+                  <h1 className="text-sm text-[#004ff2] px-2  font-semibold tracking-wider  hover:text-[#3a8cfb] rounded-full border-[1px] border-slate-400">
+                    {DeSlugify(item.subsection)}
+                  </h1>
+                </Link>
+              </div>
               <Link
                 href={`/${
                   item.section !== "null"

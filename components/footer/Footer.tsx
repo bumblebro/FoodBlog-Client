@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { FacebookIcon, PinterestIcon, TwitterIcon } from "react-share";
 
@@ -10,11 +11,17 @@ function Footer() {
             Want to join our exclusive community?
           </h1>
           <span className="w-1/12 border-b mb-1"></span>
-          <form className="flex flex-col  gap-3 md:flex-row w-full md:w-[70%] md:gap-0   2xl:w-[50%]">
+          <form
+            onSubmit={(e) => {
+              alert("Subscribed!");
+            }}
+            className="flex flex-col  gap-3 md:flex-row w-full md:w-[70%] md:gap-0   2xl:w-[50%]"
+          >
             <input
               className="  placeholder-slate-500 font-light w-full rounded-md py-2 text-center  md:text-start md:pl-4 md:rounded-r-none text-black"
-              type="text"
+              type="email"
               placeholder="Enter your email"
+              required
             />
             <button
               type="submit"
@@ -33,6 +40,9 @@ function Footer() {
             </Link>
             <Link className="hover:text-[#004ff2]" href={"/about"}>
               About Us
+            </Link>{" "}
+            <Link className="hover:text-[#004ff2]" href={"/contact"}>
+              Contact Us
             </Link>
             {/* <Link className="hover:text-[#004ff2]" href={"/advertise"}>
               Advertise With Us
@@ -45,16 +55,15 @@ function Footer() {
             {/* <Link className="hover:text-[#004ff2]" href={"/website-disclaimer"}>
               Disclaimer
             </Link>{" "} */}
-            <Link className="hover:text-[#004ff2]" href={"/contact"}>
-              Contact Us
-            </Link>
-            {/* <Link className="hover:text-[#004ff2]" href={"/terms"}>
+            <Link className="hover:text-[#004ff2]" href={"/terms"}>
               Terms and Conditions
-            </Link> */}
+            </Link>
           </div>
         </div>{" "}
         <div className="flex flex-row items-center gap-3 mx-auto md:mx-0">
-          <h1 className="flex justify-start text-sm font-semibold">FOLLOW US</h1>
+          <h1 className="flex justify-start text-sm font-semibold">
+            FOLLOW US
+          </h1>
           <div className="flex gap-4  ">
             <a
               href="https://www.facebook.com/profile.php?id=61574819005948"
