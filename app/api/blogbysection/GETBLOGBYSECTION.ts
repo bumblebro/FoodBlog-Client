@@ -62,6 +62,7 @@ export default async function GETBLOGBYSECTION({
         recipedescription: true,
         recipedetails: true, // Recipe details for different serving sizes (1X, 2X, 3X, 4X)
         creationDate: true, // Date the blog was created
+        seo:true
       },
       where: whereClause,
       orderBy: {
