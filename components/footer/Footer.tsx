@@ -1,13 +1,25 @@
 "use client";
 import Link from "next/link";
+
+import localFont from 'next/font/local'
+
+
 import { FacebookIcon, PinterestIcon, TwitterIcon } from "react-share";
+
+const freight = localFont({
+  src: '../../app/fonts/freight-neo-pro-book.otf',
+})
+
+const freightbig = localFont({
+  src: '../../app/fonts/Freight Big Pro Medium Italic.otf',
+})
 
 function Footer() {
   return (
-    <div className="bg-[#333333] ">
+    <div className={`bg-[#F0F1F3] text-[#000000] ${freight.className}`}>
       <div className="pt-11 pb-20 text-white text-center flex flex-col gap-14 px-4 mx-auto xl:max-w-[73rem] ">
         <div className="flex flex-col items-center gap-3 ">
-          <h1 className="text-md font-medium">
+          <h1 className="text-md font-medium text-[#000000]">
             Want to join our exclusive community?
           </h1>
           <span className="w-1/12 border-b mb-1"></span>
@@ -32,16 +44,16 @@ function Footer() {
           </form>
         </div>
         <span className="w-full border-gray-600 border-[0.1px]"></span>
-        <div className="flex flex-col  font-normal text-sm gap-4 md:flex-row md:justify-between md:items-center">
+        <div className="flex flex-col  font-normal text-sm gap-4 md:flex-row md:justify-between md:items-center text-[#000000]">
           {" "}
           <div className="gap-4 flex flex-col md:text-start">
-            <Link className="hover:text-[#004ff2]" href={"/"}>
+            <Link className="hover:text-[#004ff2] uppercase" href={"/"}>
               Home
             </Link>
-            <Link className="hover:text-[#004ff2]" href={"/about"}>
+            <Link className="hover:text-[#004ff2] uppercase" href={"/about"}>
               About Us
             </Link>{" "}
-            <Link className="hover:text-[#004ff2]" href={"/contact"}>
+            <Link className="hover:text-[#004ff2] uppercase" href={"/contact"}>
               Contact Us
             </Link>
             {/* <Link className="hover:text-[#004ff2]" href={"/advertise"}>
@@ -49,18 +61,18 @@ function Footer() {
             </Link> */}{" "}
           </div>
           <div className="gap-4 flex flex-col md:text-end">
-            <Link className="hover:text-[#004ff2]" href={"/privacy-policy"}>
+            <Link className="hover:text-[#004ff2] uppercase" href={"/privacy-policy"}>
               Privacy Policy
             </Link>
             {/* <Link className="hover:text-[#004ff2]" href={"/website-disclaimer"}>
               Disclaimer
             </Link>{" "} */}
-            <Link className="hover:text-[#004ff2]" href={"/terms"}>
+            <Link className="hover:text-[#004ff2] uppercase " href={"/terms"}>
               Terms and Conditions
             </Link>
           </div>
         </div>{" "}
-        <div className="flex flex-row items-center gap-3 mx-auto md:mx-0">
+        <div className="flex flex-row items-center gap-3 mx-auto md:mx-0 text-[#000000]">
           <h1 className="flex justify-start text-sm font-semibold">
             FOLLOW US
           </h1>
@@ -77,14 +89,14 @@ function Footer() {
             </a>
           </div>
         </div>
-        <p className="font-light text-sm italic px-4 text-center">
+        <p className={`font-light text-sm italic px-4 text-center text-[#000000] ${freightbig.className}`}>
           SavoryTouch offers general content intended solely for informational
           purposes. The information provided on this site is not a substitute
           for professional nutritional, dietary, or culinary advice. Always seek
           the advice of qualified professionals regarding any dietary concerns,
           health conditions, or food-related decisions.
         </p>{" "}
-        <p className="font-light text-sm text-[#757577] xl:w-[50%] text-center mx-auto">
+        <p className="font-light text-sm  xl:w-[50%] text-center mx-auto text-[#000000] uppercase">
           © 2025 SavoryTouch. All Rights Reserved.
         </p>
       </div>

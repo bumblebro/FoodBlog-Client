@@ -1,4 +1,24 @@
 import Link from "next/link";
+import localFont from "next/font/local";
+
+// import Buttons from "../Buttons";
+
+const freight = localFont({
+  src: '../../app/fonts/freight-neo-pro-book.otf',
+})
+
+
+const freightlight = localFont({
+  src: "../../app/fonts/fonnts.com-FreightNeo_Pro_Light.otf",
+});
+
+const freightbig = localFont({
+  src: "../../app/fonts/Freight Big Pro Medium Italic.otf",
+});
+
+const freightbigstraight = localFont({
+  src: "../../app/fonts/Freight Big Pro Medium.otf",
+});
 
 interface Props {
   pageNo?: number;
@@ -68,7 +88,7 @@ function Paginationbloglist({
 
   return (
     <div>
-      <nav className="flex justify-between items-center mb-10  px-4 mx-auto xl:max-w-[73rem]">
+      <nav className={`flex justify-between items-center mb-10  px-4 mx-auto xl:max-w-[73rem] ${freightlight.className}`}>
         <Link
           className={`flex justify-start font-medium ${
             currentPage == 1 && "invisible"

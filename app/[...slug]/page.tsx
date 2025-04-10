@@ -18,6 +18,7 @@ import { subSections } from "@/libs/Section";
 import DeSlugify from "@/libs/DeSlugify";
 import { notFound } from "next/navigation";
 
+
 interface params {
   params: {
     slug: string[];

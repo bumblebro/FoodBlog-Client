@@ -1,11 +1,20 @@
 "use client";
 
+import localFont from 'next/font/local'
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Footer from "../footer/Footer";
 import DeSlugify from "@/libs/DeSlugify";
 import { subSections } from "@/libs/Section";
 import { slugify } from "markdown-to-jsx";
+
+const freight = localFont({
+  src: '../../app/fonts/freight-neo-pro-book.otf',
+})
+
+const freightbig = localFont({
+  src: '../../app/fonts/Freight Big Pro Medium Italic.otf',
+})
 
 // const CuisineTypes = [
 //   "Italian",
@@ -226,9 +235,9 @@ function Navbar({
   };
 
   return (
-    <nav className="  w-full z-20 top-0 start-0 fixed bg-[#333333] h-[72px] md:h-[80px]">
+    <nav className={` w-full z-20 top-0 start-0 fixed bg-[#F0F1F3] h-[72px] md:h-[80px] text-[#000000] ${freight.className}`}>
       <div className="  items-center justify-between mx-auto  py-2 md:py-3 ">
-        <div className="bg-[#333333]  grid grid-cols-3 px-3 xl:px-0 xl:max-w-[73rem] mx-auto  my-auto h-full text-white w-full ">
+        <div className="bg-[#F0F1F3]  grid grid-cols-3 px-3 xl:px-0 xl:max-w-[73rem] mx-auto  my-auto h-full text-white w-full ">
           {" "}
           <div className="flex items-center gap-2 ">
             {sidebar ? (
@@ -238,7 +247,7 @@ function Navbar({
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
-                  stroke="currentColor"
+                  stroke="#000000"
                   className={`w-8 transform-gpu  duration-500 ${
                     sidebar ? "rotate-180  " : "rotate-0 "
                   }`}
@@ -260,7 +269,7 @@ function Navbar({
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
-                  stroke="currentColor"
+                  stroke="#000000"
                   className={`w-8 transform-gpu  duration-500 ${
                     sidebar ? "rotate-180  " : "rotate-0 "
                   }`}
@@ -293,7 +302,7 @@ function Navbar({
           </div>
           <div className="flex justify-center items-center">
             <Link href="/" onClick={handleSidebar}>
-              <h1 className="uppercase font-[650] tracking-[4px] text-xl   lg:text-[1.4rem] xl:text-[1.7rem] text-center  ">
+              <h1 className={`uppercase font-[650] tracking-[4px] text-xl   lg:text-[1.4rem] xl:text-[1.7rem] text-center text-[#000000] `}>
                 savorytouch
               </h1>
             </Link>
@@ -327,7 +336,7 @@ function Navbar({
         </div>
         <div className="flex justify-center w-[90%] mx-auto">
           <div className="overflow-scroll  no-scrollbar w-full xl:max-w-[73rem] text-white text-xs tracking-widest font-light py-2 pt-2">
-            <ul className="flex items-center text-xs gap-2  text-nowrap justify-evenly  sm:justify-center">
+            <ul className="flex items-center text-xs gap-2  text-nowrap justify-evenly  sm:justify-center text-[#000000] uppercase">
               {home == true
                 ? categoryList.map((item, i) =>
                     i === 0 ? (
@@ -453,20 +462,20 @@ function Navbar({
             </ul>
           </div>
         </div>
-        <div className="bg-[#333333] w-full px-4">
+        <div className="bg-[#F0F1F3] w-full px-4">
           <div
             className={`  w-full ${
               !sidebar && "hidden"
-            }    text-white  tracking-wider 2xl:px-44 lg:pt-8 mx-auto  xl:max-w-[73rem] px-3"
-          id="navbar-sticky overflow-y-auto h-screen animate-fadein bg-[#333333]`}
+            }     tracking-wider 2xl:px-44 lg:pt-8 mx-auto  xl:max-w-[73rem] px-3"
+          id="navbar-sticky overflow-y-auto h-screen animate-fadein bg-[#F0F1F3] text-[#000000]`}
           >
-            <h1 className="text-2xl font-semibold py-6">Sections</h1>
+            <h1 className={`text-2xl font-semibold py-6 ${freightbig.className}`}>Sections</h1>
             <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 ">
               <div>
                 <Link
                   onClick={handleSidebar}
                   href={"/cuisine-types"}
-                  className="font-semibold hover:text-[#004ff2] "
+                  className={` hover:text-[#004ff2] ${freightbig.className}`}
                 >
                   Cuisine Types
                 </Link>
@@ -489,7 +498,7 @@ function Navbar({
                 <Link
                   onClick={handleSidebar}
                   href={"/meal-types"}
-                  className="font-semibold hover:text-[#004ff2]"
+                  className={` hover:text-[#004ff2] ${freightbig.className}`}
                 >
                   Meal Types
                 </Link>
@@ -512,7 +521,7 @@ function Navbar({
                 <Link
                   onClick={handleSidebar}
                   href={"/dietary-preferences"}
-                  className="font-semibold hover:text-[#004ff2]"
+                  className={` hover:text-[#004ff2] ${freightbig.className}`}
                 >
                   Dietary Preferences
                 </Link>
@@ -535,7 +544,7 @@ function Navbar({
                 <Link
                   onClick={handleSidebar}
                   href={"/cooking-techniques"}
-                  className="font-semibold  hover:text-[#004ff2]"
+                  className={` hover:text-[#004ff2] ${freightbig.className}`}
                 >
                   Cooking Techniques
                 </Link>
@@ -558,7 +567,7 @@ function Navbar({
                 <Link
                   onClick={handleSidebar}
                   href={"/ingredients"}
-                  className="font-semibold  hover:text-[#004ff2]"
+                  className={` hover:text-[#004ff2] ${freightbig.className}`}
                 >
                   Ingredients
                 </Link>
@@ -581,7 +590,7 @@ function Navbar({
                 <Link
                   onClick={handleSidebar}
                   href={"/recipe-formats"}
-                  className="font-semibold hover:text-[#004ff2]"
+                  className={` hover:text-[#004ff2] ${freightbig.className}`}
                 >
                   Recipe Formats
                 </Link>
@@ -604,7 +613,7 @@ function Navbar({
                 <Link
                   onClick={handleSidebar}
                   href={"/modern-trends"}
-                  className="font-semibold hover:text-[#004ff2]"
+                  className={` hover:text-[#004ff2] ${freightbig.className}`}
                 >
                   Modern Trends
                 </Link>
@@ -627,7 +636,7 @@ function Navbar({
                 <Link
                   onClick={handleSidebar}
                   href={"/seasonal-recipes"}
-                  className="font-semibold hover:text-[#004ff2]"
+                  className={` hover:text-[#004ff2] ${freightbig.className}`}
                 >
                   Seasonal Recipes
                 </Link>
@@ -650,7 +659,7 @@ function Navbar({
                 <Link
                   onClick={handleSidebar}
                   href={"/global-flavors"}
-                  className="font-semibold hover:text-[#004ff2]"
+                  className={` hover:text-[#004ff2] ${freightbig.className}`}
                 >
                   Global Flavors
                 </Link>
@@ -673,7 +682,7 @@ function Navbar({
                 <Link
                   onClick={handleSidebar}
                   href={"/special-occasions"}
-                  className="font-semibold hover:text-[#004ff2]"
+                  className={` hover:text-[#004ff2] ${freightbig.className}`}
                 >
                   Special Occasions
                 </Link>
@@ -684,7 +693,7 @@ function Navbar({
                         onClick={handleSidebar}
                         href={`/special-occasions/${item.toLowerCase()}`}
                         key={index}
-                        className="hover:text-[#004ff2]"
+                        className="hover:text-[#004ff2] "
                       >
                         {DeSlugify(item)}
                       </Link>

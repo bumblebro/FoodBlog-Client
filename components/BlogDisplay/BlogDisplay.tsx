@@ -10,7 +10,26 @@ import RecipePage from "../RecipePage";
 import Buttons from "../Buttons";
 import { FAQSection } from "../FAQSection";
 import ShareButtons from "../ShareButtons";
+import localFont from "next/font/local";
+
 // import Buttons from "../Buttons";
+
+const freight = localFont({
+  src: '../../app/fonts/freight-neo-pro-book.otf',
+})
+
+
+const freightlight = localFont({
+  src: "../../app/fonts/fonnts.com-FreightNeo_Pro_Light.otf",
+});
+
+const freightbig = localFont({
+  src: "../../app/fonts/Freight Big Pro Medium Italic.otf",
+});
+
+const freightbigstraight = localFont({
+  src: "../../app/fonts/Freight Big Pro Medium.otf",
+});
 
 interface JsonValue {
   [key: string]: any;
@@ -73,7 +92,9 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
   // }${currentPost.title}`;
 
   return (
-    <div className=" xl:max-w-[73rem] mx-auto  mb-10 md:grid md:grid-cols-[56.7%_auto] lg:grid-cols-[67.5%_auto] xl:grid-cols-[74.25%_auto] xl:gap-2 2xl:grid-cols-[71.5%_auto]">
+    <div
+      className={` xl:max-w-[73rem] mx-auto  mb-10 md:grid md:grid-cols-[56.7%_auto] lg:grid-cols-[67.5%_auto] xl:grid-cols-[74.25%_auto] xl:gap-2 2xl:grid-cols-[71.5%_auto] ${freight.className}`}
+    >
       {" "}
       <div>
         <div>
@@ -81,6 +102,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
             <div className="pb-4 px-4 xl:px-0">
               <div className="  h-[17rem] object-cover  md:h-[21rem] lg:h-[31.5rem] xl:h-[39.5rem] 2xl:h-[38rem] w-full sm:h-[29.5rem]  relative">
                 <Image
+                  className="rounded-xl"
                   fill
                   sizes="(min-width: 640px) 640px,(min-width: 768px) 435px,(min-width: 1024px) 691px,(min-width: 1280px) 867px,(min-width: 1536px) 835px, 390px"
                   src={currentPost.imageurl}
@@ -112,14 +134,16 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                   : ""
               }`}
             >
-              <h1 className="font-semibold   mx-4 pb-2 text-sm tracking-wider text-[#004ff2] hidden md:flex xl:mx-0 hover:text-[#3a8cfb]">
+              <h1 className="font-semibold   mx-4 pb-2 text-sm tracking-wider text-slate-400 hidden md:flex xl:mx-0 hover:text-[#3a8cfb]">
                 {DeSlugify(
                   decodedslug[decodedslug.length - 2]
                 )[0].toUpperCase() +
                   DeSlugify(decodedslug[decodedslug.length - 2]).slice(1)}
               </h1>
             </Link>
-            <h1 className="text-2xl mx-4 xl:mx-0  font-semibold border-b-[0.1px] pb-4 mb-6 border-gray-500  capitalize sm:text-[25px] md:text-[30px] lg:text-[32px] xl:pb-6">
+            <h1
+              className={`text-2xl mx-4 xl:mx-0  border-b-[0.1px] pb-4 mb-6 border-gray-500  capitalize sm:text-[25px] md:text-[30px] lg:text-[35px] xl:pb-6 ${freightbigstraight.className}`}
+            >
               {DeSlugify(decodedslug[decodedslug.length - 1])}
             </h1>{" "}
             <div className="lg:flex lg:pb-4">
@@ -129,9 +153,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                   {/* <span className="underline p-author ">
                     {currentPost.author}
                   </span> */}{" "}
-                  <span className="underline p-author ">
-                   Savory Touch
-                  </span>
+                  <span className="underline p-author ">Savory Touch</span>
                 </h1>
                 <h2 className=" font-normal text-gray-600 dt-published">
                   Published:{" "}
@@ -222,8 +244,11 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                     </h1>
                   ))} */}
                 {contentItem.description && (
-                  <div className="leading-[1.7rem] font-[330] text-black mb-4">
+                  <div
+                    className={`  mb-4 ${freightlight.className} tracking-[1.275px] font-extralight leading-[27px]`}
+                  >
                     <MarkdownComponent text={contentItem.description} />
+                   
                   </div>
                 )}
                 {contentItem.url == "null" ||
@@ -279,7 +304,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
             {currentPost.quote}
           </h1>
         </div>{" "}
-        <div className="bg-[#eeeff1] py-8 px-4  hidden md:flex md:flex-col">
+        <div className=" py-8 px-4  hidden md:flex md:flex-col">
           <h1 className="text-lg font-semibold text-center pb-4">
             Related Stories
           </h1>
@@ -304,6 +329,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                   >
                     <div className="w-full h-[75px] relative">
                       <Image
+                        className="rounded-lg"
                         fill
                         sizes="100px"
                         src={item.imageurl}
@@ -340,7 +366,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                         }`}
                       >
                         {" "}
-                        <h1 className="text-xs text-[#1750d3] font-semibold tracking-wider hover:text-[#3a8cfb]">
+                        <h1 className="text-xs text-slate-400 font-semibold tracking-wider hover:text-[#3a8cfb]">
                           {DeSlugify(item.subsubsection)}
                         </h1>
                       </Link>
@@ -356,7 +382,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                             : ""
                         }`}
                       >
-                        <h1 className="text-xs text-[#1e50ce] font-semibold tracking-wider hover:text-[#3a8cfb]">
+                        <h1 className="text-xs text-slate-400  font-semibold tracking-wider hover:text-[#3a8cfb]">
                           {DeSlugify(item.subsection)}
                         </h1>
                       </Link>
@@ -369,7 +395,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                         }`}
                       >
                         {" "}
-                        <h1 className="text-xs text-[#1e50ce] font-semibold tracking-wider hover:text-[#3a8cfb]">
+                        <h1 className="text-xs text-slate-400  font-semibold tracking-wider hover:text-[#3a8cfb]">
                           {DeSlugify(item.section)}
                         </h1>
                       </Link>
@@ -389,7 +415,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                           : ""
                       }${item.title.toLowerCase()}`}
                     >
-                      <h1 className="text-sm font-semibold line-clamp-2  hover:text-[#004ff2]">
+                      <h1 className="text-sm font-medium line-clamp-2  hover:text-[#004ff2] text-slate-800">
                         {DeSlugify(item.title)}
                       </h1>
                     </Link>
@@ -400,7 +426,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
           </div>
         </div>{" "}
       </div>
-      <div className="bg-[#eeeff1] py-8 px-4 md:bg-[#ffffff] xl:pr-0">
+      <div className="py-8 px-4 md:bg-[#ffffff] xl:pr-0">
         <h1 className="text-lg font-semibold text-center pb-4">
           Related Stories
         </h1>
@@ -425,6 +451,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                 >
                   <div className="w-full h-[75px] relative">
                     <Image
+                      className="rounded-lg"
                       fill
                       sizes="100px"
                       src={item.imageurl}
@@ -461,7 +488,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                       }`}
                     >
                       {" "}
-                      <h1 className="text-xs text-[#1750d3] font-semibold tracking-wider hover:text-[#3a8cfb]">
+                      <h1 className="text-xs text-slate-400 font-semibold tracking-wider hover:text-[#3a8cfb]">
                         {DeSlugify(item.subsubsection)}
                       </h1>
                     </Link>
@@ -477,7 +504,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                           : ""
                       }`}
                     >
-                      <h1 className="text-xs text-[#1e50ce] font-semibold tracking-wider hover:text-[#3a8cfb]">
+                      <h1 className="text-xs text-slate-400  font-semibold tracking-wider hover:text-[#3a8cfb]">
                         {DeSlugify(item.subsection)}
                       </h1>
                     </Link>
@@ -490,7 +517,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                       }`}
                     >
                       {" "}
-                      <h1 className="text-xs text-[#1e50ce] font-semibold tracking-wider hover:text-[#3a8cfb]">
+                      <h1 className="text-xs text-slate-400  font-semibold tracking-wider hover:text-[#3a8cfb]">
                         {DeSlugify(item.section)}
                       </h1>
                     </Link>
@@ -510,7 +537,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                         : ""
                     }${item.title.toLowerCase()}`}
                   >
-                    <h1 className="text-sm font-semibold line-clamp-2 hover:text-[#004ff2] ">
+                    <h1 className="text-sm font-medium line-clamp-2 hover:text-[#004ff2] text-slate-800">
                       {DeSlugify(item.title)}
                     </h1>
                   </Link>

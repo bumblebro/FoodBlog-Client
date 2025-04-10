@@ -3,6 +3,12 @@ import { useEffect, useState } from "react";
 import { subSections } from "../../libs/Section";
 import DeSlugify from "@/libs/DeSlugify";
 
+import localFont from 'next/font/local'
+
+const freight = localFont({
+  src: '../../app/fonts/freight-neo-pro-book.otf',
+})
+
 interface CategoryPost {
   decodedslug: string[];
   totalBlogs: number;
@@ -26,7 +32,7 @@ function CategoryPost({ decodedslug, totalBlogs }: CategoryPost) {
   }
 
   return (
-    <div className=" text-center flex flex-col items-center pb-3  px-4 mt-[85px] md:mt-[91px] ">
+    <div className={`text-center flex flex-col items-center pb-3  px-4 mt-[85px] md:mt-[91px] ${freight.className} `}>
       <nav
         className="flex tracking-wider justify-start w-full xl:max-w-[73rem]"
         aria-label="Breadcrumb"

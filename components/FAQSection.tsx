@@ -1,6 +1,24 @@
 "use client";
 import { useState } from "react";
+import localFont from "next/font/local";
 
+// import Buttons from "../Buttons";
+
+const freight = localFont({
+  src: "../app/fonts/freight-neo-pro-book.otf",
+});
+
+const freightlight = localFont({
+  src: "../app/fonts/fonnts.com-FreightNeo_Pro_Light.otf",
+});
+
+const freightbig = localFont({
+  src: "../app/fonts/Freight Big Pro Medium Italic.otf",
+});
+
+const freightbigstraight = localFont({
+  src: "../app/fonts/Freight Big Pro Medium.otf",
+});
 export const FAQSection = ({ faqs }: any) => {
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -10,7 +28,7 @@ export const FAQSection = ({ faqs }: any) => {
 
   return (
     <div className="faq-section px-4 py-8">
-      <h2 className="text-lg font-semibold mb-4">Frequently Asked Questions</h2>
+      <h2 className={`text-lg font-semibold mb-4   ${freightbigstraight.className} italic`}>Frequently Asked Questions</h2>
       <div className="space-y-4">
         {faqs.map((item: any, index: any) => (
           <div key={index} className="border-b pb-4">
