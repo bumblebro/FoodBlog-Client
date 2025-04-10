@@ -2,7 +2,25 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { subSections } from "../../libs/Section";
 import DeSlugify from "@/libs/DeSlugify";
+import localFont from "next/font/local";
 
+// import Buttons from "../Buttons";
+
+const freight = localFont({
+  src: "../../app/fonts/freight-neo-pro-book.otf",
+});
+
+const freightlight = localFont({
+  src: "../../app/fonts/fonnts.com-FreightNeo_Pro_Light.otf",
+});
+
+const freightbig = localFont({
+  src: "../../app/fonts/Freight Big Pro Medium Italic.otf",
+});
+
+const freightbigstraight = localFont({
+  src: "../../app/fonts/Freight Big Pro Medium.otf",
+});
 interface Category {
   decodedslug: string[];
   totalBlogs: number;
@@ -27,7 +45,7 @@ function Category({ decodedslug, totalBlogs }: Category) {
   }
 
   return (
-    <div className=" text-center flex flex-col items-center gap-4 px-4 pb-3 mt-[85px] md:mt-[91px] ">
+    <div className={` text-center flex flex-col items-center gap-4 px-4 pb-3 mt-[85px] md:mt-[91px] ${freight.className}`}>
       <nav
         className="flex tracking-wider justify-start w-full xl:max-w-[73rem]"
         aria-label="Breadcrumb"

@@ -5,7 +5,26 @@ import GETBLOG from "./api/blogs/GETBLOG";
 import FeaturedPost from "@/components/featuredPost/FeaturedPost";
 import { Metadata } from "next";
 import Navbar from "@/components/navbar/Navbar";
+import localFont from "next/font/local";
 
+
+// import Buttons from "../Buttons";
+
+const freight = localFont({
+  src: "../app/fonts/freight-neo-pro-book.otf",
+});
+
+const freightlight = localFont({
+  src: "../app/fonts/fonnts.com-FreightNeo_Pro_Light.otf",
+});
+
+const freightbig = localFont({
+  src: "../app/fonts/Freight Big Pro Medium Italic.otf",
+});
+
+const freightbigstraight = localFont({
+  src: "../app/fonts/Freight Big Pro Medium.otf",
+});
 export const revalidate = 86400;
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -58,7 +77,7 @@ async function Home({ searchParams }: { searchParams: { pageNo: string } }) {
       <Navbar decodedslug={slugs} home={true} />
       <FeaturedPost posts={posts || []} />
       <div className="mt-32 md:mt-10 lg:mt-8 ">
-        <h1 className="text-center  text-lg font-semibold tracking-wider">
+        <h1 className={`text-center  text-lg font-semibold tracking-wider ${freightbig.className}`}>
           The Latest Recipes
         </h1>
         <BlogList posts={posts || []} />

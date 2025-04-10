@@ -29,7 +29,7 @@ function FeaturedPost({ posts }: posts) {
   let randomNum = Math.floor(Math.random() * posts.length) + 1;
   // let randomNum = 1;
   return (
-    <div className="  mx-auto   px-4 mt-[85px] md:mt-[91px] ">
+    <div className={`mx-auto   px-4 mt-[85px] md:mt-[91px] ${freight.className}`}>
       <div className="grid grid-cols-1 relative md:grid-cols-2   md:h-[25rem]  xl:h-[25rem] xl:max-w-[73rem] mx-auto ">
         <Link
           className="flex justify-center pt-4 h-64 relative md:h-full"
@@ -62,7 +62,7 @@ function FeaturedPost({ posts }: posts) {
             )}`}
           />{" "}
         </Link>{" "}
-        <div className="bg-[#F0F1F3] text-white left-[5%]  text-center  w-[90%] py-6 absolute top-[80%] px-6 md:relative md:h-full md:top-0 md:flex md:flex-col md:justify-center md:left-0 md:w-full   rounded-xl md:rounded-none text-[#000000]">
+        <div className="bg-[#F0F1F3]  left-[5%]  text-center  w-[90%] py-6 absolute top-[80%] px-6 md:relative md:h-full md:top-0 md:flex md:flex-col md:justify-center md:left-0 md:w-full   rounded-xl md:rounded-none text-[#000000]">
           {/* <h1 className="pb-3 text-[#6594F1] font-semibold md:text-lg md:pb-5">
             {posts[randomNum].section
               ? posts[randomNum].section
@@ -87,7 +87,7 @@ function FeaturedPost({ posts }: posts) {
               }`}
             >
               {" "}
-              <h1 className="pb-3 text-[#6594F1] font-semibold md:text-lg md:pb-5 hover:text-[#3a8cfb]">
+              <h1 className="pb-3 text-slate-400 font-semibold md:text-lg md:pb-5 hover:text-[#3a8cfb]">
                 {posts[randomNum].subsubsection?.replace(/-/g, " ")}
               </h1>
             </Link>
@@ -103,7 +103,7 @@ function FeaturedPost({ posts }: posts) {
                   : ""
               }`}
             >
-              <h1 className="pb-3 text-[#6594F1] font-semibold md:text-lg md:pb-5 hover:text-[#3a8cfb]">
+              <h1 className="pb-3 text-slate-400 font-semibold md:text-lg md:pb-5 hover:text-[#3a8cfb]">
                 {posts[randomNum].subsection?.replace(/-/g, " ")}
               </h1>
             </Link>
@@ -116,7 +116,7 @@ function FeaturedPost({ posts }: posts) {
               }`}
             >
               {" "}
-              <h1 className="pb-3 text-[#6594F1] font-semibold md:text-lg md:pb-5 hover:text-[#3a8cfb]">
+              <h1 className="pb-3 text-slate-400 font-semibold md:text-lg md:pb-5 hover:text-[#3a8cfb]">
                 {posts[randomNum]?.section?.replace(/-/g, " ")}
               </h1>
             </Link>
@@ -136,7 +136,7 @@ function FeaturedPost({ posts }: posts) {
                 : ""
             }${posts[randomNum]?.title}`}
           >
-            <h2 className={`text-xl font-semibold md:text-3xl hover:text-[#004ff2] ${freightlight.className}`}>
+            <h2 className={`text-xl font-semibold md:text-3xl hover:text-[#004ff2] ${freight.className} text-black`}>
               {posts[randomNum]?.title?.replace(/-/g, " ")}
             </h2>
           </Link>

@@ -89,7 +89,7 @@ function Footer() {
             </a>
           </div>
         </div>
-        <p className={`font-light text-sm italic px-4 text-center text-[#000000] ${freightbig.className}`}>
+        <p className={`font-light text-sm italic px-4 text-center text-[#000000] ${freight.className}`}>
           SavoryTouch offers general content intended solely for informational
           purposes. The information provided on this site is not a substitute
           for professional nutritional, dietary, or culinary advice. Always seek

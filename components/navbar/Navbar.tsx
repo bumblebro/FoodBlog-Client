@@ -16,6 +16,16 @@ const freightbig = localFont({
   src: '../../app/fonts/Freight Big Pro Medium Italic.otf',
 })
 
+
+const freightlight = localFont({
+  src: "../../app/fonts/fonnts.com-FreightNeo_Pro_Light.otf",
+});
+
+
+const freightbigstraight = localFont({
+  src: "../../app/fonts/Freight Big Pro Medium.otf",
+});
+
 // const CuisineTypes = [
 //   "Italian",
 //   "Mexican",
@@ -302,8 +312,8 @@ function Navbar({
           </div>
           <div className="flex justify-center items-center">
             <Link href="/" onClick={handleSidebar}>
-              <h1 className={`uppercase font-[650] tracking-[4px] text-xl   lg:text-[1.4rem] xl:text-[1.7rem] text-center text-[#000000] `}>
-                savorytouch
+              <h1 className={`uppercase font-[650] tracking-[4px] text-3xl   lg:text-[1.7rem] xl:text-[1.7rem] text-center text-[#000000] ${freightbig.className}`}>
+                SavoryTouch
               </h1>
             </Link>
           </div>
