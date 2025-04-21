@@ -139,10 +139,10 @@ function page() {
     <h1 className="text-3xl font-extrabold pb-6">About Savory Touch</h1>
     <p className="mb-4">By Shreyas M S</p>
     <p className="mb-4">
-      Hey there, food lover! Welcome to <strong>Savory Touch</strong> — a personal project crafted with love, passion, and a pinch of spice.
+      Hey there, food lover! Welcome to <strong>Savory Touch</strong>, a personal project crafted with love, passion, and a pinch of spice.
     </p>
     <p className="mb-4">
-      I believe food is more than just fuel — it&rsquo;s a story, a creative outlet, and a daily joy. My goal? Simple:
+      I believe food is more than just fuel. it&rsquo;s a story, a creative outlet, and a daily joy. My goal? Simple:
     </p>
     <h2 className="text-2xl font-semibold mb-4">
       ALL THE RECIPES YOU&rsquo;LL EVER NEED. PERIOD.
@@ -152,7 +152,7 @@ function page() {
     </p>
     <ul className="list-disc pl-6 mb-4">
       <li className="mb-2">
-        A growing library of delicious recipes — from comforting classics to bold new favorites.
+        A growing library of delicious recipes, from comforting classics to bold new favorites.
       </li>
       <li className="mb-2">
         Tips, tricks, and honest food experiences straight from my own cooking adventures.
@@ -212,7 +212,7 @@ function page() {
           <strong>Shreyas M S</strong> - Founder of Savory Touch
         </p>
         <p className="mb-4">
-          Hi, I&rsquo;m Shreyas — a self-taught foodie and tech enthusiast. I built Savory Touch to share my love for cooking with the world. Every recipe here is something I&rsquo;ve personally worked on, tasted, and enjoyed.
+          Hi, I&rsquo;m Shreyas, a self-taught foodie and tech enthusiast. I built Savory Touch to share my love for cooking with the world. Every recipe here is something I&rsquo;ve personally worked on, tasted, and enjoyed.
         </p>
         <p className="mb-4">
           I hope this website inspires you to try something new in the kitchen. Got something to share? Reach out any time via{" "}
@@ -233,7 +233,7 @@ function page() {
     </div>
 
     <p className="mb-4">Happy cooking,</p>
-    <p className="font-semibold">— Shreyas</p>
+    <p className="font-semibold">- Shreyas</p>
   </div>
 </div>
 
