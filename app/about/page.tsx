@@ -134,7 +134,7 @@ function page() {
       </div>
     </div>
 */
-    <div className="flex flex-col gap-4 px-4 pb-3 my-[130px] md:my-[105px] md:max-w-[45rem] mx-auto w-full leading-[1.7rem] font-[330] text-black">
+   <div className="flex flex-col gap-4 px-4 pb-3 my-[130px] md:my-[105px] md:max-w-[45rem] mx-auto w-full leading-[1.7rem] font-[330] text-black">
   <div className="container mx-auto px-4 py-12 text-left">
     <h1 className="text-3xl font-extrabold pb-6">About Savory Touch</h1>
     <p className="mb-4">By Shreyas M S</p>
@@ -142,13 +142,13 @@ function page() {
       Hey there, food lover! Welcome to <strong>Savory Touch</strong> — a personal project crafted with love, passion, and a pinch of spice.
     </p>
     <p className="mb-4">
-      I believe food is more than just fuel — it’s a story, a creative outlet, and a daily joy. My goal? Simple:
+      I believe food is more than just fuel — it&rsquo;s a story, a creative outlet, and a daily joy. My goal? Simple:
     </p>
     <h2 className="text-2xl font-semibold mb-4">
-      ALL THE RECIPES YOU&apos;LL EVER NEED. PERIOD.
+      ALL THE RECIPES YOU&rsquo;LL EVER NEED. PERIOD.
     </h2>
     <p className="mb-4">
-      Savory Touch is my personal space where I share tried-and-tested recipes, flavorful ideas, and a taste of my kitchen experiments. Here's what you can expect:
+      Savory Touch is my personal space where I share tried-and-tested recipes, flavorful ideas, and a taste of my kitchen experiments. Here&rsquo;s what you can expect:
     </p>
     <ul className="list-disc pl-6 mb-4">
       <li className="mb-2">
@@ -159,10 +159,10 @@ function page() {
       </li>
     </ul>
     <p className="mb-4">
-      Whether you’re a beginner in the kitchen or someone who enjoys experimenting with flavors, Savory Touch is here to make your cooking journey fun and flavorful. Explore the <strong>Recipes Section</strong> and find your next favorite dish.
+      Whether you&rsquo;re a beginner in the kitchen or someone who enjoys experimenting with flavors, Savory Touch is here to make your cooking journey fun and flavorful. Explore the <strong>Recipes Section</strong> and find your next favorite dish.
     </p>
     <p className="mb-4">
-      Got feedback, suggestions, or just want to say hi? I’d love to hear from you!
+      Got feedback, suggestions, or just want to say hi? I&rsquo;d love to hear from you!
     </p>
 
     <ul>
@@ -212,7 +212,7 @@ function page() {
           <strong>Shreyas M S</strong> - Founder of Savory Touch
         </p>
         <p className="mb-4">
-          Hi, I’m Shreyas — a self-taught foodie and tech enthusiast. I built Savory Touch to share my love for cooking with the world. Every recipe here is something I’ve personally worked on, tasted, and enjoyed.
+          Hi, I&rsquo;m Shreyas — a self-taught foodie and tech enthusiast. I built Savory Touch to share my love for cooking with the world. Every recipe here is something I&rsquo;ve personally worked on, tasted, and enjoyed.
         </p>
         <p className="mb-4">
           I hope this website inspires you to try something new in the kitchen. Got something to share? Reach out any time via{" "}
