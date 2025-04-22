@@ -20,7 +20,7 @@ function Footer() {
       <div className="pt-11 pb-20 text-white text-center flex flex-col gap-14 px-4 mx-auto xl:max-w-[73rem] ">
         <div className="flex flex-col items-center gap-3 ">
           <h1 className="text-md font-medium text-[#000000]">
-            Want to join our exclusive community?
+          Want delicious updates straight to your inbox?
           </h1>
           <span className="w-1/12 border-b mb-1"></span>
           <form
@@ -89,13 +89,13 @@ function Footer() {
             </a>
           </div>
         </div>
-        <p className={`font-light text-sm italic px-4 text-center text-[#000000] ${freight.className}`}>
+        {/* <p className={`font-light text-sm italic px-4 text-center text-[#000000] ${freight.className}`}>
           SavoryTouch offers general content intended solely for informational
           purposes. The information provided on this site is not a substitute
           for professional nutritional, dietary, or culinary advice. Always seek
           the advice of qualified professionals regarding any dietary concerns,
           health conditions, or food-related decisions.
-        </p>{" "}
+        </p> */}
         <p className="font-light text-sm  xl:w-[50%] text-center mx-auto text-[#000000] uppercase">
           © 2025 SavoryTouch. All Rights Reserved.
         </p>

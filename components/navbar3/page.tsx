@@ -1,0 +1,400 @@
+"use client";
+
+import {
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuItems,
+} from "@headlessui/react";
+import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
+import localFont from "next/font/local";
+import { useEffect, useState } from "react";
+import DeSlugify from "@/libs/DeSlugify";
+import { slugify } from "markdown-to-jsx";
+import { subSections } from "@/libs/Section";
+
+const freight = localFont({
+  src: "../../app/fonts/freight-neo-pro-book.otf",
+});
+
+const freightbig = localFont({
+  src: "../../app/fonts/Freight Big Pro Medium Italic.otf",
+});
+
+const freightlight = localFont({
+  src: "../../app/fonts/fonnts.com-FreightNeo_Pro_Light.otf",
+});
+
+const freightbigstraight = localFont({
+  src: "../../app/fonts/Freight Big Pro Medium.otf",
+});
+
+const CuisineTypes = [
+  "Italian",
+  "Mexican",
+  "Asian",
+  "Mediterranean",
+  "American",
+  "Indian",
+  "French",
+  "Japanese",
+  "Greek",
+  "Spanish",
+];
+
+const MealTypes = [
+  "Breakfast",
+  "Lunch",
+  "Dinner",
+  "Snacks",
+  "Desserts",
+  "Brunch",
+];
+
+const DietaryPreferences = [
+  "Vegetarian",
+  "Vegan",
+  "Gluten-Free",
+  "Keto",
+  "Paleo",
+  "Low-Carb",
+  "Dairy-Free",
+];
+
+const CookingTechniques = [
+  "Baking",
+  "Grilling",
+  "Roasting",
+  "Sautéing",
+  "Boiling",
+  "Steaming",
+  "Frying",
+  "Smoking",
+];
+const Ingredients = [
+  "Fruits",
+  "Vegetables",
+  "Proteins",
+  "Grains",
+  "Spices-and-Herbs",
+];
+
+const RecipeFormats = [
+  "Quick-Meals",
+  "Slow-Cooker",
+  "Instant-Pot",
+  "Batch-Cooking",
+  "No-Cook",
+  "One-Bowl-Meals",
+  "Kid-Friendly",
+];
+
+const ModernTrends = [
+  "Plant-Based",
+  "Fusion-Cuisine",
+  "Healthy-Swaps",
+  "Fermented-Foods",
+  "Zero-Waste-Cooking",
+];
+
+const SeasonalRecipes = ["Spring", "Summer", "Fall", "Winter", "Holiday"];
+
+const GlobalFlavors = [
+  "Middle-Eastern",
+  "South-American",
+  "African",
+  "Caribbean",
+  "Nordic",
+];
+
+const SpecialOccasions = [
+  "Birthday",
+  "Anniversary",
+  "Picnic",
+  "Potluck",
+  "Game-Day",
+];
+
+const navigation = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Recipes", href: "/recipes" },
+];
+
+function classNames(...classes: any) {
+  return classes.filter(Boolean).join(" ");
+}
+
+function Navbar3({
+  decodedslug,
+  home,
+  ispost,
+}: {
+  decodedslug?: any;
+  home?: boolean;
+  ispost?: boolean;
+}) {
+  const [categoryList, setCategoryList] = useState<string[]>([]);
+  const [lastElement, setLastElement] = useState(false);
+
+  useEffect(() => {
+    // console.log(`SLUGGGGG`, decodedslug);
+    setLastElement(false);
+
+    if (decodedslug?.length == 3) {
+      setLastElement(true);
+      // setLen(decodedslug.length);
+    } else setLastElement(false);
+
+    if (home == true) {
+      setCategoryList(decodedslug);
+      return;
+    }
+
+    if (Array.isArray(decodedslug) && decodedslug.length > 0) {
+      const input = decodedslug[decodedslug.length - 1]?.trim().toLowerCase();
+      for (const [category, subCategory] of Object.entries(subSections)) {
+        if (input === category.toLowerCase()) {
+          setCategoryList(Object.keys(subCategory));
+        }
+
+        // Check if the input matches a sub-category
+        for (const [subCategoryKey, items] of Object.entries(subCategory)) {
+          if (input === subCategoryKey.toLowerCase()) {
+            setCategoryList(items);
+          }
+        }
+
+        if (categoryList.length == 0) {
+          // setLastElement(true);
+
+          for (const [subCategoryKey, items] of Object.entries(subCategory)) {
+            if (
+              decodedslug[decodedslug.length - 2]?.trim().toLowerCase() ===
+              subCategoryKey.toLowerCase()
+            ) {
+              setCategoryList(items);
+            }
+          }
+
+          // decodedslug.pop();
+        }
+      }
+    }
+    // console.log(`lastElement`, lastElement);
+  }, []);
+
+  return (
+    <Disclosure as="nav" className="bg-[#F0F1F3]">
+      <div className="w-full mx-auto max-w-7xl px-5 sm:px-4 lg:px-4 xl:px-14 py-0">
+        <div className="relative flex h-16 items-center justify-between">
+          <div className="flex flex-1 items-center  sm:items-stretch justify-start">
+            <div className="flex shrink-0 items-center">
+              <Link href="/">
+                <h1
+                  className={` font-[650] tracking-[4px] text-3xl   lg:text-[1.7rem] xl:text-[1.7rem] text-center text-[#000000] ${freightbigstraight.className}`}
+                >
+                  SavoryTouch
+                </h1>
+              </Link>
+            </div>
+          </div>
+          <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+            {/* <button
+              type="button"
+              className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden"
+            >
+              <span className="absolute -inset-1.5" />
+              <span className="sr-only">View notifications</span>
+              <BellIcon aria-hidden="true" className="size-6" />
+            </button> */}
+            <div className="   flex items-center sm:hidden">
+              {/* Mobile menu button*/}
+              <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset">
+                <span className="absolute -inset-0.5" />
+                <span className="sr-only">Open main menu</span>
+                <Bars3Icon
+                  aria-hidden="true"
+                  className="block size-6 group-data-open:hidden"
+                />
+                <XMarkIcon
+                  aria-hidden="true"
+                  className="hidden size-6 group-data-open:block"
+                />
+              </DisclosureButton>
+            </div>
+            <div className="hidden  sm:block">
+              <div className="flex space-x-4">
+                {navigation.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    // aria-current={item.current ? "page" : undefined}
+                    className={classNames(
+                      "text-black hover:bg-gray-700 hover:text-white",
+                      "rounded-md px-3 py-2 text-lg uppercase font-bold"
+                    )}
+                  >
+                    {item.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="flex justify-center w-[90%] mx-auto ">
+        <div className="overflow-scroll  no-scrollbar w-full xl:max-w-[73rem] text-white text-xs tracking-widest font-extrabold py-2 pt-2">
+          <ul className="flex items-center text-xs gap-2  text-nowrap justify-evenly  sm:justify-center text-[#000000] uppercase font-light">
+            {home == true
+              ? categoryList.map((item, i) =>
+                  i === 0 ? (
+                    <li key={i}>
+                      <Link
+                        className="hover:text-[#004ff2] "
+                        key={i}
+                        href={`/${DeSlugify(item.toLowerCase())}`}
+                      >
+                        {DeSlugify(item)}
+                      </Link>
+                    </li>
+                  ) : (
+                    <>
+                      {" "}
+                      <li key={i}>
+                        <h1>|</h1>
+                      </li>
+                      <li key={i}>
+                        <Link
+                          className=" hover:text-[#004ff2]"
+                          key={i}
+                          href={`/${slugify(item.toLowerCase())}`}
+                        >
+                          {DeSlugify(item)}
+                        </Link>
+                      </li>
+                    </>
+                  )
+                )
+              : ispost == true
+              ? categoryList.map((item, i) => {
+                  const url = `/${decodedslug.slice(0, 2).join("/")}`;
+                  return i === 0 ? (
+                    <li key={i}>
+                      <Link
+                        className="hover:text-[#004ff2] "
+                        key={i}
+                        href={`${url}/${slugify(item.toLowerCase())}`}
+                      >
+                        {DeSlugify(item)}
+                      </Link>
+                    </li>
+                  ) : (
+                    <>
+                      <li key={i}>
+                        <h1>|</h1>
+                      </li>
+                      <li key={i}>
+                        <Link
+                          className="hover:text-[#004ff2] "
+                          key={i}
+                          href={`${url}/${slugify(item.toLowerCase())}`}
+                        >
+                          {DeSlugify(item)}
+                        </Link>
+                      </li>
+                    </>
+                  );
+                })
+              : categoryList.map((item, i) => {
+                  // const url = `/${decodedslug.join("/")}`;
+                  return (
+                    // <Link
+                    //   className=" "
+                    //   key={i}
+                    //   href={`${url}/${item.toLowerCase()}`}
+                    // >
+                    //   {DeSlugify(item)}
+                    // </Link>
+
+                    i === 0 ? (
+                      <li key={i}>
+                        {" "}
+                        <Link
+                          className=" hover:text-[#004ff2]"
+                          key={i}
+                          href={
+                            lastElement == true
+                              ? `${slugify(item.toLowerCase())}`
+                              : `
+                  ${decodedslug[decodedslug.length - 1]}/${slugify(
+                                  item.toLowerCase()
+                                )}`
+                          }
+                        >
+                          {DeSlugify(item)}
+                        </Link>
+                      </li>
+                    ) : (
+                      <>
+                        {" "}
+                        <li key={i}>
+                          <h1>|</h1>
+                        </li>{" "}
+                        <li>
+                          <Link
+                            className="hover:text-[#004ff2] "
+                            key={i}
+                            href={
+                              lastElement == true
+                                ? `${slugify(item.toLowerCase())}`
+                                : `
+                    ${decodedslug[decodedslug.length - 1]}/${slugify(
+                                    item.toLowerCase()
+                                  )}`
+                            }
+                          >
+                            {DeSlugify(item)}
+                          </Link>
+                        </li>
+                      </>
+                    )
+                  );
+                })}
+
+            {/* <h1>TRAILBLAZERS</h1>
+            <h1>Tech</h1>
+            <h1>Watches</h1>
+            <h1>Cars</h1>
+            <h1>Drinks</h1>
+            <h1>Entertainment</h1> */}
+          </ul>
+        </div>
+      </div>
+      <DisclosurePanel className="sm:hidden">
+        <div className="space-y-1 px-2 pt-2 pb-3">
+          {navigation.map((item) => (
+            <DisclosureButton
+              key={item.name}
+              as="a"
+              href={item.href}
+              // aria-current={item.current ? "page" : undefined}
+              className={classNames(
+                "text-black hover:bg-gray-700 hover:text-white",
+                "block rounded-md px-3 py-2 text-sm font-medium uppercase"
+              )}
+            >
+              {item.name}
+            </DisclosureButton>
+          ))}
+        </div>
+      </DisclosurePanel>
+    </Disclosure>
+  );
+}
+
+export default Navbar3;

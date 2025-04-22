@@ -150,6 +150,7 @@
 
 // export default page;
 
+import Navbar3 from "@/components/navbar3/page";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -158,49 +159,59 @@ export const metadata: Metadata = {
 
 function page() {
   return (
-    <div className="flex flex-col  gap-4 px-4 pb-3 my-[130px] md:my-[105px]   md:max-w-[45rem] mx-auto w-full leading-[1.7rem] font-[330] text-black h-[50vh]">
-      <h1 className="text-center text-3xl font-semibold py-6">Contact Us</h1>
-      <p>
-        We would love to hear from you! Whether you have a question, feedback,
-        or simply want to connect, feel free to reach out. Our team is here to
-        assist you and ensure that your experience on SavoryTouch is as seamless
-        and enjoyable as possible.
-      </p>
-      {/* <a
+    <>
+      {" "}
+      <Navbar3 />
+      <div className="flex flex-col  gap-4 px-4 pb-3 my-[130px] md:my-[105px]   md:max-w-[45rem] mx-auto w-full leading-[1.7rem] font-[330] text-black h-[50vh]">
+        <h1 className="text-center text-3xl font-semibold py-6">Contact Us</h1>
+        <p>
+          We would love to hear from you! Whether you have a question, feedback,
+          or simply want to connect, feel free to reach out. Our team is here to
+          assist you and ensure that your experience on SavoryTouch is as
+          seamless and enjoyable as possible.
+        </p>
+        {/* <a
         className="underline text-center text-blue-700 "
         href="mailto:savorytouch@gmail.com?"
       >
         Please click here to mail
       </a>{" "} */}
-      <ul>
-        <li>
-          📧 <strong>Email:</strong>{" "}
-          <a rel="noopener" className="underline" href="mailto:savorytouch13@gmail.com">
-          savorytouch13@gmail.com
-          </a>
-        </li>
-        <li>
-          📘 <strong>Facebook:</strong>{" "}
-          <a
-            rel="noopener" className="underline"
-            href="https://www.facebook.com/profile.php?id=61574819005948"
-            target="_blank"
-          >
-            facebook.com/profile.php?id=61574819005948
-          </a>
-        </li>
-        <li>
-          📌 <strong>Pinterest:</strong>{" "}
-          <a
-            rel="noopener" className="underline"
-            href="https://in.pinterest.com/SavoryTouchBlog/"
-            target="_blank"
-          >
-            in.pinterest.com/SavoryTouchBlog/
-          </a>
-        </li>
-      </ul>
-    </div>
+        <ul>
+          <li>
+            📧 <strong>Email:</strong>{" "}
+            <a
+              rel="noopener"
+              className="underline"
+              href="mailto:savorytouch13@gmail.com"
+            >
+              savorytouch13@gmail.com
+            </a>
+          </li>
+          <li>
+            📘 <strong>Facebook:</strong>{" "}
+            <a
+              rel="noopener"
+              className="underline"
+              href="https://www.facebook.com/profile.php?id=61574819005948"
+              target="_blank"
+            >
+              facebook.com/profile.php?id=61574819005948
+            </a>
+          </li>
+          <li>
+            📌 <strong>Pinterest:</strong>{" "}
+            <a
+              rel="noopener"
+              className="underline"
+              href="https://in.pinterest.com/SavoryTouchBlog/"
+              target="_blank"
+            >
+              in.pinterest.com/SavoryTouchBlog/
+            </a>
+          </li>
+        </ul>
+      </div>
+    </>
   );
 }
 

@@ -6,7 +6,9 @@ import FeaturedPost from "@/components/featuredPost/FeaturedPost";
 import { Metadata } from "next";
 import Navbar from "@/components/navbar/Navbar";
 import localFont from "next/font/local";
-
+import FoodSections from "@/components/FoodSections";
+import Navbar2 from "@/components/navbar2/page";
+import Navbar3 from "@/components/navbar3/page";
 
 // import Buttons from "../Buttons";
 
@@ -74,10 +76,14 @@ async function Home({ searchParams }: { searchParams: { pageNo: string } }) {
 
   return (
     <>
-      <Navbar decodedslug={slugs} home={true} />
+      {/* <Navbar2 decodedslug={slugs} home={true} /> */}
+      <Navbar3 decodedslug={slugs} home={true} />
       <FeaturedPost posts={posts || []} />
+      {/* <FoodSections /> */}
       <div className="mt-32 md:mt-10 lg:mt-8 ">
-        <h1 className={`text-center  text-lg font-semibold tracking-wider ${freightbig.className}`}>
+        <h1
+          className={`text-center  text-lg font-semibold tracking-wider ${freightbig.className}`}
+        >
           The Latest Recipes
         </h1>
         <BlogList posts={posts || []} />

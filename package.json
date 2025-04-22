@@ -12,6 +12,8 @@
   "dependencies": {
     "@builder.io/partytown": "^0.10.2",
     "@google/generative-ai": "^0.17.1",
+    "@headlessui/react": "^2.2.2",
+    "@heroicons/react": "^2.2.0",
     "@neondatabase/serverless": "^0.9.5",
     "@next/third-parties": "^14.2.13",
     "@nextui-org/react": "^2.4.6",
@@ -23,6 +25,8 @@
     "axios": "^1.7.5",
     "clipboard-copy": "^4.0.1",
     "feed": "^4.2.2",
+    "headlessui": "^0.0.0",
+    "heroicons": "^2.2.0",
     "html2canvas": "^1.4.1",
     "html2pdf.js": "^0.10.2",
     "install": "^0.13.0",

@@ -1,6 +1,6 @@
 "use client";
 
-import localFont from 'next/font/local'
+import localFont from "next/font/local";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Footer from "../footer/Footer";
@@ -9,18 +9,16 @@ import { subSections } from "@/libs/Section";
 import { slugify } from "markdown-to-jsx";
 
 const freight = localFont({
-  src: '../../app/fonts/freight-neo-pro-book.otf',
-})
+  src: "../../app/fonts/freight-neo-pro-book.otf",
+});
 
 const freightbig = localFont({
-  src: '../../app/fonts/Freight Big Pro Medium Italic.otf',
-})
-
+  src: "../../app/fonts/Freight Big Pro Medium Italic.otf",
+});
 
 const freightlight = localFont({
   src: "../../app/fonts/fonnts.com-FreightNeo_Pro_Light.otf",
 });
-
 
 const freightbigstraight = localFont({
   src: "../../app/fonts/Freight Big Pro Medium.otf",
@@ -185,7 +183,7 @@ function Navbar({
   home,
   ispost,
 }: {
-  decodedslug: any;
+  decodedslug?: any;
   home?: boolean;
   ispost?: boolean;
 }) {
@@ -197,7 +195,7 @@ function Navbar({
     // console.log(`SLUGGGGG`, decodedslug);
     setLastElement(false);
 
-    if (decodedslug.length == 3) {
+    if (decodedslug?.length == 3) {
       setLastElement(true);
       // setLen(decodedslug.length);
     } else setLastElement(false);
@@ -245,14 +243,24 @@ function Navbar({
   };
 
   return (
-    <nav className={` w-full z-20 top-0 start-0 fixed bg-[#F0F1F3] h-[72px] md:h-[80px] text-[#000000] ${freight.className}`}>
+    <nav
+      className={` w-full z-20 top-0 start-0 fixed bg-[#F0F1F3] h-[72px] md:h-[80px] text-[#000000] ${freight.className}`}
+    >
       <div className="  items-center justify-between mx-auto  py-2 md:py-3 ">
-        <div className="bg-[#F0F1F3]  grid grid-cols-3 px-3 xl:px-0 xl:max-w-[73rem] mx-auto  my-auto h-full text-white w-full ">
+        <div className="bg-[#F0F1F3] flex flex-row justify-between  xl:px-0 xl:max-w-[73rem] mx-auto  my-auto h-full text-white w-full ">
           {" "}
+          <div className="flex justify-center items-center">
+            <Link href="/" onClick={handleSidebar}>
+              <h1
+                className={`uppercase font-[650] tracking-[4px] text-3xl   lg:text-[1.7rem] xl:text-[1.7rem] text-center text-[#000000] ${freightbig.className}`}
+              >
+                SavoryTouch
+              </h1>
+            </Link>
+          </div>
           <div className="flex items-center gap-2 ">
-            {sidebar ? (
-              <button type="submit" title="Button">
-                <svg
+            {/* <button type="submit" title="Button"> */}
+            {/* <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -270,31 +278,17 @@ function Navbar({
                     strokeLinejoin="round"
                     d="M6 18 18 6M6 6l12 12"
                   />
-                </svg>
-              </button>
-            ) : (
-              <button type="submit" title="Button">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="#000000"
-                  className={`w-8 transform-gpu  duration-500 ${
-                    sidebar ? "rotate-180  " : "rotate-0 "
-                  }`}
-                  onClick={() => {
-                    setSideBar((prev: boolean) => !prev);
-                  }}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                  />
-                </svg>
-              </button>
-            )}
+                </svg> */}
+            <a href="/ " className="text-black">
+              Home
+            </a>{" "}
+            <a href="/about " className="text-black">
+              About
+            </a>
+            <a href="/recipes " className="text-black">
+              Recipes
+            </a>
+            {/* </button> */}
             {/* <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -309,13 +303,6 @@ function Navbar({
                 d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
               />
             </svg> */}
-          </div>
-          <div className="flex justify-center items-center">
-            <Link href="/" onClick={handleSidebar}>
-              <h1 className={`uppercase font-[650] tracking-[4px] text-3xl   lg:text-[1.7rem] xl:text-[1.7rem] text-center text-[#000000] ${freightbig.className}`}>
-                SavoryTouch
-              </h1>
-            </Link>
           </div>
           {/* <div className="flex justify-end items-center">
             <h1 className="bg-[#0c50e6] w-fit   uppercase tracking-wider text-xs font-semibold py-1 px-1 rounded-full md:text-base md:px-4 md:py-0 2xl:py-2 2xl:px-6 ">
@@ -344,8 +331,8 @@ function Navbar({
             </svg>
           </button> */}
         </div>
-        <div className="flex justify-center w-[90%] mx-auto">
-          <div className="overflow-scroll  no-scrollbar w-full xl:max-w-[73rem] text-white text-xs tracking-widest font-light py-2 pt-2">
+        <div className="flex justify-center w-[90%] mx-auto ">
+          <div className="overflow-scroll  no-scrollbar w-full xl:max-w-[73rem] text-white text-xs tracking-widest font-extrabold py-2 pt-2">
             <ul className="flex items-center text-xs gap-2  text-nowrap justify-evenly  sm:justify-center text-[#000000] uppercase">
               {home == true
                 ? categoryList.map((item, i) =>
@@ -472,14 +459,18 @@ function Navbar({
             </ul>
           </div>
         </div>
-        <div className="bg-[#F0F1F3] w-full px-4">
+        {/* <div className="bg-[#F0F1F3] w-full px-4">
           <div
             className={`  w-full ${
               !sidebar && "hidden"
             }     tracking-wider 2xl:px-44 lg:pt-8 mx-auto  xl:max-w-[73rem] px-3"
           id="navbar-sticky overflow-y-auto h-screen animate-fadein bg-[#F0F1F3] text-[#000000]`}
           >
-            <h1 className={`text-2xl font-semibold py-6 ${freightbig.className}`}>Sections</h1>
+            <h1
+              className={`text-2xl font-semibold py-6 ${freightbig.className}`}
+            >
+              Sections
+            </h1>
             <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 ">
               <div>
                 <Link
@@ -714,7 +705,7 @@ function Navbar({
             </div>{" "}
             <Footer />
           </div>{" "}
-        </div>
+        </div> */}
       </div>
     </nav>
   );

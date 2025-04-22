@@ -5,13 +5,13 @@ import GETBLOG from "../api/blogs/GETBLOG";
 import { Metadata } from "next";
 import Navbar from "@/components/navbar/Navbar";
 import localFont from "next/font/local";
+import Navbar3 from "@/components/navbar3/page";
 
 // import Buttons from "../Buttons";
 
 const freight = localFont({
   src: "../../app/fonts/freight-neo-pro-book.otf",
 });
-
 
 // const slugs = [
 //   "Cuisine Types",
@@ -105,9 +105,12 @@ async function Blog({ searchParams }: { searchParams: { pageNo: string } }) {
   return (
     <>
       {" "}
-      <Navbar decodedslug={slugs} home={true} />
-      <div className={`mt-28 px-4 ${freight.className}`}>
-        <h1 className={`text-center  text-2xl font-semibold tracking-wider pb-4  ${freight.className}`}>
+      {/* <Navbar decodedslug={slugs} home={true} /> */}
+      <Navbar3 decodedslug={slugs} ispost={true} />
+      <div className={`mt-10 px-4 ${freight.className}`}>
+        <h1
+          className={`text-center  text-2xl font-semibold tracking-wider pb-4  ${freight.className}`}
+        >
           The Latest Recipes - Page 1
         </h1>
         <h1 className="text-center  text-sm font-semibold tracking-wider">

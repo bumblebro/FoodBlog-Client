@@ -9,14 +9,13 @@ import { Metadata } from "next";
 import { stringify } from "querystring";
 import { useEffect, useState } from "react";
 import localFont from "next/font/local";
-
+import Navbar3 from "@/components/navbar3/page";
 
 // import Buttons from "../Buttons";
 
 const freight = localFont({
   src: "../../../../app/fonts/freight-neo-pro-book.otf",
 });
-
 
 interface params {
   params: {
@@ -131,8 +130,9 @@ async function BlogPage({ params }: params) {
 
   return (
     <>
-      <Navbar decodedslug={slugs} home={true} />
-      <div className={`mt-32 md:mt-22 lg:mt-13 ${freight.className}`}>
+      {/* <Navbar decodedslug={slugs} home={true} /> */}
+      <Navbar3 decodedslug={slugs} ispost={true} />
+      <div className={`mt-10 lg:mt-13 ${freight.className}`}>
         <h1 className="text-center  text-2xl font-semibold tracking-wider pb-4">
           The Latest Recipes - Page {params.pageNo.toString()}
         </h1>

@@ -17,7 +17,7 @@ import GenerateSlugs from "../../libs/GenerateSlugs";
 import { subSections } from "@/libs/Section";
 import DeSlugify from "@/libs/DeSlugify";
 import { notFound } from "next/navigation";
-
+import Navbar3 from "@/components/navbar3/page";
 
 interface params {
   params: {
@@ -499,7 +499,8 @@ async function BlogCategory({ params }: params) {
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
           />
-          <Navbar decodedslug={navslugs} ispost={true} />
+          {/* <Navbar decodedslug={navslugs} ispost={true} /> */}
+          <Navbar3 decodedslug={navslugs} ispost={true} />
           <CategoryPost decodedslug={slugs} totalBlogs={totalBlogs} />
           <BlogDisplay
             decodedslug={decodedslug}
@@ -510,7 +511,8 @@ async function BlogCategory({ params }: params) {
         </>
       ) : (
         <>
-          <Navbar decodedslug={slugs} />
+          {/* <Navbar decodedslug={slugs} /> */}
+          <Navbar3 decodedslug={slugs} />
           <Category decodedslug={slugs} totalBlogs={totalBlogs} />
           <BlogList posts={posts} />{" "}
           <Paginationbloglist

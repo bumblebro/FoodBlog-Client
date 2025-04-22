@@ -32,7 +32,7 @@ function CategoryPost({ decodedslug, totalBlogs }: CategoryPost) {
   }
 
   return (
-    <div className={`text-center flex flex-col items-center pb-3  px-4 mt-[85px] md:mt-[91px] ${freight.className} `}>
+    <div className={`text-center flex flex-col items-center pb-3  px-4 mt-[10px] md:mt-[10px] ${freight.className} `}>
       <nav
         className="flex tracking-wider justify-start w-full xl:max-w-[73rem]"
         aria-label="Breadcrumb"
