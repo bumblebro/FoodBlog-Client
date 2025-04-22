@@ -219,7 +219,7 @@ function Navbar({
           }
         }
 
-        if (categoryList.length == 0) {
+        if (categoryList?.length == 0) {
           // setLastElement(true);
 
           for (const [subCategoryKey, items] of Object.entries(subCategory)) {
@@ -335,7 +335,7 @@ function Navbar({
           <div className="overflow-scroll  no-scrollbar w-full xl:max-w-[73rem] text-white text-xs tracking-widest font-extrabold py-2 pt-2">
             <ul className="flex items-center text-xs gap-2  text-nowrap justify-evenly  sm:justify-center text-[#000000] uppercase">
               {home == true
-                ? categoryList.map((item, i) =>
+                ? categoryList?.map((item, i) =>
                     i === 0 ? (
                       <li key={i}>
                         <Link
@@ -365,7 +365,7 @@ function Navbar({
                     )
                   )
                 : ispost == true
-                ? categoryList.map((item, i) => {
+                ? categoryList?.map((item, i) => {
                     const url = `/${decodedslug.slice(0, 2).join("/")}`;
                     return i === 0 ? (
                       <li key={i}>
@@ -394,7 +394,7 @@ function Navbar({
                       </>
                     );
                   })
-                : categoryList.map((item, i) => {
+                : categoryList?.map((item, i) => {
                     // const url = `/${decodedslug.join("/")}`;
                     return (
                       // <Link
