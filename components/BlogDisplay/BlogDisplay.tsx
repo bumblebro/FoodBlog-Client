@@ -245,7 +245,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                   ))} */}
                 {contentItem.description && (
                   <div
-                    className={`  mb-4 ${freightlight.className} tracking-[1.275px] font-extralight leading-[27px]`}
+                    className={`  mb-4 ${freightlight.className} tracking-[1px] font-medium leading-[27px]`}
                   >
                     <MarkdownComponent text={contentItem.description} />
                    

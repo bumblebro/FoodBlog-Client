@@ -4,10 +4,6 @@ import {
   Disclosure,
   DisclosureButton,
   DisclosurePanel,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuItems,
 } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
@@ -16,7 +12,15 @@ import { useEffect, useState } from "react";
 import DeSlugify from "@/libs/DeSlugify";
 import { slugify } from "markdown-to-jsx";
 import { subSections } from "@/libs/Section";
+import Image from "next/image";
 
+import { Pacifico } from "next/font/google";
+// Pacifico
+const font = Pacifico({
+  weight: "400",
+  subsets: ["latin"],
+  // display: "swap",
+});
 const freight = localFont({
   src: "../../app/fonts/freight-neo-pro-book.otf",
 });
@@ -190,21 +194,30 @@ function Navbar3({
 
   return (
     <Disclosure as="nav" className="bg-[#F0F1F3]">
-      <div className="w-full mx-auto max-w-7xl px-5 sm:px-4 lg:px-4 xl:px-14 py-0">
-        <div className="relative flex h-16 items-center justify-between">
-          <div className="flex flex-1 items-center  sm:items-stretch justify-start">
-            <div className="flex shrink-0 items-center">
-              <Link href="/">
-                <h1
-                  className={` font-[650] tracking-[4px] text-3xl   lg:text-[1.7rem] xl:text-[1.7rem] text-center text-[#000000] ${freightbigstraight.className}`}
-                >
-                  SavoryTouch
-                </h1>
-              </Link>
-            </div>
-          </div>
-          <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            {/* <button
+      {({ open }) => (
+        <>
+          <div className="w-full mx-auto max-w-7xl px-5 sm:px-4 lg:px-4 xl:px-14 py-0">
+            <div className="relative flex h-16 items-center justify-between">
+              <div className="flex flex-1 items-center  sm:items-stretch justify-start">
+                <div className="flex shrink-0 items-center">
+                  <Link href="/">
+                    <h1
+                      className={` font-[650] tracking-[4px] text-3xl   lg:text-[1.7rem] xl:text-[1.7rem] text-center text-[#000000] ${font.className}`}
+                    >
+                      SavoryTouch
+                    </h1>
+                    {/* <Image
+                      src={logo}
+                      alt="savorytouch logo"
+                      width={100}
+                      height={100}
+                    ></Image> */}
+                    {/* <img src={logo} alt="" />{" "} */}
+                  </Link>
+                </div>
+              </div>
+              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                {/* <button
               type="button"
               className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden"
             >
@@ -212,187 +225,189 @@ function Navbar3({
               <span className="sr-only">View notifications</span>
               <BellIcon aria-hidden="true" className="size-6" />
             </button> */}
-            <div className="   flex items-center sm:hidden">
-              {/* Mobile menu button*/}
-              <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset">
-                <span className="absolute -inset-0.5" />
-                <span className="sr-only">Open main menu</span>
-                <Bars3Icon
-                  aria-hidden="true"
-                  className="block size-6 group-data-open:hidden"
-                />
-                <XMarkIcon
-                  aria-hidden="true"
-                  className="hidden size-6 group-data-open:block"
-                />
-              </DisclosureButton>
-            </div>
-            <div className="hidden  sm:block">
-              <div className="flex space-x-4">
-                {navigation.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    // aria-current={item.current ? "page" : undefined}
-                    className={classNames(
-                      "text-black hover:bg-gray-700 hover:text-white",
-                      "rounded-md px-3 py-2 text-lg uppercase font-bold"
+                <div className="   flex items-center sm:hidden">
+                  {/* Mobile menu button*/}
+                  <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 ">
+                    <span className="absolute -inset-0.5" />
+                    <span className="sr-only">Open main menu</span>
+                    {open ? (
+                      <XMarkIcon className="block size-6 " aria-hidden="true" />
+                    ) : (
+                      <Bars3Icon
+                        className="block size-6  "
+                        aria-hidden="true"
+                      />
                     )}
-                  >
-                    {item.name}
-                  </a>
-                ))}
+                  </DisclosureButton>
+                </div>
+                <div className="hidden  sm:block">
+                  <div className="flex space-x-4">
+                    {navigation.map((item) => (
+                      <a
+                        key={item.name}
+                        href={item.href}
+                        // aria-current={item.current ? "page" : undefined}
+                        className={classNames(
+                          "text-black hover:bg-gray-700 hover:text-white",
+                          "rounded-md px-3 py-2 text-lg uppercase font-bold"
+                        )}
+                      >
+                        {item.name}
+                      </a>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div className="flex justify-center w-[90%] mx-auto ">
-        <div className="overflow-scroll  no-scrollbar w-full xl:max-w-[73rem] text-white text-xs tracking-widest font-extrabold py-2 pt-2">
-          <ul className="flex items-center text-xs gap-2  text-nowrap justify-evenly  sm:justify-center text-[#000000] uppercase font-light">
-            {home == true
-              ? categoryList.map((item, i) =>
-                  i === 0 ? (
-                    <li key={i}>
-                      <Link
-                        className="hover:text-[#004ff2] "
-                        key={i}
-                        href={`/${DeSlugify(item.toLowerCase())}`}
-                      >
-                        {DeSlugify(item)}
-                      </Link>
-                    </li>
-                  ) : (
-                    <>
-                      {" "}
-                      <li key={i}>
-                        <h1>|</h1>
-                      </li>
-                      <li key={i}>
-                        <Link
-                          className=" hover:text-[#004ff2]"
-                          key={i}
-                          href={`/${slugify(item.toLowerCase())}`}
-                        >
-                          {DeSlugify(item)}
-                        </Link>
-                      </li>
-                    </>
-                  )
-                )
-              : ispost == true
-              ? categoryList.map((item, i) => {
-                  const url = `/${decodedslug.slice(0, 2).join("/")}`;
-                  return i === 0 ? (
-                    <li key={i}>
-                      <Link
-                        className="hover:text-[#004ff2] "
-                        key={i}
-                        href={`${url}/${slugify(item.toLowerCase())}`}
-                      >
-                        {DeSlugify(item)}
-                      </Link>
-                    </li>
-                  ) : (
-                    <>
-                      <li key={i}>
-                        <h1>|</h1>
-                      </li>
-                      <li key={i}>
-                        <Link
-                          className="hover:text-[#004ff2] "
-                          key={i}
-                          href={`${url}/${slugify(item.toLowerCase())}`}
-                        >
-                          {DeSlugify(item)}
-                        </Link>
-                      </li>
-                    </>
-                  );
-                })
-              : categoryList.map((item, i) => {
-                  // const url = `/${decodedslug.join("/")}`;
-                  return (
-                    // <Link
-                    //   className=" "
-                    //   key={i}
-                    //   href={`${url}/${item.toLowerCase()}`}
-                    // >
-                    //   {DeSlugify(item)}
-                    // </Link>
-
-                    i === 0 ? (
-                      <li key={i}>
-                        {" "}
-                        <Link
-                          className=" hover:text-[#004ff2]"
-                          key={i}
-                          href={
-                            lastElement == true
-                              ? `${slugify(item.toLowerCase())}`
-                              : `
-                  ${decodedslug[decodedslug.length - 1]}/${slugify(
-                                  item.toLowerCase()
-                                )}`
-                          }
-                        >
-                          {DeSlugify(item)}
-                        </Link>
-                      </li>
-                    ) : (
-                      <>
-                        {" "}
+          <div className="flex justify-center w-[90%] mx-auto ">
+            <div className="overflow-scroll  no-scrollbar w-full xl:max-w-[73rem] text-white text-xs tracking-widest font-extrabold py-2 pt-2">
+              <ul className="flex items-center text-xs gap-2  text-nowrap justify-evenly  sm:justify-center text-[#000000] uppercase font-light">
+                {home == true
+                  ? categoryList.map((item, i) =>
+                      i === 0 ? (
                         <li key={i}>
-                          <h1>|</h1>
-                        </li>{" "}
-                        <li>
                           <Link
                             className="hover:text-[#004ff2] "
                             key={i}
-                            href={
-                              lastElement == true
-                                ? `${slugify(item.toLowerCase())}`
-                                : `
-                    ${decodedslug[decodedslug.length - 1]}/${slugify(
-                                    item.toLowerCase()
-                                  )}`
-                            }
+                            href={`/${DeSlugify(item.toLowerCase())}`}
                           >
                             {DeSlugify(item)}
                           </Link>
                         </li>
-                      </>
+                      ) : (
+                        <>
+                          {" "}
+                          <li key={i}>
+                            <h1>|</h1>
+                          </li>
+                          <li key={i}>
+                            <Link
+                              className=" hover:text-[#004ff2]"
+                              key={i}
+                              href={`/${slugify(item.toLowerCase())}`}
+                            >
+                              {DeSlugify(item)}
+                            </Link>
+                          </li>
+                        </>
+                      )
                     )
-                  );
-                })}
+                  : ispost == true
+                  ? categoryList.map((item, i) => {
+                      const url = `/${decodedslug.slice(0, 2).join("/")}`;
+                      return i === 0 ? (
+                        <li key={i}>
+                          <Link
+                            className="hover:text-[#004ff2] "
+                            key={i}
+                            href={`${url}/${slugify(item.toLowerCase())}`}
+                          >
+                            {DeSlugify(item)}
+                          </Link>
+                        </li>
+                      ) : (
+                        <>
+                          <li key={i}>
+                            <h1>|</h1>
+                          </li>
+                          <li key={i}>
+                            <Link
+                              className="hover:text-[#004ff2] "
+                              key={i}
+                              href={`${url}/${slugify(item.toLowerCase())}`}
+                            >
+                              {DeSlugify(item)}
+                            </Link>
+                          </li>
+                        </>
+                      );
+                    })
+                  : categoryList.map((item, i) => {
+                      // const url = `/${decodedslug.join("/")}`;
+                      return (
+                        // <Link
+                        //   className=" "
+                        //   key={i}
+                        //   href={`${url}/${item.toLowerCase()}`}
+                        // >
+                        //   {DeSlugify(item)}
+                        // </Link>
 
-            {/* <h1>TRAILBLAZERS</h1>
+                        i === 0 ? (
+                          <li key={i}>
+                            {" "}
+                            <Link
+                              className=" hover:text-[#004ff2]"
+                              key={i}
+                              href={
+                                lastElement == true
+                                  ? `${slugify(item.toLowerCase())}`
+                                  : `
+                  ${decodedslug[decodedslug.length - 1]}/${slugify(
+                                      item.toLowerCase()
+                                    )}`
+                              }
+                            >
+                              {DeSlugify(item)}
+                            </Link>
+                          </li>
+                        ) : (
+                          <>
+                            {" "}
+                            <li key={i}>
+                              <h1>|</h1>
+                            </li>{" "}
+                            <li>
+                              <Link
+                                className="hover:text-[#004ff2] "
+                                key={i}
+                                href={
+                                  lastElement == true
+                                    ? `${slugify(item.toLowerCase())}`
+                                    : `
+                    ${decodedslug[decodedslug.length - 1]}/${slugify(
+                                        item.toLowerCase()
+                                      )}`
+                                }
+                              >
+                                {DeSlugify(item)}
+                              </Link>
+                            </li>
+                          </>
+                        )
+                      );
+                    })}
+
+                {/* <h1>TRAILBLAZERS</h1>
             <h1>Tech</h1>
             <h1>Watches</h1>
             <h1>Cars</h1>
             <h1>Drinks</h1>
             <h1>Entertainment</h1> */}
-          </ul>
-        </div>
-      </div>
-      <DisclosurePanel className="sm:hidden">
-        <div className="space-y-1 px-2 pt-2 pb-3">
-          {navigation.map((item) => (
-            <DisclosureButton
-              key={item.name}
-              as="a"
-              href={item.href}
-              // aria-current={item.current ? "page" : undefined}
-              className={classNames(
-                "text-black hover:bg-gray-700 hover:text-white",
-                "block rounded-md px-3 py-2 text-sm font-medium uppercase"
-              )}
-            >
-              {item.name}
-            </DisclosureButton>
-          ))}
-        </div>
-      </DisclosurePanel>
+              </ul>
+            </div>
+          </div>
+          <DisclosurePanel className="sm:hidden">
+            <div className="space-y-1 px-2 pt-2 pb-3">
+              {navigation.map((item) => (
+                <DisclosureButton
+                  key={item.name}
+                  as="a"
+                  href={item.href}
+                  // aria-current={item.current ? "page" : undefined}
+                  className={classNames(
+                    "text-black hover:bg-gray-700 hover:text-white",
+                    "block rounded-md px-3 py-2 text-sm font-medium uppercase"
+                  )}
+                >
+                  {item.name}
+                </DisclosureButton>
+              ))}
+            </div>
+          </DisclosurePanel>
+        </>
+      )}
     </Disclosure>
   );
 }

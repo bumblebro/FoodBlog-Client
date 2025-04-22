@@ -16,7 +16,7 @@ const freightbig = localFont({
 
 function Footer() {
   return (
-    <div className={`bg-[#F0F1F3] text-[#000000] ${freight.className}`}>
+    <div className={`bg-[#F0F1F3] text-[#000000] font-sans`}>
       <div className="pt-11 pb-20 text-white text-center flex flex-col gap-14 px-4 mx-auto xl:max-w-[73rem] ">
         <div className="flex flex-col items-center gap-3 ">
           <h1 className="text-md font-medium text-[#000000]">

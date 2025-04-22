@@ -110,7 +110,7 @@ function BlogList({ posts }: posts) {
             //     })}
             //   </div>
             // </div>
-            <div key={index} className="mt-4   flex flex-col justify-between ">
+            <div key={index} className="mt-4   flex flex-col  ">
               {" "}
               <div>
                 <Link
@@ -169,16 +169,16 @@ function BlogList({ posts }: posts) {
                     item.subsubsection !== "null"
                       ? item.subsubsection.toLowerCase() + "/"
                       : ""
-                  }${item.title.toLowerCase()}`}
+                  }`}
                 >
-                  <h2
-                    className={`font-medium hover:text-[#004ff2] text-slate-800 pt-4 ${freight.className}`}
+                  <h1
+                    className={`text-sm   pt-3   hover:text-[#3a8cfb]  text-slate-400 ${freight.className}`}
                   >
-                    {DeSlugify(item.title)}
-                  </h2>
+                    {DeSlugify(item.subsection)}
+                  </h1>
                 </Link>
               </div>
-              <div className="flex  pb-1 ">
+              <div className="pt-1 ">
                 <Link
                   href={`/${
                     item.section !== "null"
@@ -192,13 +192,13 @@ function BlogList({ posts }: posts) {
                     item.subsubsection !== "null"
                       ? item.subsubsection.toLowerCase() + "/"
                       : ""
-                  }`}
+                  }${item.title.toLowerCase()}`}
                 >
-                  <h1
-                    className={`text-sm      hover:text-[#3a8cfb]  text-slate-400 ${freight.className}`}
+                  <h2
+                    className={`font-extrabold hover:text-[#004ff2] text-slate-800  ${freight.className}`}
                   >
-                    {DeSlugify(item.subsection)}
-                  </h1>
+                    {DeSlugify(item.title)}
+                  </h2>
                 </Link>
               </div>
             </div>
