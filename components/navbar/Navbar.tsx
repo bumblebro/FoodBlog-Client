@@ -7,7 +7,14 @@ import Footer from "../footer/Footer";
 import DeSlugify from "@/libs/DeSlugify";
 import { subSections } from "@/libs/Section";
 import { slugify } from "markdown-to-jsx";
-
+import { Nunito_Sans } from "next/font/google";
+// Pacifico
+// Homemade_Apple
+const font = Nunito_Sans({
+  weight: "400",
+  subsets: ["latin"],
+  // display: "swap",
+});
 const freight = localFont({
   src: "../../app/fonts/freight-neo-pro-book.otf",
 });

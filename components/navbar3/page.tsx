@@ -15,7 +15,16 @@ import { subSections } from "@/libs/Section";
 import Image from "next/image";
 
 import { Pacifico } from "next/font/google";
+import { Nunito_Sans } from "next/font/google";
 // Pacifico
+// Homemade_Apple
+const Nunito = Nunito_Sans({
+  weight: "800",
+  subsets: ["latin"],
+  // display: "swap",
+});
+// Pacifico
+// Homemade_Apple
 const font = Pacifico({
   weight: "400",
   subsets: ["latin"],
@@ -202,7 +211,7 @@ function Navbar3({
                 <div className="flex shrink-0 items-center">
                   <Link href="/">
                     <h1
-                      className={` font-[650] tracking-[4px] text-3xl   lg:text-[1.7rem] xl:text-[1.7rem] text-center text-[#000000] ${font.className}`}
+                      className={`  tracking-[4px] text-xl   lg:text-[1.7rem] xl:text-[1.7rem] text-center text-[#000000] ${font.className}`}
                     >
                       SavoryTouch
                     </h1>
@@ -225,7 +234,9 @@ function Navbar3({
               <span className="sr-only">View notifications</span>
               <BellIcon aria-hidden="true" className="size-6" />
             </button> */}
-                <div className="   flex items-center sm:hidden">
+                <div
+                  className={` flex items-center sm:hidden ${Nunito.className}`}
+                >
                   {/* Mobile menu button*/}
                   <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 ">
                     <span className="absolute -inset-0.5" />
@@ -388,7 +399,7 @@ function Navbar3({
               </ul>
             </div>
           </div>
-          <DisclosurePanel className="sm:hidden">
+          <DisclosurePanel className={`sm:hidden ${Nunito.className}`}>
             <div className="space-y-1 px-2 pt-2 pb-3">
               {navigation.map((item) => (
                 <DisclosureButton
@@ -398,7 +409,7 @@ function Navbar3({
                   // aria-current={item.current ? "page" : undefined}
                   className={classNames(
                     "text-black hover:bg-gray-700 hover:text-white",
-                    "block rounded-md px-3 py-2 text-sm font-medium uppercase"
+                    `block rounded-md px-3 py-2 text-sm font-medium uppercase`
                   )}
                 >
                   {item.name}

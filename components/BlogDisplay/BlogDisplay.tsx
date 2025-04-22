@@ -13,11 +13,18 @@ import ShareButtons from "../ShareButtons";
 import localFont from "next/font/local";
 
 // import Buttons from "../Buttons";
+import { Nunito_Sans } from "next/font/google";
+// Pacifico
+// Homemade_Apple
+const font = Nunito_Sans({
+  weight: "400",
+  subsets: ["latin"],
+  // display: "swap",
+});
 
 const freight = localFont({
-  src: '../../app/fonts/freight-neo-pro-book.otf',
-})
-
+  src: "../../app/fonts/freight-neo-pro-book.otf",
+});
 
 const freightlight = localFont({
   src: "../../app/fonts/fonnts.com-FreightNeo_Pro_Light.otf",
@@ -93,7 +100,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
 
   return (
     <div
-      className={` xl:max-w-[73rem] mx-auto  mb-10 md:grid md:grid-cols-[56.7%_auto] lg:grid-cols-[67.5%_auto] xl:grid-cols-[74.25%_auto] xl:gap-2 2xl:grid-cols-[71.5%_auto] ${freight.className}`}
+      className={` xl:max-w-[73rem] mx-auto  mb-10 md:grid md:grid-cols-[56.7%_auto] lg:grid-cols-[67.5%_auto] xl:grid-cols-[74.25%_auto] xl:gap-2 2xl:grid-cols-[71.5%_auto] ${font.className}`}
     >
       {" "}
       <div>
@@ -134,7 +141,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                   : ""
               }`}
             >
-              <h1 className="font-semibold   mx-4 pb-2 text-sm tracking-wider text-slate-400 hidden md:flex xl:mx-0 hover:text-[#3a8cfb]">
+              <h1 className="font-semibold   mx-4 pb-2 text-sm text-slate-400 hidden md:flex xl:mx-0 hover:text-[#3a8cfb]">
                 {DeSlugify(
                   decodedslug[decodedslug.length - 2]
                 )[0].toUpperCase() +
@@ -142,12 +149,12 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
               </h1>
             </Link>
             <h1
-              className={`text-2xl mx-4 xl:mx-0  border-b-[0.1px] pb-4 mb-6 border-gray-500  capitalize sm:text-[25px] md:text-[30px] lg:text-[35px] xl:pb-6 ${freightbigstraight.className}`}
+              className={`text-2xl mx-4 xl:mx-0  border-b-[0.1px] pb-4 mb-6 border-gray-500  capitalize sm:text-[25px] md:text-[30px] lg:text-[35px] xl:pb-6 ${font.className}`}
             >
               {DeSlugify(decodedslug[decodedslug.length - 1])}
             </h1>{" "}
             <div className="lg:flex lg:pb-4">
-              <div className="mx-4 text-xs tracking-wider flex flex-col gap-2 pb-4 xl:mx-0">
+              <div className="mx-4 text-xs  flex flex-col gap-2 pb-4 xl:mx-0">
                 <h1 className="font-semibold">
                   By{" "}
                   {/* <span className="underline p-author ">
@@ -164,7 +171,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                   })}
                 </h2>
               </div>
-              <div className="flex items-center gap-2 text-xs font-semibold tracking-wider mb-4 px-4 lg:w-[45%] lg:ml-auto xl:px-0 2xl:w-[40%]">
+              <div className="flex items-center gap-2 text-xs font-semibold  mb-4 px-4 lg:w-[45%] lg:ml-auto xl:px-0 2xl:w-[40%]">
                 <CopyBtn
                   text={`/${
                     currentPost.section !== "null"
@@ -245,10 +252,9 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                   ))} */}
                 {contentItem.description && (
                   <div
-                    className={`  mb-4 ${freightlight.className} tracking-[1px] font-medium leading-[27px]`}
+                    className={`  mb-4 ${font.className}  font-medium leading-[27px]`}
                   >
                     <MarkdownComponent text={contentItem.description} />
-                   
                   </div>
                 )}
                 {contentItem.url == "null" ||
@@ -366,7 +372,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                         }`}
                       >
                         {" "}
-                        <h1 className="text-xs text-slate-400 font-semibold tracking-wider hover:text-[#3a8cfb]">
+                        <h1 className="text-xs text-slate-400 font-semibold  hover:text-[#3a8cfb]">
                           {DeSlugify(item.subsubsection)}
                         </h1>
                       </Link>
@@ -382,7 +388,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                             : ""
                         }`}
                       >
-                        <h1 className="text-xs text-slate-400  font-semibold tracking-wider hover:text-[#3a8cfb]">
+                        <h1 className="text-xs text-slate-400  font-semibold  hover:text-[#3a8cfb]">
                           {DeSlugify(item.subsection)}
                         </h1>
                       </Link>
@@ -395,7 +401,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                         }`}
                       >
                         {" "}
-                        <h1 className="text-xs text-slate-400  font-semibold tracking-wider hover:text-[#3a8cfb]">
+                        <h1 className="text-xs text-slate-400  font-semibold  hover:text-[#3a8cfb]">
                           {DeSlugify(item.section)}
                         </h1>
                       </Link>
@@ -488,7 +494,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                       }`}
                     >
                       {" "}
-                      <h1 className="text-xs text-slate-400 font-semibold tracking-wider hover:text-[#3a8cfb]">
+                      <h1 className="text-xs text-slate-400 font-semibold  hover:text-[#3a8cfb]">
                         {DeSlugify(item.subsubsection)}
                       </h1>
                     </Link>
@@ -504,7 +510,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                           : ""
                       }`}
                     >
-                      <h1 className="text-xs text-slate-400  font-semibold tracking-wider hover:text-[#3a8cfb]">
+                      <h1 className="text-xs text-slate-400  font-semibold  hover:text-[#3a8cfb]">
                         {DeSlugify(item.subsection)}
                       </h1>
                     </Link>
@@ -517,7 +523,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                       }`}
                     >
                       {" "}
-                      <h1 className="text-xs text-slate-400  font-semibold tracking-wider hover:text-[#3a8cfb]">
+                      <h1 className="text-xs text-slate-400  font-semibold  hover:text-[#3a8cfb]">
                         {DeSlugify(item.section)}
                       </h1>
                     </Link>
