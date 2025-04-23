@@ -10,8 +10,19 @@ import FoodSections from "@/components/FoodSections";
 import Navbar2 from "@/components/navbar2/page";
 import Navbar3 from "@/components/navbar3/page";
 
-// import Buttons from "../Buttons";
+import { Poppins } from "next/font/google";
+// Poppins
+const Poppins700 = Poppins({
+  weight: "700",
+  subsets: ["latin"],
+  display: "swap",
+});
 
+const Poppins400 = Poppins({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
 const freight = localFont({
   src: "../app/fonts/freight-neo-pro-book.otf",
 });
@@ -82,7 +93,7 @@ async function Home({ searchParams }: { searchParams: { pageNo: string } }) {
       {/* <FoodSections /> */}
       <div className="mt-32 md:mt-10 lg:mt-8 ">
         <h1
-          className={`text-center  text-lg font-semibold tracking-wider ${freightbig.className}`}
+          className={`text-center  text-lg font-semibold tracking-wider ${Poppins700.className}`}
         >
           The Latest Recipes
         </h1>

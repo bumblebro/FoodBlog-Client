@@ -4,6 +4,20 @@ import Image from "next/image";
 import Link from "next/link";
 import localFont from "next/font/local";
 import { Pacifico } from "next/font/google";
+
+import { Poppins } from "next/font/google";
+// Poppins
+const Poppins700 = Poppins({
+  weight: "700",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const Poppins400 = Poppins({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
 // Pacifico
 const font = Pacifico({
   weight: "400",
@@ -36,7 +50,7 @@ function FeaturedPost({ posts }: posts) {
   // let randomNum = 1;
   return (
     <div
-      className={`mx-auto   px-4 mt-[10px] md:mt-[10px] ${freight.className}`}
+      className={`mx-auto   px-4 mt-[10px] md:mt-[10px] ${Poppins400.className}`}
     >
       <div className="grid grid-cols-1 relative md:grid-cols-2   md:h-[25rem]  xl:h-[25rem] xl:max-w-[73rem] mx-auto ">
         <Link
@@ -95,7 +109,7 @@ function FeaturedPost({ posts }: posts) {
               }`}
             >
               {" "}
-              <h1 className="pb-3 text-slate-400 font-semibold md:text-lg md:pb-5 hover:text-[#3a8cfb]">
+              <h1 className="pb-3 text-black font-semibold md:text-lg md:pb-5 hover:underline">
                 {posts[randomNum].subsubsection?.replace(/-/g, " ")}
               </h1>
             </Link>
@@ -111,7 +125,7 @@ function FeaturedPost({ posts }: posts) {
                   : ""
               }`}
             >
-              <h1 className="pb-3 text-slate-400 font-semibold md:text-lg md:pb-5 hover:text-[#3a8cfb]">
+              <h1 className="pb-3 text-black font-semibold md:text-lg md:pb-5 hover:underline">
                 {posts[randomNum].subsection?.replace(/-/g, " ")}
               </h1>
             </Link>
@@ -124,7 +138,7 @@ function FeaturedPost({ posts }: posts) {
               }`}
             >
               {" "}
-              <h1 className="pb-3 text-slate-400 font-semibold md:text-lg md:pb-5 hover:text-[#3a8cfb]">
+              <h1 className="pb-3 text-black font-semibold md:text-lg md:pb-5 hover:underline">
                 {posts[randomNum]?.section?.replace(/-/g, " ")}
               </h1>
             </Link>
@@ -145,7 +159,7 @@ function FeaturedPost({ posts }: posts) {
             }${posts[randomNum]?.title}`}
           >
             <h2
-              className={`text-xl font-semibold md:text-3xl hover:text-[#004ff2] ${freight.className} text-black`}
+              className={`text-xl font-semibold md:text-3xl hover:underline ${Poppins700.className} text-black`}
             >
               {posts[randomNum]?.title?.replace(/-/g, " ")}
             </h2>

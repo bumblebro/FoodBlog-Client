@@ -5,8 +5,19 @@ import { useState, useRef, useEffect } from "react";
 // import html2pdf from "html2pdf.js";
 import localFont from "next/font/local";
 
-// import Buttons from "../Buttons";
+import { Poppins } from "next/font/google";
+// Poppins
+const Poppins700 = Poppins({
+  weight: "700",
+  subsets: ["latin"],
+  display: "swap",
+});
 
+const Poppins400 = Poppins({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
 const freight = localFont({
   src: "../app/fonts/freight-neo-pro-book.otf",
 });
@@ -19,9 +30,6 @@ const freightbig = localFont({
   src: "../app/fonts/Freight Big Pro Medium Italic.otf",
 });
 
-const freightbigstraight = localFont({
-  src: "../app/fonts/Freight Big Pro Medium.otf",
-});
 
 function timeToISO8601Duration(seconds: number) {
   const units = [
@@ -114,7 +122,7 @@ const RecipePage = ({ currentPost }: any) => {
       >
         {/* Recipe Title */}
         <h1
-          className={`text-3xl font-serif text-center font-bold mb-6 text-[#000000] p-name ${freightbigstraight.className}`}
+          className={`text-3xl font-serif text-center font-bold mb-6 text-[#000000] p-name ${Poppins700.className}`}
         >
           {DeSlugify(currentPost?.title)}
         </h1>
@@ -128,9 +136,9 @@ const RecipePage = ({ currentPost }: any) => {
         </p>
 
         {/* Yield & Time Info */}
-        <div className="bg-[#f0f1f3] p-4 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6">
+        <div className=" p-4 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6">
           <h2
-            className={`text-xl font-serif text-[#000000] mb-3  ${freightbigstraight.className} italic`}
+            className={`text-xl font-serif text-[#000000] mb-3  ${Poppins700.className} italic`}
           >
             ⏳ Yield & Time
           </h2>
@@ -174,7 +182,7 @@ const RecipePage = ({ currentPost }: any) => {
               className={`px-5 py-2 rounded-lg text-base font-semibold transition-all ${
                 selectedQuantity === qty
                   ? "bg-[#000000] text-white shadow-md"
-                  : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+                  : " text-gray-800 hover:bg-gray-200"
               }`}
             >
               {qty}
@@ -183,22 +191,22 @@ const RecipePage = ({ currentPost }: any) => {
         </div>
 
         {/* Ingredients */}
-        {/* <div className="bg-[#f0f1f3] p-6 rounded-lg shadow-md border border-gray-300 mb-6">
+        {/* <div className=" p-6 rounded-lg shadow-md border border-gray-300 mb-6">
           <h2 className="text-xl font-serif text-[#6b4226] mb-3">
             🍽 Ingredients
           </h2>
           <ul className="list-disc pl-5 space-y-2 text-lg">
             {recipeDetails.ingredients.map((ingredient: any, index: any) => (
-              <li key={index} className="text-gray-700 text-base">
+              <li key={index} className="text-black text-base">
                 {ingredient.quantity} {ingredient.name}
               </li>
             ))}
           </ul>
         </div> */}
 
-        <div className="bg-[#f0f1f3] p-4 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6">
+        <div className=" p-4 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6">
           <h2
-            className={`text-xl font-serif text-[#000000] mb-3  ${freightbigstraight.className} italic`}
+            className={`text-xl font-serif text-[#000000] mb-3  ${Poppins700.className} italic`}
           >
             🍽 Ingredients
           </h2>
@@ -206,7 +214,7 @@ const RecipePage = ({ currentPost }: any) => {
             {recipeDetails?.ingredients?.map((ingredient: any, index: any) => (
               <li
                 key={index}
-                className={`text-gray-700 text-base ${
+                className={`text-black text-base ${
                   checkedItems[index] ? "line-through" : ""
                 }`}
               >
@@ -230,9 +238,9 @@ const RecipePage = ({ currentPost }: any) => {
         </div>
 
         {/* Instructions */}
-        <div className="bg-[#f0f1f3] p-4 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6">
+        <div className=" p-4 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6">
           <h2
-            className={`text-xl  text-[#000000] mb-3  ${freightbigstraight.className} italic`}
+            className={`text-xl  text-[#000000] mb-3  ${Poppins700.className} italic`}
           >
             📖 Instructions
           </h2>
@@ -240,7 +248,7 @@ const RecipePage = ({ currentPost }: any) => {
             {currentPost?.instructions?.map((instruction: any, index: any) => (
               <li
                 key={index}
-                className="text-gray-700 text-base e-instructions
+                className="text-black text-base e-instructions
 "
               >
                 {instruction}
@@ -250,15 +258,15 @@ const RecipePage = ({ currentPost }: any) => {
         </div>
 
         {/* Notes */}
-        <div className="bg-[#f0f1f3] p-4 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6">
+        <div className=" p-4 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6">
           <h2
-            className={`text-xl font-serif text-[#000000] mb-3  ${freightbigstraight.className} italic`}
+            className={`text-xl font-serif text-[#000000] mb-3  ${Poppins700.className} italic`}
           >
             📝 Notes
           </h2>
           <ul className="list-disc pl-5 space-y-2 text-lg">
             {recipeDetails?.notes?.map((note: any, index: any) => (
-              <li key={index} className="text-gray-700 text-base">
+              <li key={index} className="text-black text-base">
                 {note}
               </li>
             ))}
@@ -266,8 +274,8 @@ const RecipePage = ({ currentPost }: any) => {
         </div>
 
         {/* Nutrition Info */}
-        <div className="bg-[#f0f1f3] p-4 sm:p-6 rounded-lg shadow-md border border-gray-300 text-">
-        <h2 className={`text-xl font-serif text-[#000000] mb-3  ${freightbigstraight.className} italic`}>
+        <div className=" p-4 sm:p-6 rounded-lg shadow-md border border-gray-300 text-">
+        <h2 className={`text-xl font-serif text-[#000000] mb-3  ${Poppins700.className} italic`}>
 
             🍎 Nutrition
           </h2>
@@ -387,7 +395,7 @@ export default RecipePage;
 //             </p>
 
 //             {/* Yield & Time Info */}
-//             <div className="bg-[#f0f1f3] p-6 rounded-lg shadow-md border border-gray-300 mb-6">
+//             <div className=" p-6 rounded-lg shadow-md border border-gray-300 mb-6">
 //               <h2 className="text-xl font-serif text-[#6b4226] mb-3">
 //                 ⏳ Yield & Time
 //               </h2>
@@ -420,7 +428,7 @@ export default RecipePage;
 //                   className={`px-5 py-2 rounded-lg text-base font-semibold transition-all ${
 //                     selectedQuantity === qty
 //                       ? "bg-[#b5651d] text-white shadow-md"
-//                       : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+//                       : " text-gray-800 hover:bg-gray-200"
 //                   }`}
 //                 >
 //                   {qty}
@@ -429,20 +437,20 @@ export default RecipePage;
 //             </div>
 
 //             {/* Ingredients */}
-//             {/* <div className="bg-[#f0f1f3] p-6 rounded-lg shadow-md border border-gray-300 mb-6">
+//             {/* <div className=" p-6 rounded-lg shadow-md border border-gray-300 mb-6">
 //             <h2 className="text-xl font-serif text-[#6b4226] mb-3">
 //               🍽 Ingredients
 //             </h2>
 //             <ul className="list-disc pl-5 space-y-2 text-lg">
 //               {recipeDetails.ingredients.map((ingredient: any, index: any) => (
-//                 <li key={index} className="text-gray-700 text-base">
+//                 <li key={index} className="text-black text-base">
 //                   {ingredient.quantity} {ingredient.name}
 //                 </li>
 //               ))}
 //             </ul>
 //           </div> */}
 
-//             <div className="bg-[#f0f1f3] p-6 rounded-lg shadow-md border border-gray-300 mb-6">
+//             <div className=" p-6 rounded-lg shadow-md border border-gray-300 mb-6">
 //               <h2 className="text-xl font-serif text-[#6b4226] mb-3">
 //                 🍽 Ingredients
 //               </h2>
@@ -451,7 +459,7 @@ export default RecipePage;
 //                   (ingredient: any, index: any) => (
 //                     <li
 //                       key={index}
-//                       className={`text-gray-700 text-base ${
+//                       className={`text-black text-base ${
 //                         checkedItems[index] ? "line-through" : ""
 //                       }`}
 //                     >
@@ -473,14 +481,14 @@ export default RecipePage;
 //             </div>
 
 //             {/* Instructions */}
-//             <div className="bg-[#f0f1f3] p-6 rounded-lg shadow-md border border-gray-300 mb-6">
+//             <div className=" p-6 rounded-lg shadow-md border border-gray-300 mb-6">
 //               <h2 className="text-xl font-serif text-[#6b4226] mb-3">
 //                 📖 Instructions
 //               </h2>
 //               <ol className="list-decimal pl-5 space-y-2 text-lg">
 //                 {currentPost.instructions?.map(
 //                   (instruction: any, index: any) => (
-//                     <li key={index} className="text-gray-700 text-base">
+//                     <li key={index} className="text-black text-base">
 //                       {instruction}
 //                     </li>
 //                   )
@@ -489,13 +497,13 @@ export default RecipePage;
 //             </div>
 
 //             {/* Notes */}
-//             <div className="bg-[#f0f1f3] p-6 rounded-lg shadow-md border border-gray-300 mb-6">
+//             <div className=" p-6 rounded-lg shadow-md border border-gray-300 mb-6">
 //               <h2 className="text-xl font-serif text-[#6b4226] mb-3">
 //                 📝 Notes
 //               </h2>
 //               <ul className="list-disc pl-5 space-y-2 text-lg">
 //                 {recipeDetails.notes.map((note: any, index: any) => (
-//                   <li key={index} className="text-gray-700 text-base">
+//                   <li key={index} className="text-black text-base">
 //                     {note}
 //                   </li>
 //                 ))}
@@ -503,7 +511,7 @@ export default RecipePage;
 //             </div>
 
 //             {/* Nutrition Info */}
-//             <div className="bg-[#f0f1f3] p-6 rounded-lg shadow-md border border-gray-300">
+//             <div className=" p-6 rounded-lg shadow-md border border-gray-300">
 //               <h2 className="text-xl font-serif text-[#6b4226] mb-3">
 //                 🍎 Nutrition
 //               </h2>
@@ -554,7 +562,7 @@ export default RecipePage;
 //   //     </h1>
 
 //   //     {/* Yield & Time Info */}
-//   //     <div className="bg-[#f0f1f3] p-6 rounded-lg shadow-md border border-gray-300 mb-6">
+//   //     <div className=" p-6 rounded-lg shadow-md border border-gray-300 mb-6">
 //   //       <h2 className="text-xl font-serif text-[#6b4226] mb-3">
 //   //         ⏳ Yield & Time
 //   //       </h2>
@@ -586,7 +594,7 @@ export default RecipePage;
 //   //           className={`px-5 py-2 rounded-lg text-base font-semibold transition-all ${
 //   //             selectedQuantity === qty
 //   //               ? "bg-[#b5651d] text-white shadow-md"
-//   //               : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+//   //               : " text-gray-800 hover:bg-gray-200"
 //   //           }`}
 //   //         >
 //   //           {qty}
@@ -595,13 +603,13 @@ export default RecipePage;
 //   //     </div>
 
 //   //     {/* Ingredients */}
-//   //     <div className="bg-[#f0f1f3] p-6 rounded-lg shadow-md border border-gray-300 mb-6">
+//   //     <div className=" p-6 rounded-lg shadow-md border border-gray-300 mb-6">
 //   //       <h2 className="text-xl font-serif text-[#6b4226] mb-3">
 //   //         🍽 Ingredients
 //   //       </h2>
 //   //       <ul className="list-disc pl-5 space-y-2 text-lg">
 //   //         {recipeDetails.ingredients.map((ingredient: any, index: any) => (
-//   //           <li key={index} className="text-gray-700 text-base">
+//   //           <li key={index} className="text-black text-base">
 //   //             {ingredient.quantity} {ingredient.name}
 //   //           </li>
 //   //         ))}
@@ -609,13 +617,13 @@ export default RecipePage;
 //   //     </div>
 
 //   //     {/* Instructions */}
-//   //     <div className="bg-[#f0f1f3] p-6 rounded-lg shadow-md border border-gray-300 mb-6">
+//   //     <div className=" p-6 rounded-lg shadow-md border border-gray-300 mb-6">
 //   //       <h2 className="text-xl font-serif text-[#6b4226] mb-3">
 //   //         📖 Instructions
 //   //       </h2>
 //   //       <ol className="list-decimal pl-5 space-y-2 text-lg">
 //   //         {currentPost.instructions?.map((instruction: any, index: any) => (
-//   //           <li key={index} className="text-gray-700 text-base">
+//   //           <li key={index} className="text-black text-base">
 //   //             {instruction}
 //   //           </li>
 //   //         ))}
@@ -623,11 +631,11 @@ export default RecipePage;
 //   //     </div>
 
 //   //     {/* Notes */}
-//   //     <div className="bg-[#f0f1f3] p-6 rounded-lg shadow-md border border-gray-300 mb-6">
+//   //     <div className=" p-6 rounded-lg shadow-md border border-gray-300 mb-6">
 //   //       <h2 className="text-xl font-serif text-[#6b4226] mb-3">📝 Notes</h2>
 //   //       <ul className="list-disc pl-5 space-y-2 text-lg">
 //   //         {recipeDetails.notes.map((note: any, index: any) => (
-//   //           <li key={index} className="text-gray-700 text-base">
+//   //           <li key={index} className="text-black text-base">
 //   //             {note}
 //   //           </li>
 //   //         ))}
@@ -635,7 +643,7 @@ export default RecipePage;
 //   //     </div>
 
 //   //     {/* Nutrition Info */}
-//   //     <div className="bg-[#f0f1f3] p-6 rounded-lg shadow-md border border-gray-300">
+//   //     <div className=" p-6 rounded-lg shadow-md border border-gray-300">
 //   //       <h2 className="text-xl font-serif text-[#6b4226] mb-3">
 //   //         🍎 Nutrition
 //   //       </h2>

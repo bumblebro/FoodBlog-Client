@@ -7,8 +7,19 @@ import Navbar from "@/components/navbar/Navbar";
 import localFont from "next/font/local";
 import Navbar3 from "@/components/navbar3/page";
 
-// import Buttons from "../Buttons";
+import { Poppins } from "next/font/google";
+// Poppins
+const Poppins700 = Poppins({
+  weight: "700",
+  subsets: ["latin"],
+  display: "swap",
+});
 
+const Poppins400 = Poppins({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
 const freight = localFont({
   src: "../../app/fonts/freight-neo-pro-book.otf",
 });
@@ -107,9 +118,9 @@ async function Blog({ searchParams }: { searchParams: { pageNo: string } }) {
       {" "}
       {/* <Navbar decodedslug={slugs} home={true} /> */}
       <Navbar3 decodedslug={slugs} ispost={true} />
-      <div className={`mt-10 px-4 ${freight.className}`}>
+      <div className={`mt-10 px-4 ${Poppins400.className}`}>
         <h1
-          className={`text-center  text-2xl font-semibold tracking-wider pb-4  ${freight.className}`}
+          className={`text-center  text-2xl font-semibold tracking-wider pb-4  ${Poppins700.className}`}
         >
           The Latest Recipes - Page 1
         </h1>

@@ -1,26 +1,41 @@
 "use client";
 import Link from "next/link";
 
-import localFont from 'next/font/local'
-
+import localFont from "next/font/local";
 
 import { FacebookIcon, PinterestIcon, TwitterIcon } from "react-share";
+import { Poppins } from "next/font/google";
+// Poppins
+const Poppins700 = Poppins({
+  weight: "700",
+  subsets: ["latin"],
+  display: "swap",
+});
 
+const Poppins400 = Poppins({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
 const freight = localFont({
-  src: '../../app/fonts/freight-neo-pro-book.otf',
-})
+  src: "../../app/fonts/freight-neo-pro-book.otf",
+});
 
 const freightbig = localFont({
-  src: '../../app/fonts/Freight Big Pro Medium Italic.otf',
-})
+  src: "../../app/fonts/Freight Big Pro Medium Italic.otf",
+});
 
 function Footer() {
   return (
-    <div className={`bg-[#F0F1F3] text-[#000000] font-sans`}>
+    <div
+      className={`bg-[#F4F2F2] text-[#000000] font-sans ${Poppins400.className}`}
+    >
       <div className="pt-11 pb-20 text-white text-center flex flex-col gap-14 px-4 mx-auto xl:max-w-[73rem] ">
         <div className="flex flex-col items-center gap-3 ">
-          <h1 className="text-md font-medium text-[#000000]">
-          Want delicious updates straight to your inbox?
+          <h1
+            className={`text-md font-medium text-[#000000] ${Poppins700.className} uppercase`}
+          >
+            Want delicious updates straight to your inbox?
           </h1>
           <span className="w-1/12 border-b mb-1"></span>
           <form
@@ -46,34 +61,43 @@ function Footer() {
         <span className="w-full border-gray-600 border-[0.1px]"></span>
         <div className="flex flex-col  font-normal text-sm gap-4 md:flex-row md:justify-between md:items-center text-[#000000]">
           {" "}
-          <div className="gap-4 flex flex-col md:text-start">
-            <Link className="hover:text-[#004ff2] uppercase" href={"/"}>
+          <div
+            className={`gap-4 flex flex-col md:text-start ${Poppins700.className}`}
+          >
+            <Link className="hover:underline uppercase" href={"/"}>
               Home
             </Link>
-            <Link className="hover:text-[#004ff2] uppercase" href={"/about"}>
+            <Link className="hover:underline uppercase" href={"/about"}>
               About Us
             </Link>{" "}
-            <Link className="hover:text-[#004ff2] uppercase" href={"/contact"}>
+            <Link className="hover:underline uppercase" href={"/contact"}>
               Contact Us
             </Link>
             {/* <Link className="hover:text-[#004ff2]" href={"/advertise"}>
               Advertise With Us
             </Link> */}{" "}
           </div>
-          <div className="gap-4 flex flex-col md:text-end">
-            <Link className="hover:text-[#004ff2] uppercase" href={"/privacy-policy"}>
+          <div
+            className={`gap-4 flex flex-col md:text-end  ${Poppins700.className}`}
+          >
+            <Link
+              className="hover:underline uppercase"
+              href={"/privacy-policy"}
+            >
               Privacy Policy
             </Link>
             {/* <Link className="hover:text-[#004ff2]" href={"/website-disclaimer"}>
               Disclaimer
             </Link>{" "} */}
-            <Link className="hover:text-[#004ff2] uppercase " href={"/terms"}>
+            <Link className="hover:underline uppercase " href={"/terms"}>
               Terms and Conditions
             </Link>
           </div>
         </div>{" "}
         <div className="flex flex-row items-center gap-3 mx-auto md:mx-0 text-[#000000]">
-          <h1 className="flex justify-start text-sm font-semibold">
+          <h1
+            className={`flex justify-start text-sm font-semibold ${Poppins700.className}`}
+          >
             FOLLOW US
           </h1>
           <div className="flex gap-4  ">

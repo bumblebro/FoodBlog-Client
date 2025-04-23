@@ -3,11 +3,19 @@ import { useEffect, useState } from "react";
 import { subSections } from "../../libs/Section";
 import DeSlugify from "@/libs/DeSlugify";
 
-import localFont from 'next/font/local'
+import { Poppins } from "next/font/google";
+// Poppins
+const Poppins700 = Poppins({
+  weight: "700",
+  subsets: ["latin"],
+  display: "swap",
+});
 
-const freight = localFont({
-  src: '../../app/fonts/freight-neo-pro-book.otf',
-})
+const Poppins400 = Poppins({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 interface CategoryPost {
   decodedslug: string[];
@@ -32,7 +40,9 @@ function CategoryPost({ decodedslug, totalBlogs }: CategoryPost) {
   }
 
   return (
-    <div className={`text-center flex flex-col items-center pb-3  px-4 mt-[10px] md:mt-[10px] ${freight.className} `}>
+    <div
+      className={`text-center flex flex-col items-center pb-3  px-4 mt-[10px] md:mt-[10px] ${Poppins400.className} `}
+    >
       <nav
         className="flex tracking-wider justify-start w-full xl:max-w-[73rem]"
         aria-label="Breadcrumb"

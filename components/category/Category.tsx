@@ -4,8 +4,19 @@ import { subSections } from "../../libs/Section";
 import DeSlugify from "@/libs/DeSlugify";
 import localFont from "next/font/local";
 
-// import Buttons from "../Buttons";
+import { Poppins } from "next/font/google";
+// Poppins
+const Poppins700 = Poppins({
+  weight: "700",
+  subsets: ["latin"],
+  display: "swap",
+});
 
+const Poppins400 = Poppins({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
 const freight = localFont({
   src: "../../app/fonts/freight-neo-pro-book.otf",
 });
@@ -45,7 +56,9 @@ function Category({ decodedslug, totalBlogs }: Category) {
   }
 
   return (
-    <div className={` text-center flex flex-col items-center gap-4 px-4 pb-3 mt-[10px] md:mt-[10px] ${freight.className}`}>
+    <div
+      className={` text-center flex flex-col items-center gap-4 px-4 pb-3 mt-[10px] md:mt-[10px] ${Poppins400.className}`}
+    >
       <nav
         className="flex tracking-wider justify-start w-full xl:max-w-[73rem]"
         aria-label="Breadcrumb"
@@ -53,7 +66,7 @@ function Category({ decodedslug, totalBlogs }: Category) {
         <ul className="flex items-center text-xs md:text-[14px] ">
           <li className="inline-flex items-center">
             <Link
-              className="inline-flex items-center  font-medium text-gray-500 hover:text-[#3a8cfb]"
+              className="inline-flex items-center  font-medium text-gray-500 hover:underline"
               href="/"
             >
               {" "}
@@ -83,7 +96,7 @@ function Category({ decodedslug, totalBlogs }: Category) {
                 <Link
                   href={url.toLowerCase()}
                   className="inline-flex capitalize items-center font-medium
-                  text-gray-500 hover:text-blue-600  "
+                  text-gray-500 hover:underline "
                 >
                   {DeSlugify(item)}
                 </Link>
@@ -93,7 +106,9 @@ function Category({ decodedslug, totalBlogs }: Category) {
         </ul>
       </nav>
 
-      <h1 className="text-2xl font-semibold border-b border-black pb-4 capitalize sm:text-[25px] md:text-[30px] ">
+      <h1
+        className={`text-2xl font-semibold border-b border-black pb-4 capitalize sm:text-[25px] md:text-[30px] ${Poppins700.className}`}
+      >
         {DeSlugify(decodedslug[decodedslug.length - 1])}
       </h1>
       <p className="text-sm text-gray-800  md:w-[70%] xl:w-[60%] 2xl:w-[50%]">
@@ -109,10 +124,10 @@ function Category({ decodedslug, totalBlogs }: Category) {
       </p>
       {decodedslug.length < 3 && (
         <div className="overflow-scroll  no-scrollbar w-full xl:max-w-[73rem] ">
-          <ul className="flex items-center text-xs  pt-8  justify-around gap-10 px-10 underline md:justify-center ">
+          <ul className="flex items-center text-xs  pt-8  justify-around gap-10 px-10 md:justify-center ">
             {categoryList.map((item, i) => (
               <Link
-                className="hover:text-[#004ff2]"
+                className="hover:underline"
                 key={i}
                 href={`${
                   decodedslug[decodedslug.length - 1]
@@ -125,7 +140,7 @@ function Category({ decodedslug, totalBlogs }: Category) {
         </div>
       )}
       <h1 className="text-sm font-semibold tracking-wider  pt-8  capitalize ">
-        {totalBlogs} {DeSlugify(decodedslug[decodedslug.length - 1])} Articles
+        {totalBlogs} {DeSlugify(decodedslug[decodedslug.length - 1])} Blogs
         Published
       </h1>
     </div>

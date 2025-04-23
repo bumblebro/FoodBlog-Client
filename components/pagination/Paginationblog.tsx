@@ -1,12 +1,23 @@
 import Link from "next/link";
 import localFont from "next/font/local";
 
-// import Buttons from "../Buttons";
+import { Poppins } from "next/font/google";
+// Poppins
+const Poppins700 = Poppins({
+  weight: "700",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const Poppins400 = Poppins({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 const freight = localFont({
-  src: '../../app/fonts/freight-neo-pro-book.otf',
-})
-
+  src: "../../app/fonts/freight-neo-pro-book.otf",
+});
 
 const freightlight = localFont({
   src: "../../app/fonts/fonnts.com-FreightNeo_Pro_Light.otf",
@@ -80,7 +91,9 @@ function Paginationblog({ pageNo = "1", totalPages, hasNextPage }: Props) {
 
   return (
     <div>
-      <nav className={`flex justify-between items-center mb-10  px-4 mx-auto xl:max-w-[73rem] ${freightlight.className}`}>
+      <nav
+        className={`flex justify-between items-center mb-10  px-4 mx-auto xl:max-w-[73rem] ${Poppins400.className}`}
+      >
         <Link
           className={`flex justify-start font-medium ${
             currentPage == 1 && "invisible"
@@ -125,10 +138,7 @@ function Paginationblog({ pageNo = "1", totalPages, hasNextPage }: Props) {
               {page === "..." ? (
                 <span className="text-gray-500">...</span>
               ) : (
-                <Link
-                  className="hover:text-[#004ff2]"
-                  href={`/blog/page/${page}`}
-                >
+                <Link className="hover:underline" href={`/blog/page/${page}`}>
                   {page}
                 </Link>
               )}
@@ -143,7 +153,7 @@ function Paginationblog({ pageNo = "1", totalPages, hasNextPage }: Props) {
           // href={`/blog/page/${currentPage + 1}`}
           href={`/blog/page/${currentPage + 1}`}
         >
-          <div className="bg-black text-white py-3 px-4 rounded-lg flex  items-center gap-2 md:px-8 tracking-widest hover:bg-[#004ff2]">
+          <div className="bg-black text-white py-3 px-4 rounded-lg flex  items-center gap-2 md:px-8 tracking-widest hover:bg-slate-700">
             <p>Next</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"

@@ -16,6 +16,21 @@ import localFont from "next/font/local";
 import { Nunito_Sans } from "next/font/google";
 // Pacifico
 // Homemade_Apple
+
+import { Poppins } from "next/font/google";
+// Poppins
+const Poppins700 = Poppins({
+  weight: "700",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const Poppins400 = Poppins({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
+
 const font = Nunito_Sans({
   weight: "400",
   subsets: ["latin"],
@@ -100,7 +115,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
 
   return (
     <div
-      className={` xl:max-w-[73rem] mx-auto  mb-10 md:grid md:grid-cols-[56.7%_auto] lg:grid-cols-[67.5%_auto] xl:grid-cols-[74.25%_auto] xl:gap-2 2xl:grid-cols-[71.5%_auto] ${font.className}`}
+      className={` xl:max-w-[73rem] mx-auto  mb-10 md:grid md:grid-cols-[56.7%_auto] lg:grid-cols-[67.5%_auto] xl:grid-cols-[74.25%_auto] xl:gap-2 2xl:grid-cols-[71.5%_auto] ${Poppins400.className}`}
     >
       {" "}
       <div>
@@ -141,7 +156,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                   : ""
               }`}
             >
-              <h1 className="font-semibold   mx-4 pb-2 text-sm text-slate-400 hidden md:flex xl:mx-0 hover:text-[#3a8cfb]">
+              <h1 className="font-semibold   mx-4 pb-2 text-sm text-black hidden md:flex xl:mx-0 hover:underline">
                 {DeSlugify(
                   decodedslug[decodedslug.length - 2]
                 )[0].toUpperCase() +
@@ -149,7 +164,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
               </h1>
             </Link>
             <h1
-              className={`text-2xl mx-4 xl:mx-0  border-b-[0.1px] pb-4 mb-6 border-gray-500  capitalize sm:text-[25px] md:text-[30px] lg:text-[35px] xl:pb-6 ${font.className}`}
+              className={`text-2xl mx-4 xl:mx-0  border-b-[0.1px] pb-4 mb-6 border-gray-500  capitalize sm:text-[25px] md:text-[30px] lg:text-[35px] xl:pb-6 ${Poppins700.className}`}
             >
               {DeSlugify(decodedslug[decodedslug.length - 1])}
             </h1>{" "}
@@ -287,10 +302,12 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
           })}{" "}
           {currentPost.equipments && currentPost.equipments.length > 0 && (
             <div className="px-6 py-5 bg-white shadow-md rounded-2xl mb-2">
-              <h2 className="text-xl font-medium text-gray-900 pb-3">
+              <h2
+                className={`text-xl font-medium text-gray-900 pb-3 ${Poppins700.className}`}
+              >
                 Required Equipments
               </h2>
-              <ul className="bg-gray-100 rounded-lg py-3  flex flex-col gap-2">
+              <ul className=" rounded-lg py-3  flex flex-col gap-2 ">
                 {currentPost.equipments.map((equipment, i) => (
                   <li
                     key={i}
@@ -306,18 +323,23 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
           {currentPost.faq && (currentPost.faq as any[]).length > 0 && (
             <FAQSection faqs={currentPost.faq} />
           )}
-          <h1 className="px-4 py-4 my-4 italic bg-[#eeeff1]">
+          <h1 className="px-4 py-4 my-4 italic ">
             {currentPost.quote}
           </h1>
         </div>{" "}
         <div className=" py-8 px-4  hidden md:flex md:flex-col">
-          <h1 className="text-lg font-semibold text-center pb-4">
+          <h1
+            className={`text-lg font-semibold text-center pb-4 ${Poppins700.className}`}
+          >
             Related Stories
           </h1>
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
             {latposts?.map((item, i) => {
               return (
-                <div key={i} className="grid grid-cols-[100px_auto] gap-4">
+                <div
+                  key={i}
+                  className={`grid grid-cols-[100px_auto] gap-4 ${Poppins400.className} shadow-md rounded-lg`}
+                >
                   <Link
                     href={`/${
                       item.section !== "null"
@@ -335,7 +357,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                   >
                     <div className="w-full h-[75px] relative">
                       <Image
-                        className="rounded-lg"
+                        className="rounded-l-lg"
                         fill
                         sizes="100px"
                         src={item.imageurl}
@@ -372,7 +394,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                         }`}
                       >
                         {" "}
-                        <h1 className="text-xs text-slate-400 font-semibold  hover:text-[#3a8cfb]">
+                        <h1 className="text-xs text-black font-semibold  hover:underline">
                           {DeSlugify(item.subsubsection)}
                         </h1>
                       </Link>
@@ -388,7 +410,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                             : ""
                         }`}
                       >
-                        <h1 className="text-xs text-slate-400  font-semibold  hover:text-[#3a8cfb]">
+                        <h1 className="text-xs text-black  font-semibold  hover:underline">
                           {DeSlugify(item.subsection)}
                         </h1>
                       </Link>
@@ -401,7 +423,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                         }`}
                       >
                         {" "}
-                        <h1 className="text-xs text-slate-400  font-semibold  hover:text-[#3a8cfb]">
+                        <h1 className="text-xs text-black  font-semibold  hover:underline">
                           {DeSlugify(item.section)}
                         </h1>
                       </Link>
@@ -421,7 +443,9 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                           : ""
                       }${item.title.toLowerCase()}`}
                     >
-                      <h1 className="text-sm font-medium line-clamp-2  hover:text-[#004ff2] text-slate-800">
+                      <h1
+                        className={`text-sm font-medium line-clamp-2  hover:underline text-slate-800 ${Poppins700.className}`}
+                      >
                         {DeSlugify(item.title)}
                       </h1>
                     </Link>
@@ -433,13 +457,18 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
         </div>{" "}
       </div>
       <div className="py-8 px-4 md:bg-[#ffffff] xl:pr-0">
-        <h1 className="text-lg font-semibold text-center pb-4">
+        <h1
+          className={`text-lg font-semibold text-center pb-4 ${Poppins700.className}`}
+        >
           Related Stories
         </h1>
         <div className="flex flex-col gap-4">
           {posts?.map((item, i) => {
             return (
-              <div key={i} className="grid grid-cols-[100px_auto] gap-4">
+              <div
+                key={i}
+                className={`grid grid-cols-[100px_auto] gap-4 ${Poppins400.className} shadow-md rounded-lg`}
+              >
                 <Link
                   href={`/${
                     item.section !== "null"
@@ -457,7 +486,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                 >
                   <div className="w-full h-[75px] relative">
                     <Image
-                      className="rounded-lg"
+                      className="rounded-l-lg"
                       fill
                       sizes="100px"
                       src={item.imageurl}
@@ -494,7 +523,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                       }`}
                     >
                       {" "}
-                      <h1 className="text-xs text-slate-400 font-semibold  hover:text-[#3a8cfb]">
+                      <h1 className="text-xs text-black font-semibold  hover:underline">
                         {DeSlugify(item.subsubsection)}
                       </h1>
                     </Link>
@@ -510,7 +539,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                           : ""
                       }`}
                     >
-                      <h1 className="text-xs text-slate-400  font-semibold  hover:text-[#3a8cfb]">
+                      <h1 className="text-xs text-black  font-semibold  hover:underline">
                         {DeSlugify(item.subsection)}
                       </h1>
                     </Link>
@@ -523,7 +552,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                       }`}
                     >
                       {" "}
-                      <h1 className="text-xs text-slate-400  font-semibold  hover:text-[#3a8cfb]">
+                      <h1 className="text-xs text-black  font-semibold  hover:underline">
                         {DeSlugify(item.section)}
                       </h1>
                     </Link>
@@ -543,7 +572,9 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                         : ""
                     }${item.title.toLowerCase()}`}
                   >
-                    <h1 className="text-sm font-medium line-clamp-2 hover:text-[#004ff2] text-slate-800">
+                    <h1
+                      className={`text-sm font-medium line-clamp-2 hover:underline text-slate-800 ${Poppins700.className}`}
+                    >
                       {DeSlugify(item.title)}
                     </h1>
                   </Link>

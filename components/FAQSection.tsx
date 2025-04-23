@@ -2,8 +2,19 @@
 import { useState } from "react";
 import localFont from "next/font/local";
 
-// import Buttons from "../Buttons";
+import { Poppins } from "next/font/google";
+// Poppins
+const Poppins700 = Poppins({
+  weight: "700",
+  subsets: ["latin"],
+  display: "swap",
+});
 
+const Poppins400 = Poppins({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
 const freight = localFont({
   src: "../app/fonts/freight-neo-pro-book.otf",
 });
@@ -27,14 +38,28 @@ export const FAQSection = ({ faqs }: any) => {
   };
 
   return (
-    <div className="faq-section px-4 py-8">
-      <h2 className={`text-lg font-semibold mb-4   ${freightbigstraight.className} italic`}>Frequently Asked Questions</h2>
-      <div className="space-y-4">
+    <div
+      className={`faq-section  my-8 ${Poppins400.className}  border-b border-slate-300 `}
+    >
+      {" "}
+      <div className="flex items-center text-center mb-4 gap-4">
+        {" "}
+        <h1 className="bg-[#CBAFB7] rounded-full px-[8px]  text-4xl">?</h1>
+        <h2
+          className={`text-2xl font-semibold    ${Poppins700.className} italic`}
+        >
+          Frequently Asked Questions
+        </h2>
+      </div>
+      <div className=" ">
         {faqs.map((item: any, index: any) => (
-          <div key={index} className="border-b pb-4">
+          <div
+            key={index}
+            className=" pb-4 border border-b-0 border-slate-300  px-4 py-4"
+          >
             {/* Question - Click to toggle */}
             <button
-              className="text-base  font-medium mb-2 flex justify-between w-full text-left"
+              className={`text-xl  font-medium mb-2 flex justify-between w-full text-left ${Poppins700.className}`}
               onClick={() => toggleFAQ(index)}
             >
               {item.question}

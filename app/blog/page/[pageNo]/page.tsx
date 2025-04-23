@@ -11,7 +11,19 @@ import { useEffect, useState } from "react";
 import localFont from "next/font/local";
 import Navbar3 from "@/components/navbar3/page";
 
-// import Buttons from "../Buttons";
+import { Poppins } from "next/font/google";
+// Poppins
+const Poppins700 = Poppins({
+  weight: "700",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const Poppins400 = Poppins({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 const freight = localFont({
   src: "../../../../app/fonts/freight-neo-pro-book.otf",
@@ -132,8 +144,10 @@ async function BlogPage({ params }: params) {
     <>
       {/* <Navbar decodedslug={slugs} home={true} /> */}
       <Navbar3 decodedslug={slugs} ispost={true} />
-      <div className={`mt-10 lg:mt-13 ${freight.className}`}>
-        <h1 className="text-center  text-2xl font-semibold tracking-wider pb-4">
+      <div className={`mt-10 lg:mt-13 ${Poppins400.className}`}>
+        <h1
+          className={`text-center  text-2xl font-semibold tracking-wider pb-4 ${Poppins700.className}`}
+        >
           The Latest Recipes - Page {params.pageNo.toString()}
         </h1>
         <h1 className="text-center  text-sm font-semibold tracking-wider">

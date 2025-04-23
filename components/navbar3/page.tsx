@@ -16,6 +16,26 @@ import Image from "next/image";
 
 import { Pacifico } from "next/font/google";
 import { Nunito_Sans } from "next/font/google";
+import { Poppins } from "next/font/google";
+// Poppins
+const Poppins700 = Poppins({
+  weight: "700",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const Poppins400 = Poppins({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const Poppins500 = Poppins({
+  weight: "500",
+  subsets: ["latin"],
+  display: "swap",
+});
+
 // Pacifico
 // Homemade_Apple
 const Nunito = Nunito_Sans({
@@ -202,7 +222,7 @@ function Navbar3({
   }, []);
 
   return (
-    <Disclosure as="nav" className="bg-[#F0F1F3]">
+    <Disclosure as="nav" className="bg-[#F4F2F2]">
       {({ open }) => (
         <>
           <div className="w-full mx-auto max-w-7xl px-5 sm:px-4 lg:px-4 xl:px-14 py-0">
@@ -235,7 +255,7 @@ function Navbar3({
               <BellIcon aria-hidden="true" className="size-6" />
             </button> */}
                 <div
-                  className={` flex items-center sm:hidden ${Nunito.className}`}
+                  className={` flex items-center sm:hidden ${Poppins700.className}`}
                 >
                   {/* Mobile menu button*/}
                   <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 ">
@@ -259,8 +279,8 @@ function Navbar3({
                         href={item.href}
                         // aria-current={item.current ? "page" : undefined}
                         className={classNames(
-                          "text-black hover:bg-gray-700 hover:text-white",
-                          "rounded-md px-3 py-2 text-lg uppercase font-bold"
+                          "text-black hover:bg-[#8D6271] hover:text-white",
+                          "rounded-md px-3 py-2 text-lg  font-bold"
                         )}
                       >
                         {item.name}
@@ -271,7 +291,9 @@ function Navbar3({
               </div>
             </div>
           </div>
-          <div className="flex justify-center w-[90%] mx-auto ">
+          <div
+            className={`flex justify-center w-[90%] mx-auto ${Poppins500.className}`}
+          >
             <div className="overflow-scroll  no-scrollbar w-full xl:max-w-[73rem] text-white text-xs tracking-widest font-extrabold py-2 pt-2">
               <ul className="flex items-center text-xs gap-2  text-nowrap justify-evenly  sm:justify-center text-[#000000] uppercase font-light">
                 {home == true
@@ -279,7 +301,7 @@ function Navbar3({
                       i === 0 ? (
                         <li key={i}>
                           <Link
-                            className="hover:text-[#004ff2] "
+                            className="hover:underline "
                             key={i}
                             href={`/${DeSlugify(item.toLowerCase())}`}
                           >
@@ -294,7 +316,7 @@ function Navbar3({
                           </li>
                           <li key={i}>
                             <Link
-                              className=" hover:text-[#004ff2]"
+                              className=" hover:underline"
                               key={i}
                               href={`/${slugify(item.toLowerCase())}`}
                             >
@@ -310,7 +332,7 @@ function Navbar3({
                       return i === 0 ? (
                         <li key={i}>
                           <Link
-                            className="hover:text-[#004ff2] "
+                            className="hover:underline "
                             key={i}
                             href={`${url}/${slugify(item.toLowerCase())}`}
                           >
@@ -324,7 +346,7 @@ function Navbar3({
                           </li>
                           <li key={i}>
                             <Link
-                              className="hover:text-[#004ff2] "
+                              className="hover:underline "
                               key={i}
                               href={`${url}/${slugify(item.toLowerCase())}`}
                             >
@@ -349,7 +371,7 @@ function Navbar3({
                           <li key={i}>
                             {" "}
                             <Link
-                              className=" hover:text-[#004ff2]"
+                              className=" hover:underline"
                               key={i}
                               href={
                                 lastElement == true
@@ -371,7 +393,7 @@ function Navbar3({
                             </li>{" "}
                             <li>
                               <Link
-                                className="hover:text-[#004ff2] "
+                                className="hover:underline "
                                 key={i}
                                 href={
                                   lastElement == true
@@ -399,7 +421,7 @@ function Navbar3({
               </ul>
             </div>
           </div>
-          <DisclosurePanel className={`sm:hidden ${Nunito.className}`}>
+          <DisclosurePanel className={`sm:hidden ${Poppins700.className}`}>
             <div className="space-y-1 px-2 pt-2 pb-3">
               {navigation.map((item) => (
                 <DisclosureButton
@@ -408,8 +430,8 @@ function Navbar3({
                   href={item.href}
                   // aria-current={item.current ? "page" : undefined}
                   className={classNames(
-                    "text-black hover:bg-gray-700 hover:text-white",
-                    `block rounded-md px-3 py-2 text-sm font-medium uppercase`
+                    "text-black hover:bg-[#8D6271] hover:text-white",
+                    `block rounded-md px-3 py-2 text-sm font-medium `
                   )}
                 >
                   {item.name}
