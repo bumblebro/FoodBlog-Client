@@ -1588,7 +1588,6 @@ function page() {
           the wpDiscuz plugin (
           <a
             className="text-[#B2357E]"
-            className="text-[#B2357E]"
             href="https://wpdiscuz.com/docs/wpdiscuz-documentation/gdpr/"
           >
             https://wpdiscuz.com/docs/wpdiscuz-documentation/gdpr/
@@ -1601,7 +1600,6 @@ function page() {
           hash) may be provided to the Gravatar service to see if you are using
           it. The Gravatar service privacy policy is available here:&nbsp;
           <a
-            className="text-[#B2357E]"
             className="text-[#B2357E]"
             href="https://automattic.com/privacy/"
           >
