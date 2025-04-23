@@ -155,6 +155,7 @@ const SpecialOccasions = [
 const navigation = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
+  // { name: "Privacy Policy", href: "/privacy-policy" },
   { name: "Recipes", href: "/recipes" },
 ];
 

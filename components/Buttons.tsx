@@ -2,8 +2,19 @@
 
 import { useEffect, useState } from "react";
 // import Scroll from "react-scroll";
+import { Poppins } from "next/font/google";
+// Poppins
+const Poppins700 = Poppins({
+  weight: "700",
+  subsets: ["latin"],
+  display: "swap",
+});
 
-
+const Poppins400 = Poppins({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
 function Buttons() {
   const [Component, setComponent] = useState<JSX.Element>();
 
@@ -13,7 +24,9 @@ function Buttons() {
       const ScrollLink = Scroll.Link;
 
       setComponent(
-        <div className=" text-xs font-medium tracking-wider py-6 lg:py-4 px-3 lg:w-[45%] xl:px-0 ">
+        <div
+          className={` text-xs font-medium tracking-wider py-6 lg:py-4 px-3 lg:w-[45%] xl:px-0  ${Poppins400.className}`}
+        >
           {/* Jump to Recipe Button */}
           <ScrollLink
             to="recipeSection"
@@ -26,7 +39,7 @@ function Buttons() {
               // onClick={() =>
               //   recipeRef.current?.scrollIntoView({ behavior: "smooth" })
               // }
-              className="uppercase flex justify-center items-center   gap-2 "
+              className="uppercase flex justify-center items-center   gap-2 bg-[#F4F2F2] hover:bg-[#8D6271] rounded-md px-4 py-2 text-black hover:text-white transition-all duration-300"
               type="button"
             >
               <svg
@@ -34,13 +47,10 @@ function Buttons() {
                 viewBox="0 0 512 512"
                 strokeWidth="1.5"
                 // stroke="currentColor"
-                className="size-6"
+                className="size-6 text-white hover:text-black"
                 // xml:space="preserve"
               >
-                <path
-                  fill="#000000"
-                  d="m256 502 150-200h-80V146H186v156h-80zM186 78h140v40H186zM186 10h140v40H186z"
-                />
+                <path d="m256 502 150-200h-80V146H186v156h-80zM186 78h140v40H186zM186 10h140v40H186z" />
               </svg>
               <h1 className="inline-block ">Jump to Recipe</h1>
               {/* <button className="w-full py-[0.6rem] uppercase flex justify-center items-center">
