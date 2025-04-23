@@ -77,7 +77,7 @@ function BlogList({ posts }: posts) {
 
                       // blurDataURL={myBlurDataUrl}
                     />{" "}
-                    <div className=" text-[8px] absolute bg-white px-2 pt-1 bottom-0 rounded-se-md flex items-center gap-2">
+                    <div className=" text-[15px] absolute bg-white px-2 pt-1 bottom-0 rounded-se-md flex items-center gap-2">
                       <svg
                         className=" h-4 md:h-6 "
                         viewBox="0 0 64.00 64.00"
