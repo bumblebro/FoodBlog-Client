@@ -42,7 +42,7 @@ function Buttons() {
                   d="m256 502 150-200h-80V146H186v156h-80zM186 78h140v40H186zM186 10h140v40H186z"
                 />
               </svg>
-              <h1 className="inline-block">Jump to Recipe</h1>
+              <h1 className="inline-block ">Jump to Recipe</h1>
               {/* <button className="w-full py-[0.6rem] uppercase flex justify-center items-center">
             {" "}
             <svg

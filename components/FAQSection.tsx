@@ -44,9 +44,11 @@ export const FAQSection = ({ faqs }: any) => {
       {" "}
       <div className="flex items-center text-center mb-4 gap-4">
         {" "}
-        <h1 className="bg-[#CBAFB7] rounded-full px-[8px]  text-4xl">?</h1>
+        {/* <h1 className="bg-[#CBAFB7] rounded-full px-[6px] md:px-[8px]  text-4xl">
+          ?
+        </h1> */}
         <h2
-          className={`text-2xl font-semibold    ${Poppins700.className} italic`}
+          className={`text-2xl font-semibold    ${Poppins700.className} italic mx-4`}
         >
           Frequently Asked Questions
         </h2>
@@ -59,7 +61,7 @@ export const FAQSection = ({ faqs }: any) => {
           >
             {/* Question - Click to toggle */}
             <button
-              className={`text-xl  font-medium mb-2 flex justify-between w-full text-left ${Poppins700.className}`}
+              className={` text-lg md:text-xl  font-medium mb-2 flex justify-between w-full text-left ${Poppins700.className}`}
               onClick={() => toggleFAQ(index)}
             >
               {item.question}

@@ -106,12 +106,12 @@ const RecipePage = ({ currentPost }: any) => {
   return (
     <div
       className={`flex flex-col items-center min-h-screen  py-4 w-full   tracking-[1.275px] ${Poppins400.className} `}
-      id="recipeSection"
+      id="recipeSection "
     >
-      <div className="w-full flex justify-start">
+      <div className="w-full flex justify-start ">
         <button
           onClick={downloadPDF}
-          className={`mb-4 px-5 py-2 rounded-md shadow-md transition-all hover:bg-black text-white bg-[#8D6271] duration-400 uppercase ${Poppins700.className}`}
+          className={`mb-4 px-5 py-2 rounded-md shadow-md transition-all hover:bg-black text-white bg-[#8D6271] duration-400 uppercase ${Poppins700.className} mx-2`}
         >
           📜 Save Recipe
         </button>
