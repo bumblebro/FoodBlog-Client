@@ -18,7 +18,7 @@ function CopyBtn({ text }: { text: string }) {
   return (
     <button
       onClick={handleCopyClick}
-      className="uppercase flex justify-center items-center bg-[#ee5631]  rounded-md py-[0.6rem] w-full gap-2  hover:bg-[#ee5731c8]"
+      className="uppercase flex justify-center items-center   rounded-md py-[0.6rem] w-full gap-2  hover:bg-black text-white bg-[#8D6271] transition-all duration-400"
       type="button"
     >
       <svg

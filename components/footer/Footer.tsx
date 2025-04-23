@@ -45,14 +45,14 @@ function Footer() {
             className="flex flex-col  gap-3 md:flex-row w-full md:w-[70%] md:gap-0   2xl:w-[50%]"
           >
             <input
-              className="  placeholder-slate-500 font-light w-full rounded-md py-2 text-center  md:text-start md:pl-4 md:rounded-r-none text-black"
+              className="  placeholder-slate-500 font-light w-full rounded-md py-2 text-center  md:text-start md:pl-4 md:rounded-r-none text-black hover:shadow-xl border border-slate-400 "
               type="email"
               placeholder="Enter your email"
               required
             />
             <button
               type="submit"
-              className="bg-[#ee5631] text-black w-full rounded-md py-2 text-center font-semibold md:w-[50%]  2xl:w-[40%] md:rounded-l-none hover:bg-[#ff8769]"
+              className="bg-[#8D6271] text-white w-full rounded-md py-2 text-center font-semibold md:w-[50%]  2xl:w-[40%] md:rounded-l-none hover:shadow-xl "
             >
               Subscribe
             </button>

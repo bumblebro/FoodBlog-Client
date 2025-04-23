@@ -170,21 +170,24 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
             </h1>{" "}
             <div className="lg:flex lg:pb-4">
               <div className="mx-4 text-xs  flex flex-col gap-2 pb-4 xl:mx-0">
-                <h1 className="font-semibold">
-                  By{" "}
+                <div className="font-semibold flex gap-1">
+                  <h1 className={`${Poppins700.className}`}>By:</h1>{" "}
                   {/* <span className="underline p-author ">
                     {currentPost.author}
                   </span> */}{" "}
                   <span className="underline p-author ">Savory Touch</span>
-                </h1>
-                <h2 className=" font-normal text-gray-600 dt-published">
-                  Published:{" "}
-                  {date.toLocaleDateString("en-GB", {
-                    day: "2-digit",
-                    month: "short",
-                    year: "numeric",
-                  })}
-                </h2>
+                </div>
+                <div className=" text-black  dt-published flex gap-2">
+                  <h1 className={`${Poppins700.className}`}>Published:</h1>{" "}
+                  <span>
+                    {" "}
+                    {date.toLocaleDateString("en-GB", {
+                      day: "2-digit",
+                      month: "short",
+                      year: "numeric",
+                    })}
+                  </span>
+                </div>
               </div>
               <div className="flex items-center gap-2 text-xs font-semibold  mb-4 px-4 lg:w-[45%] lg:ml-auto xl:px-0 2xl:w-[40%]">
                 <CopyBtn
@@ -301,19 +304,16 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
             );
           })}{" "}
           {currentPost.equipments && currentPost.equipments.length > 0 && (
-            <div className="px-6 py-5 bg-white shadow-md rounded-2xl mb-2">
+            <div className="px-6 py-5 bg-white  rounded-2xl mb-2 border-black border-2">
               <h2
                 className={`text-xl font-medium text-gray-900 pb-3 ${Poppins700.className}`}
               >
                 Required Equipments
               </h2>
-              <ul className=" rounded-lg py-3  flex flex-col gap-2 ">
+              <ul className=" rounded-lg py-3  flex flex-col gap-2  list-disc ">
                 {currentPost.equipments.map((equipment, i) => (
-                  <li
-                    key={i}
-                    className="flex items-center text-gray-700  px-4  "
-                  >
-                    <span className="font-normal">{equipment}</span>
+                  <li key={i} className="flex items-center text-gray-700  ">
+                    {equipment}
                   </li>
                 ))}
               </ul>
@@ -323,13 +323,11 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
           {currentPost.faq && (currentPost.faq as any[]).length > 0 && (
             <FAQSection faqs={currentPost.faq} />
           )}
-          <h1 className="px-4 py-4 my-4 italic ">
-            {currentPost.quote}
-          </h1>
+          <h1 className="px-4 py-4 my-4 italic ">{currentPost.quote}</h1>
         </div>{" "}
         <div className=" py-8 px-4  hidden md:flex md:flex-col">
           <h1
-            className={`text-lg font-semibold text-center pb-4 ${Poppins700.className}`}
+            className={`text-2xl font-semibold text-center py-4 mb-4 ${Poppins700.className} bg-[#8D6271]  text-white rounded-md`}
           >
             Related Stories
           </h1>
@@ -376,7 +374,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                       alt=""
                     /> */}
                   </Link>
-                  <div className="flex flex-col gap-2 md:gap-2 w-full">
+                  <div className="flex flex-col gap-2 md:gap-2 w-full ">
                     {item.subsubsection ? (
                       <Link
                         href={`/${
@@ -394,7 +392,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                         }`}
                       >
                         {" "}
-                        <h1 className="text-xs text-black font-semibold  hover:underline">
+                        <h1 className="text-xs text-black font-semibold  hover:underline pt-2">
                           {DeSlugify(item.subsubsection)}
                         </h1>
                       </Link>
@@ -410,7 +408,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                             : ""
                         }`}
                       >
-                        <h1 className="text-xs text-black  font-semibold  hover:underline">
+                        <h1 className="text-xs text-black  font-semibold  hover:underline pt-2">
                           {DeSlugify(item.subsection)}
                         </h1>
                       </Link>
@@ -423,7 +421,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                         }`}
                       >
                         {" "}
-                        <h1 className="text-xs text-black  font-semibold  hover:underline">
+                        <h1 className="text-xs text-black  font-semibold  hover:underline pt-2">
                           {DeSlugify(item.section)}
                         </h1>
                       </Link>
@@ -458,7 +456,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
       </div>
       <div className="py-8 px-4 md:bg-[#ffffff] xl:pr-0">
         <h1
-          className={`text-lg font-semibold text-center pb-4 ${Poppins700.className}`}
+          className={`text-lg font-semibold text-center py-4 mb-4 ${Poppins700.className}  bg-[#8D6271]  text-white rounded-md`}
         >
           Related Stories
         </h1>
@@ -505,7 +503,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                     alt=""
                   /> */}
                 </Link>
-                <div className="flex flex-col gap-2 md:gap-2 w-full">
+                <div className="flex flex-col gap-2 md:gap-2 w-full ">
                   {item.subsubsection ? (
                     <Link
                       href={`/${
@@ -523,7 +521,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                       }`}
                     >
                       {" "}
-                      <h1 className="text-xs text-black font-semibold  hover:underline">
+                      <h1 className="text-xs text-black font-semibold  hover:underline ">
                         {DeSlugify(item.subsubsection)}
                       </h1>
                     </Link>
@@ -539,7 +537,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                           : ""
                       }`}
                     >
-                      <h1 className="text-xs text-black  font-semibold  hover:underline">
+                      <h1 className="text-xs text-black  font-semibold  hover:underline ">
                         {DeSlugify(item.subsection)}
                       </h1>
                     </Link>

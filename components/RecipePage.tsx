@@ -30,7 +30,6 @@ const freightbig = localFont({
   src: "../app/fonts/Freight Big Pro Medium Italic.otf",
 });
 
-
 function timeToISO8601Duration(seconds: number) {
   const units = [
     { symbol: "Y", value: 365 * 24 * 3600 },
@@ -106,15 +105,17 @@ const RecipePage = ({ currentPost }: any) => {
 
   return (
     <div
-      className="flex flex-col items-center min-h-screen  py-4 w-full   tracking-[1.275px]"
+      className={`flex flex-col items-center min-h-screen  py-4 w-full   tracking-[1.275px] ${Poppins400.className} `}
       id="recipeSection"
     >
-      <button
-        onClick={downloadPDF}
-        className="mb-4 px-5 py-2 bg-[#ee5631] text-[#000000] font-serif rounded-full shadow-md hover:bg-[#8a4f1d] transition-all "
-      >
-        📜 Save Recipe
-      </button>
+      <div className="w-full flex justify-start">
+        <button
+          onClick={downloadPDF}
+          className={`mb-4 px-5 py-2 rounded-md shadow-md transition-all hover:bg-black text-white bg-[#8D6271] duration-400 uppercase ${Poppins700.className}`}
+        >
+          📜 Save Recipe
+        </button>
+      </div>
 
       <div
         ref={recipeRef}
@@ -129,7 +130,7 @@ const RecipePage = ({ currentPost }: any) => {
 
         {/* Recipe Description */}
         <p
-          className=" text-gray-600 text-center italic mb-6 text-base p-summary
+          className=" text-black text-center italic mb-6 text-base p-summary
 "
         >
           {currentPost?.recipedescription}
@@ -275,8 +276,9 @@ const RecipePage = ({ currentPost }: any) => {
 
         {/* Nutrition Info */}
         <div className=" p-4 sm:p-6 rounded-lg shadow-md border border-gray-300 text-">
-        <h2 className={`text-xl font-serif text-[#000000] mb-3  ${Poppins700.className} italic`}>
-
+          <h2
+            className={`text-xl font-serif text-[#000000] mb-3  ${Poppins700.className} italic`}
+          >
             🍎 Nutrition
           </h2>
           <p
