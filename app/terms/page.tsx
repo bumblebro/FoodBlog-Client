@@ -1,6 +1,25 @@
 import Navbar3 from "@/components/navbar3/page";
 import { Metadata } from "next";
+import { Poppins } from "next/font/google";
 
+// Poppins
+const Poppins700 = Poppins({
+  weight: "700",
+  subsets: ["latin"],
+  // display: "swap",
+});
+
+const Poppins400 = Poppins({
+  weight: "400",
+  subsets: ["latin"],
+  // display: "swap",
+});
+
+const Poppins500 = Poppins({
+  weight: "500",
+  subsets: ["latin"],
+  // display: "swap",
+});
 export const metadata: Metadata = {
   title: "Terms and Conditions",
   metadataBase: new URL(`${process.env.NEXT_PUBLIC_BASE_API_URL}`),
@@ -13,8 +32,12 @@ function page() {
   return (
     <>
       <Navbar3 />
-      <div className="flex flex-col gap-4 px-4 pb-3 my-[130px] md:my-[105px] md:max-w-[45rem] mx-auto w-full leading-[1.7rem] font-[330] text-black">
-        <h1 className="text-3xl font-extrabold pb-6">Terms and Conditions</h1>
+      <div
+        className={` ${Poppins400.className} flex flex-col gap-4 px-4 pb-3 my-[130px] md:my-[105px] md:max-w-[75rem] mx-auto w-full leading-[1.7rem] font-[330] text-black`}
+      >
+        <h1 className={`text-3xl font-extrabold pb-6 ${Poppins700.className}`}>
+          Terms and Conditions
+        </h1>
         <h2>Effective Date: April 1st, 2024</h2>
         <p>
           These terms and conditions outline the rules and regulations for the
@@ -45,7 +68,9 @@ function page() {
           prevailing laws.
         </p>
 
-        <h3 className="text-lg font-semibold">Cookies</h3>
+        <h3 className={`${Poppins700.className} text-lg font-semibold`}>
+          Cookies
+        </h3>
 
         <p>
           We employ the use of cookies. By accessing Savory Touch, you agreed to
@@ -60,7 +85,9 @@ function page() {
           also use cookies.
         </p>
 
-        <h2 className="text-lg font-semibold">License</h2>
+        <h2 className={`${Poppins700.className} text-lg font-semibold`}>
+          License
+        </h2>
 
         <p>
           Unless otherwise stated, Savory Touch and/or its licensors own the
@@ -87,7 +114,9 @@ function page() {
           .
         </p>
 
-        <h3 className="text-lg font-semibold">User Comments</h3>
+        <h3 className={`${Poppins700.className} text-lg font-semibold`}>
+          User Comments
+        </h3>
 
         <p>
           Parts of this website offer an opportunity for users to post and
@@ -108,7 +137,9 @@ function page() {
           Terms and Conditions.
         </p>
 
-        <h3 className="text-lg font-semibold">Hyperlinking to our Content</h3>
+        <h3 className={`${Poppins700.className} text-lg font-semibold`}>
+          Hyperlinking to our Content
+        </h3>
 
         <p>
           The following organizations may link to our Website without prior
@@ -136,7 +167,9 @@ function page() {
           within the context of the linking party&apos;s site.
         </p>
 
-        <h3 className="text-lg font-semibold">Disclaimer</h3>
+        <h3 className={`${Poppins700.className} text-lg font-semibold`}>
+          Disclaimer
+        </h3>
 
         <p>
           To the maximum extent permitted by applicable law, we exclude all

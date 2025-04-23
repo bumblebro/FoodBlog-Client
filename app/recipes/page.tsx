@@ -5,13 +5,27 @@ import Link from "next/link";
 import Footer from "@/components/footer/Footer";
 import Navbar from "@/components/navbar/Navbar";
 import Navbar3 from "@/components/navbar3/page";
-
-const freight = localFont({
-  src: "../../app/fonts/freight-neo-pro-book.otf",
+import { Poppins } from "next/font/google";
+// Poppins
+const Poppins700 = Poppins({
+  weight: "700",
+  subsets: ["latin"],
+  // display: "swap",
 });
 
-const freightbig = localFont({
-  src: "../../app/fonts/Freight Big Pro Medium Italic.otf",
+const Poppins400 = Poppins({
+  weight: "400",
+  subsets: ["latin"],
+  // display: "swap",
+});
+
+const Poppins500 = Poppins({
+  weight: "500",
+  subsets: ["latin"],
+  // display : "swap",
+});
+const freight = localFont({
+  src: "../../app/fonts/freight-neo-pro-book.otf",
 });
 
 const CuisineTypes = [
@@ -104,29 +118,31 @@ function page() {
   return (
     <div>
       <Navbar3 />
-      <div className=" w-full px-4 my-20">
+      <div className=" w-full px-4 my-15 mb-10">
         <div
           className={`  w-full    tracking-wider 2xl:px-44 lg:pt-8 mx-auto  xl:max-w-[73rem] px-3"
   id="navbar-sticky    text-[#000000]`}
         >
-          {/* <h1 className={`text-2xl font-semibold py-6 ${freightbig.className}`}>
-            Sections
-          </h1> */}
+          <h1
+            className={`text-2xl md:text-3xl py-10 ${Poppins700.className} text-center`}
+          >
+            All Recipes
+          </h1>
           <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 ">
             <div>
               <Link
                 href={"/cuisine-types"}
-                className={` hover:text-[#004ff2] ${freightbig.className} text-lg`}
+                className={` hover:underline ${Poppins700.className} text-lg`}
               >
                 Cuisine Types
               </Link>
-              <ul className="font-light flex flex-col gap-3 pt-4">
+              <ul className="font-light flex flex-col gap-3 pt-4 ">
                 {CuisineTypes.map((item, index) => (
                   <li key={index}>
                     <Link
                       href={`/cuisine-types/${item.toLowerCase()} `}
                       key={index}
-                      className="hover:text-[#004ff2] list-decimal"
+                      className={`hover:underline ${Poppins400.className}`}
                     >
                       {DeSlugify(item)}
                     </Link>
@@ -137,7 +153,7 @@ function page() {
             <div>
               <Link
                 href={"/meal-types"}
-                className={` hover:text-[#004ff2] ${freightbig.className} text-lg`}
+                className={` hover:underline ${Poppins700.className} text-lg`}
               >
                 Meal Types
               </Link>
@@ -147,7 +163,7 @@ function page() {
                     <Link
                       href={`/meal-types/${item.toLowerCase()}`}
                       key={index}
-                      className="hover:text-[#004ff2]"
+                      className={`hover:underline ${Poppins400.className}`}
                     >
                       {DeSlugify(item)}
                     </Link>
@@ -158,7 +174,7 @@ function page() {
             <div>
               <Link
                 href={"/dietary-preferences"}
-                className={` hover:text-[#004ff2] ${freightbig.className} text-lg`}
+                className={` hover:underline ${Poppins700.className} text-lg`}
               >
                 Dietary Preferences
               </Link>
@@ -168,7 +184,7 @@ function page() {
                     <Link
                       href={`/dietary-preferences/${item.toLowerCase()}`}
                       key={index}
-                      className="hover:text-[#004ff2]"
+                      className={`hover:underline ${Poppins400.className}`}
                     >
                       {DeSlugify(item)}
                     </Link>
@@ -179,7 +195,7 @@ function page() {
             <div>
               <Link
                 href={"/cooking-techniques"}
-                className={` hover:text-[#004ff2] ${freightbig.className} text-lg`}
+                className={` hover:underline ${Poppins700.className} text-lg`}
               >
                 Cooking Techniques
               </Link>
@@ -189,7 +205,7 @@ function page() {
                     <Link
                       href={`/cooking-techniques/${item.toLowerCase()}`}
                       key={index}
-                      className="hover:text-[#004ff2]"
+                      className={`hover:underline ${Poppins400.className}`}
                     >
                       {DeSlugify(item)}
                     </Link>
@@ -200,7 +216,7 @@ function page() {
             <div>
               <Link
                 href={"/ingredients"}
-                className={` hover:text-[#004ff2] ${freightbig.className} text-lg`}
+                className={` hover:underline ${Poppins700.className} text-lg`}
               >
                 Ingredients
               </Link>
@@ -210,7 +226,7 @@ function page() {
                     <Link
                       href={`/ingredients/${item.toLowerCase()}`}
                       key={index}
-                      className="hover:text-[#004ff2]"
+                      className={`hover:underline ${Poppins400.className}`}
                     >
                       {DeSlugify(item)}
                     </Link>
@@ -221,7 +237,7 @@ function page() {
             <div>
               <Link
                 href={"/recipe-formats"}
-                className={` hover:text-[#004ff2] ${freightbig.className} text-lg`}
+                className={` hover:underline ${Poppins700.className} text-lg`}
               >
                 Recipe Formats
               </Link>
@@ -231,7 +247,7 @@ function page() {
                     <Link
                       href={`/recipe-formats/${item.toLowerCase()}`}
                       key={index}
-                      className="hover:text-[#004ff2]"
+                      className={`hover:underline ${Poppins400.className}`}
                     >
                       {DeSlugify(item)}
                     </Link>
@@ -242,7 +258,7 @@ function page() {
             <div>
               <Link
                 href={"/modern-trends"}
-                className={` hover:text-[#004ff2] ${freightbig.className} text-lg`}
+                className={` hover:underline ${Poppins700.className} text-lg`}
               >
                 Modern Trends
               </Link>
@@ -252,7 +268,7 @@ function page() {
                     <Link
                       href={`/modern-trends/${item.toLowerCase()}`}
                       key={index}
-                      className="hover:text-[#004ff2]"
+                      className={`hover:underline ${Poppins400.className}`}
                     >
                       {DeSlugify(item)}
                     </Link>
@@ -263,7 +279,7 @@ function page() {
             <div>
               <Link
                 href={"/seasonal-recipes"}
-                className={` hover:text-[#004ff2] ${freightbig.className}  text-lg`}
+                className={` hover:underline ${Poppins700.className}  text-lg`}
               >
                 Seasonal Recipes
               </Link>
@@ -273,7 +289,7 @@ function page() {
                     <Link
                       href={`/seasonal-recipes/${item.toLowerCase()}`}
                       key={index}
-                      className="hover:text-[#004ff2]"
+                      className={`hover:underline ${Poppins400.className}`}
                     >
                       {DeSlugify(item)}
                     </Link>
@@ -284,7 +300,7 @@ function page() {
             <div>
               <Link
                 href={"/global-flavors"}
-                className={` hover:text-[#004ff2] ${freightbig.className}  text-lg`}
+                className={` hover:underline ${Poppins700.className}  text-lg`}
               >
                 Global Flavors
               </Link>
@@ -294,7 +310,7 @@ function page() {
                     <Link
                       href={`/global-flavors/${item.toLowerCase()}`}
                       key={index}
-                      className="hover:text-[#004ff2]"
+                      className={`hover:underline ${Poppins400.className}`}
                     >
                       {DeSlugify(item)}
                     </Link>
@@ -305,7 +321,7 @@ function page() {
             <div>
               <Link
                 href={"/special-occasions"}
-                className={` hover:text-[#004ff2] ${freightbig.className} text-lg`}
+                className={` hover:underline ${Poppins700.className} text-lg`}
               >
                 Special Occasions
               </Link>
@@ -315,7 +331,7 @@ function page() {
                     <Link
                       href={`/special-occasions/${item.toLowerCase()}`}
                       key={index}
-                      className="hover:text-[#004ff2] "
+                      className="hover:underline "
                     >
                       {DeSlugify(item)}
                     </Link>
