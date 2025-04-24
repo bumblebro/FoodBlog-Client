@@ -140,7 +140,7 @@ function Category({ decodedslug, totalBlogs }: Category) {
         </div>
       )}
       <h1 className="text-sm font-semibold tracking-wider  pt-8  capitalize ">
-        {totalBlogs} {DeSlugify(decodedslug[decodedslug.length - 1])} Blogs
+        {totalBlogs} {DeSlugify(decodedslug[decodedslug.length - 1])} Recipes
         Published
       </h1>
     </div>
