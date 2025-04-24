@@ -34,7 +34,7 @@ function BlogList({ posts }: posts) {
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-4    xl:max-w-[73rem] mx-auto w-full lg:gap-x-6 xl:gap-y-2">
         {posts.map((item, index) => {
           // const myBlurDataUrl = await getBase64(item.imageurl);
-          const shouldInsertAd = Math.random() < 0.5;
+          const shouldInsertAd = Math.random() < 0.2;
           if (shouldInsertAd) {
             return (
               <div key={index} className="mt-4  shadow-md rounded-lg">
