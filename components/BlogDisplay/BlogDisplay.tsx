@@ -327,7 +327,6 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
           <h1 className="px-4 py-4 my-4 italic ">{currentPost.quote}</h1>
         </div>{" "}
         <div className=" py-8 px-4  hidden md:flex md:flex-col">
-          {" "}
           <GoogleAdUnit>
             <>
               {/* Everywhere */}
@@ -341,8 +340,6 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
               />
             </>
           </GoogleAdUnit>
-        </div>
-        <div className=" py-8 px-4  hidden md:flex md:flex-col">
           <h1
             className={`text-2xl font-semibold text-center py-4 mb-4 ${Poppins700.className} bg-[#8D6271]  text-white rounded-md`}
           >
@@ -491,7 +488,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
           </div>
         </div>{" "}
       </div>
-      <div className="py-8 px-4  xl:pr-0">
+      <div className="py-8 px-4 md:bg-[#ffffff] xl:pr-0">
         <GoogleAdUnit>
           <>
             {/* Everywhere */}
@@ -505,8 +502,6 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
             />
           </>
         </GoogleAdUnit>
-      </div>
-      <div className="py-8 px-4 md:bg-[#ffffff] xl:pr-0">
         <h1
           className={`text-lg font-semibold text-center py-4 mb-4 ${Poppins700.className}  bg-[#8D6271]  text-white rounded-md`}
         >
