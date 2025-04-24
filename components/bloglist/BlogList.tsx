@@ -34,12 +34,10 @@ function BlogList({ posts }: posts) {
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-4    xl:max-w-[73rem] mx-auto w-full lg:gap-x-6 xl:gap-y-2">
         {posts.map((item, index) => {
           // const myBlurDataUrl = await getBase64(item.imageurl);
-          if (index == 2)
+          const shouldInsertAd = Math.random() < 0.1; 
+          if (shouldInsertAd) {
             return (
-              <div
-                key={index}
-                className="mt-4  shadow-md rounded-lg"
-              >
+              <div key={index} className="mt-4  shadow-md rounded-lg">
                 <GoogleAdUnit>
                   <ins
                     className="adsbygoogle"
@@ -52,6 +50,7 @@ function BlogList({ posts }: posts) {
                 </GoogleAdUnit>
               </div>
             );
+          }
           return (
             <div
               key={index}
