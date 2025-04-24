@@ -343,21 +343,6 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
           </GoogleAdUnit>
         </div>
         <div className=" py-8 px-4  hidden md:flex md:flex-col">
-          <GoogleAdUnit>
-            <>
-              {/* Everywhere */}
-              <ins
-                className="adsbygoogle"
-                style={{ display: "block" }}
-                data-ad-client="ca-pub-5012580427673167"
-                data-ad-slot={3048648789}
-                data-ad-format="auto"
-                data-full-width-responsive="true"
-              />
-            </>
-          </GoogleAdUnit>
-        </div>
-        <div className=" py-8 px-4  hidden md:flex md:flex-col">
           <h1
             className={`text-2xl font-semibold text-center py-4 mb-4 ${Poppins700.className} bg-[#8D6271]  text-white rounded-md`}
           >
@@ -502,6 +487,21 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
             })}
           </div>
         </div>{" "}
+      </div>
+      <div className="py-8 px-4  xl:pr-0">
+        <GoogleAdUnit>
+          <>
+            {/* Everywhere */}
+            <ins
+              className="adsbygoogle"
+              style={{ display: "block" }}
+              data-ad-client="ca-pub-5012580427673167"
+              data-ad-slot={3048648789}
+              data-ad-format="auto"
+              data-full-width-responsive="true"
+            />
+          </>
+        </GoogleAdUnit>
       </div>
       <div className="py-8 px-4 md:bg-[#ffffff] xl:pr-0">
         <h1
