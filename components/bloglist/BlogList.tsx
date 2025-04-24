@@ -1,3 +1,5 @@
+"use client";
+
 import DeSlugify from "@/libs/DeSlugify";
 import { shimmer, toBase64 } from "@/libs/Shimmer";
 import { FoodBlogs } from "@prisma/client";
