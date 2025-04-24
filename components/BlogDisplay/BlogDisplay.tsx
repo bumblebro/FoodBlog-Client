@@ -18,6 +18,7 @@ import localFont from "next/font/local";
 // Homemade_Apple
 
 import { Poppins } from "next/font/google";
+import GoogleAdUnit from "../GoogleAdUnit";
 // Poppins
 const Poppins700 = Poppins({
   weight: "700",
@@ -333,6 +334,23 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
           </h1>
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
             {latposts?.map((item, i) => {
+              const shouldInsertAd = Math.random() < 0.1;
+              if (shouldInsertAd) {
+                return (
+                  <div key={i} className="mt-4  shadow-md rounded-lg">
+                    <GoogleAdUnit>
+                      <ins
+                        className="adsbygoogle"
+                        style={{ display: "block" }}
+                        data-ad-format="fluid"
+                        data-ad-layout-key="-ik+6-e-2h+5s"
+                        data-ad-client="ca-pub-5012580427673167"
+                        data-ad-slot={7683937910}
+                      />
+                    </GoogleAdUnit>
+                  </div>
+                );
+              }
               return (
                 <div
                   key={i}
@@ -462,6 +480,23 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
         </h1>
         <div className="flex flex-col gap-4">
           {posts?.map((item, i) => {
+            const shouldInsertAd = Math.random() < 0.1;
+            if (shouldInsertAd) {
+              return (
+                <div key={i} className="mt-4  shadow-md rounded-lg">
+                  <GoogleAdUnit>
+                    <ins
+                      className="adsbygoogle"
+                      style={{ display: "block" }}
+                      data-ad-format="fluid"
+                      data-ad-layout-key="-ik+6-e-2h+5s"
+                      data-ad-client="ca-pub-5012580427673167"
+                      data-ad-slot={7683937910}
+                    />
+                  </GoogleAdUnit>
+                </div>
+              );
+            }
             return (
               <div
                 key={i}
