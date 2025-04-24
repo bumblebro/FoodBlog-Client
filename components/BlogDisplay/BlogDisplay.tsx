@@ -327,6 +327,37 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
           <h1 className="px-4 py-4 my-4 italic ">{currentPost.quote}</h1>
         </div>{" "}
         <div className=" py-8 px-4  hidden md:flex md:flex-col">
+          {" "}
+          <GoogleAdUnit>
+            <>
+              {/* Everywhere */}
+              <ins
+                className="adsbygoogle"
+                style={{ display: "block" }}
+                data-ad-client="ca-pub-5012580427673167"
+                data-ad-slot={3048648789}
+                data-ad-format="auto"
+                data-full-width-responsive="true"
+              />
+            </>
+          </GoogleAdUnit>
+        </div>
+        <div className=" py-8 px-4  hidden md:flex md:flex-col">
+          <GoogleAdUnit>
+            <>
+              {/* Everywhere */}
+              <ins
+                className="adsbygoogle"
+                style={{ display: "block" }}
+                data-ad-client="ca-pub-5012580427673167"
+                data-ad-slot={3048648789}
+                data-ad-format="auto"
+                data-full-width-responsive="true"
+              />
+            </>
+          </GoogleAdUnit>
+        </div>
+        <div className=" py-8 px-4  hidden md:flex md:flex-col">
           <h1
             className={`text-2xl font-semibold text-center py-4 mb-4 ${Poppins700.className} bg-[#8D6271]  text-white rounded-md`}
           >
