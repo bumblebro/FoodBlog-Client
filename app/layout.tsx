@@ -72,12 +72,14 @@ export default function RootLayout({
         </script> */}
       </head>
       <body className={inter.className}>
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5457433644037438"
-          crossOrigin="anonymous"
-          strategy="lazyOnload"
-        />
+        {process.env.NODE_ENV == "production" && (
+          <Script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5457433644037438"
+            crossOrigin="anonymous"
+            strategy="lazyOnload"
+          />
+        )}
         <NextTopLoader showSpinner={false} color="#0050f0" crawlSpeed={50} />
         {/* <Navbar /> */}
         {children}

@@ -6,6 +6,7 @@ import localFont from "next/font/local";
 import { Pacifico } from "next/font/google";
 
 import { Poppins } from "next/font/google";
+import GoogleAdUnit from "../GoogleAdUnit";
 // Poppins
 const Poppins700 = Poppins({
   weight: "700",
@@ -166,6 +167,7 @@ function FeaturedPost({ posts }: posts) {
           </Link>
         </div>
       </div>
+     
     </div>
   );
 }
