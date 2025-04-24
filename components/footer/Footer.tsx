@@ -33,19 +33,20 @@ function Footer() {
     >
       {/* <div className="bg-gray-200 w-full h-[100px]">
         {" "} */}
-      <GoogleAdUnit>
-        {/* Ads1 */}
-        <ins
-          className="adsbygoogle"
-          style={{ display: "block" }}
-          data-ad-client="ca-pub-5012580427673167"
-          data-ad-slot={3048648789}
-          data-ad-format="auto"
-          data-full-width-responsive="true"
-        />
-      </GoogleAdUnit>
+
       {/* </div> */}
       <div className="pt-11 pb-20 text-white text-center flex flex-col gap-14 px-4 mx-auto xl:max-w-[73rem] ">
+        <GoogleAdUnit>
+          {/* Ads1 */}
+          <ins
+            className="adsbygoogle"
+            style={{ display: "block" }}
+            data-ad-client="ca-pub-5012580427673167"
+            data-ad-slot={3048648789}
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          />
+        </GoogleAdUnit>
         <div className="flex flex-col items-center gap-3 ">
           <h1
             className={`text-md font-medium text-[#000000] ${Poppins700.className} uppercase`}
