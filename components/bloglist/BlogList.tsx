@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import localFont from "next/font/local";
 import { Poppins } from "next/font/google";
+import GoogleAdUnit from "../GoogleAdUnit";
 // Poppins
 const Poppins700 = Poppins({
   weight: "700",
@@ -33,7 +34,24 @@ function BlogList({ posts }: posts) {
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-4    xl:max-w-[73rem] mx-auto w-full lg:gap-x-6 xl:gap-y-2">
         {posts.map((item, index) => {
           // const myBlurDataUrl = await getBase64(item.imageurl);
-
+          if (index == 2)
+            return (
+              <div
+                key={index}
+                className="mt-4  shadow-md rounded-lg"
+              >
+                <GoogleAdUnit>
+                  <ins
+                    className="adsbygoogle"
+                    style={{ display: "block" }}
+                    data-ad-format="fluid"
+                    data-ad-layout-key="+23+s8-j-5g+bo"
+                    data-ad-client="ca-pub-5012580427673167"
+                    data-ad-slot={4989250569}
+                  />
+                </GoogleAdUnit>
+              </div>
+            );
           return (
             <div
               key={index}
