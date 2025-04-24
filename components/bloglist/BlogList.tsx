@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import DeSlugify from "@/libs/DeSlugify";
 import { shimmer, toBase64 } from "@/libs/Shimmer";
@@ -50,7 +50,7 @@ function BlogList({ posts }: posts) {
                     data-ad-client="ca-pub-5012580427673167"
                     data-ad-slot={3048648789}
                     data-ad-format="auto"
-                    data-full-width-responsive="true"
+                    data-full-width-responsive="false"
                   />
                 </GoogleAdUnit>
               </div>

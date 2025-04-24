@@ -53,7 +53,7 @@ const GoogleAdUnitClient = ({
     } catch (err) {
       console.error(err);
     }
-  }, [pathname, searchParams]);
+  }, [pathname, searchParams, isProduction]);
   return <React.Fragment>{children}</React.Fragment>;
 };
 
