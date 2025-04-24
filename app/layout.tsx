@@ -36,6 +36,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5457433644037438"
+          crossOrigin="anonymous"
+          strategy="lazyOnload"
+        />
         {/* <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-5RNXYBZTK0"
@@ -70,7 +76,8 @@ export default function RootLayout({
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5457433644037438"
           crossOrigin="anonymous"
-        ></Script>
+          strategy="lazyOnload"
+        />
         <NextTopLoader showSpinner={false} color="#0050f0" crawlSpeed={50} />
         {/* <Navbar /> */}
         {children}
