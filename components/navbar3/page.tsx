@@ -156,7 +156,7 @@ const navigation = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   // { name: "Privacy Policy", href: "/privacy-policy" },
-  { name: "Recipes", href: "/recipes" },
+  { name: "All Recipes", href: "/recipes" },
 ];
 
 function classNames(...classes: any) {
