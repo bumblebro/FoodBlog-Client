@@ -25,7 +25,7 @@
 // export default GoogleAdUnitClient;
 
 "use client";
-import React from "react";
+import React, { ReactNode } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 
 export type GoogleAdUnitProps = {
@@ -38,7 +38,13 @@ declare global {
   }
 }
 
-const GoogleAdUnitClient: React.FC<GoogleAdUnitProps> = ({ children }) => {
+const GoogleAdUnitClient = ({
+  isProduction,
+  children,
+}: {
+  isProduction: boolean;
+  children: ReactNode;
+}) => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   React.useEffect(() => {
