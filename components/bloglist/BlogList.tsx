@@ -42,10 +42,10 @@ function BlogList({ posts }: posts) {
                   <ins
                     className="adsbygoogle"
                     style={{ display: "block" }}
-                    data-ad-format="fluid"
-                    data-ad-layout-key="+23+s8-j-5g+bo"
                     data-ad-client="ca-pub-5012580427673167"
-                    data-ad-slot={4989250569}
+                    data-ad-slot={3048648789}
+                    data-ad-format="auto"
+                    data-full-width-responsive="true"
                   />
                 </GoogleAdUnit>
               </div>

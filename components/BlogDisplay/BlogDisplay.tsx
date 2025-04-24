@@ -373,10 +373,10 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                       <ins
                         className="adsbygoogle"
                         style={{ display: "block" }}
-                        data-ad-format="fluid"
-                        data-ad-layout-key="-ik+6-e-2h+5s"
                         data-ad-client="ca-pub-5012580427673167"
-                        data-ad-slot={7683937910}
+                        data-ad-slot={3048648789}
+                        data-ad-format="auto"
+                        data-full-width-responsive="true"
                       />
                     </GoogleAdUnit>
                   </div>
@@ -519,10 +519,10 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                     <ins
                       className="adsbygoogle"
                       style={{ display: "block" }}
-                      data-ad-format="fluid"
-                      data-ad-layout-key="-ik+6-e-2h+5s"
                       data-ad-client="ca-pub-5012580427673167"
-                      data-ad-slot={7683937910}
+                      data-ad-slot={3048648789}
+                      data-ad-format="auto"
+                      data-full-width-responsive="true"
                     />
                   </GoogleAdUnit>
                 </div>
