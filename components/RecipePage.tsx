@@ -275,8 +275,7 @@ const RecipePage = ({ currentPost }: any) => {
             ))}
           </ul>
         </div>
-        <GoogleAdUnit>
-          {/* Ads1 */}
+        {/* <GoogleAdUnit>
           <ins
             className="adsbygoogle"
             style={{ display: "block" }}
@@ -285,7 +284,7 @@ const RecipePage = ({ currentPost }: any) => {
             data-ad-format="auto"
             data-full-width-responsive="true"
           />
-        </GoogleAdUnit>
+        </GoogleAdUnit> */}
         {/* Nutrition Info */}
         <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 text-">
           <h2
