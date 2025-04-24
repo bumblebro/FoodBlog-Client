@@ -331,7 +331,7 @@ function page() {
                     <Link
                       href={`/special-occasions/${item.toLowerCase()}`}
                       key={index}
-                      className="hover:underline "
+                      className={`hover:underline ${Poppins400.className}`}
                     >
                       {DeSlugify(item)}
                     </Link>

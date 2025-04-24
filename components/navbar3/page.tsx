@@ -246,6 +246,7 @@ function Navbar3({
                   </Link>
                 </div>
               </div>
+
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 {/* <button
               type="button"
@@ -255,13 +256,27 @@ function Navbar3({
               <span className="sr-only">View notifications</span>
               <BellIcon aria-hidden="true" className="size-6" />
             </button> */}
+
                 <div
                   className={` flex items-center sm:hidden ${Poppins700.className}`}
                 >
+                  {" "}
+                  <a
+                    // as="a"
+                    href={"/recipes"}
+                    // aria-current={item.current ? "page" : undefined}
+                    className={classNames(
+                      "hover:bg-black text-white bg-[#8D6271] transition-all duration-400",
+                      `block rounded-md px-3 py-2 text-sm font-medium `
+                    )}
+                  >
+                    All Recipes
+                  </a>
                   {/* Mobile menu button*/}
                   <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 ">
                     <span className="absolute -inset-0.5" />
                     <span className="sr-only">Open main menu</span>
+
                     {open ? (
                       <XMarkIcon className="block size-6 " aria-hidden="true" />
                     ) : (
