@@ -36,14 +36,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* {process.env.NODE_ENV == "production" && (
+        {process.env.NODE_ENV == "production" && (
           <Script
             async
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5457433644037438"
             crossOrigin="anonymous"
-            strategy="lazyOnload"
+            strategy="beforeInteractive"
           />
-        )} */}
+        )}
         {/* <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-5RNXYBZTK0"
