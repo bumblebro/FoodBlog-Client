@@ -1,3 +1,4 @@
+"use client";
 import { ReactNode, Suspense } from "react";
 import GoogleAdUnitClient from "./GoogleAdUnitClient";
 
