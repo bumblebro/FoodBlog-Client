@@ -31,7 +31,7 @@ function Footer() {
     <div
       className={`bg-[#F4F2F2] text-[#000000] font-sans ${Poppins400.className}`}
     >
-      <div className=" w-full h-[100px]">
+      <div className="bg-gray-200 w-full h-[100px]">
         {" "}
         <GoogleAdUnit>
           {/* Ads1 */}
