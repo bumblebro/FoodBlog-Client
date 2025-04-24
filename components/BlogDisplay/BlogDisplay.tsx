@@ -350,10 +350,13 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
           </h1>
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
             {latposts?.map((item, i) => {
-              const shouldInsertAd = Math.random() < 0.2;
+              const shouldInsertAd = Math.random() < 0.1;
               if (shouldInsertAd) {
                 return (
-                  <div key={i} className="mt-4  shadow-md rounded-lg">
+                  <div
+                    key={i}
+                    className="mt-4  shadow-md rounded-lg w-full h-full"
+                  >
                     <GoogleAdUnit>
                       <ins
                         className="adsbygoogle"
@@ -511,10 +514,13 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
         </h1>
         <div className="flex flex-col gap-4">
           {posts?.map((item, i) => {
-            const shouldInsertAd = Math.random() < 0.2;
+            const shouldInsertAd = Math.random() < 0.1;
             if (shouldInsertAd) {
               return (
-                <div key={i} className="mt-4  shadow-md rounded-lg">
+                <div
+                  key={i}
+                  className="mt-4  shadow-md rounded-lg w-full h-full"
+                >
                   <GoogleAdUnit>
                     <ins
                       className="adsbygoogle"
