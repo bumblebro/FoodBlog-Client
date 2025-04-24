@@ -133,7 +133,7 @@ const options = {
     },
     strong: {
       component: (props: any) => (
-        <strong style={{ fontWeight: "500" }} {...props} />
+        <strong {...props} />
       ),
     },
     ul: {
@@ -165,7 +165,7 @@ const options = {
         <li style={{ marginBottom: "5px" }}>
           {React.Children.map(props.children, (child) =>
             child.type === "strong" ? (
-              <strong style={{ fontWeight: "500" }}>
+              <strong >
                 {child.props.children}
               </strong>
             ) : (

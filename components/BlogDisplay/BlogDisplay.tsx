@@ -13,7 +13,7 @@ import ShareButtons from "../ShareButtons";
 import localFont from "next/font/local";
 
 // import Buttons from "../Buttons";
-import { Nunito_Sans } from "next/font/google";
+// import { Nunito_Sans } from "next/font/google";
 // Pacifico
 // Homemade_Apple
 
@@ -31,11 +31,11 @@ const Poppins400 = Poppins({
   // display: "swap",
 });
 
-const font = Nunito_Sans({
-  weight: "400",
-  subsets: ["latin"],
-  // display: "swap",
-});
+// const font = Nunito_Sans({
+//   weight: "400",
+//   subsets: ["latin"],
+//   // display: "swap",
+// });
 
 const freight = localFont({
   src: "../../app/fonts/freight-neo-pro-book.otf",
@@ -270,7 +270,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                   ))} */}
                 {contentItem.description && (
                   <div
-                    className={`  mb-4 ${font.className}  font-medium leading-[27px]`}
+                    className={`  mb-4 ${Poppins400.className}  font-medium leading-[27px]`}
                   >
                     <MarkdownComponent text={contentItem.description} />
                   </div>
@@ -312,7 +312,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
               </h2>
               <ul className=" rounded-lg py-3  flex flex-col gap-2  list-disc ">
                 {currentPost.equipments.map((equipment, i) => (
-                  <li key={i} className="flex items-center text-gray-700  ">
+                  <li key={i} className="flex items-center  ">
                     {equipment}
                   </li>
                 ))}
@@ -442,7 +442,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                       }${item.title.toLowerCase()}`}
                     >
                       <h1
-                        className={`text-sm font-medium line-clamp-2  hover:underline text-slate-800 ${Poppins700.className}`}
+                        className={`text-sm font-medium line-clamp-2  hover:underline  ${Poppins700.className}`}
                       >
                         {DeSlugify(item.title)}
                       </h1>
@@ -571,7 +571,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                     }${item.title.toLowerCase()}`}
                   >
                     <h1
-                      className={`text-sm font-medium line-clamp-2 hover:underline text-slate-800 ${Poppins700.className}`}
+                      className={`text-sm font-medium line-clamp-2 hover:underline  ${Poppins700.className}`}
                     >
                       {DeSlugify(item.title)}
                     </h1>
