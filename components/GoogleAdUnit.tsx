@@ -22,7 +22,7 @@ import GoogleAdUnitClient, { GoogleAdUnitProps } from "./GoogleAdUnitClient";
 
 const GoogleAdUnit = ({ children }: GoogleAdUnitProps) => {
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<div className="text-black">Loading Ad...</div>}>
       <GoogleAdUnitClient isProduction={process.env.NODE_ENV == "production"}>
         {children}
       </GoogleAdUnitClient>
