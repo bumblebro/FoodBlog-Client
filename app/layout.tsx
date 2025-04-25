@@ -7,6 +7,7 @@ import Footer from "@/components/footer/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
 import AnalyticsScript from "@/components/AnalyticsScript";
+import { GoogleAdSense } from "next-google-adsense";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,14 +37,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {process.env.NODE_ENV == "production" && (
+        {/* {process.env.NODE_ENV == "production" && (
           <Script
             async
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5457433644037438"
             crossOrigin="anonymous"
             strategy="lazyOnload"
           />
-        )}
+        )} */}
         {/* <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-5RNXYBZTK0"
@@ -74,6 +75,9 @@ export default function RootLayout({
         </script> */}
       </head>
       <body className={inter.className}>
+        {process.env.NODE_ENV == "production" && (
+          <GoogleAdSense publisherId="pub-5457433644037438" />
+        )}
         <NextTopLoader showSpinner={false} color="#0050f0" crawlSpeed={50} />
         {/* <Navbar /> */}
         {children}
