@@ -1,6 +1,6 @@
 "use client";
 
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 
 export type GoogleAdUnitProps = {
@@ -22,14 +22,28 @@ const GoogleAdUnitClient = ({
 }) => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  React.useEffect(() => {
-    try {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-    } catch (err) {
-      console.error(err);
-    }
+  // React.useEffect(() => {
+  //   try {
+  //     (window.adsbygoogle = window.adsbygoogle || []).push({});
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // }, [pathname, searchParams]);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      try {
+        if (typeof window !== "undefined") {
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    }, 100);
+    return () => clearTimeout(timeout);
   }, [pathname, searchParams]);
-  return <React.Fragment>{children}</React.Fragment>;
+
+  return <>{children}</>;
 };
 
 export default GoogleAdUnitClient;
