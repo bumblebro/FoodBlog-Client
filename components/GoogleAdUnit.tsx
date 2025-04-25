@@ -11,4 +11,4 @@ const GoogleAdUnit = ({ children }: GoogleAdUnitProps) => {
   );
 };
 
-export default GoogleAdUnit;
+// export default GoogleAdUnit;

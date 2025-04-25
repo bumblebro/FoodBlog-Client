@@ -18,7 +18,8 @@ import localFont from "next/font/local";
 // Homemade_Apple
 
 import { Poppins } from "next/font/google";
-import GoogleAdUnit from "../GoogleAdUnit";
+import GoogleAdUnit from "nextjs13_google_adsense";
+// import GoogleAdUnit from "../GoogleAdUnit";
 // Poppins
 const Poppins700 = Poppins({
   weight: "700",
