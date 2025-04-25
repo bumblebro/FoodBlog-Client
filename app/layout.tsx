@@ -76,9 +76,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         {process.env.NODE_ENV == "production" && (
-          <GoogleAdSense
-            publisherId={process.env.NEXT_PUBLIC_ADSENSE_PUBLISHER_ID}
-          />
+          <GoogleAdSense publisherId="pub-5457433644037438" />
         )}
         <NextTopLoader showSpinner={false} color="#0050f0" crawlSpeed={50} />
         {/* <Navbar /> */}
