@@ -31,18 +31,18 @@ const GoogleAdUnitClient = ({
   //   }
   // }, [pathname, searchParams]);
 
-  // useEffect(() => {
-  //   const timeout = setTimeout(() => {
-  //     try {
-  //       if (typeof window !== "undefined") {
-  //         (window.adsbygoogle = window.adsbygoogle || []).push({});
-  //       }
-  //     } catch (err) {
-  //       console.error(err);
-  //     }
-  //   }, 100);
-  //   return () => clearTimeout(timeout);
-  // }, [pathname, searchParams]);
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      try {
+        if (typeof window !== "undefined") {
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    }, 100);
+    return () => clearTimeout(timeout);
+  }, [pathname, searchParams]);
 
   //------------------ new fixxxxxxx
   // useEffect(() => {
@@ -84,18 +84,18 @@ const GoogleAdUnitClient = ({
   //   } catch (err) {}
   // }, []);
 
-  useEffect(() => {
-    const ads = document.querySelectorAll(".adsbygoogle");
-    ads.forEach((ad) => {
-      if (!ad.getAttribute("data-adsbygoogle-status")) {
-        try {
-          (window.adsbygoogle = window.adsbygoogle || []).push({});
-        } catch (e) {
-          console.error("AdSense error:", e);
-        }
-      }
-    });
-  }, []);
+  // useEffect(() => {
+  //   const ads = document.querySelectorAll(".adsbygoogle");
+  //   ads.forEach((ad) => {
+  //     if (!ad.getAttribute("data-adsbygoogle-status")) {
+  //       try {
+  //         (window.adsbygoogle = window.adsbygoogle || []).push({});
+  //       } catch (e) {
+  //         console.error("AdSense error:", e);
+  //       }
+  //     }
+  //   });
+  // }, []);
 
   return <>{children}</>;
 };
