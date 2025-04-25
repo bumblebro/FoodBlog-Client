@@ -44,35 +44,44 @@ const GoogleAdUnitClient = ({
   //   return () => clearTimeout(timeout);
   // }, [pathname, searchParams]);
 
+  //------------------ new fixxxxxxx
+  // useEffect(() => {
+  //   const handleRouteChange = () => {
+  //     const intervalId = setInterval(() => {
+  //       try {
+  //         // Check if the 'ins' element already has an ad in it
+  //         if (window.adsbygoogle) {
+  //           window.adsbygoogle.push({});
+  //           clearInterval(intervalId);
+  //         }
+  //       } catch (err) {
+  //         console.error("Error pushing ads: ", err);
+  //         clearInterval(intervalId); // Ensure we clear interval on errors too
+  //       }
+  //     }, 100);
+  //     return () => clearInterval(intervalId); // Clear interval on component unmount
+  //   };
+
+  //   // Run the function when the component mounts
+  //   handleRouteChange();
+
+  //   // Subscribe to route changes
+  //   if (typeof window !== "undefined") {
+  //     Router.events.on("routeChangeComplete", handleRouteChange);
+
+  //     // Unsubscribe from route changes when the component unmounts
+  //     return () => {
+  //       Router.events.off("routeChangeComplete", handleRouteChange);
+  //     };
+  //   }
+  // }, []);
+
+  //------------adother fix
   useEffect(() => {
-    const handleRouteChange = () => {
-      const intervalId = setInterval(() => {
-        try {
-          // Check if the 'ins' element already has an ad in it
-          if (window.adsbygoogle) {
-            window.adsbygoogle.push({});
-            clearInterval(intervalId);
-          }
-        } catch (err) {
-          console.error("Error pushing ads: ", err);
-          clearInterval(intervalId); // Ensure we clear interval on errors too
-        }
-      }, 100);
-      return () => clearInterval(intervalId); // Clear interval on component unmount
-    };
-
-    // Run the function when the component mounts
-    handleRouteChange();
-
-    // Subscribe to route changes
-    if (typeof window !== "undefined") {
-      Router.events.on("routeChangeComplete", handleRouteChange);
-
-      // Unsubscribe from route changes when the component unmounts
-      return () => {
-        Router.events.off("routeChangeComplete", handleRouteChange);
-      };
-    }
+    try {
+      // @ts-ignore
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (err) {}
   }, []);
 
   return <>{children}</>;
