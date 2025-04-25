@@ -37,16 +37,30 @@ function Footer() {
 
       {/* </div> */}
       <div className="pt-11 pb-20 text-white text-center flex flex-col gap-14 px-4 mx-auto xl:max-w-[73rem] ">
-        <GoogleAdUnit>
-          <ins
-            className="adsbygoogle"
-            style={{ display: "block" }}
-            data-ad-client="ca-pub-5012580427673167"
-            data-ad-slot={3048648789}
-            data-ad-format="auto"
-            data-full-width-responsive="true"
-          />
-        </GoogleAdUnit>
+        <div className="h-full">
+          <GoogleAdUnit>
+            <ins
+              className="adsbygoogle"
+              // style={{ display: "block" }}
+              style={{
+                display: "block",
+                overflow: "hidden",
+                border:
+                  process.env.NODE_ENV === "development"
+                    ? "1px solid red"
+                    : "none",
+                background:
+                  process.env.NODE_ENV === "development"
+                    ? "rgba(255, 0, 0, 0.1)"
+                    : "none",
+              }}
+              data-ad-client="ca-pub-5012580427673167"
+              data-ad-slot={3048648789}
+              data-ad-format="auto"
+              data-full-width-responsive="true"
+            />
+          </GoogleAdUnit>
+        </div>
         {/* <AdUnit
           publisherId="pub-5457433644037438"
           slotId="3048648789"
