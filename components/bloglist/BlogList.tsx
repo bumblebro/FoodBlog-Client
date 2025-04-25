@@ -36,26 +36,26 @@ function BlogList({ posts }: posts) {
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-4    xl:max-w-[73rem] mx-auto w-full lg:gap-x-6 xl:gap-y-2">
         {posts.map((item, index) => {
           // const myBlurDataUrl = await getBase64(item.imageurl);
-          const shouldInsertAd = Math.random() < 0.1;
-          if (shouldInsertAd) {
-            return (
-              <div
-                key={index}
-                className="mt-4 w-full h-full  shadow-md rounded-lg"
-              >
-                <GoogleAdUnit>
-                  <ins
-                    className="adsbygoogle"
-                    style={{ display: "block" }}
-                    data-ad-client="ca-pub-5012580427673167"
-                    data-ad-slot={3048648789}
-                    data-ad-format="auto"
-                    data-full-width-responsive="false"
-                  />
-                </GoogleAdUnit>
-              </div>
-            );
-          }
+          // const shouldInsertAd = Math.random() < 0.1;
+          // if (shouldInsertAd) {
+          //   return (
+          //     <div
+          //       key={index}
+          //       className="mt-4 w-full h-full  shadow-md rounded-lg"
+          //     >
+          //       <GoogleAdUnit>
+          //         <ins
+          //           className="adsbygoogle"
+          //           style={{ display: "block" }}
+          //           data-ad-client="ca-pub-5012580427673167"
+          //           data-ad-slot={3048648789}
+          //           data-ad-format="auto"
+          //           data-full-width-responsive="false"
+          //         />
+          //       </GoogleAdUnit>
+          //     </div>
+          //   );
+          // }
           return (
             <div
               key={index}
