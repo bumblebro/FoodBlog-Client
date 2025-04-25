@@ -47,7 +47,11 @@ function Footer() {
             data-full-width-responsive="true"
           />
         </GoogleAdUnit> */}
-        <AdUnit slotId="3048648789" layout="display" />
+        <AdUnit
+          publisherId="pub-5457433644037438"
+          slotId="3048648789"
+          layout="display"
+        />
         <div className="flex flex-col items-center gap-3 ">
           <h1
             className={`text-md font-medium text-[#000000] ${Poppins700.className} uppercase`}
