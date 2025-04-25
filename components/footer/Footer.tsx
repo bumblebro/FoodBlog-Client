@@ -37,7 +37,7 @@ function Footer() {
 
       {/* </div> */}
       <div className="pt-11 pb-20 text-white text-center flex flex-col gap-14 px-4 mx-auto xl:max-w-[73rem] ">
-        {/* <GoogleAdUnit>
+        <GoogleAdUnit>
           <ins
             className="adsbygoogle"
             style={{ display: "block" }}
@@ -46,12 +46,12 @@ function Footer() {
             data-ad-format="auto"
             data-full-width-responsive="true"
           />
-        </GoogleAdUnit> */}
-        <AdUnit
+        </GoogleAdUnit>
+        {/* <AdUnit
           publisherId="pub-5457433644037438"
           slotId="3048648789"
           layout="display"
-        />
+        /> */}
         <div className="flex flex-col items-center gap-3 ">
           <h1
             className={`text-md font-medium text-[#000000] ${Poppins700.className} uppercase`}
