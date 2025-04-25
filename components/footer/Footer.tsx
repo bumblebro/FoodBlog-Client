@@ -6,6 +6,7 @@ import localFont from "next/font/local";
 import { FacebookIcon, PinterestIcon, TwitterIcon } from "react-share";
 import { Poppins } from "next/font/google";
 import GoogleAdUnit from "../GoogleAdUnit";
+import { AdUnit } from "next-google-adsense";
 // Poppins
 const Poppins700 = Poppins({
   weight: "700",
@@ -36,7 +37,7 @@ function Footer() {
 
       {/* </div> */}
       <div className="pt-11 pb-20 text-white text-center flex flex-col gap-14 px-4 mx-auto xl:max-w-[73rem] ">
-        <GoogleAdUnit>
+        {/* <GoogleAdUnit>
           <ins
             className="adsbygoogle"
             style={{ display: "block" }}
@@ -45,7 +46,8 @@ function Footer() {
             data-ad-format="auto"
             data-full-width-responsive="true"
           />
-        </GoogleAdUnit>
+        </GoogleAdUnit> */}
+        <AdUnit slotId="3048648789" layout="display" />
         <div className="flex flex-col items-center gap-3 ">
           <h1
             className={`text-md font-medium text-[#000000] ${Poppins700.className} uppercase`}
