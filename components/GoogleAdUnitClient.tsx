@@ -77,11 +77,24 @@ const GoogleAdUnitClient = ({
   // }, []);
 
   //------------adother fix
+  // useEffect(() => {
+  //   try {
+  //     // @ts-ignore
+  //     (window.adsbygoogle = window.adsbygoogle || []).push({});
+  //   } catch (err) {}
+  // }, []);
+
   useEffect(() => {
-    try {
-      // @ts-ignore
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-    } catch (err) {}
+    const ads = document.querySelectorAll(".adsbygoogle");
+    ads.forEach((ad) => {
+      if (!ad.getAttribute("data-adsbygoogle-status")) {
+        try {
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+        } catch (e) {
+          console.error("AdSense error:", e);
+        }
+      }
+    });
   }, []);
 
   return <>{children}</>;
