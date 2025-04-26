@@ -322,7 +322,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
               </ul>
             </div>
           )}
-          {/* <AdCode>
+          <AdCode>
             {" "}
             <ins
               className="adsbygoogle"
@@ -333,9 +333,8 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
               data-ad-format="auto"
               data-full-width-responsive="true"
             />
-          </AdCode>{" "} */}
+          </AdCode>{" "}
           {/* <GoogleAdPcItem key={2 + "ads"} adId={`ad-slot-${2}`} /> */}
-          <GoogleAd />
           <RecipePage currentPost={currentPost} />
           {currentPost.faq && (currentPost.faq as any[]).length > 0 && (
             <FAQSection faqs={currentPost.faq} />

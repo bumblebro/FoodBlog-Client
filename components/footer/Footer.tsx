@@ -60,7 +60,7 @@ function Footer() {
               data-ad-format="auto"
               data-full-width-responsive="true"
             /> */}
-          {/* <AdCode>
+          <AdCode>
             {" "}
             <ins
               className="adsbygoogle"
@@ -71,10 +71,8 @@ function Footer() {
               data-ad-format="auto"
               data-full-width-responsive="true"
             />
-          </AdCode>{" "} */}
+          </AdCode>{" "}
           {/* <GoogleAdPcItem key={1 + "ads"} adId={`ad-slot-${1}`} /> */}
-
-          <GoogleAd />
         </div>
         <div className="flex flex-col items-center gap-3 ">
           <h1
