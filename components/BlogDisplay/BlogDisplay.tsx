@@ -18,7 +18,6 @@ import localFont from "next/font/local";
 // Homemade_Apple
 
 import { Poppins } from "next/font/google";
-import GoogleAdUnit from "nextjs13_google_adsense";
 import AdCode from "../AdCode";
 // import GoogleAdUnit from "../GoogleAdUnit";
 // Poppins
@@ -341,16 +340,6 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
           <h1 className="px-4 py-4 my-4 italic ">{currentPost.quote}</h1>
         </div>{" "}
         <div className=" py-8 px-4  hidden md:flex md:flex-col">
-          {/* <GoogleAdUnit>
-            <ins
-              className="adsbygoogle"
-              style={{ display: "block" }}
-              data-ad-client="ca-pub-5012580427673167"
-              data-ad-slot={3048648789}
-              data-ad-format="auto"
-              data-full-width-responsive="true"
-            />
-          </GoogleAdUnit> */}
           <AdCode>
             {" "}
             <ins
@@ -512,16 +501,18 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
         </div>{" "}
       </div>
       <div className="py-8 px-4 md:bg-[#ffffff] xl:pr-0">
-        <GoogleAdUnit>
+        <AdCode>
+          {" "}
           <ins
             className="adsbygoogle"
-            style={{ display: "block" }}
+            // style={{ display: "block" }}
+            style={{ display: "block", width: "100%" }}
             data-ad-client="ca-pub-5012580427673167"
-            data-ad-slot={3048648789}
+            data-ad-slot="3048648789"
             data-ad-format="auto"
             data-full-width-responsive="true"
           />
-        </GoogleAdUnit>
+        </AdCode>{" "}
         <h1
           className={`text-lg font-semibold text-center py-4 mb-4 ${Poppins700.className}  bg-[#8D6271]  text-white rounded-md`}
         >

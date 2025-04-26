@@ -7,7 +7,6 @@ import Image from "next/image";
 import Link from "next/link";
 import localFont from "next/font/local";
 import { Poppins } from "next/font/google";
-// import GoogleAdUnit from "../GoogleAdUnit";
 // Poppins
 const Poppins700 = Poppins({
   weight: "700",

@@ -5,9 +5,7 @@ import localFont from "next/font/local";
 
 import { FacebookIcon, PinterestIcon, TwitterIcon } from "react-share";
 import { Poppins } from "next/font/google";
-// import GoogleAdUnit from "../GoogleAdUnit";
-import { AdUnit } from "next-google-adsense";
-import GoogleAdUnit from "nextjs13_google_adsense";
+
 import AdCode from "../AdCode";
 
 // Poppins
@@ -41,8 +39,7 @@ function Footer() {
       {/* </div> */}
       <div className="pt-11 pb-20 text-white text-center flex flex-col gap-14 px-4 mx-auto xl:max-w-[73rem] ">
         <div className="h-full">
-          {/* <GoogleAdUnit>
-            <ins
+          {/* <ins
               className="adsbygoogle"
               // style={{ display: "block" }}
               style={{
@@ -61,19 +58,7 @@ function Footer() {
               data-ad-slot={3048648789}
               data-ad-format="auto"
               data-full-width-responsive="true"
-            />
-          </GoogleAdUnit> */}
-          {/* <GoogleAdUnit>
-            <ins
-              className="adsbygoogle"
-              // style={{ display: "block" }}
-              style={{ display: "block" }}
-              data-ad-client="ca-pub-5012580427673167"
-              data-ad-slot={3048648789}
-              data-ad-format="auto"
-              data-full-width-responsive="true"
-            />
-          </GoogleAdUnit> */}
+            /> */}
           <AdCode>
             {" "}
             <ins
@@ -87,11 +72,7 @@ function Footer() {
             />
           </AdCode>{" "}
         </div>
-        {/* <AdUnit
-          publisherId="pub-5457433644037438"
-          slotId="3048648789"
-          layout="display"
-        /> */}
+       
         <div className="flex flex-col items-center gap-3 ">
           <h1
             className={`text-md font-medium text-[#000000] ${Poppins700.className} uppercase`}

@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import GoogleAdUnitClient, { GoogleAdUnitProps } from "./GoogleAdUnitClient";
+import GoogleAdUnitClient, { GoogleAdUnitProps } from "./2";
 
 const GoogleAdUnit = ({ children }: GoogleAdUnitProps) => {
   return (

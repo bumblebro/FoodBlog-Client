@@ -6,9 +6,7 @@ import { useState, useRef, useEffect } from "react";
 import localFont from "next/font/local";
 
 import { Poppins } from "next/font/google";
-import GoogleAdUnit from "nextjs13_google_adsense";
 import AdCode from "./AdCode";
-// import GoogleAdUnit from "./GoogleAdUnit";
 // Poppins
 const Poppins700 = Poppins({
   weight: "700",
@@ -278,16 +276,7 @@ const RecipePage = ({ currentPost }: any) => {
           </ul>
         </div>
 
-        {/* <GoogleAdUnit>
-          <ins
-            className="adsbygoogle"
-            style={{ display: "block" }}
-            data-ad-client="ca-pub-5012580427673167"
-            data-ad-slot={3048648789}
-            data-ad-format="auto"
-            data-full-width-responsive="true"
-          />
-        </GoogleAdUnit> */}
+
         <AdCode>
           {" "}
           <ins
