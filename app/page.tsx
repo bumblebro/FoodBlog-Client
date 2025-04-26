@@ -105,7 +105,9 @@ async function Home({ searchParams }: { searchParams: { pageNo: string } }) {
             data-full-width-responsive="true"
           />
         </AdCode>{" "} */}
+        <h1>Advertisement1</h1>
         <DisplayAdUnit format="auto" />
+        <h1>Advertisement2</h1>
         <AdCode>
           <ins
             className="adsbygoogle"
