@@ -75,3 +75,20 @@ export function InFeedAdUnit({ className }: { className?: string }) {
     </Card>
   );
 }
+
+export function InFeedAdUnit2({ className }: { className?: string }) {
+  return (
+    <Card className={className}>
+      <AdUnit>
+        <ins
+          className="adsbygoogle"
+          style={{ display: "block" }}
+          data-ad-client="ca-pub-5012580427673167"
+          data-ad-format="fluid"
+          data-ad-slot={4819538215}
+          data-ad-layout-key="-ih+6-k-2f+6d"
+        ></ins>
+      </AdUnit>
+    </Card>
+  );
+}

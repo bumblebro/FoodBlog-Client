@@ -13,7 +13,7 @@ import ShareButtons from "../ShareButtons";
 import localFont from "next/font/local";
 import { Poppins } from "next/font/google";
 import AdCode from "../AdCode";
-import { DisplayAdUnit } from "../Ads/ad-unit";
+import { DisplayAdUnit, InFeedAdUnit2 } from "../Ads/ad-unit";
 // import GoogleAdUnit from "../GoogleAdUnit";
 // Poppins
 const Poppins700 = Poppins({
@@ -359,26 +359,10 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
           </h1>
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
             {latposts?.map((item, i) => {
-              // const shouldInsertAd = Math.random() < 0.1;
-              // if (shouldInsertAd) {
-              //   return (
-              //     <div
-              //       key={i}
-              //       className="mt-4  shadow-md rounded-lg w-full h-full"
-              //     >
-              //       <GoogleAdUnit>
-              //         <ins
-              //           className="adsbygoogle"
-              //           style={{ display: "block" }}
-              //           data-ad-client="ca-pub-5012580427673167"
-              //           data-ad-slot={3048648789}
-              //           data-ad-format="auto"
-              //           data-full-width-responsive="true"
-              //         />
-              //       </GoogleAdUnit>
-              //     </div>
-              //   );
-              // }
+              const shouldInsertAd = Math.random() < 0.1;
+              if (shouldInsertAd) {
+                return <InFeedAdUnit2 key={i} />;
+              }
               return (
                 <div
                   key={i}
@@ -521,26 +505,10 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
         </h1>
         <div className="flex flex-col gap-4">
           {posts?.map((item, i) => {
-            // const shouldInsertAd = Math.random() < 0.1;
-            // if (shouldInsertAd) {
-            //   return (
-            //     <div
-            //       key={i}
-            //       className="mt-4  shadow-md rounded-lg w-full h-full"
-            //     >
-            //       <GoogleAdUnit>
-            //         <ins
-            //           className="adsbygoogle"
-            //           style={{ display: "block" }}
-            //           data-ad-client="ca-pub-5012580427673167"
-            //           data-ad-slot={3048648789}
-            //           data-ad-format="auto"
-            //           data-full-width-responsive="true"
-            //         />
-            //       </GoogleAdUnit>
-            //     </div>
-            //   );
-            // }
+            const shouldInsertAd = Math.random() < 0.1;
+            if (shouldInsertAd) {
+              return <InFeedAdUnit2 key={i} />;
+            }
             return (
               <div
                 key={i}
