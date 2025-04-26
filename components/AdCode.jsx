@@ -5,6 +5,17 @@ import React from "react";
 class AdCodeWithoutRouter extends React.Component {
   renderAds() {
     (window.adsbygoogle = window.adsbygoogle || []).push({});
+    // const handleScriptLoad= ()=>{
+    //   try{
+    //     if(windows.adsbygoogle ){
+    //       console.log("Pushing ads")
+    //       adsbygoogle.push({})
+    //     }
+    //     else{
+    //     scriptElement!.addEven
+    //     }
+    //   }
+    // }
   }
 
   componentDidMount() {
