@@ -10,11 +10,10 @@ const AdsenseComp = () => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  if (process.env.NODE_ENV == "development") {
-    return <></>;
-  }
-
   useEffect(() => {
+    if (process.env.NODE_ENV == "development") {
+      return <></>;
+    }
     const url = `${pathname}?${searchParams}`;
     console.log("AdsenseComp -> router changed ", url);
 
