@@ -7,7 +7,6 @@ import Footer from "@/components/footer/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
 import AnalyticsScript from "@/components/AnalyticsScript";
-import { GoogleAdSense } from "next-google-adsense";
 
 const inter = Inter({ subsets: ["latin"] });
 
