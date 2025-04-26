@@ -301,6 +301,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
               </div>
             );
           })}{" "}
+          <DisplayAdUnit format="auto" />
           {currentPost.equipments && currentPost.equipments.length > 0 && (
             <div className="px-6 py-5 bg-white  rounded-2xl mb-2 border-black border-2 mx-2">
               <h2
@@ -328,10 +329,10 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
               data-ad-format="auto"
               data-full-width-responsive="true"
             />
-          </AdCode>{" "} */}
-          <DisplayAdUnit format="auto" />
+            </AdCode>{" "} */}
           {/* <GoogleAdPcItem key={2 + "ads"} adId={`ad-slot-${2}`} /> */}
           <RecipePage currentPost={currentPost} />
+          <DisplayAdUnit format="auto" />
           {currentPost.faq && (currentPost.faq as any[]).length > 0 && (
             <FAQSection faqs={currentPost.faq} />
           )}
