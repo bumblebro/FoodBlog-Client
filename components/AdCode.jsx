@@ -24,6 +24,8 @@ class AdCodeWithoutRouter extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.router.asPath !== prevProps.router.asPath) {
+      console.log("path before:", this.props.router.asPath);
+      console.log("path after:", prevProps.router.asPath);
       this.renderAds();
     }
   }
