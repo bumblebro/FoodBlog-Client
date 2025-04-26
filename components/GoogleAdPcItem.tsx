@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "next/router";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
 import React from "react";
 
@@ -11,7 +11,7 @@ import React from "react";
 // }
 
 const GoogleAdPcItem = ({ adId }: { adId: string }) => {
-  const router = useRouter();
+  const pathname = usePathname(); // Reacts to route changes
   const adsLoaded = useRef<any>(false);
 
   useEffect(() => {
@@ -23,10 +23,10 @@ const GoogleAdPcItem = ({ adId }: { adId: string }) => {
       }
     };
 
-    if (router.query && !adsLoaded.current) {
+    if (!adsLoaded.current) {
       setTimeout(loadAd, 0);
     }
-  }, [router.query]);
+  }, [pathname]);
 
   return (
     <div
