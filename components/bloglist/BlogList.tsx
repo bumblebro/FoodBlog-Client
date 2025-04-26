@@ -39,7 +39,10 @@ function BlogList({ posts }: posts) {
           const shouldInsertAd = Math.random() < 0.1;
           if (shouldInsertAd) {
             return (
-              <InFeedAdUnit className="h-[55vw] w-full  lg:h-[12rem] xl:h-[22rem] md:h-[17rem] sm:h-[29rem] relative " />
+              <InFeedAdUnit
+                key={index}
+                className="h-[55vw] w-full  lg:h-[12rem] xl:h-[22rem] md:h-[17rem] sm:h-[29rem] relative "
+              />
             );
           }
           return (

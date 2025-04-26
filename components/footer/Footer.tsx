@@ -34,7 +34,7 @@ function Footer() {
     <div
       className={`bg-[#F4F2F2] text-[#000000] font-sans ${Poppins400.className}`}
     >
-      <DisplayAdUnit format="auto" />
+      <DisplayAdUnit format="auto" className="mx-auto w-full" />
       {/* <div className="bg-gray-200 w-full h-[100px]">
         {" "} */}
       {/* </div> */}
