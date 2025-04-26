@@ -7,6 +7,7 @@ import localFont from "next/font/local";
 
 import { Poppins } from "next/font/google";
 import GoogleAdUnit from "nextjs13_google_adsense";
+import AdCode from "./AdCode";
 // import GoogleAdUnit from "./GoogleAdUnit";
 // Poppins
 const Poppins700 = Poppins({
@@ -277,7 +278,7 @@ const RecipePage = ({ currentPost }: any) => {
           </ul>
         </div>
 
-        <GoogleAdUnit>
+        {/* <GoogleAdUnit>
           <ins
             className="adsbygoogle"
             style={{ display: "block" }}
@@ -286,7 +287,19 @@ const RecipePage = ({ currentPost }: any) => {
             data-ad-format="auto"
             data-full-width-responsive="true"
           />
-        </GoogleAdUnit>
+        </GoogleAdUnit> */}
+        <AdCode>
+          {" "}
+          <ins
+            className="adsbygoogle"
+            // style={{ display: "block" }}
+            style={{ display: "block", width: "100%" }}
+            data-ad-client="ca-pub-5012580427673167"
+            data-ad-slot="3048648789"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          />
+        </AdCode>{" "}
         {/* Nutrition Info */}
         <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 text-">
           <h2

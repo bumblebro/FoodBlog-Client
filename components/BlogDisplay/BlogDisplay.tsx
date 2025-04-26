@@ -19,6 +19,7 @@ import localFont from "next/font/local";
 
 import { Poppins } from "next/font/google";
 import GoogleAdUnit from "nextjs13_google_adsense";
+import AdCode from "../AdCode";
 // import GoogleAdUnit from "../GoogleAdUnit";
 // Poppins
 const Poppins700 = Poppins({
@@ -321,6 +322,18 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
               </ul>
             </div>
           )}
+          <AdCode>
+            {" "}
+            <ins
+              className="adsbygoogle"
+              // style={{ display: "block" }}
+              style={{ display: "block", width: "100%" }}
+              data-ad-client="ca-pub-5012580427673167"
+              data-ad-slot="3048648789"
+              data-ad-format="auto"
+              data-full-width-responsive="true"
+            />
+          </AdCode>{" "}
           <RecipePage currentPost={currentPost} />
           {currentPost.faq && (currentPost.faq as any[]).length > 0 && (
             <FAQSection faqs={currentPost.faq} />
@@ -328,7 +341,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
           <h1 className="px-4 py-4 my-4 italic ">{currentPost.quote}</h1>
         </div>{" "}
         <div className=" py-8 px-4  hidden md:flex md:flex-col">
-          <GoogleAdUnit>
+          {/* <GoogleAdUnit>
             <ins
               className="adsbygoogle"
               style={{ display: "block" }}
@@ -337,7 +350,19 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
               data-ad-format="auto"
               data-full-width-responsive="true"
             />
-          </GoogleAdUnit>
+          </GoogleAdUnit> */}
+          <AdCode>
+            {" "}
+            <ins
+              className="adsbygoogle"
+              // style={{ display: "block" }}
+              style={{ display: "block", width: "100%" }}
+              data-ad-client="ca-pub-5012580427673167"
+              data-ad-slot="3048648789"
+              data-ad-format="auto"
+              data-full-width-responsive="true"
+            />
+          </AdCode>{" "}
           <h1
             className={`text-2xl font-semibold text-center py-4 mb-4 ${Poppins700.className} bg-[#8D6271]  text-white rounded-md`}
           >
