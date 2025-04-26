@@ -129,7 +129,6 @@ const RecipePage = ({ currentPost }: any) => {
         >
           {DeSlugify(currentPost?.title)}
         </h1>
-
         {/* Recipe Description */}
         <p
           className=" text-black text-center italic mb-6 text-base p-summary
@@ -137,7 +136,6 @@ const RecipePage = ({ currentPost }: any) => {
         >
           {currentPost?.recipedescription}
         </p>
-
         {/* Yield & Time Info */}
         <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6">
           <h2
@@ -170,7 +168,6 @@ const RecipePage = ({ currentPost }: any) => {
             15 min
           </time> */}
         </div>
-
         {/* Quantity Selector */}
         <div className="flex justify-center space-x-3 mb-6">
           {["1X", "2X", "3X", "4X"].map((qty) => (
@@ -192,7 +189,6 @@ const RecipePage = ({ currentPost }: any) => {
             </button>
           ))}
         </div>
-
         {/* Ingredients */}
         {/* <div className=" p-6 rounded-lg shadow-md border border-gray-300 mb-6">
           <h2 className="text-xl font-serif text-[#6b4226] mb-3">
@@ -206,7 +202,6 @@ const RecipePage = ({ currentPost }: any) => {
             ))}
           </ul>
         </div> */}
-
         <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6">
           <h2
             className={`text-xl  text-[#000000] mb-3  ${Poppins700.className} italic`}
@@ -239,7 +234,6 @@ const RecipePage = ({ currentPost }: any) => {
             ))}
           </ul>
         </div>
-
         {/* Instructions */}
         <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6">
           <h2
@@ -259,7 +253,6 @@ const RecipePage = ({ currentPost }: any) => {
             ))}
           </ol>
         </div>
-
         {/* Notes */}
         <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6">
           <h2
@@ -275,14 +268,12 @@ const RecipePage = ({ currentPost }: any) => {
             ))}
           </ul>
         </div>
-
-
         <AdCode>
           {" "}
           <ins
             className="adsbygoogle"
             // style={{ display: "block" }}
-            style={{ display: "block", width: "100%" }}
+            style={{ display: "block" }}
             data-ad-client="ca-pub-5012580427673167"
             data-ad-slot="3048648789"
             data-ad-format="auto"

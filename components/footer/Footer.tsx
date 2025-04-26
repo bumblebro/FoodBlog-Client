@@ -64,7 +64,7 @@ function Footer() {
             <ins
               className="adsbygoogle"
               // style={{ display: "block" }}
-              style={{ display: "block", width: "100%" }}
+              style={{ display: "block" }}
               data-ad-client="ca-pub-5012580427673167"
               data-ad-slot="3048648789"
               data-ad-format="auto"
@@ -72,7 +72,6 @@ function Footer() {
             />
           </AdCode>{" "}
         </div>
-       
         <div className="flex flex-col items-center gap-3 ">
           <h1
             className={`text-md font-medium text-[#000000] ${Poppins700.className} uppercase`}
