@@ -105,19 +105,8 @@ async function Home({ searchParams }: { searchParams: { pageNo: string } }) {
             data-full-width-responsive="true"
           />
         </AdCode>{" "} */}
-        <h1>Advertisement1</h1>
         <DisplayAdUnit format="auto" />
-        <h1>Advertisement2</h1>
-        <AdCode>
-          <ins
-            className="adsbygoogle"
-            style={{ display: "block" }}
-            data-ad-client="ca-pub-5012580427673167"
-            data-ad-slot="8446957885"
-            data-ad-format="auto"
-            data-full-width-responsive="true"
-          />
-        </AdCode>
+
         <h1
           className={`text-center  text-lg font-semibold tracking-wider ${Poppins700.className}`}
         >

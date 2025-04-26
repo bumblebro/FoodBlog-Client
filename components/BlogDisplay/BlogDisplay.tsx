@@ -229,19 +229,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
             💾 Save Recipe
           </button> */}
           <Buttons />
-          <h1>Advertisement1</h1>
           <DisplayAdUnit format="auto" />
-          <h1>Advertisement2</h1>
-          <AdCode>
-            <ins
-              className="adsbygoogle"
-              style={{ display: "block" }}
-              data-ad-client="ca-pub-5012580427673167"
-              data-ad-slot="8446957885"
-              data-ad-format="auto"
-              data-full-width-responsive="true"
-            />
-          </AdCode>
           {/* <ShareButtons urllink={urllink} imageUrl={imageUrl} /> */}
           {/* <button className="bg-red-400">
             {" "}
@@ -362,6 +350,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
               data-full-width-responsive="true"
             />
           </AdCode>{" "} */}
+          <DisplayAdUnit format="rectangle" />
           <h1
             className={`text-2xl font-semibold text-center py-4 mb-4 ${Poppins700.className} bg-[#8D6271]  text-white rounded-md`}
           >
@@ -523,6 +512,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
             data-full-width-responsive="true"
           />
         </AdCode>{" "} */}
+        <DisplayAdUnit format="rectangle" />
         <h1
           className={`text-lg font-semibold text-center py-4 mb-4 ${Poppins700.className}  bg-[#8D6271]  text-white rounded-md`}
         >
