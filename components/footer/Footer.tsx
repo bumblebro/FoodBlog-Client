@@ -34,47 +34,11 @@ function Footer() {
     <div
       className={`bg-[#F4F2F2] text-[#000000] font-sans ${Poppins400.className}`}
     >
+      <DisplayAdUnit format="auto" />
       {/* <div className="bg-gray-200 w-full h-[100px]">
         {" "} */}
-
       {/* </div> */}
       <div className="pt-11 pb-20 text-white text-center flex flex-col gap-14 px-4 mx-auto xl:max-w-[73rem] ">
-        <div className="h-full">
-          {/* <ins
-              className="adsbygoogle"
-              // style={{ display: "block" }}
-              style={{
-                display: "block",
-                overflow: "hidden",
-                border:
-                  process.env.NODE_ENV === "development"
-                    ? "1px solid red"
-                    : "none",
-                background:
-                  process.env.NODE_ENV === "development"
-                    ? "rgba(255, 0, 0, 0.1)"
-                    : "none",
-              }}
-              data-ad-client="ca-pub-5012580427673167"
-              data-ad-slot={3048648789}
-              data-ad-format="auto"
-              data-full-width-responsive="true"
-            /> */}
-          {/* <AdCode>
-            {" "}
-            <ins
-              className="adsbygoogle"
-              // style={{ display: "block" }}
-              style={{ display: "block" }}
-              data-ad-client="ca-pub-5012580427673167"
-              data-ad-slot="3048648789"
-              data-ad-format="auto"
-              data-full-width-responsive="true"
-            />
-          </AdCode>{" "} */}
-          <DisplayAdUnit format="auto" />
-          {/* <GoogleAdPcItem key={1 + "ads"} adId={`ad-slot-${1}`} /> */}
-        </div>
         <div className="flex flex-col items-center gap-3 ">
           <h1
             className={`text-md font-medium text-[#000000] ${Poppins700.className} uppercase`}
