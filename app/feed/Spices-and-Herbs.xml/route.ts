@@ -54,8 +54,6 @@ function generateRSSFeed(recipes: any) {
       `title=${r.title}` +
       `&cover=${r.imageurl}`;
 
-    console.log(`urllll`, imageUrl);
-
     const url = siteURL + "/" + r.slug;
 
     const cat1 = {
