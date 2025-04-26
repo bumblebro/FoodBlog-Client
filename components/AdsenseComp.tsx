@@ -12,10 +12,11 @@ const AdsenseComp = () => {
   const searchParams = useSearchParams();
   // @ts-ignore
   useEffect(() => {
-    if (process.env.NODE_ENV == "development") {
-      return <></>;
+    if (process.env.NODE_ENV === "development") {
+      return;
     }
-    const url = `${pathname}?${searchParams}`;
+    // const url = `${pathname}?${searchParams}`;
+    const url = `${pathname}?${searchParams.toString()}`;
     console.log("AdsenseComp -> router changed ", url);
 
     const scriptElement = document.querySelector(
@@ -43,8 +44,11 @@ const AdsenseComp = () => {
       }
     };
 
-    handleScriptLoad();
-    // Wait for script to load
+    if (scriptElement) {
+      handleScriptLoad();
+    } else {
+      console.warn("Adsense script not found");
+    }
 
     return () => {
       if (scriptElement) {
