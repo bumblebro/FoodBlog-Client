@@ -11,6 +11,7 @@ import Navbar2 from "@/components/navbar2/page";
 import Navbar3 from "@/components/navbar3/page";
 
 import { Poppins } from "next/font/google";
+import AdCode from "@/components/AdCode";
 // Poppins
 const Poppins700 = Poppins({
   weight: "700",
@@ -92,6 +93,7 @@ async function Home({ searchParams }: { searchParams: { pageNo: string } }) {
       <FeaturedPost posts={posts || []} />
       {/* <FoodSections /> */}
       <div className="mt-32 md:mt-10 lg:mt-8 ">
+        <AdCode />
         <h1
           className={`text-center  text-lg font-semibold tracking-wider ${Poppins700.className}`}
         >

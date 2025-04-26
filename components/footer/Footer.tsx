@@ -8,6 +8,7 @@ import { Poppins } from "next/font/google";
 // import GoogleAdUnit from "../GoogleAdUnit";
 import { AdUnit } from "next-google-adsense";
 import GoogleAdUnit from "nextjs13_google_adsense";
+import AdCode from "../AdCode";
 
 // Poppins
 const Poppins700 = Poppins({
@@ -62,7 +63,7 @@ function Footer() {
               data-full-width-responsive="true"
             />
           </GoogleAdUnit> */}
-          <GoogleAdUnit>
+          {/* <GoogleAdUnit>
             <ins
               className="adsbygoogle"
               // style={{ display: "block" }}
@@ -72,7 +73,8 @@ function Footer() {
               data-ad-format="auto"
               data-full-width-responsive="true"
             />
-          </GoogleAdUnit>
+          </GoogleAdUnit> */}
+          <AdCode />
         </div>
         {/* <AdUnit
           publisherId="pub-5457433644037438"
