@@ -23,7 +23,8 @@ class AdCodeWithoutRouter extends React.Component {
     const { children } = this.props; // Extract children from props
 
     return (
-      <div className="container mx-auto text-center" aria-hidden={true}>
+      // <div className="container mx-auto text-center" aria-hidden={true}>
+      <div>
         {children}
         <script
           dangerouslySetInnerHTML={{
