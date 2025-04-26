@@ -105,7 +105,7 @@ async function Home({ searchParams }: { searchParams: { pageNo: string } }) {
             data-full-width-responsive="true"
           />
         </AdCode>{" "} */}
-        <DisplayAdUnit format="auto" />
+        <DisplayAdUnit format="auto" className="mx-auto w-full" />
 
         <h1
           className={`text-center  text-lg font-semibold tracking-wider ${Poppins700.className}`}
