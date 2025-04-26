@@ -15,6 +15,9 @@ const AdsenseComp = () => {
     if (process.env.NODE_ENV === "development") {
       return;
     }
+    if (typeof window === "undefined" || typeof document === "undefined")
+      return;
+
     // const url = `${pathname}?${searchParams}`;
     const url = `${pathname}?${searchParams.toString()}`;
     console.log("AdsenseComp -> router changed ", url);

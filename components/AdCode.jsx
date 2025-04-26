@@ -33,7 +33,11 @@ class AdCodeWithoutRouter extends React.Component {
 
     return (
       // <div className="container mx-auto text-center" aria-hidden={true}>
-      <div>
+      <div
+        className="adparent"
+        align="center"
+        style={{ minwidth: "320px", margin: "auto", textAlign: "center" }}
+      >
         {children}
         <script
           dangerouslySetInnerHTML={{
