@@ -19,7 +19,7 @@ import localFont from "next/font/local";
 
 import { Poppins } from "next/font/google";
 import AdCode from "../AdCode";
-import GoogleAd from "../Ads/google_ad_pc";
+import { DisplayAdUnit } from "../Ads/ad-unit";
 // import GoogleAdUnit from "../GoogleAdUnit";
 // Poppins
 const Poppins700 = Poppins({
@@ -322,7 +322,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
               </ul>
             </div>
           )}
-          <AdCode>
+          {/* <AdCode>
             {" "}
             <ins
               className="adsbygoogle"
@@ -333,7 +333,8 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
               data-ad-format="auto"
               data-full-width-responsive="true"
             />
-          </AdCode>{" "}
+          </AdCode>{" "} */}
+          <DisplayAdUnit />
           {/* <GoogleAdPcItem key={2 + "ads"} adId={`ad-slot-${2}`} /> */}
           <RecipePage currentPost={currentPost} />
           {currentPost.faq && (currentPost.faq as any[]).length > 0 && (
