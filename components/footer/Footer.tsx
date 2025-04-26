@@ -72,7 +72,7 @@ function Footer() {
               data-full-width-responsive="true"
             />
           </AdCode>{" "} */}
-          <DisplayAdUnit />
+          <DisplayAdUnit format="horizontal" />
           {/* <GoogleAdPcItem key={1 + "ads"} adId={`ad-slot-${1}`} /> */}
         </div>
         <div className="flex flex-col items-center gap-3 ">
