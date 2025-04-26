@@ -1,13 +1,9 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import Script from "next/script";
 
-type GoogleAdProps = {
-  adClient: string;
-  adSlot: string;
-  adStyle?: React.CSSProperties;
-};
-
-const GoogleAd: React.FC<GoogleAdProps> = ({ adClient, adSlot, adStyle }) => {
+const GoogleAd: React.FC = () => {
   const [isAdLoaded, setIsAdLoaded] = useState(false);
   const [isAdVisible, setIsAdVisible] = useState(false);
   const [height, setHeight] = useState(0);
@@ -60,7 +56,6 @@ const GoogleAd: React.FC<GoogleAdProps> = ({ adClient, adSlot, adStyle }) => {
           display: "inline-block",
           overflow: "hidden",
           //backgroundColor: '#000',
-          ...adStyle,
         }}
         data-ad-client="ca-pub-5012580427673167"
         data-ad-slot="3048648789"

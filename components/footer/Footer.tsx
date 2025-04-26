@@ -7,8 +7,7 @@ import { FacebookIcon, PinterestIcon, TwitterIcon } from "react-share";
 import { Poppins } from "next/font/google";
 
 import AdCode from "../AdCode";
-import AdsenseComp from "../GoogleAdPcItem";
-import GoogleAdPcItem from "../GoogleAdPcItem";
+import GoogleAd from "../Ads/google_ad_pc";
 
 // Poppins
 const Poppins700 = Poppins({
@@ -75,7 +74,7 @@ function Footer() {
           </AdCode>{" "} */}
           {/* <GoogleAdPcItem key={1 + "ads"} adId={`ad-slot-${1}`} /> */}
 
-          <GoogleAdPcItem adId={"1"} />
+          <GoogleAd />
         </div>
         <div className="flex flex-col items-center gap-3 ">
           <h1
