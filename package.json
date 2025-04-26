@@ -5,10 +5,9 @@
   "scripts": {
     "postinstall": "prisma generate",
     "dev": "next dev",
-    "build": "prisma generate && next build && create-ads-txt",
+    "build": "prisma generate && next build",
     "start": "next start",
-    "lint": "next lint",
-    "create-ads-txt": "create-ads-txt"
+    "lint": "next lint"
   },
   "dependencies": {
     "@builder.io/partytown": "^0.10.2",
