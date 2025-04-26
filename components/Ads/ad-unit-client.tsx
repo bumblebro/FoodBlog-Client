@@ -44,12 +44,17 @@ export default function AdUnitClient({ children }: AdUnitProps) {
   const adLoaded = useRef(false);
 
   useEffect(() => {
+    console.log(`pathname: `, pathname, "searchparams: ", searchParams);
+
     if (typeof window === "undefined") return;
 
     try {
       if (!adLoaded.current && adRef.current) {
+        console.log(`new ad rendered`);
         (window.adsbygoogle = window.adsbygoogle || []).push({});
         adLoaded.current = true;
+      } else {
+        console.log(`new ad NOT rendered`);
       }
     } catch (err) {
       console.error("Adsense error:", err);
