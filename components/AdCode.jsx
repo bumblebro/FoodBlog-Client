@@ -18,18 +18,11 @@ class AdCodeWithoutRouter extends React.Component {
   }
 
   render() {
+    const { children } = this.props; // Extract children from props
+
     return (
       <div className="container mx-auto text-center" aria-hidden={true}>
-        <ins
-          className="adsbygoogle"
-          // style={{ display: "block" }}
-          style={{ display: "block", width: "100%" }}
-          data-ad-client="ca-pub-5012580427673167"
-          data-ad-slot="3048648789"
-          data-ad-format="auto"
-          data-full-width-responsive="true"
-        />
-
+        {children}
         <script
           dangerouslySetInnerHTML={{
             __html: "(window.adsbygoogle = window.adsbygoogle || []).push({});",
@@ -40,9 +33,9 @@ class AdCodeWithoutRouter extends React.Component {
   }
 }
 
-const AdCode = () => {
+const AdCode = ({ children }) => {
   const router = useRouter();
-  return <AdCodeWithoutRouter router={router} />;
+  return <AdCodeWithoutRouter router={router}>{children}</AdCodeWithoutRouter>;
 };
 
 export default AdCode;

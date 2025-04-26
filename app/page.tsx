@@ -93,7 +93,18 @@ async function Home({ searchParams }: { searchParams: { pageNo: string } }) {
       <FeaturedPost posts={posts || []} />
       {/* <FoodSections /> */}
       <div className="mt-32 md:mt-10 lg:mt-8 ">
-        <AdCode />
+        <AdCode>
+          {" "}
+          <ins
+            className="adsbygoogle"
+            // style={{ display: "block" }}
+            style={{ display: "block", width: "100%" }}
+            data-ad-client="ca-pub-5012580427673167"
+            data-ad-slot="3048648789"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          />
+        </AdCode>{" "}
         <h1
           className={`text-center  text-lg font-semibold tracking-wider ${Poppins700.className}`}
         >
