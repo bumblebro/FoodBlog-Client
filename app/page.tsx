@@ -12,6 +12,7 @@ import Navbar3 from "@/components/navbar3/page";
 
 import { Poppins } from "next/font/google";
 import AdCode from "@/components/AdCode";
+import { DisplayAdUnit } from "@/components/Ads/ad-unit";
 // Poppins
 const Poppins700 = Poppins({
   weight: "700",
@@ -93,7 +94,7 @@ async function Home({ searchParams }: { searchParams: { pageNo: string } }) {
       <FeaturedPost posts={posts || []} />
       {/* <FoodSections /> */}
       <div className="mt-32 md:mt-10 lg:mt-8 ">
-        <AdCode>
+        {/* <AdCode>
           {" "}
           <ins
             className="adsbygoogle"
@@ -103,7 +104,8 @@ async function Home({ searchParams }: { searchParams: { pageNo: string } }) {
             data-ad-format="auto"
             data-full-width-responsive="true"
           />
-        </AdCode>{" "}
+        </AdCode>{" "} */}
+        <DisplayAdUnit format="horizontal" />
         <h1
           className={`text-center  text-lg font-semibold tracking-wider ${Poppins700.className}`}
         >
