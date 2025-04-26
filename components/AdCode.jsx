@@ -1,6 +1,7 @@
 "use client";
+import { useRouter } from "next/router";
 import React from "react";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 
 class AdCodeWithoutRouter extends React.Component {
   renderAds() {
