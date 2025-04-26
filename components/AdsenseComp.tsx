@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -9,7 +10,7 @@ const AdsenseComp = () => {
 
   const pathname = usePathname();
   const searchParams = useSearchParams();
-
+  // @ts-ignore
   useEffect(() => {
     if (process.env.NODE_ENV == "development") {
       return <></>;
@@ -25,8 +26,10 @@ const AdsenseComp = () => {
       try {
         if (window.adsbygoogle) {
           console.log("pushing ads ");
+          // @ts-ignore
           adsbygoogle.push({});
         } else {
+          // @ts-ignore
           scriptElement.addEventListener("load", handleScriptLoad);
           console.log(
             "waiting until adsense lib is loaded...This prevents adsbygoogle is not defined error"
@@ -65,5 +68,4 @@ const AdsenseComp = () => {
     </div>
   );
 };
-
 export default AdsenseComp;

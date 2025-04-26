@@ -7,6 +7,7 @@ import { FacebookIcon, PinterestIcon, TwitterIcon } from "react-share";
 import { Poppins } from "next/font/google";
 
 import AdCode from "../AdCode";
+import AdsenseComp from "../AdsenseComp";
 
 // Poppins
 const Poppins700 = Poppins({
@@ -71,7 +72,7 @@ function Footer() {
               data-full-width-responsive="true"
             />
           </AdCode>{" "} */}
-          {/* <AdsenseComp /> */}
+          <AdsenseComp />
         </div>
         <div className="flex flex-col items-center gap-3 ">
           <h1
