@@ -5,6 +5,7 @@ import localFont from "next/font/local";
 
 import { FacebookIcon, PinterestIcon, TwitterIcon } from "react-share";
 import { Poppins } from "next/font/google";
+import AdsenseComp from "../AdsenseComp";
 
 import AdCode from "../AdCode";
 
@@ -59,7 +60,7 @@ function Footer() {
               data-ad-format="auto"
               data-full-width-responsive="true"
             /> */}
-          <AdCode>
+          {/* <AdCode>
             {" "}
             <ins
               className="adsbygoogle"
@@ -70,7 +71,8 @@ function Footer() {
               data-ad-format="auto"
               data-full-width-responsive="true"
             />
-          </AdCode>{" "}
+          </AdCode>{" "} */}
+          <AdsenseComp />
         </div>
         <div className="flex flex-col items-center gap-3 ">
           <h1
