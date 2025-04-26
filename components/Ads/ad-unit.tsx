@@ -50,7 +50,7 @@ export function DisplayAdUnit({
           className="adsbygoogle"
           data-ad-client="ca-pub-5012580427673167"
           style={{ display: "block" }}
-          data-ad-slot="3048648789"
+          data-ad-slot={3048648789}
           data-ad-format={format}
           data-full-width-responsive="true"
         ></ins>
@@ -66,10 +66,10 @@ export function InFeedAdUnit({ className }: { className?: string }) {
         <ins
           className="adsbygoogle"
           style={{ display: "block" }}
-          data-ad-client={process.env.NEXT_PUBLIC_ADSENSE_PUB_ID!}
+          data-ad-client="ca-pub-5012580427673167"
           data-ad-format="fluid"
-          data-ad-layout-key="-f9+5v+4m-d8+7b"
-          data-ad-slot="3384843406"
+          data-ad-layout-key="+23+sa-1a-5c+ee"
+          data-ad-slot={9404816336}
         ></ins>
       </AdUnit>
     </Card>
