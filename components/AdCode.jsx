@@ -1,12 +1,16 @@
 "use client";
 import { useRouter } from "next/navigation";
+import Script from "next/script";
 // import { useRouter } from "next/router";
 import React from "react";
 // import { useRouter } from "next/navigation";
 
 class AdCodeWithoutRouter extends React.Component {
   renderAds() {
-    (window.adsbygoogle = window.adsbygoogle || []).push({});
+    // (window.adsbygoogle = window.adsbygoogle || []).push({});
+    window.addEventListener("load", function () {
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    });
   }
 
   componentDidMount() {
@@ -26,11 +30,11 @@ class AdCodeWithoutRouter extends React.Component {
       // <div className="container mx-auto text-center" aria-hidden={true}>
       <div>
         {children}
-        <script
+        <Script
           dangerouslySetInnerHTML={{
             __html: "(window.adsbygoogle = window.adsbygoogle || []).push({});",
           }}
-        ></script>
+        />
       </div>
     );
   }
