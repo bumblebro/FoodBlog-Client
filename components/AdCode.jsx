@@ -5,17 +5,6 @@ import React from "react";
 class AdCodeWithoutRouter extends React.Component {
   renderAds() {
     (window.adsbygoogle = window.adsbygoogle || []).push({});
-    // const handleScriptLoad= ()=>{
-    //   try{
-    //     if(windows.adsbygoogle ){
-    //       console.log("Pushing ads")
-    //       adsbygoogle.push({})
-    //     }
-    //     else{
-    //     scriptElement!.addEven
-    //     }
-    //   }
-    // }
   }
 
   componentDidMount() {
@@ -24,8 +13,6 @@ class AdCodeWithoutRouter extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.router.asPath !== prevProps.router.asPath) {
-      console.log("path before:", this.props.router.asPath);
-      console.log("path after:", this.props.router.asPath);
       this.renderAds();
     }
   }

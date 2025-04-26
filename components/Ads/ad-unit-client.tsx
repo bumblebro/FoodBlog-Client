@@ -1,5 +1,35 @@
+// "use client";
+// import { useEffect } from "react";
+// import { usePathname, useSearchParams } from "next/navigation";
+// import React from "react";
+
+// export type AdUnitProps = {
+//   children: React.ReactNode;
+// };
+
+// // declare global {
+// //   interface Window {
+// //     adsbygoogle?: any | any[];
+// //   }
+// // }
+
+// export default function AdUnitClient({ children }: AdUnitProps) {
+//   const pathname = usePathname();
+//   const searchParams = useSearchParams();
+//   useEffect(() => {
+//     try {
+//       console.log(`pathname: `, pathname, "searchparams: ", searchParams);
+//       (window.adsbygoogle = window.adsbygoogle || []).push({});
+//     } catch (err) {
+//       console.error(err);
+//     }
+//   }, [pathname, searchParams]);
+//   return <>{children}</>;
+// }
+
 "use client";
-import { useEffect } from "react";
+
+import { useEffect, useRef } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import React from "react";
 
@@ -7,22 +37,24 @@ export type AdUnitProps = {
   children: React.ReactNode;
 };
 
-// declare global {
-//   interface Window {
-//     adsbygoogle?: any | any[];
-//   }
-// }
-
 export default function AdUnitClient({ children }: AdUnitProps) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const adRef = useRef<HTMLDivElement>(null);
+  const adLoaded = useRef(false);
+
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     try {
-      console.log(`pathname: `, pathname, "searchparams: ", searchParams);
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
+      if (!adLoaded.current && adRef.current) {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+        adLoaded.current = true;
+      }
     } catch (err) {
-      console.error(err);
+      console.error("Adsense error:", err);
     }
   }, [pathname, searchParams]);
-  return <>{children}</>;
+
+  return <div ref={adRef}>{children}</div>;
 }
