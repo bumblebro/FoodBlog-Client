@@ -11,12 +11,6 @@ import Buttons from "../Buttons";
 import { FAQSection } from "../FAQSection";
 import ShareButtons from "../ShareButtons";
 import localFont from "next/font/local";
-
-// import Buttons from "../Buttons";
-// import { Nunito_Sans } from "next/font/google";
-// Pacifico
-// Homemade_Apple
-
 import { Poppins } from "next/font/google";
 import AdCode from "../AdCode";
 import { DisplayAdUnit } from "../Ads/ad-unit";
