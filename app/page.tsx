@@ -106,6 +106,16 @@ async function Home({ searchParams }: { searchParams: { pageNo: string } }) {
           />
         </AdCode>{" "} */}
         <DisplayAdUnit format="auto" />
+        <AdCode>
+          <ins
+            className="adsbygoogle"
+            style={{ display: "block" }}
+            data-ad-client="ca-pub-5012580427673167"
+            data-ad-slot="8446957885"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          />
+        </AdCode>
         <h1
           className={`text-center  text-lg font-semibold tracking-wider ${Poppins700.className}`}
         >
