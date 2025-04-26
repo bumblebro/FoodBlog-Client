@@ -18,6 +18,7 @@ export default function AdUnitClient({ children }: AdUnitProps) {
   const searchParams = useSearchParams();
   useEffect(() => {
     try {
+      console.log(`pathname: `, pathname, "searchparams: ", searchParams);
       (window.adsbygoogle = window.adsbygoogle || []).push({});
     } catch (err) {
       console.error(err);
