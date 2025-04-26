@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useRef } from "react";
 import React from "react";
 
@@ -11,10 +11,13 @@ import React from "react";
 // }
 
 const GoogleAdPcItem = ({ adId }: { adId: string }) => {
-  const pathname = usePathname(); // Reacts to route changes
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
   const adsLoaded = useRef<any>(false);
 
   useEffect(() => {
+    const url = `${pathname}?${searchParams}`;
+    console.log("AdsenseComp -> router changed ", url);
     const loadAd = () => {
       if (typeof window !== "undefined" && window.adsbygoogle) {
         window.adsbygoogle = window.adsbygoogle || [];
@@ -26,12 +29,12 @@ const GoogleAdPcItem = ({ adId }: { adId: string }) => {
     if (!adsLoaded.current) {
       setTimeout(loadAd, 0);
     }
-  }, [pathname]);
+  }, [pathname, searchParams]);
 
   return (
     <div
       className="googleAd-container flex items-center justify-center border rounded-md"
-      style={{ maxWidth: "282px", maxHeight: "282px" }}
+      // style={{ maxWidth: "282px", maxHeight: "282px" }}
     >
       <ins
         key={adId}
