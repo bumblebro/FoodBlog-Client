@@ -41,7 +41,8 @@ function BlogList({ posts }: posts) {
             return (
               <InFeedAdUnit
                 key={index}
-                className="h-[55vw] w-full  lg:h-[12rem] xl:h-[22rem] md:h-[17rem] sm:h-[29rem] relative "
+                // className="h-[55vw] w-full  lg:h-[12rem] xl:h-[22rem] md:h-[17rem] sm:h-[29rem] relative "
+                // className="h-[55vw] w-full  lg:h-[12rem] xl:h-[22rem] md:h-[17rem] sm:h-[29rem] relative "
               />
             );
           }
