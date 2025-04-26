@@ -12,10 +12,11 @@ import React from "react";
 
 const GoogleAdPcItem = ({ adId }: { adId: string }) => {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
   const adsLoaded = useRef<any>(false);
 
   useEffect(() => {
-    const url = pathname;
+    const url = `${pathname}?${searchParams}`;
     console.log("AdsenseComp -> router changed ", url);
     const loadAd = () => {
       if (typeof window !== "undefined" && window.adsbygoogle) {
@@ -28,7 +29,7 @@ const GoogleAdPcItem = ({ adId }: { adId: string }) => {
     if (!adsLoaded.current) {
       setTimeout(loadAd, 0);
     }
-  }, [pathname]);
+  }, [pathname, searchParams]);
 
   return (
     <div

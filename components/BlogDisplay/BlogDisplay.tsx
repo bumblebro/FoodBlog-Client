@@ -334,7 +334,8 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
               data-full-width-responsive="true"
             />
           </AdCode>{" "} */}
-          <GoogleAdPcItem key={2 + "ads"} adId={`ad-slot-${2}`} />
+          {/* <GoogleAdPcItem key={2 + "ads"} adId={`ad-slot-${2}`} /> */}
+          <GoogleAdPcItem adId={"2"} />
           <RecipePage currentPost={currentPost} />
           {currentPost.faq && (currentPost.faq as any[]).length > 0 && (
             <FAQSection faqs={currentPost.faq} />

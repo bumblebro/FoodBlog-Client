@@ -10,7 +10,6 @@ const domain =
 
 export async function GET(request: Request, response: Response) {
   const recipes = await GETBLOGBYSECTION({ subCategory: "Desserts" });
-  console.log(`rec`, recipes);
 
   const rss = generateRSSFeed(recipes);
 

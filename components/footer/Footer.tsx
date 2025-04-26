@@ -73,7 +73,9 @@ function Footer() {
               data-full-width-responsive="true"
             />
           </AdCode>{" "} */}
-          <GoogleAdPcItem key={1 + "ads"} adId={`ad-slot-${1}`} />
+          {/* <GoogleAdPcItem key={1 + "ads"} adId={`ad-slot-${1}`} /> */}
+
+          <GoogleAdPcItem adId={"1"} />
         </div>
         <div className="flex flex-col items-center gap-3 ">
           <h1
