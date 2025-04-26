@@ -97,10 +97,9 @@ async function Home({ searchParams }: { searchParams: { pageNo: string } }) {
           {" "}
           <ins
             className="adsbygoogle"
-            // style={{ display: "block" }}
             style={{ display: "block" }}
             data-ad-client="ca-pub-5012580427673167"
-            data-ad-slot="3048648789"
+            data-ad-slot={8446957885}
             data-ad-format="auto"
             data-full-width-responsive="true"
           />
