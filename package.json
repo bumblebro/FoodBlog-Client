@@ -26,6 +26,7 @@
     "axios": "^1.7.5",
     "clipboard-copy": "^4.0.1",
     "feed": "^4.2.2",
+    "framer-motion": "^12.9.2",
     "headlessui": "^0.0.0",
     "heroicons": "^2.2.0",
     "html2canvas": "^1.4.1",

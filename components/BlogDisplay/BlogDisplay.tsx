@@ -14,6 +14,7 @@ import localFont from "next/font/local";
 import { Poppins } from "next/font/google";
 import AdCode from "../AdCode";
 import { DisplayAdUnit, InFeedAdUnit2 } from "../Ads/ad-unit";
+import AdContainer from "../SideAdComponent";
 // import GoogleAdUnit from "../GoogleAdUnit";
 // Poppins
 const Poppins700 = Poppins({
@@ -484,6 +485,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
           </div>
         </div>{" "}
       </div>
+      {/* --- Sideeeeee one */}
       <div className="py-8 px-4 md:bg-[#ffffff] xl:pr-0">
         {/* <AdCode>
           {" "}
@@ -627,7 +629,9 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
               </div>
             );
           })}
-        </div>
+        </div>{" "}
+        {/* <div className="bg-red-200 w-full h-72"></div> */}
+        <AdContainer />
       </div>
     </div>
   );
