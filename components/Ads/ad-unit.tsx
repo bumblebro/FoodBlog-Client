@@ -24,11 +24,11 @@ export function InArticleAd({ className }: { className?: string }) {
       <AdUnit>
         <ins
           className="adsbygoogle"
-          data-ad-client={process.env.NEXT_PUBLIC_ADSENSE_PUB_ID!}
           style={{ display: "block", textAlign: "center" }}
           data-ad-layout="in-article"
           data-ad-format="fluid"
-          data-ad-slot="8920257026"
+          data-ad-client="ca-pub-5012580427673167"
+          data-ad-slot={5351673649}
         ></ins>
       </AdUnit>
     </div>

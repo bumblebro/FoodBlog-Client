@@ -13,7 +13,7 @@ import ShareButtons from "../ShareButtons";
 import localFont from "next/font/local";
 import { Poppins } from "next/font/google";
 import AdCode from "../AdCode";
-import { DisplayAdUnit, InFeedAdUnit2 } from "../Ads/ad-unit";
+import { DisplayAdUnit, InArticleAd, InFeedAdUnit2 } from "../Ads/ad-unit";
 import AdContainer from "../SideAdComponent";
 // import GoogleAdUnit from "../GoogleAdUnit";
 // Poppins
@@ -230,7 +230,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
             💾 Save Recipe
           </button> */}
           <Buttons />
-          <DisplayAdUnit format="auto" />
+          <InArticleAd />
           {/* <ShareButtons urllink={urllink} imageUrl={imageUrl} /> */}
           {/* <button className="bg-red-400">
             {" "}
@@ -302,7 +302,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
               </div>
             );
           })}{" "}
-          <DisplayAdUnit format="auto" />
+          <InArticleAd />
           {currentPost.equipments && currentPost.equipments.length > 0 && (
             <div className="px-6 py-5 bg-white  rounded-2xl mb-2 border-black border-2 mx-2">
               <h2
