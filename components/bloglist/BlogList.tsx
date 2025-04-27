@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import localFont from "next/font/local";
 import { Poppins } from "next/font/google";
-import { InFeedAdUnit } from "../Ads/ad-unit";
+import { DisplayAdUnit, InFeedAdUnit } from "../Ads/ad-unit";
 // Poppins
 const Poppins700 = Poppins({
   weight: "700",
@@ -34,6 +34,8 @@ function BlogList({ posts }: posts) {
   return (
     <div className="  mx-auto mb-10   w-full px-4">
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-4    xl:max-w-[73rem] mx-auto w-full lg:gap-x-6 xl:gap-y-2">
+        <DisplayAdUnit format="auto" className="mx-auto w-full" />
+
         {posts.map((item, index) => {
           // const myBlurDataUrl = await getBase64(item.imageurl);
           // const shouldInsertAd = Math.random() < 0.1;
