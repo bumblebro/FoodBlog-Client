@@ -36,16 +36,16 @@ function BlogList({ posts }: posts) {
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-4    xl:max-w-[73rem] mx-auto w-full lg:gap-x-6 xl:gap-y-2">
         {posts.map((item, index) => {
           // const myBlurDataUrl = await getBase64(item.imageurl);
-          const shouldInsertAd = Math.random() < 0.1;
-          if (shouldInsertAd) {
-            return (
-              <InFeedAdUnit
-                key={index}
-                // className="h-[55vw] w-full  lg:h-[12rem] xl:h-[22rem] md:h-[17rem] sm:h-[29rem] relative "
-                // className="h-[55vw] w-full  lg:h-[12rem] xl:h-[22rem] md:h-[17rem] sm:h-[29rem] relative "
-              />
-            );
-          }
+          // const shouldInsertAd = Math.random() < 0.1;
+          // if (shouldInsertAd) {
+          //   return (
+          //     <InFeedAdUnit
+          //       key={index}
+          //       // className="h-[55vw] w-full  lg:h-[12rem] xl:h-[22rem] md:h-[17rem] sm:h-[29rem] relative "
+          //       // className="h-[55vw] w-full  lg:h-[12rem] xl:h-[22rem] md:h-[17rem] sm:h-[29rem] relative "
+          //     />
+          //   );
+          // }
           return (
             <div
               key={index}
