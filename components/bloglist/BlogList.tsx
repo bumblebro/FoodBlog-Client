@@ -160,7 +160,7 @@ function BlogList({ posts }: posts) {
                   }`}
                 >
                   <h1
-                    className={`text-sm   pt-3 px-2  hover:underline   ${Poppins400.className}`}
+                    className={`text-sm   pt-3 px-2  hover:underline inline  ${Poppins400.className}`}
                   >
                     {DeSlugify(item.subsection)}
                   </h1>
