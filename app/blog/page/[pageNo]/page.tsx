@@ -63,18 +63,18 @@ const slugs = [
 
 export const revalidate = 86400;
 
-export async function generateStaticParams() {
-  const response = await GETBLOG({ pageNo: "1" });
-  const totalpage = response.metaData.totalPages;
-  const arr = [];
-  for (let i = 1; i <= totalpage; i++) {
-    arr.push({
-      slug: ["page", i],
-    });
-  }
-  // console.log(`blogpageslug`, arr.length);
-  return arr;
-}
+// export async function generateStaticParams() {
+//   const response = await GETBLOG({ pageNo: "1" });
+//   const totalpage = response.metaData.totalPages;
+//   const arr = [];
+//   for (let i = 1; i <= totalpage; i++) {
+//     arr.push({
+//       slug: ["page", i],
+//     });
+//   }
+//   // console.log(`blogpageslug`, arr.length);
+//   return arr;
+// }
 
 export async function generateMetadata({ params }: params): Promise<Metadata> {
   return {
