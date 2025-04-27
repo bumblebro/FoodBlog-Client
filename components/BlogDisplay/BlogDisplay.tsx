@@ -499,7 +499,6 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
             data-full-width-responsive="true"
           />
         </AdCode>{" "} */}
-        <DisplayAdUnit format="auto" />
         <h1
           className={`text-lg font-semibold text-center py-4 mb-4 ${Poppins700.className}  bg-[#8D6271]  text-white rounded-md`}
         >
@@ -630,6 +629,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
             );
           })}
         </div>{" "}
+        <DisplayAdUnit format="auto" />
         {/* <div className="bg-red-200 w-full h-72"></div> */}
         <AdContainer />
       </div>

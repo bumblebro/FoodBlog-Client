@@ -94,7 +94,7 @@ export default function BlogPage() {
       }
 
       const scrollTop = window.scrollY;
-      const adChangeDistance = 1000; // Change ad after every 1000px scrolled
+      const adChangeDistance = 3000; // Change ad after every 1000px scrolled
       const index = Math.floor(scrollTop / adChangeDistance);
       setCurrentAdIndex(Math.min(index, ads.length - 1));
     };
