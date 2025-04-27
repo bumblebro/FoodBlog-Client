@@ -120,7 +120,7 @@ export default function BlogPage() {
               animate={{ y: 0 }}
               exit={{ y: -300 }}
               transition={{ duration: 0.5 }}
-              className="w-full h-full bg-gray-100 shadow-lg flex items-center justify-center text-xl font-semibold"
+              // className="w-full h-full bg-gray-100 shadow-lg flex items-center justify-center text-xl font-semibold"
             >
               <DisplayAdUnit format="auto" />
 
