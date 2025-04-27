@@ -112,7 +112,8 @@ export default function BlogPage() {
 
       {/* Floating Ad */}
       {showFloatingAd && (
-        <div className="fixed top-5 right-5 w-[300px] h-[250px] overflow-hidden z-50">
+        // <div className="fixed top-5 right-5 w-[300px] h-[250px] overflow-hidden z-50">
+        <div>
           <AnimatePresence mode="wait">
             <motion.div
               key={currentAdIndex}
