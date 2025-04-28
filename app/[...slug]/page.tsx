@@ -470,6 +470,8 @@ async function BlogCategory({ params }: params) {
     preparationTime: "",
   };
 
+  type JsonObject = { [key: string]: unknown };
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Recipe",
@@ -489,6 +491,17 @@ async function BlogCategory({ params }: params) {
     recipeYield: recipeDetails?.yield,
     totalTime: timeToISO8601Duration(recipeDetails?.totalTime),
     recipeInstructions: currentPost?.instructions.map((e) => e),
+    keywords: (currentPost?.seo as JsonObject)?.primaryKeywords,
+    recipeCategory: currentPost?.section,
+    recipeCuisine: currentPost?.subsection,
+    nutrition: {
+      "@type": "NutritionInformation",
+      calories: recipeDetails?.nutrition?.calories,
+      fatContent: recipeDetails?.nutrition?.fat,
+      fiberContent: recipeDetails?.nutrition?.fiber,
+      proteinContent: recipeDetails?.nutrition?.protien,
+      carbohydrateContent: recipeDetails?.nutrition?.carbohydrates,
+    },
   };
 
   return (
