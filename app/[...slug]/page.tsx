@@ -67,51 +67,51 @@ function timeToISO8601Duration(seconds: number) {
   return duration;
 }
 
-// export async function generateStaticParams() {
-//   const sluglayer = await GenerateSlugs(subSections);
+export async function generateStaticParams() {
+  const sluglayer = await GenerateSlugs(subSections);
 
-//   let paramsArray: any = [];
-//   let page = 0;
-//   const pageSize = 100;
+  let paramsArray: any = [];
+  let page = 0;
+  const pageSize = 100;
 
-//   try {
-//     while (true) {
-//       // Fetch paginated blogs
-//       const response = await GETBLOGALL(page, pageSize);
+  try {
+    while (true) {
+      // Fetch paginated blogs
+      const response = await GETBLOGALL(page, pageSize);
 
-//       if (response.length === 0) {
-//         break; // Break loop when no more records
-//       }
+      if (response.length === 0) {
+        break; // Break loop when no more records
+      }
 
-//       const titleArray = response?.map((item: any) => {
-//         if (item.section && item.subsection && item.subsubsection) {
-//           return {
-//             slug: [
-//               item.section.toLowerCase(),
-//               item.subsection.toLowerCase(),
-//               item.subsubsection.toLowerCase(),
-//               item.title.toLowerCase(),
-//             ],
-//           };
-//         }
-//       });
-//       // Append to params array
-//       paramsArray = [...paramsArray, ...titleArray];
-//       page++; // Move to the next page
-//     }
-//     // console.log(`sluglayer`, sluglayer.length);
-//     // console.log(`paramsArray`, paramsArray.length);
-//     const sortedArray = paramsArray.sort((a: any, b: any) => b - a);
-//     // const slicedArray = sortedArray;
-//     const slicedArray = sortedArray.slice(0, 100);
-//     // console.log(`lengthh`, slicedArray.length());
-//     return [...sluglayer, ...slicedArray];
-//     // return [...slicedArray];
-//   } catch (error) {
-//     // console.error("Error fetching blogs:", error);
-//     return [];
-//   }
-// }
+      const titleArray = response?.map((item: any) => {
+        if (item.section && item.subsection && item.subsubsection) {
+          return {
+            slug: [
+              item.section.toLowerCase(),
+              item.subsection.toLowerCase(),
+              item.subsubsection.toLowerCase(),
+              item.title.toLowerCase(),
+            ],
+          };
+        }
+      });
+      // Append to params array
+      paramsArray = [...paramsArray, ...titleArray];
+      page++; // Move to the next page
+    }
+    // console.log(`sluglayer`, sluglayer.length);
+    // console.log(`paramsArray`, paramsArray.length);
+    const sortedArray = paramsArray.sort((a: any, b: any) => b - a);
+    // const slicedArray = sortedArray;
+    const slicedArray = sortedArray.slice(0, 100);
+    // console.log(`lengthh`, slicedArray.length());
+    return [...sluglayer, ...slicedArray];
+    // return [...slicedArray];
+  } catch (error) {
+    // console.error("Error fetching blogs:", error);
+    return [];
+  }
+}
 
 export async function generateMetadata({ params }: params): Promise<Metadata> {
   let categoryList: string[] = [];
