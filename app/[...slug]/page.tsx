@@ -508,6 +508,11 @@ async function BlogCategory({ params }: params) {
       proteinContent: recipeDetails?.nutrition?.protien,
       carbohydrateContent: recipeDetails?.nutrition?.carbohydrates,
     },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: (Math.random() * (4.8 - 4.5) + 4.5).toFixed(1),
+      ratingCount: Math.floor(Math.random() * (160 - 45 + 1)) + 45,
+    },
   };
 
   return (
