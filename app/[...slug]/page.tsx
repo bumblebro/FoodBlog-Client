@@ -471,6 +471,7 @@ async function BlogCategory({ params }: params) {
   };
 
   type JsonObject = { [key: string]: unknown };
+  const seo = currentPost?.seo as JsonObject;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -478,6 +479,7 @@ async function BlogCategory({ params }: params) {
     author: {
       "@type": "Person",
       givenName: currentPost?.author,
+      name: currentPost?.author,
     },
     cookTime: timeToISO8601Duration(recipeDetails.cookTime),
     datePublished: currentPost?.creationDate,
@@ -491,7 +493,11 @@ async function BlogCategory({ params }: params) {
     recipeYield: recipeDetails?.yield,
     totalTime: timeToISO8601Duration(recipeDetails?.totalTime),
     recipeInstructions: currentPost?.instructions.map((e) => e),
-    keywords: (currentPost?.seo as JsonObject)?.primaryKeywords,
+    // keywords: (currentPost?.seo as JsonObject)?.primaryKeywords,
+    keywords: {
+      primaryKeywords: seo?.primaryKeywords,
+      secondaryKeywords: seo?.secondaryKeywords,
+    },
     recipeCategory: currentPost?.section,
     recipeCuisine: currentPost?.subsection,
     nutrition: {
