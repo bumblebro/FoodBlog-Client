@@ -471,8 +471,11 @@ async function BlogCategory({ params }: params) {
   };
 
   type JsonObject = { [key: string]: unknown };
-  const seo = currentPost?.seo as JsonObject;
-
+  // const seo = currentPost?.seo as JsonObject;
+  // interface Seo {
+  //   primaryKeywords?: string[];
+  //   secondaryKeywords?: string[];
+  // }
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Recipe",
@@ -493,11 +496,16 @@ async function BlogCategory({ params }: params) {
     recipeYield: recipeDetails?.yield,
     totalTime: timeToISO8601Duration(recipeDetails?.totalTime),
     recipeInstructions: currentPost?.instructions.map((e) => e),
-    // keywords: (currentPost?.seo as JsonObject)?.primaryKeywords,
-    keywords: {
-      primaryKeywords: seo?.primaryKeywords,
-      secondaryKeywords: seo?.secondaryKeywords,
-    },
+    keywords: [
+      ...((currentPost?.seo as SEOType)?.primaryKeywords ?? []),
+      ...((currentPost?.seo as SEOType)?.secondaryKeywords ?? []),
+    ],
+    // keywords: [
+    //   (currentPost?.seo?.primaryKeywords ?? []).concat(
+    //     currentPost?.seo?.secondaryKeywords ?? []
+    //   ),
+    // ],
+
     recipeCategory: currentPost?.section,
     recipeCuisine: currentPost?.subsection,
     nutrition: {
