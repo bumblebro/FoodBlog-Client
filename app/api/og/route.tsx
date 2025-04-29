@@ -180,6 +180,7 @@ export async function GET(req: NextRequest) {
         }}
       >
         {phrases[Math.floor(Math.random() * phrases.length)] +
+          " " +
           getRandomFoodEmoji()}
       </div>{" "}
       <div
