@@ -310,7 +310,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
           })}{" "}
           {/* <InArticleAd /> */}
           {currentPost.equipments && currentPost.equipments.length > 0 && (
-            <div className="px-6 py-5 bg-white  rounded-2xl mb-2 border-black border-2 mx-2 flex flex-col lg:flex-row justify-between items-center">
+            <div className="px-6 py-5 bg-white  rounded-2xl mb-2 border-black border-2 mx-2 flex flex-col lg:flex-row justify-between items-start lg:items-center">
               <div className="my-auto">
                 <h2
                   className={`text-xl font-medium text-gray-900 pb-3 ${Poppins700.className}`}
