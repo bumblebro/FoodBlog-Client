@@ -74,7 +74,7 @@ const ads = [
   "Ad 6 - Home Decor!",
 ];
 
-export default function BlogPage() {
+export default function SideAdComponent() {
   const blogRef = useRef<HTMLDivElement>(null);
   const [currentAdIndex, setCurrentAdIndex] = useState(0);
   const [showFloatingAd, setShowFloatingAd] = useState(false);
@@ -112,22 +112,23 @@ export default function BlogPage() {
 
       {/* Floating Ad */}
       {showFloatingAd && (
-        // <div className="fixed top-5 right-5 w-[300px] h-[250px] overflow-hidden z-50">
-        <div>
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentAdIndex}
-              initial={{ y: 300 }}
-              animate={{ y: 0 }}
-              exit={{ y: -300 }}
-              transition={{ duration: 0.5 }}
-              // className="w-full h-full bg-gray-100 shadow-lg flex items-center justify-center text-xl font-semibold"
-            >
-              <DisplayAdUnit format="auto" />
-
-              {/* {ads[currentAdIndex]} */}
-            </motion.div>
-          </AnimatePresence>
+        <div className="fixed top-5 right-5 w-[300px] h-[250px] overflow-hidden z-50">
+          <div>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentAdIndex}
+                initial={{ y: 300 }}
+                animate={{ y: 0 }}
+                exit={{ y: -300 }}
+                transition={{ duration: 0.5 }}
+                className="w-full h-full  shadow-lg flex items-center justify-center text-xl font-semibold"
+              >
+                <DisplayAdUnit format="auto" className="w-[300px] h-[250px]" />
+                {/* <h1 className="w-[300px] h-[250px] bg-gray-500 "></h1> */}
+                {/* {ads[currentAdIndex]} */}
+              </motion.div>
+            </AnimatePresence>
+          </div>{" "}
         </div>
       )}
     </>

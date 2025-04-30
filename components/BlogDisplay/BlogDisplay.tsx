@@ -14,7 +14,7 @@ import localFont from "next/font/local";
 import { Poppins } from "next/font/google";
 import AdCode from "../AdCode";
 import { DisplayAdUnit, InArticleAd, InFeedAdUnit2 } from "../Ads/ad-unit";
-import AdContainer from "../SideAdComponent";
+import SideAdComponent from "../SideAdComponent";
 // import GoogleAdUnit from "../GoogleAdUnit";
 // Poppins
 const Poppins700 = Poppins({
@@ -629,9 +629,9 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
             );
           })}
         </div>{" "}
-        <DisplayAdUnit format="auto" />
+        {/* <DisplayAdUnit format="auto" /> */}
         {/* <div className="bg-red-200 w-full h-72"></div> */}
-        <AdContainer />
+        <SideAdComponent />
       </div>
     </div>
   );
