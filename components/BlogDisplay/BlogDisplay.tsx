@@ -333,7 +333,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
             </AdCode>{" "} */}
           {/* <GoogleAdPcItem key={2 + "ads"} adId={`ad-slot-${2}`} /> */}
           <RecipePage currentPost={currentPost} />
-          <DisplayAdUnit format="rectangle" /> --made rect
+          <DisplayAdUnit format="rectangle" />
           {currentPost.faq && (currentPost.faq as any[]).length > 0 && (
             <FAQSection faqs={currentPost.faq} />
           )}
