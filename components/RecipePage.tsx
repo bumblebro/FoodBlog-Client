@@ -138,7 +138,7 @@ const RecipePage = ({ currentPost }: any) => {
           {currentPost?.recipedescription}
         </p>
         {/* Yield & Time Info */}
-        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6 flex flex-col lg:flex-row">
+        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6 flex flex-col lg:flex-row justify-between items-center">
           <div className="my-auto">
             <h2
               className={`text-xl  text-[#000000] mb-3  ${Poppins700.className} italic`}
@@ -207,7 +207,7 @@ const RecipePage = ({ currentPost }: any) => {
             ))}
           </ul>
         </div> */}
-        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6 flex flex-col lg:flex-row">
+        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6 flex flex-col lg:flex-row justify-between items-center">
           <div className="my-auto">
             <h2
               className={`text-xl  text-[#000000] mb-3  ${Poppins700.className} italic`}
@@ -266,7 +266,7 @@ const RecipePage = ({ currentPost }: any) => {
           </ol>
         </div>
         {/* Notes */}
-        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6 flex flex-col lg:flex-row">
+        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6 flex flex-col lg:flex-row justify-between items-center">
           <div className="my-auto">
             <h2
               className={`text-xl  text-[#000000] mb-3  ${Poppins700.className} italic`}
@@ -286,8 +286,8 @@ const RecipePage = ({ currentPost }: any) => {
         <DisplayAdUnit format="auto" />
 
         {/* Nutrition Info */}
-        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 flex flex-col lg:flex-row">
-          <div className="my-auto">
+        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 flex flex-col lg:flex-row justify-between items-center">
+          <div className="">
             <h2
               className={`text-xl  text-[#000000] mb-3  ${Poppins700.className} italic`}
             >
