@@ -138,38 +138,40 @@ const RecipePage = ({ currentPost }: any) => {
           {currentPost?.recipedescription}
         </p>
         {/* Yield & Time Info */}
-        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6 ">
-          {" "}
-          <h2
-            className={`text-xl  text-[#000000] mb-3  ${Poppins700.className} italic`}
-          >
-            ⏳ Yield & Time
-          </h2>
-          <p className="text-base p-yield">
-            <strong>Yield:</strong>{" "}
-            <span className="p-yield">{recipeDetails?.yield}</span> servings
-          </p>
-          <p className="text-base">
-            <strong>Preparation Time:</strong>{" "}
-            {Math.floor(parseInt(recipeDetails?.preparationTime) / 60)} minutes
-          </p>
-          <p className="text-base">
-            <strong>Cook Time:</strong>{" "}
-            {Math.floor(parseInt(recipeDetails?.cookTime) / 60)} minutes
-          </p>
-          <p className="text-base dt-duration  ">
-            <strong>Total Time:</strong>{" "}
-            <time
-              className="dt-duration"
-              dateTime={timeToISO8601Duration(recipeDetails?.totalTime)}
+        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6 flex flex-col lg:flex-row">
+          <div className="my-auto">
+            <h2
+              className={`text-xl  text-[#000000] mb-3  ${Poppins700.className} italic`}
             >
-              {Math.floor(parseInt(recipeDetails?.totalTime) / 60)} minutes
-            </time>
-          </p>
-          <DisplayAdUnit />
-          {/* <time className="dt-duration" dateTime="1H">
+              ⏳ Yield & Time
+            </h2>
+            <p className="text-base p-yield">
+              <strong>Yield:</strong>{" "}
+              <span className="p-yield">{recipeDetails?.yield}</span> servings
+            </p>
+            <p className="text-base">
+              <strong>Preparation Time:</strong>{" "}
+              {Math.floor(parseInt(recipeDetails?.preparationTime) / 60)}{" "}
+              minutes
+            </p>
+            <p className="text-base">
+              <strong>Cook Time:</strong>{" "}
+              {Math.floor(parseInt(recipeDetails?.cookTime) / 60)} minutes
+            </p>
+            <p className="text-base dt-duration  ">
+              <strong>Total Time:</strong>{" "}
+              <time
+                className="dt-duration"
+                dateTime={timeToISO8601Duration(recipeDetails?.totalTime)}
+              >
+                {Math.floor(parseInt(recipeDetails?.totalTime) / 60)} minutes
+              </time>
+            </p>
+            {/* <time className="dt-duration" dateTime="1H">
             15 min
           </time> */}
+          </div>
+          <MediumRectangleAdUnit />
         </div>
         {/* Quantity Selector */}
         <div className="flex justify-center space-x-3 mb-6">
@@ -205,37 +207,42 @@ const RecipePage = ({ currentPost }: any) => {
             ))}
           </ul>
         </div> */}
-        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6">
-          <h2
-            className={`text-xl  text-[#000000] mb-3  ${Poppins700.className} italic`}
-          >
-            🍽 Ingredients
-          </h2>
-          <ul className="  space-y-2 text-lg">
-            {recipeDetails?.ingredients?.map((ingredient: any, index: any) => (
-              <li
-                key={index}
-                className={`text-black text-base ${
-                  checkedItems[index] ? "line-through" : ""
-                }`}
-              >
-                <label className="flex items-center space-x-2">
-                  <input
-                    type="checkbox"
-                    checked={checkedItems[index]}
-                    onChange={() => handleCheck(index)}
-                    className="h-4 w-4 text-[#b5651d] checked:bg-[#b5651d] border-[#b5651d] focus:ring-[#b5651d]"
-                  />
-                  <span
-                    className="p-ingredient
-"
+        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6 flex flex-col lg:flex-row">
+          <div className="my-auto">
+            <h2
+              className={`text-xl  text-[#000000] mb-3  ${Poppins700.className} italic`}
+            >
+              🍽 Ingredients
+            </h2>
+            <ul className="  space-y-2 text-lg">
+              {recipeDetails?.ingredients?.map(
+                (ingredient: any, index: any) => (
+                  <li
+                    key={index}
+                    className={`text-black text-base ${
+                      checkedItems[index] ? "line-through" : ""
+                    }`}
                   >
-                    {ingredient?.quantity} {ingredient?.name}
-                  </span>
-                </label>
-              </li>
-            ))}
-          </ul>
+                    <label className="flex items-center space-x-2">
+                      <input
+                        type="checkbox"
+                        checked={checkedItems[index]}
+                        onChange={() => handleCheck(index)}
+                        className="h-4 w-4 text-[#b5651d] checked:bg-[#b5651d] border-[#b5651d] focus:ring-[#b5651d]"
+                      />
+                      <span
+                        className="p-ingredient
+"
+                      >
+                        {ingredient?.quantity} {ingredient?.name}
+                      </span>
+                    </label>
+                  </li>
+                )
+              )}
+            </ul>
+          </div>
+          <MediumRectangleAdUnit />
         </div>
         <DisplayAdUnit format="auto" />
 
@@ -259,66 +266,72 @@ const RecipePage = ({ currentPost }: any) => {
           </ol>
         </div>
         {/* Notes */}
-        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6">
-          <h2
-            className={`text-xl  text-[#000000] mb-3  ${Poppins700.className} italic`}
-          >
-            📝 Notes
-          </h2>
-          <ul className="list-disc pl-5 space-y-2 text-lg">
-            {recipeDetails?.notes?.map((note: any, index: any) => (
-              <li key={index} className="text-black text-base">
-                {note}
-              </li>
-            ))}
-          </ul>
+        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6 flex flex-col lg:flex-row">
+          <div className="my-auto">
+            <h2
+              className={`text-xl  text-[#000000] mb-3  ${Poppins700.className} italic`}
+            >
+              📝 Notes
+            </h2>
+            <ul className="list-disc pl-5 space-y-2 text-lg">
+              {recipeDetails?.notes?.map((note: any, index: any) => (
+                <li key={index} className="text-black text-base">
+                  {note}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <MediumRectangleAdUnit />
         </div>
         <DisplayAdUnit format="auto" />
 
         {/* Nutrition Info */}
-        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 text-">
-          <h2
-            className={`text-xl  text-[#000000] mb-3  ${Poppins700.className} italic`}
-          >
-            🍎 Nutrition
-          </h2>
-          <p
-            className="text-base p-nutrition
+        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 flex flex-col lg:flex-row">
+          <div className="my-auto">
+            <h2
+              className={`text-xl  text-[#000000] mb-3  ${Poppins700.className} italic`}
+            >
+              🍎 Nutrition
+            </h2>
+            <p
+              className="text-base p-nutrition
 "
-          >
-            <strong>Calories:</strong> {recipeDetails?.nutrition?.calories}
-          </p>
-          <p
-            className="text-base p-nutrition
+            >
+              <strong>Calories:</strong> {recipeDetails?.nutrition?.calories}
+            </p>
+            <p
+              className="text-base p-nutrition
 "
-          >
-            <strong>Protein:</strong> {recipeDetails?.nutrition?.protein}
-          </p>
-          <p
-            className="text-base p-nutrition
+            >
+              <strong>Protein:</strong> {recipeDetails?.nutrition?.protein}
+            </p>
+            <p
+              className="text-base p-nutrition
 "
-          >
-            <strong>Fat:</strong> {recipeDetails?.nutrition?.fat}
-          </p>
-          <p
-            className="text-base p-nutrition
+            >
+              <strong>Fat:</strong> {recipeDetails?.nutrition?.fat}
+            </p>
+            <p
+              className="text-base p-nutrition
 "
-          >
-            <strong>Carbohydrates:</strong>{" "}
-            {recipeDetails?.nutrition?.carbohydrates}
-          </p>
-          <p
-            className="text-base p-nutrition
+            >
+              <strong>Carbohydrates:</strong>{" "}
+              {recipeDetails?.nutrition?.carbohydrates}
+            </p>
+            <p
+              className="text-base p-nutrition
 "
-          >
-            <strong>Fiber:</strong> {recipeDetails?.nutrition?.fiber}
-          </p>
-          <p
-            className="text-base p-nutrition
+            >
+              <strong>Fiber:</strong> {recipeDetails?.nutrition?.fiber}
+            </p>
+            <p
+              className="text-base p-nutrition
 "
-          >
-            <strong>Calcium:</strong> {recipeDetails?.nutrition?.calcium}
-          </p>
+            >
+              <strong>Calcium:</strong> {recipeDetails?.nutrition?.calcium}
+            </p>
+          </div>
+          <MediumRectangleAdUnit />
         </div>
       </div>
     </div>

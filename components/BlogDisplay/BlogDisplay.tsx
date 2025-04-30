@@ -274,10 +274,10 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                   ))} */}
                 {contentItem.description && (
                   <div
-                    className={`  mb-4 ${Poppins400.className}  font-medium leading-[27px] flex flex-col lg:flex-row `}
+                    className={`  mb-4 ${Poppins400.className}  font-medium leading-[27px]  `}
                   >
+                    <DisplayAdUnit format="horizontal" />
                     <MarkdownComponent text={contentItem.description} />{" "}
-                    <MediumRectangleAdUnit />
                   </div>
                 )}
                 {contentItem.url == "null" ||
@@ -308,9 +308,9 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
               </div>
             );
           })}{" "}
-          <InArticleAd />
+          {/* <InArticleAd /> */}
           {currentPost.equipments && currentPost.equipments.length > 0 && (
-            <div className="px-6 py-5 bg-white  rounded-2xl mb-2 border-black border-2 mx-2 flex flex-col lg:flex-row ">
+            <div className="px-6 py-5 bg-white  rounded-2xl mb-2 border-black border-2 mx-2 flex flex-col lg:flex-row">
               <div>
                 <h2
                   className={`text-xl font-medium text-gray-900 pb-3 ${Poppins700.className}`}
@@ -323,9 +323,9 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                       {equipment}
                     </li>
                   ))}
-                </ul>{" "}
-              </div>{" "}
-              <MediumRectangleAdUnit />
+                </ul>
+              </div>
+              <DisplayAdUnit format="rectangle" />
             </div>
           )}
           {/* <AdCode>
