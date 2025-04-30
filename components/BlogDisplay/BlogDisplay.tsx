@@ -235,7 +235,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
             💾 Save Recipe
           </button> */}
           <Buttons />
-          <InArticleAd />
+          {/* <InArticleAd /> */}
           {/* <ShareButtons urllink={urllink} imageUrl={imageUrl} /> */}
           {/* <button className="bg-red-400">
             {" "}
