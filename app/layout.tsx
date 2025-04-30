@@ -7,6 +7,7 @@ import Footer from "@/components/footer/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
 import AnalyticsScript from "@/components/AnalyticsScript";
+import AdsenseScript from "@/components/Ads/AdsenseScript";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {process.env.NODE_ENV == "production" && (
+        {/* {process.env.NODE_ENV == "production" && (
           <Script
             async
             // src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5457433644037438"
@@ -44,35 +45,8 @@ export default function RootLayout({
             crossOrigin="anonymous"
             strategy="afterInteractive"
           ></Script>
-        )}
-        {/* <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-5RNXYBZTK0"
-        ></Script>
-        <Script id="google-analytics">
-          {`window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-5RNXYBZTK0');`}
-        </Script> */}
-
-        {/* <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-5RNXYBZTK0"
-        ></script>
-        <script>
-          dangerouslySetInnerHTML=
-          {{
-            __html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-5RNXYBZTK0');
-        `,
-          }}
-        </script> */}
+        )} */}
+        <AdsenseScript />
       </head>
       <body className={inter.className}>
         {/* {process.env.NODE_ENV == "production" && (
