@@ -63,7 +63,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { DisplayAdUnit } from "./Ads/ad-unit";
+import { DisplayAdUnit, MediumRectangleAdUnit } from "./Ads/ad-unit";
 
 const ads = [
   "Ad 1 - Buy Shoes!",
@@ -123,12 +123,12 @@ export default function SideAdComponent() {
                 transition={{ duration: 0.5 }}
                 className="w-full h-full   flex items-center justify-center text-xl font-semibold"
               >
-                <DisplayAdUnit format="rectangle" />
+                <MediumRectangleAdUnit />
                 {/* <h1 className="w-[300px] h-[250px] bg-gray-500 "></h1> */}
                 {/* {ads[currentAdIndex]} */}
               </motion.div>
             </AnimatePresence>
-          </div>{" "}
+          </div>
         </div>
       )}
     </>

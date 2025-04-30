@@ -13,7 +13,12 @@ import ShareButtons from "../ShareButtons";
 import localFont from "next/font/local";
 import { Poppins } from "next/font/google";
 import AdCode from "../AdCode";
-import { DisplayAdUnit, InArticleAd, InFeedAdUnit2 } from "../Ads/ad-unit";
+import {
+  DisplayAdUnit,
+  InArticleAd,
+  InFeedAdUnit2,
+  MediumRectangleAdUnit,
+} from "../Ads/ad-unit";
 import SideAdComponent from "../SideAdComponent";
 // import GoogleAdUnit from "../GoogleAdUnit";
 // Poppins
@@ -631,6 +636,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
         </div>{" "}
         {/* <DisplayAdUnit format="auto" /> */}
         {/* <div className="bg-red-200 w-full h-72"></div> */}
+        <MediumRectangleAdUnit />
         <SideAdComponent />
       </div>
     </div>
