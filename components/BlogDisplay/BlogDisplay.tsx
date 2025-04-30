@@ -274,9 +274,10 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                   ))} */}
                 {contentItem.description && (
                   <div
-                    className={`  mb-4 ${Poppins400.className}  font-medium leading-[27px]`}
+                    className={`  mb-4 ${Poppins400.className}  font-medium leading-[27px] flex flex-col lg:flex-row `}
                   >
-                    <MarkdownComponent text={contentItem.description} />
+                    <MarkdownComponent text={contentItem.description} />{" "}
+                    <MediumRectangleAdUnit />
                   </div>
                 )}
                 {contentItem.url == "null" ||
@@ -309,19 +310,22 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
           })}{" "}
           <InArticleAd />
           {currentPost.equipments && currentPost.equipments.length > 0 && (
-            <div className="px-6 py-5 bg-white  rounded-2xl mb-2 border-black border-2 mx-2">
-              <h2
-                className={`text-xl font-medium text-gray-900 pb-3 ${Poppins700.className}`}
-              >
-                Required Equipments
-              </h2>
-              <ul className=" rounded-lg py-3  flex flex-col gap-2  list-disc ">
-                {currentPost.equipments.map((equipment, i) => (
-                  <li key={i} className="flex items-center  ">
-                    {equipment}
-                  </li>
-                ))}
-              </ul>
+            <div className="px-6 py-5 bg-white  rounded-2xl mb-2 border-black border-2 mx-2 flex flex-col lg:flex-row ">
+              <div>
+                <h2
+                  className={`text-xl font-medium text-gray-900 pb-3 ${Poppins700.className}`}
+                >
+                  Required Equipments
+                </h2>
+                <ul className=" rounded-lg py-3  flex flex-col gap-2  list-disc ">
+                  {currentPost.equipments.map((equipment, i) => (
+                    <li key={i} className="flex items-center  ">
+                      {equipment}
+                    </li>
+                  ))}
+                </ul>{" "}
+              </div>{" "}
+              <MediumRectangleAdUnit />
             </div>
           )}
           {/* <AdCode>

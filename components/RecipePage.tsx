@@ -7,7 +7,7 @@ import localFont from "next/font/local";
 
 import { Poppins } from "next/font/google";
 import AdCode from "./AdCode";
-import { DisplayAdUnit } from "./Ads/ad-unit";
+import { DisplayAdUnit, MediumRectangleAdUnit } from "./Ads/ad-unit";
 // Poppins
 const Poppins700 = Poppins({
   weight: "700",
@@ -138,7 +138,8 @@ const RecipePage = ({ currentPost }: any) => {
           {currentPost?.recipedescription}
         </p>
         {/* Yield & Time Info */}
-        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6">
+        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6 ">
+          {" "}
           <h2
             className={`text-xl  text-[#000000] mb-3  ${Poppins700.className} italic`}
           >
@@ -165,6 +166,7 @@ const RecipePage = ({ currentPost }: any) => {
               {Math.floor(parseInt(recipeDetails?.totalTime) / 60)} minutes
             </time>
           </p>
+          <DisplayAdUnit />
           {/* <time className="dt-duration" dateTime="1H">
             15 min
           </time> */}
