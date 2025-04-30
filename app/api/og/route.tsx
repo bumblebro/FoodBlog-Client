@@ -159,6 +159,7 @@ export async function GET(req: NextRequest) {
         alignItems: "center",
         justifyContent: "flex-start",
         backgroundColor: getRandomDarkColor(),
+        // backgroundColor: "black",
         // backgroundImage: `url(${cover})`,
       }}
     >
@@ -172,6 +173,7 @@ export async function GET(req: NextRequest) {
           paddingRight: "10px",
           paddingLeft: "10px",
           paddingTop: "20px",
+          paddingBottom: "10px",
           fontSize: "120px",
           fontWeight: "900",
           fontFamily: "headfont1",
@@ -192,9 +194,9 @@ export async function GET(req: NextRequest) {
           textAlign: "center",
           paddingRight: "10px",
           paddingLeft: "10px",
-          fontSize: "75px",
+          fontSize: "55px",
           fontFamily: "titlefont",
-          textTransform: "uppercase",
+          textTransform: "capitalize",
         }}
       >
         {DeSlugify(title)}
