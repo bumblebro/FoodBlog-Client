@@ -121,7 +121,7 @@ export default function SideAdComponent() {
                 animate={{ y: 0 }}
                 exit={{ y: -300 }}
                 transition={{ duration: 0.5 }}
-                className="w-full h-full  shadow-lg flex items-center justify-center text-xl font-semibold"
+                className="w-full h-full   flex items-center justify-center text-xl font-semibold"
               >
                 <DisplayAdUnit format="auto" className="w-[300px] h-[250px]" />
                 {/* <h1 className="w-[300px] h-[250px] bg-gray-500 "></h1> */}
