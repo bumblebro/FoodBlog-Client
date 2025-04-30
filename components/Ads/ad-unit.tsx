@@ -47,12 +47,16 @@ export function DisplayAdUnit({
     <div className={className}>
       <AdUnit>
         <ins
+          // className="adsbygoogle"
+          // data-ad-client="ca-pub-5012580427673167"
+          // style={{ display: "block" }}
+          // data-ad-slot={3048648789}
+          // data-ad-format={format}
+          // data-full-width-responsive="true"
           className="adsbygoogle"
+          style={{ display: "inline-block", width: 300, height: 250 }}
           data-ad-client="ca-pub-5012580427673167"
-          style={{ display: "block" }}
-          data-ad-slot={3048648789}
-          data-ad-format={format}
-          data-full-width-responsive="true"
+          data-ad-slot={1659393530}
         ></ins>
       </AdUnit>
     </div>
