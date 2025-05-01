@@ -8,6 +8,8 @@ import localFont from "next/font/local";
 import { Poppins } from "next/font/google";
 import AdCode from "./AdCode";
 import { DisplayAdUnit, MediumRectangleAdUnit } from "./Ads/ad-unit";
+import AdContainerForDesktop from "./Ads/AdContainerForDesktop";
+import AdContainerForMobile from "./Ads/AdContainerForMobile";
 // Poppins
 const Poppins700 = Poppins({
   weight: "700",
@@ -171,12 +173,10 @@ const RecipePage = ({ currentPost }: any) => {
             15 min
           </time> */}
           </div>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <div style={{ width: 300, height: 250, maxWidth: "100%" }}>
-              <MediumRectangleAdUnit />
-            </div>
-          </div>
+          <AdContainerForDesktop />
         </div>
+        <AdContainerForMobile />
+
         {/* Quantity Selector */}
         <div className="flex justify-center space-x-3 mb-6">
           {["1X", "2X", "3X", "4X"].map((qty) => (
@@ -246,13 +246,10 @@ const RecipePage = ({ currentPost }: any) => {
               )}
             </ul>
           </div>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <div style={{ width: 300, height: 250,maxWidth: "100%"  }}>
-              <MediumRectangleAdUnit />
-            </div>
-          </div>{" "}
+          <AdContainerForDesktop />
         </div>
         {/* <DisplayAdUnit format="auto" /> */}
+        <AdContainerForMobile />
 
         {/* Instructions */}
         <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6">
@@ -289,13 +286,10 @@ const RecipePage = ({ currentPost }: any) => {
               ))}
             </ul>
           </div>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <div style={{ width: 300, height: 250 ,maxWidth: "100%"}}>
-              <MediumRectangleAdUnit />
-            </div>
-          </div>{" "}
+          <AdContainerForDesktop />
         </div>
         {/* <DisplayAdUnit format="auto" /> */}
+        <AdContainerForMobile />
 
         {/* Nutrition Info */}
         <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 flex flex-col lg:flex-row justify-between items-start lg:items-center">
@@ -343,11 +337,7 @@ const RecipePage = ({ currentPost }: any) => {
               <strong>Calcium:</strong> {recipeDetails?.nutrition?.calcium}
             </p>
           </div>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <div style={{ width: 300, height: 250 ,maxWidth: "100%"}}>
-              <MediumRectangleAdUnit />
-            </div>
-          </div>{" "}
+          <AdContainerForDesktop />
         </div>
       </div>
     </div>
