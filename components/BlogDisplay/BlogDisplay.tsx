@@ -276,7 +276,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                   <div
                     className={`  mb-4 ${Poppins400.className}  font-medium leading-[27px]  `}
                   >
-                    <DisplayAdUnit format="horizontal" />
+                    {/* <DisplayAdUnit format="horizontal" /> */}
                     <MarkdownComponent text={contentItem.description} />{" "}
                   </div>
                 )}
@@ -342,7 +342,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
             </AdCode>{" "} */}
           {/* <GoogleAdPcItem key={2 + "ads"} adId={`ad-slot-${2}`} /> */}
           <RecipePage currentPost={currentPost} />
-          <DisplayAdUnit format="rectangle" />
+          {/* <DisplayAdUnit format="rectangle" /> */}
           {currentPost.faq && (currentPost.faq as any[]).length > 0 && (
             <FAQSection faqs={currentPost.faq} />
           )}
@@ -361,7 +361,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
               data-full-width-responsive="true"
             />
           </AdCode>{" "} */}
-          <DisplayAdUnit format="rectangle" />
+          {/* <DisplayAdUnit format="rectangle" /> */}
           <h1
             className={`text-2xl font-semibold text-center py-4 mb-4 ${Poppins700.className} bg-[#8D6271]  text-white rounded-md`}
           >

@@ -244,7 +244,7 @@ const RecipePage = ({ currentPost }: any) => {
           </div>
           <MediumRectangleAdUnit />
         </div>
-        <DisplayAdUnit format="auto" />
+        {/* <DisplayAdUnit format="auto" /> */}
 
         {/* Instructions */}
         <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6">
@@ -283,7 +283,7 @@ const RecipePage = ({ currentPost }: any) => {
           </div>
           <MediumRectangleAdUnit />
         </div>
-        <DisplayAdUnit format="auto" />
+        {/* <DisplayAdUnit format="auto" /> */}
 
         {/* Nutrition Info */}
         <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 flex flex-col lg:flex-row justify-between items-start lg:items-center">
