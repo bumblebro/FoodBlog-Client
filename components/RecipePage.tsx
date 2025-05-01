@@ -171,7 +171,11 @@ const RecipePage = ({ currentPost }: any) => {
             15 min
           </time> */}
           </div>
-          <MediumRectangleAdUnit />
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <div style={{ width: 300, height: 250 }}>
+              <MediumRectangleAdUnit />
+            </div>
+          </div>
         </div>
         {/* Quantity Selector */}
         <div className="flex justify-center space-x-3 mb-6">
@@ -242,7 +246,11 @@ const RecipePage = ({ currentPost }: any) => {
               )}
             </ul>
           </div>
-          <MediumRectangleAdUnit />
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <div style={{ width: 300, height: 250 }}>
+              <MediumRectangleAdUnit />
+            </div>
+          </div>{" "}
         </div>
         {/* <DisplayAdUnit format="auto" /> */}
 
@@ -281,7 +289,11 @@ const RecipePage = ({ currentPost }: any) => {
               ))}
             </ul>
           </div>
-          <MediumRectangleAdUnit />
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <div style={{ width: 300, height: 250 }}>
+              <MediumRectangleAdUnit />
+            </div>
+          </div>{" "}
         </div>
         {/* <DisplayAdUnit format="auto" /> */}
 
@@ -331,7 +343,11 @@ const RecipePage = ({ currentPost }: any) => {
               <strong>Calcium:</strong> {recipeDetails?.nutrition?.calcium}
             </p>
           </div>
-          <MediumRectangleAdUnit />{" "}
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <div style={{ width: 300, height: 250 }}>
+              <MediumRectangleAdUnit />
+            </div>
+          </div>{" "}
         </div>
       </div>
     </div>
