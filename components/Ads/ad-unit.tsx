@@ -65,7 +65,12 @@ export function MediumRectangleAdUnit() {
       <AdUnit>
         <ins
           className="adsbygoogle"
-          style={{ display: "inline-block", width: 300, height: 250 }}
+          style={{
+            display: "inline-block",
+            width: 300,
+            height: 250,
+            maxWidth: "100%",
+          }}
           data-ad-client="ca-pub-5012580427673167"
           data-ad-slot={1659393530}
         ></ins>
