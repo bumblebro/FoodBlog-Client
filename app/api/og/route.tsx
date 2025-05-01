@@ -414,7 +414,7 @@ export async function GET(req: NextRequest) {
           fontWeight: "900",
           fontFamily: "source-sans-pro.black",
           textTransform: "uppercase",
-          lineHeight: "140px", // Adjust this value as needed
+          lineHeight: "100px", // Adjust this value as needed
         }}
       >
         {phrases[Math.floor(Math.random() * phrases.length)]}
@@ -431,6 +431,7 @@ export async function GET(req: NextRequest) {
           fontSize: "75px",
           fontFamily: "SoinSansPro-Bold",
           textTransform: "capitalize",
+          paddingTop: "20px",
         }}
       >
         {DeSlugify(title)}
