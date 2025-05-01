@@ -39,6 +39,7 @@ function Footer() {
       {/* </div> */}
       <div className="pt-11 pb-20 text-white text-center flex flex-col gap-14 px-4 mx-auto xl:max-w-[73rem] ">
         {/* <DisplayAdUnit format="auto" className="mx-auto w-full" /> */}
+        
         <div className="flex flex-col items-center gap-3 ">
           <h1
             className={`text-md font-medium text-[#000000] ${Poppins700.className} uppercase`}

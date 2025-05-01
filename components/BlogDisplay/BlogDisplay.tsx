@@ -20,6 +20,8 @@ import {
   MediumRectangleAdUnit,
 } from "../Ads/ad-unit";
 import SideAdComponent from "../SideAdComponent";
+import AdContainerForDesktop from "../Ads/AdContainerForDesktop";
+import AdContainerForMobile from "../Ads/AdContainerForMobile";
 // import GoogleAdUnit from "../GoogleAdUnit";
 // Poppins
 const Poppins700 = Poppins({
@@ -325,7 +327,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                   ))}
                 </ul>
               </div>
-              <MediumRectangleAdUnit />
+              <AdContainerForDesktop />
             </div>
           )}
           {/* <AdCode>
@@ -341,6 +343,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
             />
             </AdCode>{" "} */}
           {/* <GoogleAdPcItem key={2 + "ads"} adId={`ad-slot-${2}`} /> */}
+          <AdContainerForMobile />
           <RecipePage currentPost={currentPost} />
           {/* <DisplayAdUnit format="rectangle" /> */}
           {currentPost.faq && (currentPost.faq as any[]).length > 0 && (
@@ -348,7 +351,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
           )}
           <h1 className="px-4 py-4 my-4 italic ">{currentPost.quote}</h1>
         </div>{" "}
-        <div className=" py-8 px-4  hidden md:flex md:flex-col">
+        <div className=" py-8 px-4  hidden md:flex md:flex-col ">
           {/* <AdCode>
             {" "}
             <ins
@@ -367,7 +370,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
           >
             Related Stories
           </h1>
-          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 ">
             {latposts?.map((item, i) => {
               // const shouldInsertAd = Math.random() < 0.1;
               // if (shouldInsertAd) {
@@ -513,7 +516,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
         >
           Related Stories
         </h1>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 mb-20">
           {posts?.map((item, i) => {
             // const shouldInsertAd = Math.random() < 0.1;
             // if (shouldInsertAd) {

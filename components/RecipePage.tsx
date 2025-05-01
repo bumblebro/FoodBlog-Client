@@ -175,7 +175,6 @@ const RecipePage = ({ currentPost }: any) => {
           </div>
           <AdContainerForDesktop />
         </div>
-        <AdContainerForMobile />
 
         {/* Quantity Selector */}
         <div className="flex justify-center space-x-3 mb-6">
@@ -211,6 +210,8 @@ const RecipePage = ({ currentPost }: any) => {
             ))}
           </ul>
         </div> */}
+        <AdContainerForMobile />
+
         <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6 flex flex-col lg:flex-row justify-between items-start lg:items-center">
           <div className="my-auto">
             <h2
@@ -271,6 +272,8 @@ const RecipePage = ({ currentPost }: any) => {
           </ol>
         </div>
         {/* Notes */}
+        <AdContainerForMobile />
+
         <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6 flex flex-col lg:flex-row justify-between items-start lg:items-center">
           <div className="my-auto">
             <h2
