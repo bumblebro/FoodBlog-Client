@@ -253,7 +253,7 @@ const RecipePage = ({ currentPost }: any) => {
         <AdContainerForMobile />
 
         {/* Instructions */}
-        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6">
+        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6 mt-6">
           <h2
             className={`text-xl  text-[#000000] mb-3  ${Poppins700.className} italic`}
           >
@@ -274,7 +274,7 @@ const RecipePage = ({ currentPost }: any) => {
         {/* Notes */}
         <AdContainerForMobile />
 
-        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6 flex flex-col lg:flex-row justify-between items-start lg:items-center">
+        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6 mt-6 flex flex-col lg:flex-row justify-between items-start lg:items-center">
           <div className="my-auto">
             <h2
               className={`text-xl  text-[#000000] mb-3  ${Poppins700.className} italic`}
@@ -295,7 +295,7 @@ const RecipePage = ({ currentPost }: any) => {
         <AdContainerForMobile />
 
         {/* Nutrition Info */}
-        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 flex flex-col lg:flex-row justify-between items-start lg:items-center">
+        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 flex flex-col lg:flex-row justify-between items-start lg:items-center mt-6">
           <div>
             <h2
               className={`text-xl  text-[#000000] mb-3  ${Poppins700.className} italic`}
