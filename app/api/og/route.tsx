@@ -415,6 +415,7 @@ export async function GET(req: NextRequest) {
           fontFamily: "source-sans-pro.black",
           textTransform: "uppercase",
           lineHeight: "100px", // Adjust this value as needed
+          paddingTop: "20px",
         }}
       >
         {phrases[Math.floor(Math.random() * phrases.length)]}
@@ -465,81 +466,6 @@ export async function GET(req: NextRequest) {
         }}
       />
     </div>,
-    // <div
-    //   key={"1"}
-    //   style={{
-    //     height: "100vh", // Fixed height for the container
-    //     width: "100%",
-    //     display: "flex",
-    //     flexDirection: "column",
-    //     alignItems: "center",
-    //     justifyContent: "flex-start",
-    //     backgroundColor: "black",
-    //     // backgroundImage: `url(${cover})`,
-    //   }}
-    // >
-    //   <div
-    //     style={{
-    //       // height: "200px", // Fixed height for title
-    //       // paddingTop: "5px",
-    //       // paddingBottom: "25px",
-    //       color: "white",
-    //       textAlign: "center",
-    //       paddingRight: "10px",
-    //       paddingLeft: "10px",
-    //       fontSize: "80px",
-    //       fontWeight: "900",
-    //       fontFamily: "source-sans-pro.black",
-    //       textTransform: "uppercase",
-    //     }}
-    //   >
-    //     {phrases[Math.floor(Math.random() * phrases.length)]}
-    //   </div>{" "}
-    //   <div
-    //     style={{
-    //       // height: "200px", // Fixed height for title
-    //       // paddingTop: "25px",
-    //       paddingBottom: "25px",
-    //       color: "white",
-    //       textAlign: "center",
-    //       paddingRight: "10px",
-    //       paddingLeft: "10px",
-    //       fontSize: "50px",
-    //       fontFamily: "SoinSansPro-Bold",
-    //       textTransform: "capitalize",
-    //     }}
-    //   >
-    //     {DeSlugify(title)}
-    //   </div>{" "}
-    //   <div
-    //     style={{
-    //       // height: "60px", // Fixed height for footer text
-    //       textAlign: "center",
-    //       fontSize: "30px",
-    //       color: "black",
-    //       paddingRight: "30px",
-    //       paddingLeft: "30px",
-    //       fontStyle: "normal",
-    //       backgroundColor: "#FFFFF7",
-    //       fontWeight: 100,
-    //       fontFamily: "source-sans-pro.extralight",
-    //     }}
-    //   >
-    //     savorytouch.com
-    //   </div>
-    //   <img
-    //     src={cover}
-    //     alt="test"
-    //     height={900}
-    //     width={1000}
-    //     style={{
-    //       flexGrow: 1, // Ensures the image takes available space
-    //       width: "100%",
-    //       objectFit: "cover",
-    //       objectPosition: "center",
-    //     }}
-    //   />
-    // </div>,
   ];
 
   const randomTemplate =
