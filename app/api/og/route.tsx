@@ -403,13 +403,13 @@ export async function GET(req: NextRequest) {
       }}
     >
       {" "}
-      <div
+      {/* <div
         style={{
-          // marginTop: "5px",
+          marginTop: "10px",
           borderBottom: `10px solid ${theme.text}`, // Add bottom border
           width: "100%",
         }}
-      ></div>
+      ></div> */}
       <div
         style={{
           // height: "200px", // Fixed height for title
@@ -460,11 +460,11 @@ export async function GET(req: NextRequest) {
           fontFamily: "source-sans-pro.extralight",
         }}
       >
-        wordofmany.com
+        savorytouch.com
       </div>
       <div
         style={{
-          // marginBottom: "5px",
+          // marginTop: "10px",
           borderBottom: `10px solid ${theme.text}`, // Add bottom border
           width: "100%",
         }}
