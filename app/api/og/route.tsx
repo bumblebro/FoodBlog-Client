@@ -398,9 +398,18 @@ export async function GET(req: NextRequest) {
         alignItems: "center",
         justifyContent: "flex-start",
         backgroundColor: theme.background,
+
         // backgroundImage: `url(${cover})`,
       }}
     >
+      {" "}
+      <div
+        style={{
+          // marginTop: "5px",
+          borderBottom: `10px solid ${theme.text}`, // Add bottom border
+          width: "100%",
+        }}
+      ></div>
       <div
         style={{
           // height: "200px", // Fixed height for title
@@ -429,10 +438,10 @@ export async function GET(req: NextRequest) {
           textAlign: "center",
           paddingRight: "10px",
           paddingLeft: "10px",
+          paddingTop: "20px",
           fontSize: "75px",
           fontFamily: "SoinSansPro-Bold",
           textTransform: "capitalize",
-          paddingTop: "20px",
         }}
       >
         {DeSlugify(title)}
@@ -451,8 +460,15 @@ export async function GET(req: NextRequest) {
           fontFamily: "source-sans-pro.extralight",
         }}
       >
-        savorytouch.com
+        wordofmany.com
       </div>
+      <div
+        style={{
+          // marginBottom: "5px",
+          borderBottom: `10px solid ${theme.text}`, // Add bottom border
+          width: "100%",
+        }}
+      ></div>
       <img
         src={cover}
         alt="test"
