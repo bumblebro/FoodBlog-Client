@@ -65,7 +65,9 @@ const RecipePage = ({ currentPost }: any) => {
   const [selectedQuantity, setSelectedQuantity] = useState("1X");
   const recipeRef = useRef(null);
   const [html2pdf, setHtml2pdf] = useState<Function | null>(null); // State to hold the html2pdf function
-
+  const siteURL = process.env.NEXT_PUBLIC_BASE_API_URL || "";
+  const domain =
+    process.env.NEXT_PUBLIC_BASE_API_URL?.replace(/^https:/, "http:") || "";
   useEffect(() => {
     async function loadModule() {
       const impmodule = await import("html2pdf.js");
@@ -113,15 +115,6 @@ const RecipePage = ({ currentPost }: any) => {
       className={`flex flex-col items-center min-h-screen  py-4 w-full  ${Poppins400.className} `}
       id="recipeSection"
     >
-      <div className="w-full flex justify-center ">
-        <button
-          onClick={downloadPDF}
-          className={`mb-4 px-5 py-2 rounded-md shadow-md transition-all hover:bg-black text-white bg-[#8D6271] duration-400 uppercase ${Poppins700.className} mx-2`}
-        >
-          📜 Save Recipe
-        </button>
-      </div>
-
       <div
         ref={recipeRef}
         className="w-full max-w-4xl bg-white shadow-lg rounded-xl p-3 border border-gray-300"
@@ -212,7 +205,7 @@ const RecipePage = ({ currentPost }: any) => {
         </div> */}
         <AdContainerForMobile />
 
-        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6 flex flex-col lg:flex-row justify-between items-start lg:items-center mt-6" >
+        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6 flex flex-col lg:flex-row justify-between items-start lg:items-center mt-6">
           <div className="my-auto">
             <h2
               className={`text-xl  text-[#000000] mb-3  ${Poppins700.className} italic`}
@@ -341,6 +334,32 @@ const RecipePage = ({ currentPost }: any) => {
             </p>
           </div>
           <AdContainerForDesktop />
+        </div>
+      </div>
+      <div className=" w-full flex justify-start">
+        {" "}
+        <div className="w-full flex justify-center ">
+          <button
+            onClick={downloadPDF}
+            className={`mt-4 px-5 py-2 rounded-md shadow-md transition-all hover:bg-black text-white bg-[#8D6271] duration-400 uppercase ${Poppins700.className} mx-2 `}
+          >
+            📜 Print Recipe
+          </button>
+        </div>
+        <div className="w-full flex justify-center ">
+          <a
+            href={`https://pinterest.com/pin/create/link/?url=${
+              siteURL + "/" + currentPost.slug
+            }&media=${
+              domain +
+              `/api/og?title=${
+                currentPost.title
+              }&amp;cover=${encodeURIComponent(currentPost.imageurl)}`
+            }&description=${currentPost.recipedescription}`}
+            className={`mt-4 px-5 py-2 rounded-md shadow-md transition-all hover:bg-black text-white bg-[#8D6271] duration-400 uppercase ${Poppins700.className} mx-2 `}
+          >
+            📌 Pin Recipe
+          </a>
         </div>
       </div>
     </div>
