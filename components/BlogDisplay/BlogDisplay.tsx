@@ -118,6 +118,22 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
   //   currentPost.subsubsection !== "null" ? currentPost.subsubsection + "/" : ""
   // }${currentPost.title}`;
 
+  const siteURL = process.env.NEXT_PUBLIC_BASE_API_URL || "";
+
+  const domain =
+    process.env.NEXT_PUBLIC_BASE_API_URL?.replace(/^https:/, "http:") || "";
+
+  const generatePinterestUrl = ({ pageUrl, imageUrl, description }: any) => {
+    const baseUrl = "https://www.pinterest.com/pin/create/bookmarklet/?";
+    const params = new URLSearchParams({
+      url: pageUrl,
+      media: imageUrl,
+      description,
+    });
+
+    return `${baseUrl}${params.toString()}`;
+  };
+
   return (
     <div
       className={` xl:max-w-[73rem] mx-auto  mb-10 md:grid md:grid-cols-[56.7%_auto] lg:grid-cols-[67.5%_auto] xl:grid-cols-[74.25%_auto] xl:gap-2 2xl:grid-cols-[71.5%_auto] ${Poppins400.className}`}
@@ -169,7 +185,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
               </h1>
             </Link>
             <h1
-              className={`text-2xl mx-4 xl:mx-0  border-b-[0.1px] pb-4 mb-6 border-gray-500  capitalize sm:text-[25px] md:text-[30px] lg:text-[35px] xl:pb-6 ${Poppins700.className}`}
+              className={`text-2xl mx-4 xl:mx-0  border-b-[0.1px] pb-4 mb-6 border-gray-500  uppercase sm:text-[25px] md:text-[30px] lg:text-[35px] xl:pb-6 ${Poppins700.className} `}
             >
               {DeSlugify(decodedslug[decodedslug.length - 1])}
             </h1>{" "}
@@ -255,10 +271,61 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
             src={imageUrl}
             alt="ssss"
           /> */}
+          <a
+            target="_blank"
+            href={generatePinterestUrl({
+              pageUrl: siteURL + "/" + DeSlugify(currentPost.slug),
+              imageUrl:
+                domain +
+                `/api/og?title=${
+                  currentPost.title
+                }&amp;cover=${encodeURIComponent(currentPost.imageurl)}`,
+              description: currentPost.recipedescription,
+            })}
+          >
+            <button
+              className={`mt-4 px-5 py-2 rounded-md shadow-md transition-all hover:bg-black text-white bg-[#E60022] duration-400 uppercase ${Poppins700.className}  text-sm mb-10`}
+            >
+              📌 Pin Recipe
+            </button>
+          </a>
+          <div className=" flex flex-col gap-2">
+            <div
+              // className=" h-[17rem]  md:h-[21rem] lg:h-[31.5rem] xl:h-[39.5rem] sm:h-[28.5rem] 2xl:h-[38rem] relative w-full object-contain"
+              className=" h-auto   relative w-full "
+            >
+              <Image
+                sizes="100vw"
+                // fill
+                // sizes="(min-width: 640px) 608px,(min-width: 768px) 403px,(min-width: 1024px) 659px,(min-width: 1280px) 867px,(min-width: 1536px) 835px, 358px"
+                // style={{ objectFit: "contain" }}
+                width={0}
+                height={0}
+                style={{ width: "20%", height: "auto" }} // optional
+                // src={
+                //   domain +
+                //   `/api/og?title=${
+                //     currentPost.title
+                //   }&amp;cover=${encodeURIComponent(currentPost.imageurl)}`
+                // }
+                src="https://savorytouch.com/api/og?title=Champagne-Fruit-Salad&cover=https%3A%2F%2Fblogger.googleusercontent.com%2Fimg%2Fb%2FR29vZ2xl%2FAVvXsEgHus7ANUFIFvLSw3UQb6KuCuD4Ci6ryuCq6PV_0CXwv5l3y7C0HM9eI7Lbdcn-_1M7hLGH6LERkH4g04m0UA54NcZJQKSp5Ah1tKhF0Y8A3rsChbKwLlb7z6-3oqSQQog0gRgePbwTlcw%2Fs1600%2FFruit-Salad-with-Champagne-031-websize-x500.jpg"
+                // style={{ objectFit: "contain" , }}
+                quality={75}
+                alt={currentPost.imagealt}
+                priority
+                placeholder={`data:image/svg+xml;base64,${toBase64(
+                  shimmer(300, 300)
+                )}`}
+              />
+            </div>
+          </div>
           {currentPost.content?.map((item, i) => {
             const contentItem = item as ContentItem;
             return (
-              <div key={i} className="flex flex-col  pb-6 px-4 xl:px-0">
+              <div
+                key={i}
+                className="flex flex-col gap-6  py-6 px-4 xl:px-0 w-f"
+              >
                 {/* <h1
                 className={`${
                   i == 0 && "hidden"
@@ -287,12 +354,20 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                 contentItem.alt == "null" ||
                 contentItem.alt == null ? null : (
                   <div className=" flex flex-col gap-2">
-                    <div className=" h-[17rem] object-contain md:h-[21rem] lg:h-[31.5rem] xl:h-[39.5rem] sm:h-[28.5rem] 2xl:h-[38rem] relative w-full">
+                    <div
+                      // className=" h-[17rem]  md:h-[21rem] lg:h-[31.5rem] xl:h-[39.5rem] sm:h-[28.5rem] 2xl:h-[38rem] relative w-full object-contain"
+                      className=" h-auto   relative w-full "
+                    >
                       <Image
-                        fill
-                        sizes="(min-width: 640px) 608px,(min-width: 768px) 403px,(min-width: 1024px) 659px,(min-width: 1280px) 867px,(min-width: 1536px) 835px, 358px"
+                        // fill
+                        // sizes="(min-width: 640px) 608px,(min-width: 768px) 403px,(min-width: 1024px) 659px,(min-width: 1280px) 867px,(min-width: 1536px) 835px, 358px"
+                        width={0}
+                        height={0}
+                        sizes="100vw"
+                        style={{ width: "100%", height: "auto" }} // optional
+                        // sizes="100vw"
                         src={contentItem.url}
-                        style={{ objectFit: "contain" }}
+                        // style={{ objectFit: "contain" , }}
                         quality={75}
                         alt={contentItem.alt}
                         priority
@@ -301,21 +376,24 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                         )}`}
                       />
                     </div>
-                    {/* 
+                    {/*
                     <p className="text-gray-500 font-light text-sm">
                       {contentItem.alt} | Image: Supplied
                     </p> */}
                   </div>
+                  // <div className="  w-full h-full">
+
+                  // </div>
                 )}
               </div>
             );
           })}{" "}
           {/* <InArticleAd /> */}
           {currentPost.equipments && currentPost.equipments.length > 0 && (
-            <div className="px-6 py-5 bg-white  rounded-2xl mb-2 border-black border-2 mx-2 flex flex-col lg:flex-row justify-between items-start lg:items-center">
+            <div className="px-6 py-5 bg-white  rounded-2xl my-10 border-black border-2 mx-2 flex flex-col lg:flex-row justify-between items-start lg:items-center">
               <div className="my-auto">
                 <h2
-                  className={`text-xl font-medium text-gray-900 pb-3 ${Poppins700.className}`}
+                  className={`text-xl font-medium text-gray-900 pb-3 ${Poppins700.className} uppercase`}
                 >
                   Required Equipments
                 </h2>
@@ -329,6 +407,9 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
               </div>
               <AdContainerForDesktop />
             </div>
+          )}
+          {currentPost.faq && (currentPost.faq as any[]).length > 0 && (
+            <FAQSection title={currentPost.title} faqs={currentPost.faq} />
           )}
           {/* <AdCode>
             {" "}
@@ -346,9 +427,9 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
           <AdContainerForMobile />
           <RecipePage currentPost={currentPost} />
           {/* <DisplayAdUnit format="rectangle" /> */}
-          {currentPost.faq && (currentPost.faq as any[]).length > 0 && (
+          {/* {currentPost.faq && (currentPost.faq as any[]).length > 0 && (
             <FAQSection faqs={currentPost.faq} />
-          )}
+          )} */}
           <h1 className="px-4 py-4 my-4 italic ">{currentPost.quote}</h1>
         </div>{" "}
         <div className=" py-8 px-4  hidden md:flex md:flex-col ">
@@ -368,7 +449,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
           <h1
             className={`text-2xl font-semibold text-center py-4 mb-4 ${Poppins700.className} bg-[#8D6271]  text-white rounded-md`}
           >
-            Related Stories
+            Related Storiess
           </h1>
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 ">
             {latposts?.map((item, i) => {
