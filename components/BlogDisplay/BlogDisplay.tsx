@@ -419,9 +419,11 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
               <AdContainerForDesktop />
             </div>
           )}
+          <DisplayAdUnit format="auto" />
           {currentPost.faq && (currentPost.faq as any[]).length > 0 && (
             <FAQSection title={currentPost.title} faqs={currentPost.faq} />
           )}
+          <DisplayAdUnit format="auto" />
           {/* <AdCode>
             {" "}
             <ins
@@ -435,7 +437,9 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
             />
             </AdCode>{" "} */}
           {/* <GoogleAdPcItem key={2 + "ads"} adId={`ad-slot-${2}`} /> */}
-          <AdContainerForMobile />
+          {/* <AdContainerForMobile /> */}
+          <DisplayAdUnit format="auto" />
+
           <RecipePage currentPost={currentPost} />
           {/* <DisplayAdUnit format="rectangle" /> */}
           {/* {currentPost.faq && (currentPost.faq as any[]).length > 0 && (
