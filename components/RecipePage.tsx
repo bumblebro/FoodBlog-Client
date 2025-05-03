@@ -123,28 +123,28 @@ const RecipePage = ({ currentPost }: any) => {
   return (
     <div
       // className={`flex flex-col items-center min-h-screen  py-4 w-full   tracking-[1.275px] ${Poppins400.className} `}
-      className={`flex flex-col items-center min-h-screen  py-4 w-full  ${Poppins400.className} `}
+      className={`flex flex-col items-center min-h-screen  py-4 w-full  ${Poppins400.className} my-10`}
       id="recipeSection"
     >
       <div
         ref={recipeRef}
-        className="w-full max-w-4xl bg-white shadow-lg rounded-xl p-3 border border-gray-300"
+        className="w-full max-w-4xl bg-white shadow-lg rounded-xl p-3 border border-gray-300 py-12"
       >
         {/* Recipe Title */}
         <h1
-          className={`text-3xl  text-center  mb-6 text-[#000000] p-name ${Poppins700.className}`}
+          className={`text-3xl  text-center   text-[#000000] p-name ${Poppins700.className} pb-5 uppercase`}
         >
           {DeSlugify(currentPost?.title)}
         </h1>
         {/* Recipe Description */}
         <p
-          className=" text-black text-center italic mb-6 text-base p-summary
+          className=" text-black text-center italic  text-base p-summary 
 "
         >
           {currentPost?.recipedescription}
         </p>
         {/* Yield & Time Info */}
-        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6 flex flex-col lg:flex-row justify-between items-start lg:items-center">
+        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300  flex flex-col lg:flex-row justify-between items-start lg:items-center my-12">
           <div className="my-auto">
             <h2
               className={`text-xl  text-[#000000] mb-3  ${Poppins700.className} italic`}
@@ -181,7 +181,7 @@ const RecipePage = ({ currentPost }: any) => {
         </div>
 
         {/* Quantity Selector */}
-        <div className="flex justify-center space-x-3 mb-6">
+        <div className="flex justify-center space-x-3 ">
           {["1X", "2X", "3X", "4X"].map((qty) => (
             <button
               key={qty}
@@ -202,7 +202,7 @@ const RecipePage = ({ currentPost }: any) => {
           ))}
         </div>
         {/* Ingredients */}
-        {/* <div className=" p-6 rounded-lg shadow-md border border-gray-300 mb-6">
+        {/* <div className=" p-6 rounded-lg shadow-md border border-gray-300 ">
           <h2 className="text-xl font-serif text-[#6b4226] mb-3">
             🍽 Ingredients
           </h2>
@@ -216,7 +216,7 @@ const RecipePage = ({ currentPost }: any) => {
         </div> */}
         <AdContainerForMobile />
 
-        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6 flex flex-col lg:flex-row justify-between items-start lg:items-center mt-6">
+        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300  flex flex-col lg:flex-row justify-between items-start lg:items-center my-12 ">
           <div className="my-auto">
             <h2
               className={`text-xl  text-[#000000] mb-3  ${Poppins700.className} italic`}
@@ -257,7 +257,7 @@ const RecipePage = ({ currentPost }: any) => {
         <AdContainerForMobile />
 
         {/* Instructions */}
-        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6 mt-6">
+        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300  my-12">
           <h2
             className={`text-xl  text-[#000000] mb-3  ${Poppins700.className} italic`}
           >
@@ -278,7 +278,7 @@ const RecipePage = ({ currentPost }: any) => {
         {/* Notes */}
         <AdContainerForMobile />
 
-        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 mb-6 mt-6 flex flex-col lg:flex-row justify-between items-start lg:items-center">
+        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300  my-12 flex flex-col lg:flex-row justify-between items-start lg:items-center">
           <div className="my-auto">
             <h2
               className={`text-xl  text-[#000000] mb-3  ${Poppins700.className} italic`}
@@ -299,7 +299,7 @@ const RecipePage = ({ currentPost }: any) => {
         <AdContainerForMobile />
 
         {/* Nutrition Info */}
-        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 flex flex-col lg:flex-row justify-between items-start lg:items-center mt-6">
+        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 flex flex-col lg:flex-row justify-between items-start lg:items-center mt-12">
           <div>
             <h2
               className={`text-xl  text-[#000000] mb-3  ${Poppins700.className} italic`}
@@ -347,7 +347,7 @@ const RecipePage = ({ currentPost }: any) => {
           <AdContainerForDesktop />
         </div>
       </div>
-      <div className=" w-full flex lg:ml-6 lg:justify-start gap-4 justify-center">
+      <div className=" w-full flex lg:ml-6 lg:justify-start gap-4 justify-center mt-6">
         {" "}
         <button
           onClick={downloadPDF}
@@ -357,14 +357,7 @@ const RecipePage = ({ currentPost }: any) => {
         </button>
         <a
           target="_blank"
-          // href={`https://pinterest.com/pin/create/link/?url=${
-          //   siteURL + "/" + currentPost.slug
-          // }&media=${
-          //   domain +
-          //   `/api/og?title=${
-          //     currentPost.title
-          //   }&amp;cover=${encodeURIComponent(currentPost.imageurl)}`
-          // }&description=${currentPost.recipedescription}`}
+        
           href={generatePinterestUrl({
             pageUrl: siteURL + "/" + DeSlugify(currentPost.slug),
             imageUrl:
