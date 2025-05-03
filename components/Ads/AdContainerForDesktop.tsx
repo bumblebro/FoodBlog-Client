@@ -19,7 +19,14 @@ export default function AdContainerForDesktop() {
 
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
-      <div style={{ width: 300, height: 250, maxWidth: "100%" }}>
+      <div
+        style={{
+          width: 300,
+          height: 250,
+          maxWidth: "100%",
+        
+        }}
+      >
         <MediumRectangleAdUnit />
       </div>
     </div>

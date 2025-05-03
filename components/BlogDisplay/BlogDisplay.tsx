@@ -22,6 +22,9 @@ import {
 import SideAdComponent from "../SideAdComponent";
 import AdContainerForDesktop from "../Ads/AdContainerForDesktop";
 import AdContainerForMobile from "../Ads/AdContainerForMobile";
+import { AutoFillAdStack } from "../Ads/AutoFillAdStack";
+import SideAdComponent2 from "../SideAdComponent2";
+import SideAdComponent3 from "../SideAdComponent3";
 // import GoogleAdUnit from "../GoogleAdUnit";
 // Poppins
 const Poppins700 = Poppins({
@@ -439,7 +442,6 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
           {/* <GoogleAdPcItem key={2 + "ads"} adId={`ad-slot-${2}`} /> */}
           {/* <AdContainerForMobile /> */}
           <DisplayAdUnit format="auto" />
-
           <RecipePage currentPost={currentPost} />
           {/* <DisplayAdUnit format="rectangle" /> */}
           {/* {currentPost.faq && (currentPost.faq as any[]).length > 0 && (
@@ -594,7 +596,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
         </div>{" "}
       </div>
       {/* --- Sideeeeee one */}
-      <div className="py-8 px-4 md:bg-[#ffffff] xl:pr-0">
+      <div className="py-8 px-4 md:bg-[#ffffff] xl:pr-0 h-full">
         {/* <AdCode>
           {" "}
           <ins
@@ -739,9 +741,15 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
         </div>{" "}
         {/* <DisplayAdUnit format="auto" /> */}
         {/* <div className="bg-red-200 w-full h-72"></div> */}
-        <MediumRectangleAdUnit />
+        {/* <MediumRectangleAdUnit /> */}
+        {/* Full screen height */}
         <SideAdComponent />
-      </div>
+        <SideAdComponent2 />
+        <SideAdComponent3 />
+        {/* <div className="h-full">
+          <AutoFillAdStack />
+        </div> */}
+      </div>{" "}
     </div>
   );
 }
