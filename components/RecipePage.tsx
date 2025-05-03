@@ -109,6 +109,17 @@ const RecipePage = ({ currentPost }: any) => {
     html2pdf?.().set(options).from(content).save();
   };
 
+  const generatePinterestUrl = ({ pageUrl, imageUrl, description }: any) => {
+    const baseUrl = "https://pinterest.com/pin/create/link/?";
+    const params = new URLSearchParams({
+      url: pageUrl,
+      media: imageUrl,
+      description,
+    });
+
+    return `${baseUrl}${params.toString()}`;
+  };
+
   return (
     <div
       // className={`flex flex-col items-center min-h-screen  py-4 w-full   tracking-[1.275px] ${Poppins400.className} `}
@@ -336,32 +347,40 @@ const RecipePage = ({ currentPost }: any) => {
           <AdContainerForDesktop />
         </div>
       </div>
-      <div className=" w-full flex justify-start">
+      <div className=" w-full flex lg:ml-6 lg:justify-start gap-4 justify-center">
         {" "}
-        <div className="w-full flex justify-center ">
-          <button
-            onClick={downloadPDF}
-            className={`mt-4 px-5 py-2 rounded-md shadow-md transition-all hover:bg-black text-white bg-[#8D6271] duration-400 uppercase ${Poppins700.className} mx-2 `}
-          >
-            📜 Print Recipe
-          </button>
-        </div>
-        <div className="w-full flex justify-center ">
-          <a
-            target="_blank"
-            href={`https://pinterest.com/pin/create/link/?url=${
-              siteURL + "/" + currentPost.slug
-            }&media=${
+        <button
+          onClick={downloadPDF}
+          className={`mt-4 px-5 py-2 rounded-md shadow-md transition-all hover:bg-black text-white bg-[#8D6271] duration-400 uppercase ${Poppins700.className}  `}
+        >
+          📜 Print Recipe
+        </button>
+        <a
+          target="_blank"
+          // href={`https://pinterest.com/pin/create/link/?url=${
+          //   siteURL + "/" + currentPost.slug
+          // }&media=${
+          //   domain +
+          //   `/api/og?title=${
+          //     currentPost.title
+          //   }&amp;cover=${encodeURIComponent(currentPost.imageurl)}`
+          // }&description=${currentPost.recipedescription}`}
+          href={generatePinterestUrl({
+            pageUrl: siteURL + "/" + currentPost.slug,
+            imageUrl:
               domain +
               `/api/og?title=${
                 currentPost.title
-              }&amp;cover=${encodeURIComponent(currentPost.imageurl)}`
-            }&description=${currentPost.recipedescription}`}
-            className={`mt-4 px-5 py-2 rounded-md shadow-md transition-all hover:bg-black text-white bg-[#8D6271] duration-400 uppercase ${Poppins700.className} mx-2 `}
+              }&amp;cover=${encodeURIComponent(currentPost.imageurl)}`,
+            description: currentPost.recipedescription,
+          })}
+        >
+          <button
+            className={`mt-4 px-5 py-2 rounded-md shadow-md transition-all hover:bg-black text-white bg-[#8D6271] duration-400 uppercase ${Poppins700.className}  `}
           >
             📌 Pin Recipe
-          </a>
-        </div>
+          </button>
+        </a>
       </div>
     </div>
   );
