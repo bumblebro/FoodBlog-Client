@@ -271,25 +271,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
             src={imageUrl}
             alt="ssss"
           /> */}
-          <a
-            target="_blank"
-            href={generatePinterestUrl({
-              pageUrl: siteURL + "/" + DeSlugify(currentPost.slug),
-              imageUrl:
-                domain +
-                `/api/og?title=${
-                  currentPost.title
-                }&amp;cover=${encodeURIComponent(currentPost.imageurl)}`,
-              description: currentPost.recipedescription,
-            })}
-          >
-            <button
-              className={`mt-4 px-5 py-2 rounded-md shadow-md transition-all hover:bg-black text-white bg-[#E60022] duration-400 uppercase ${Poppins700.className}  text-sm mb-10`}
-            >
-              📌 Pin Recipe
-            </button>
-          </a>
-          <div className=" flex flex-col gap-2">
+          <div className=" flex flex-col gap-2 mx-4 lg:mx-28 mt-8 mb-4">
             <div
               // className=" h-[17rem]  md:h-[21rem] lg:h-[31.5rem] xl:h-[39.5rem] sm:h-[28.5rem] 2xl:h-[38rem] relative w-full object-contain"
               className=" h-auto   relative w-full "
@@ -301,7 +283,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                 // style={{ objectFit: "contain" }}
                 width={0}
                 height={0}
-                style={{ width: "20%", height: "auto" }} // optional
+                style={{ width: "100%", height: "auto" }} // optional
                 // src={
                 //   domain +
                 //   `/api/og?title=${
@@ -319,6 +301,28 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
               />
             </div>
           </div>
+          <div className="flex justify-center my-6">
+            {" "}
+            <a
+              target="_blank"
+              href={generatePinterestUrl({
+                pageUrl: siteURL + "/" + DeSlugify(currentPost.slug),
+                imageUrl:
+                  domain +
+                  `/api/og?title=${
+                    currentPost.title
+                  }&amp;cover=${encodeURIComponent(currentPost.imageurl)}`,
+                description: currentPost.recipedescription,
+              })}
+            >
+              <button
+                className={`px-5 py-2 rounded-md shadow-md transition-all hover:bg-black text-white bg-[#E60022] duration-400 capitalize ${Poppins700.className}  text-sm `}
+              >
+                📌 Pin Recipe
+              </button>
+            </a>
+          </div>
+          <DisplayAdUnit format="auto" />
           {currentPost.content?.map((item, i) => {
             const contentItem = item as ContentItem;
             return (
@@ -388,7 +392,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
               </div>
             );
           })}{" "}
-          {/* <InArticleAd /> */}
+          <DisplayAdUnit format="auto" />
           {currentPost.equipments && currentPost.equipments.length > 0 && (
             <div className="px-6 py-5 bg-white  rounded-2xl my-10 border-black border-2 mx-2 flex flex-col lg:flex-row justify-between items-start lg:items-center">
               <div className="my-auto">
