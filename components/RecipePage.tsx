@@ -366,7 +366,7 @@ const RecipePage = ({ currentPost }: any) => {
           //   }&amp;cover=${encodeURIComponent(currentPost.imageurl)}`
           // }&description=${currentPost.recipedescription}`}
           href={generatePinterestUrl({
-            pageUrl: siteURL + "/" + currentPost.slug,
+            pageUrl: siteURL + "/" + DeSlugify(currentPost.slug),
             imageUrl:
               domain +
               `/api/og?title=${
