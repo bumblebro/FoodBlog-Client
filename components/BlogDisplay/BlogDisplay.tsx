@@ -284,13 +284,13 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                 width={0}
                 height={0}
                 style={{ width: "100%", height: "auto" }} // optional
-                // src={
-                //   domain +
-                //   `/api/og?title=${
-                //     currentPost.title
-                //   }&amp;cover=${encodeURIComponent(currentPost.imageurl)}`
-                // }
-                src="https://savorytouch.com/api/og?title=Champagne-Fruit-Salad&cover=https%3A%2F%2Fblogger.googleusercontent.com%2Fimg%2Fb%2FR29vZ2xl%2FAVvXsEgHus7ANUFIFvLSw3UQb6KuCuD4Ci6ryuCq6PV_0CXwv5l3y7C0HM9eI7Lbdcn-_1M7hLGH6LERkH4g04m0UA54NcZJQKSp5Ah1tKhF0Y8A3rsChbKwLlb7z6-3oqSQQog0gRgePbwTlcw%2Fs1600%2FFruit-Salad-with-Champagne-031-websize-x500.jpg"
+                src={
+                  domain +
+                  `/api/og?title=${
+                    currentPost.title
+                  }&amp;cover=${encodeURIComponent(currentPost.imageurl)}`
+                }
+                // src="https://savorytouch.com/api/og?title=Champagne-Fruit-Salad&cover=https%3A%2F%2Fblogger.googleusercontent.com%2Fimg%2Fb%2FR29vZ2xl%2FAVvXsEgHus7ANUFIFvLSw3UQb6KuCuD4Ci6ryuCq6PV_0CXwv5l3y7C0HM9eI7Lbdcn-_1M7hLGH6LERkH4g04m0UA54NcZJQKSp5Ah1tKhF0Y8A3rsChbKwLlb7z6-3oqSQQog0gRgePbwTlcw%2Fs1600%2FFruit-Salad-with-Champagne-031-websize-x500.jpg"
                 // style={{ objectFit: "contain" , }}
                 quality={75}
                 alt={currentPost.imagealt}
