@@ -426,7 +426,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
           {currentPost.faq && (currentPost.faq as any[]).length > 0 && (
             <FAQSection title={currentPost.title} faqs={currentPost.faq} />
           )}
-          <DisplayAdUnit format="auto" />
+          {/* <DisplayAdUnit format="auto" /> */}
           {/* <AdCode>
             {" "}
             <ins
