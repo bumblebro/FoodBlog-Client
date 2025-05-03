@@ -110,7 +110,7 @@ const RecipePage = ({ currentPost }: any) => {
   };
 
   const generatePinterestUrl = ({ pageUrl, imageUrl, description }: any) => {
-    const baseUrl = "https://pinterest.com/pin/create/link/?";
+    const baseUrl = "https://www.pinterest.com/pin/create/bookmarklet/?";
     const params = new URLSearchParams({
       url: pageUrl,
       media: imageUrl,
