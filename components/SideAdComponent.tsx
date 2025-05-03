@@ -199,7 +199,7 @@ export default function SideAdComponent() {
       </div>
 
       {!isMobile && showFloatingAd && (
-        <div className="fixed top-0 right-5 w-[300px] h-[250px] overflow-hidden z-50 ">
+        <div className="fixed top-5 right-5 w-[300px] h-[250px] overflow-hidden z-50 ">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentAdIndex}

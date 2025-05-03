@@ -745,7 +745,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
         {/* Full screen height */}
         <SideAdComponent />
         <SideAdComponent2 />
-        <SideAdComponent3 />
+        {/* <SideAdComponent3 /> */}
         {/* <div className="h-full">
           <AutoFillAdStack />
         </div> */}
