@@ -47,62 +47,67 @@ function generateRSSFeed(recipes: any) {
   });
 
   recipes.map((r: any, i: any) => {
-    const imageUrl =
-      process.env.NEXT_PUBLIC_BASE_API_URL +
-      `/api/og?` +
-      `title=${r.title}` +
-      `&cover=${r.imageurl}`;
+    const hasImageExtension = /\.(jpe?g|png|gif|webp|bmp)$/i.test(r.imageurl);
 
-    const url = siteURL + "/" + r.slug;
+    if (hasImageExtension) {
+      const imageUrl =
+        process.env.NEXT_PUBLIC_BASE_API_URL +
+        `/api/og?` +
+        `title=${r.title}` +
+        `&cover=${r.imageurl}`;
 
-    const cat1 = {
-      name: r.section,
-    };
-    const cat2 = {
-      name: r.subsection,
-    };
-    const cat3 = {
-      name: r.subsubsection,
-    };
+      const url = siteURL + "/" + r.slug;
 
-    // if (imageUrl) {
-    feed.addItem({
-      title: DeSlugify(r.title),
-      id: url,
-      link: url,
-      // description:
-      //   r.recipedescription +
-      //   "\n" +
-      //   r?.seo?.primaryKeywords
-      //     ?.map(
-      //       (keyword: string) =>
-      //         "#" +
-      //         keyword
-      //           .split(" ")
-      //           .map(
-      //             (word) =>
-      //               word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
-      //           ) // Capitalize each word
-      //           .join("")
-      //     )
-      //     .join(" ") +
-      //   "\n" +
-      //   "→ Click to learn more!",
-      description: r.recipedescription,
-      // content: r.recipedescription,
-      author: [author],
-      contributor: [author],
-      date: r.creationDate,
-      category: [cat1, cat2, cat3],
-      image: {
-        type: "image/png",
-        url:
-          domain +
-          `/api/og?title=${r.title}&amp;cover=${encodeURIComponent(
-            r.imageurl
-          )}`,
-      },
-    });
+      const cat1 = {
+        name: r.section,
+      };
+      const cat2 = {
+        name: r.subsection,
+      };
+      const cat3 = {
+        name: r.subsubsection,
+      };
+
+      // if (imageUrl) {
+      feed.addItem({
+        title: DeSlugify(r.title),
+        id: url,
+        link: url,
+        // description:
+        //   r.recipedescription +
+        //   "\n" +
+        //   r?.seo?.primaryKeywords
+        //     ?.map(
+        //       (keyword: string) =>
+        //         "#" +
+        //         keyword
+        //           .split(" ")
+        //           .map(
+        //             (word) =>
+        //               word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+        //           ) // Capitalize each word
+        //           .join("")
+        //     )
+        //     .join(" ") +
+        //   "\n" +
+        //   "→ Click to learn more!",
+        description: r.recipedescription,
+        // content: r.recipedescription,
+        author: [author],
+        contributor: [author],
+        date: r.creationDate,
+        category: [cat1, cat2, cat3],
+        image: {
+          type: "image/png",
+          url:
+            domain +
+            `/api/og?title=${r.title}&amp;cover=${encodeURIComponent(
+              r.imageurl
+            )}`,
+        },
+      });
+    }
+
     // }
   });
 
