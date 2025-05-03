@@ -348,6 +348,7 @@ const RecipePage = ({ currentPost }: any) => {
         </div>
         <div className="w-full flex justify-center ">
           <a
+            target="_blank"
             href={`https://pinterest.com/pin/create/link/?url=${
               siteURL + "/" + currentPost.slug
             }&media=${
