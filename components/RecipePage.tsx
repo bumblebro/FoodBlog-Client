@@ -123,28 +123,52 @@ const RecipePage = ({ currentPost }: any) => {
   return (
     <div
       // className={`flex flex-col items-center min-h-screen  py-4 w-full   tracking-[1.275px] ${Poppins400.className} `}
-      className={`flex flex-col items-center min-h-screen  py-4 w-full  ${Poppins400.className} my-10`}
+      className={`flex flex-col items-center min-h-screen  pb-4 w-full  ${Poppins400.className} my-10`}
       id="recipeSection"
     >
       <div
         ref={recipeRef}
-        className="w-full max-w-4xl bg-white shadow-lg rounded-xl p-3 border border-gray-300 py-12"
+        className="w-full max-w-4xl bg-white shadow-lg   border border-gray-300 pb-12"
       >
         {/* Recipe Title */}
-        <h1
-          className={`text-3xl  text-center   text-[#000000] p-name ${Poppins700.className} pb-5 uppercase`}
-        >
-          {DeSlugify(currentPost?.title)}
-        </h1>
-        {/* Recipe Description */}
-        <p
-          className=" text-black text-center italic  text-base p-summary 
+        <div className="bg-black  py-10">
+          <h1
+            className={`text-3xl  text-center   text-[#ffffff] p-name ${Poppins700.className} pb-5 uppercase`}
+          >
+            {DeSlugify(currentPost?.title)}
+          </h1>
+          {/* Recipe Description */}
+          <p
+            className=" text-white text-center italic  text-base p-summary 
 "
-        >
-          {currentPost?.recipedescription}
-        </p>
+          >
+            {currentPost?.recipedescription}
+          </p>
+        </div>
+
+        {/* Quantity Selector */}
+        <div className="flex justify-center space-x-3 my-12">
+          {["1X", "2X", "3X", "4X"].map((qty) => (
+            <button
+              key={qty}
+              onClick={() => {
+                setSelectedQuantity(qty);
+                setCheckedItems(
+                  new Array(recipeDetails?.ingredients?.length).fill(false)
+                );
+              }}
+              className={`px-5 py-2  text-base  transition-all ${
+                selectedQuantity === qty
+                  ? "bg-[#000000] text-white shadow-md"
+                  : " text-gray-800 hover:bg-gray-200"
+              }`}
+            >
+              {qty}
+            </button>
+          ))}
+        </div>
         {/* Yield & Time Info */}
-        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300  flex flex-col lg:flex-row justify-between items-start lg:items-center my-12">
+        <div className="mx-4 p-2 sm:p-6  shadow-md border border-gray-300  flex flex-col lg:flex-row justify-between items-start lg:items-center my-12">
           <div className="my-auto">
             <h2
               className={`text-xl  text-[#000000] mb-3  ${Poppins700.className} italic`}
@@ -180,27 +204,6 @@ const RecipePage = ({ currentPost }: any) => {
           <AdContainerForDesktop />
         </div>
 
-        {/* Quantity Selector */}
-        <div className="flex justify-center space-x-3 ">
-          {["1X", "2X", "3X", "4X"].map((qty) => (
-            <button
-              key={qty}
-              onClick={() => {
-                setSelectedQuantity(qty);
-                setCheckedItems(
-                  new Array(recipeDetails?.ingredients?.length).fill(false)
-                );
-              }}
-              className={`px-5 py-2 rounded-lg text-base  transition-all ${
-                selectedQuantity === qty
-                  ? "bg-[#000000] text-white shadow-md"
-                  : " text-gray-800 hover:bg-gray-200"
-              }`}
-            >
-              {qty}
-            </button>
-          ))}
-        </div>
         {/* Ingredients */}
         {/* <div className=" p-6 rounded-lg shadow-md border border-gray-300 ">
           <h2 className="text-xl font-serif text-[#6b4226] mb-3">
@@ -216,7 +219,7 @@ const RecipePage = ({ currentPost }: any) => {
         </div> */}
         <AdContainerForMobile />
 
-        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300  flex flex-col lg:flex-row justify-between items-start lg:items-center my-12 ">
+        <div className="mx-4  p-2 sm:p-6  shadow-md border border-gray-300  flex flex-col lg:flex-row justify-between items-start lg:items-center my-12 ">
           <div className="my-auto">
             <h2
               className={`text-xl  text-[#000000] mb-3  ${Poppins700.className} italic`}
@@ -257,7 +260,7 @@ const RecipePage = ({ currentPost }: any) => {
         <AdContainerForMobile />
 
         {/* Instructions */}
-        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300  my-12">
+        <div className="mx-4  p-2 sm:p-6  shadow-md border border-gray-300  my-12">
           <h2
             className={`text-xl  text-[#000000] mb-3  ${Poppins700.className} italic`}
           >
@@ -278,7 +281,7 @@ const RecipePage = ({ currentPost }: any) => {
         {/* Notes */}
         <AdContainerForMobile />
 
-        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300  my-12 flex flex-col lg:flex-row justify-between items-start lg:items-center">
+        <div className="mx-4  p-2 sm:p-6  shadow-md border border-gray-300  my-12 flex flex-col lg:flex-row justify-between items-start lg:items-center">
           <div className="my-auto">
             <h2
               className={`text-xl  text-[#000000] mb-3  ${Poppins700.className} italic`}
@@ -299,7 +302,7 @@ const RecipePage = ({ currentPost }: any) => {
         <AdContainerForMobile />
 
         {/* Nutrition Info */}
-        <div className=" p-2 sm:p-6 rounded-lg shadow-md border border-gray-300 flex flex-col lg:flex-row justify-between items-start lg:items-center mt-12">
+        <div className="mx-4  p-2 sm:p-6  shadow-md border border-gray-300 flex flex-col lg:flex-row justify-between items-start lg:items-center mt-12">
           <div>
             <h2
               className={`text-xl  text-[#000000] mb-3  ${Poppins700.className} italic`}
@@ -351,7 +354,7 @@ const RecipePage = ({ currentPost }: any) => {
         {" "}
         <button
           onClick={downloadPDF}
-          className={`mt-4 px-5 py-2 rounded-md shadow-md transition-all hover:bg-black text-white bg-[#8D6271] duration-400 uppercase ${Poppins700.className}  `}
+          className={`mt-4 px-5 py-2  shadow-md transition-all hover:bg-black text-white bg-[#8D6271] duration-400 uppercase ${Poppins700.className}  `}
         >
           📜 Print Recipe
         </button>
@@ -368,7 +371,7 @@ const RecipePage = ({ currentPost }: any) => {
           })}
         >
           <button
-            className={`mt-4 px-5 py-2 rounded-md shadow-md transition-all hover:bg-black text-white bg-[#E60022] duration-400 uppercase ${Poppins700.className}  `}
+            className={`mt-4 px-5 py-2  shadow-md transition-all hover:bg-black text-white bg-[#E60022] duration-400 uppercase ${Poppins700.className}  `}
           >
             📌 Pin Recipe
           </button>

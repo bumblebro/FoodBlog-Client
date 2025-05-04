@@ -139,7 +139,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
 
   return (
     <div
-      className={` xl:max-w-[73rem] mx-auto  mb-10 md:grid md:grid-cols-[56.7%_auto] lg:grid-cols-[67.5%_auto] xl:grid-cols-[74.25%_auto] xl:gap-2 2xl:grid-cols-[71.5%_auto] ${Poppins400.className}`}
+      className={` xl:max-w-[73rem] mx-auto  mb-10 md:grid md:grid-cols-[56.7%_auto] lg:grid-cols-[67.5%_auto] xl:grid-cols-[65%_auto] xl:gap-20 2xl:grid-cols-[62%_auto] ${Poppins400.className}`}
     >
       {/* 74.25 */}
       <div>
@@ -148,7 +148,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
             <div className="pb-4 px-4 xl:px-0">
               <div className="  h-[17rem] object-cover  md:h-[21rem] lg:h-[31.5rem] xl:h-[39.5rem] 2xl:h-[38rem] w-full sm:h-[29.5rem]  relative">
                 <Image
-                  className="rounded-xl"
+                  className=""
                   fill
                   sizes="(min-width: 640px) 640px,(min-width: 768px) 435px,(min-width: 1024px) 691px,(min-width: 1280px) 867px,(min-width: 1536px) 835px, 390px"
                   src={currentPost.imageurl}
@@ -326,7 +326,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
               })}
             >
               <button
-                className={`px-5 py-2 rounded-md shadow-md transition-all hover:bg-black text-white bg-[#E60022] duration-400 capitalize ${Poppins700.className}  text-sm `}
+                className={`px-5 py-2  shadow-md transition-all hover:bg-black text-white bg-[#E60022] duration-400 capitalize ${Poppins700.className}  text-sm `}
               >
                 📌 Pin Recipe
               </button>
@@ -404,14 +404,14 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
           })}{" "}
           <DisplayAdUnit format="auto" />
           {currentPost.equipments && currentPost.equipments.length > 0 && (
-            <div className="px-6 py-5 bg-white  rounded-2xl my-10 border-black border-2 mx-2 flex flex-col lg:flex-row justify-between items-start lg:items-center">
+            <div className="px-6 py-5 bg-white   my-10 border-black border-2 mx-2 md:mx-0 flex flex-col lg:flex-row justify-between items-start lg:items-center">
               <div className="my-auto">
                 <h2
                   className={`text-xl font-medium text-gray-900 pb-3 ${Poppins700.className} uppercase`}
                 >
                   Required Equipments
                 </h2>
-                <ul className=" rounded-lg py-3  flex flex-col gap-2  list-disc ">
+                <ul className="  py-3  flex flex-col gap-2  list-disc ">
                   {currentPost.equipments.map((equipment, i) => (
                     <li key={i} className="flex items-center  ">
                       {equipment}
@@ -464,9 +464,9 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
           </AdCode>{" "} */}
           {/* <DisplayAdUnit format="rectangle" /> */}
           <h1
-            className={`text-2xl font-semibold text-center py-4 mb-4 ${Poppins700.className} bg-[#8D6271]  text-white rounded-md`}
+            className={`text-2xl font-semibold text-center py-4 mb-4 ${Poppins700.className} bg-[#8D6271]  text-white `}
           >
-            Related Stories
+            Related Recipes
           </h1>
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 ">
             {latposts?.map((item, i) => {
@@ -477,7 +477,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
               return (
                 <div
                   key={i}
-                  className={`grid grid-cols-[100px_auto] gap-4 ${Poppins400.className} shadow-md rounded-lg`}
+                  className={`grid grid-cols-[100px_auto] gap-4 ${Poppins400.className} shadow-md`}
                 >
                   <Link
                     href={`/${
@@ -496,7 +496,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                   >
                     <div className="w-full h-[75px] relative">
                       <Image
-                        className="rounded-l-lg"
+                        className=""
                         fill
                         sizes="100px"
                         src={item.imageurl}
@@ -610,9 +610,9 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
           />
         </AdCode>{" "} */}
         <h1
-          className={`text-lg font-semibold text-center py-4 mb-4 ${Poppins700.className}  bg-[#8D6271]  text-white rounded-md`}
+          className={`text-lg font-semibold text-center py-4 mb-4 ${Poppins700.className}  bg-[#8D6271]  text-white `}
         >
-          Related Stories
+          Related Recipes
         </h1>
         <div className="flex flex-col gap-4 mb-20">
           {posts?.map((item, i) => {
@@ -623,7 +623,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
             return (
               <div
                 key={i}
-                className={`grid grid-cols-[100px_auto] gap-4 ${Poppins400.className} shadow-md rounded-lg`}
+                className={`grid grid-cols-[100px_auto] gap-4 ${Poppins400.className} shadow-md `}
               >
                 <Link
                   href={`/${
@@ -642,7 +642,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                 >
                   <div className="w-full h-[75px] relative">
                     <Image
-                      className="rounded-l-lg"
+                      className=""
                       fill
                       sizes="100px"
                       src={item.imageurl}
