@@ -307,7 +307,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                   domain +
                   `/api/og?title=${
                     currentPost.title
-                  }&amp;cover=${encodeURIComponent(currentPost.imageurl)}`
+                  }&cover=${encodeURIComponent(currentPost.imageurl)}`
                 }
                 priority
                 placeholder={`data:image/svg+xml;base64,${toBase64(
