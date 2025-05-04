@@ -126,13 +126,13 @@ function page() {
             Meet the Creator
           </h2>
 
-          {/* <Image
+          <Image
             src={imgurl}
             alt="Shreyas M S - Admin of Savory Touch"
             width="200"
             height="200"
             className="my-4"
-          /> */}
+          />
 
           <div className="flex items-center gap-4">
             <div>
@@ -153,7 +153,7 @@ function page() {
                 </a>
                 .
               </p>
-              {/* <p className="mb-4">
+              <p className="mb-4">
                 🔗 <strong>LinkedIn:</strong>{" "}
                 <a
                   href="https://www.linkedin.com/in/shreyasms660/"
@@ -163,7 +163,7 @@ function page() {
                 >
                   linkedin.com/in/shreyasms660/
                 </a>
-              </p> */}
+              </p>
             </div>
           </div>
 
