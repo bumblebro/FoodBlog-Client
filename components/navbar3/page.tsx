@@ -153,10 +153,11 @@ const SpecialOccasions = [
 ];
 
 const navigation = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
+  { name: "Home", href: "/", id: "null" },
+  { name: "About", href: "/about", id: "null" },
   // { name: "Privacy Policy", href: "/privacy-policy" },
-  { name: "Browse Recipes", href: "/recipes" },
+  { name: "Browse Recipes", href: "/recipes", id: "null" },
+  { name: "Search", id: ".search-toggle" },
 ];
 
 function classNames(...classes: any) {
@@ -291,6 +292,7 @@ function Navbar3({
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
                       <a
+                        id={item.id}
                         key={item.name}
                         href={item.href}
                         // aria-current={item.current ? "page" : undefined}
@@ -441,6 +443,7 @@ function Navbar3({
             <div className="space-y-1 px-2 pt-2 pb-3">
               {navigation.map((item) => (
                 <DisclosureButton
+                  id={item.id}
                   key={item.name}
                   as="a"
                   href={item.href}
