@@ -157,7 +157,7 @@ const navigation = [
   { name: "About", href: "/about", id: "null" },
   // { name: "Privacy Policy", href: "/privacy-policy" },
   { name: "Browse Recipes", href: "/recipes", id: "null" },
-  { name: "Search", id: ".search-toggle" },
+  { name: "Search", id: "search-toggle" },
 ];
 
 function classNames(...classes: any) {
@@ -303,7 +303,17 @@ function Navbar3({
                       >
                         {item.name}
                       </a>
-                    ))}
+                    ))}{" "}
+                    <button
+                      // aria-current={item.current ? "page" : undefined}
+                      className={classNames(
+                        "text-black hover:bg-[#8D6271] hover:text-white",
+                        "rounded-md px-3 py-2 text-lg  font-bold uppercase tracking-widest"
+                      )}
+                      id="search-toggle"
+                    >
+                      SEARCH
+                    </button>
                   </div>
                 </div>
               </div>
@@ -455,7 +465,20 @@ function Navbar3({
                 >
                   {item.name}
                 </DisclosureButton>
-              ))}
+              ))}{" "}
+              <DisclosureButton
+                // id={item.id}
+                // key={item.name}
+                as="a"
+                // href={item.href}
+                // aria-current={item.current ? "page" : undefined}
+                className={classNames(
+                  "text-black hover:bg-[#8D6271] hover:text-white",
+                  `block rounded-md px-3 py-2 text-sm font-medium uppercase tracking-widest`
+                )}
+              >
+                <button id="search-toggle">Search</button>{" "}
+              </DisclosureButton>
             </div>
           </DisclosurePanel>
         </>
