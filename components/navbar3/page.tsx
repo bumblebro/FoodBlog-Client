@@ -156,7 +156,7 @@ const navigation = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   // { name: "Privacy Policy", href: "/privacy-policy" },
-  { name: "All Recipes", href: "/recipes" },
+  { name: "Browse Recipes", href: "/recipes" },
 ];
 
 function classNames(...classes: any) {
@@ -270,7 +270,7 @@ function Navbar3({
                       `block rounded-md px-3 py-2 text-sm font-medium `
                     )}
                   >
-                    All Recipes
+                    Browse Recipes
                   </a>
                   {/* Mobile menu button*/}
                   <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 ">
@@ -296,7 +296,7 @@ function Navbar3({
                         // aria-current={item.current ? "page" : undefined}
                         className={classNames(
                           "text-black hover:bg-[#8D6271] hover:text-white",
-                          "rounded-md px-3 py-2 text-lg  font-bold"
+                          "rounded-md px-3 py-2 text-lg  font-bold uppercase tracking-widest"
                         )}
                       >
                         {item.name}
@@ -447,7 +447,7 @@ function Navbar3({
                   // aria-current={item.current ? "page" : undefined}
                   className={classNames(
                     "text-black hover:bg-[#8D6271] hover:text-white",
-                    `block rounded-md px-3 py-2 text-sm font-medium `
+                    `block rounded-md px-3 py-2 text-sm font-medium uppercase tracking-widest`
                   )}
                 >
                   {item.name}
