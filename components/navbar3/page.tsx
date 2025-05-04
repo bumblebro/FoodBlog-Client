@@ -157,7 +157,7 @@ const navigation = [
   { name: "About", href: "/about", id: "null" },
   // { name: "Privacy Policy", href: "/privacy-policy" },
   { name: "Browse Recipes", href: "/recipes", id: "null" },
-  { name: "Search", id: "search-toggle" },
+  // { name: "Search", id: "search-toggle" },
 ];
 
 function classNames(...classes: any) {
