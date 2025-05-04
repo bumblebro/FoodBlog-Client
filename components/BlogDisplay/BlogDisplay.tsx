@@ -141,7 +141,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
     <div
       className={` xl:max-w-[73rem] mx-auto  mb-10 md:grid md:grid-cols-[56.7%_auto] lg:grid-cols-[67.5%_auto] xl:grid-cols-[74.25%_auto] xl:gap-2 2xl:grid-cols-[71.5%_auto] ${Poppins400.className}`}
     >
-      {" "}
+      {/* 74.25 */}
       <div>
         <div>
           <div>
@@ -293,7 +293,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                     : domain +
                       `/api/og?title=${
                         currentPost.title
-                      }&amp;cover=${encodeURIComponent(currentPost.imageurl)}`
+                      }&cover=${encodeURIComponent(currentPost.imageurl)}`
                 }
                 // domain +
                 // `/api/og?title=${
@@ -471,7 +471,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
           <h1
             className={`text-2xl font-semibold text-center py-4 mb-4 ${Poppins700.className} bg-[#8D6271]  text-white rounded-md`}
           >
-            Related Storiess
+            Related Stories
           </h1>
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 ">
             {latposts?.map((item, i) => {

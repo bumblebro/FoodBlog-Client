@@ -357,7 +357,6 @@ const RecipePage = ({ currentPost }: any) => {
         </button>
         <a
           target="_blank"
-        
           href={generatePinterestUrl({
             pageUrl: siteURL + "/" + DeSlugify(currentPost.slug),
             imageUrl:
@@ -369,7 +368,7 @@ const RecipePage = ({ currentPost }: any) => {
           })}
         >
           <button
-            className={`mt-4 px-5 py-2 rounded-md shadow-md transition-all hover:bg-black text-white bg-[#8D6271] duration-400 uppercase ${Poppins700.className}  `}
+            className={`mt-4 px-5 py-2 rounded-md shadow-md transition-all hover:bg-black text-white bg-[#E60022] duration-400 uppercase ${Poppins700.className}  `}
           >
             📌 Pin Recipe
           </button>
