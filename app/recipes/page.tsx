@@ -3,7 +3,7 @@
 import localFont from "next/font/local";
 import DeSlugify from "@/libs/DeSlugify";
 import Link from "next/link";
-import Navbar3 from "@/components/navbar3/page";
+import Navbar3 from "@/components/Navbar3/Navbar3";
 import { Poppins } from "next/font/google";
 import Image from "next/image";
 import { shimmer, toBase64 } from "@/libs/Shimmer";
@@ -171,15 +171,15 @@ const categories = [
   },
 ];
 
-function page() {
-  const [searchTerm, setSearchTerm] = useState("");
+function RecipesPage() {
+  const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
 
   const filteredCategories = categories.filter((category) => {
     const matchesSearch =
-      category.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      category.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       category.items.some((item) =>
-        item.toLowerCase().includes(searchTerm.toLowerCase())
+        item.toLowerCase().includes(searchQuery.toLowerCase())
       );
     const matchesCategory =
       !selectedCategory || category.title === selectedCategory;
@@ -209,8 +209,8 @@ function page() {
               <input
                 type="text"
                 placeholder="Search recipes or categories..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full px-6 py-3 rounded-full border-2 border-[#8D6271] focus:outline-none focus:ring-2 focus:ring-[#8D6271] focus:border-transparent transition-all duration-200"
               />
               <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
@@ -308,4 +308,4 @@ function page() {
   );
 }
 
-export default page;
+export default RecipesPage;
