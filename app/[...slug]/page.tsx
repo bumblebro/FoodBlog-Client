@@ -18,6 +18,7 @@ import { subSections } from "@/libs/Section";
 import DeSlugify from "@/libs/DeSlugify";
 import { notFound } from "next/navigation";
 import Navbar3 from "@/components/navbar3/page";
+import StructuredData from "@/components/StructuredData/StructuredData";
 
 interface params {
   params: {
@@ -527,11 +528,7 @@ async function BlogCategory({ params }: params) {
     <>
       {currentPost ? (
         <>
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-          />
-          {/* <Navbar decodedslug={navslugs} ispost={true} /> */}
+          <StructuredData post={currentPost} recipeDetails={recipeDetails} />
           <Navbar3 decodedslug={navslugs} ispost={true} />
           <CategoryPost decodedslug={slugs} totalBlogs={totalBlogs} />
           <BlogDisplay
