@@ -3,11 +3,11 @@
 import localFont from "next/font/local";
 import DeSlugify from "@/libs/DeSlugify";
 import Link from "next/link";
-import Navbar3 from "@/components/Navbar3/Navbar3";
 import { Poppins } from "next/font/google";
 import Image from "next/image";
 import { shimmer, toBase64 } from "@/libs/Shimmer";
 import { useState } from "react";
+import Navbar3 from "@/components/navbar3/page";
 
 // Poppins
 const Poppins700 = Poppins({
