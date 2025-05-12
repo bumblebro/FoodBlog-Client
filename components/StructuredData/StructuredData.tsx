@@ -1,4 +1,5 @@
 import { FoodBlogs } from "@prisma/client";
+import DeSlugify from "@/libs/DeSlugify";
 
 interface SEOType {
   primaryKeywords?: string[];
@@ -58,7 +59,7 @@ export default function StructuredData({
     "@type": "WebPage",
     "@id": `${currentUrl}#webpage`,
     url: currentUrl,
-    name: post.title,
+    name: DeSlugify(post.title),
     description: post.recipedescription,
     isPartOf: {
       "@id": `${siteURL}#website`,
@@ -86,7 +87,7 @@ export default function StructuredData({
       "@type": "Person",
       name: post.author,
     },
-    name: post.title,
+    name: DeSlugify(post.title),
     description: post.recipedescription,
     image: {
       "@type": "ImageObject",
@@ -143,7 +144,7 @@ export default function StructuredData({
     "@context": "https://schema.org",
     "@type": "Article",
     "@id": `${currentUrl}#article`,
-    headline: post.title,
+    headline: DeSlugify(post.title),
     description: post.recipedescription,
     image: {
       "@type": "ImageObject",
@@ -183,7 +184,7 @@ export default function StructuredData({
     "@context": "https://schema.org",
     "@type": "HowTo",
     "@id": `${currentUrl}#howto`,
-    name: `How to make ${post.title}`,
+    name: `How to make ${DeSlugify(post.title)}`,
     description: post.recipedescription,
     totalTime: timeToISO8601Duration(recipeDetails?.totalTime),
     step: post.instructions?.map((instruction: string, index: number) => ({
@@ -228,7 +229,9 @@ export default function StructuredData({
       name: "SavoryTouch Community",
     },
     datePublished: post.creationDate,
-    reviewBody: `This ${post.title} recipe has received positive feedback from our community.`,
+    reviewBody: `This ${DeSlugify(
+      post.title
+    )} recipe has received positive feedback from our community.`,
     itemReviewed: {
       "@type": "Recipe",
       "@id": `${currentUrl}#recipe`,
@@ -247,7 +250,7 @@ export default function StructuredData({
         item: {
           "@type": "Recipe",
           "@id": `${currentUrl}#recipe`,
-          name: post.title,
+          name: DeSlugify(post.title),
           description: post.recipedescription,
           image: post.imageurl,
         },
@@ -326,7 +329,7 @@ export default function StructuredData({
       {
         "@type": "ListItem",
         position: 5,
-        name: post.title,
+        name: DeSlugify(post.title),
         item: currentUrl,
       },
     ],

@@ -25,6 +25,7 @@ import AdContainerForMobile from "../Ads/AdContainerForMobile";
 import { AutoFillAdStack } from "../Ads/AutoFillAdStack";
 import SideAdComponent2 from "../SideAdComponent2";
 import SideAdComponent3 from "../SideAdComponent3";
+import InternalLinking from "../InternalLinking/InternalLinking";
 // import GoogleAdUnit from "../GoogleAdUnit";
 // Poppins
 const Poppins700 = Poppins({
@@ -443,155 +444,65 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
           {/* <AdContainerForMobile /> */}
           <DisplayAdUnit format="auto" />
           <RecipePage currentPost={currentPost} />
-          {/* <DisplayAdUnit format="rectangle" /> */}
-          {/* {currentPost.faq && (currentPost.faq as any[]).length > 0 && (
-            <FAQSection faqs={currentPost.faq} />
-          )} */}
+          <InternalLinking
+            currentPost={currentPost}
+            relatedPosts={latposts}
+            categoryPosts={posts}
+          />
           <h1 className="px-4 py-4 my-4 italic ">{currentPost.quote}</h1>
         </div>{" "}
-        <div className=" py-8 px-4  hidden md:flex md:flex-col ">
-          {/* <AdCode>
-            {" "}
-            <ins
-              className="adsbygoogle"
-              // style={{ display: "block" }}
-              style={{ display: "block" }}
-              data-ad-client="ca-pub-5012580427673167"
-              data-ad-slot="3048648789"
-              data-ad-format="auto"
-              data-full-width-responsive="true"
-            />
-          </AdCode>{" "} */}
-          {/* <DisplayAdUnit format="rectangle" /> */}
+        <div className=" py-8 px-4 hidden md:flex md:flex-col">
           <h1
-            className={`text-2xl font-semibold text-center py-4 mb-4 ${Poppins700.className} bg-[#8D6271]  text-white `}
+            className={`text-2xl font-semibold text-center py-4 mb-4 ${Poppins700.className} bg-[#8D6271] text-white`}
           >
             Related Recipes
           </h1>
-          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 ">
-            {latposts?.map((item, i) => {
-              // const shouldInsertAd = Math.random() < 0.1;
-              // if (shouldInsertAd) {
-              //   return <InFeedAdUnit2 key={i} />;
-              // }
-              return (
-                <div
-                  key={i}
-                  className={`grid grid-cols-[100px_auto] gap-4 ${Poppins400.className} shadow-md`}
-                >
-                  <Link
-                    href={`/${
-                      item.section !== "null"
-                        ? item.section.toLowerCase() + "/"
-                        : ""
-                    }${
-                      item.subsection !== "null"
-                        ? item.subsection.toLowerCase() + "/"
-                        : ""
-                    }${
-                      item.subsubsection !== "null"
-                        ? item.subsubsection.toLowerCase() + "/"
-                        : ""
-                    }${item.title.toLowerCase()}`}
-                  >
-                    <div className="w-full h-[75px] relative">
-                      <Image
-                        className=""
-                        fill
-                        sizes="100px"
-                        src={item.imageurl}
-                        style={{ objectFit: "cover" }}
-                        quality={75}
-                        alt={item.imagealt}
-                        priority
-                        placeholder={`data:image/svg+xml;base64,${toBase64(
-                          shimmer(300, 300)
-                        )}`}
-                      />
-                    </div>
-                    {/* <img
-                      className="object-cover w-full h-[75px]"
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+            {latposts?.map((item, i) => (
+              <Link
+                key={i}
+                href={`/${
+                  item.section !== "null"
+                    ? item.section.toLowerCase() + "/"
+                    : ""
+                }${
+                  item.subsection !== "null"
+                    ? item.subsection.toLowerCase() + "/"
+                    : ""
+                }${
+                  item.subsubsection !== "null"
+                    ? item.subsubsection.toLowerCase() + "/"
+                    : ""
+                }${item.title.toLowerCase()}`}
+                className="group"
+              >
+                <div className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-[1.02]">
+                  <div className="relative h-48">
+                    <Image
                       src={item.imageurl}
-                      alt=""
-                    /> */}
-                  </Link>
-                  <div className="flex flex-col gap-2 md:gap-2 w-full ">
-                    {item.subsubsection ? (
-                      <Link
-                        href={`/${
-                          item.section !== "null"
-                            ? item.section.toLowerCase() + "/"
-                            : ""
-                        }${
-                          item.subsection !== "null"
-                            ? item.subsection.toLowerCase() + "/"
-                            : ""
-                        }${
-                          item.subsubsection !== "null"
-                            ? item.subsubsection.toLowerCase() + "/"
-                            : ""
-                        }`}
-                      >
-                        {" "}
-                        <h1 className="text-xs text-black font-semibold  hover:underline pt-2">
-                          {DeSlugify(item.subsubsection)}
-                        </h1>
-                      </Link>
-                    ) : item.subsection ? (
-                      <Link
-                        href={`/${
-                          item.section !== "null"
-                            ? item.section.toLowerCase() + "/"
-                            : ""
-                        }${
-                          item.subsection !== "null"
-                            ? item.subsection.toLowerCase() + "/"
-                            : ""
-                        }`}
-                      >
-                        <h1 className="text-xs text-black  font-semibold  hover:underline pt-2">
-                          {DeSlugify(item.subsection)}
-                        </h1>
-                      </Link>
-                    ) : (
-                      <Link
-                        href={`/${
-                          item.section !== "null"
-                            ? item.section.toLowerCase() + "/"
-                            : ""
-                        }`}
-                      >
-                        {" "}
-                        <h1 className="text-xs text-black  font-semibold  hover:underline pt-2">
-                          {DeSlugify(item.section)}
-                        </h1>
-                      </Link>
-                    )}{" "}
-                    <Link
-                      href={`/${
-                        item.section !== "null"
-                          ? item.section.toLowerCase() + "/"
-                          : ""
-                      }${
-                        item.subsection !== "null"
-                          ? item.subsection.toLowerCase() + "/"
-                          : ""
-                      }${
-                        item.subsubsection !== "null"
-                          ? item.subsubsection.toLowerCase() + "/"
-                          : ""
-                      }${item.title.toLowerCase()}`}
+                      alt={item.imagealt}
+                      fill
+                      className="object-cover"
+                      sizes="(min-width: 768px) 50vw, (min-width: 1024px) 33vw, 100vw"
+                      quality={75}
+                      placeholder={`data:image/svg+xml;base64,${toBase64(
+                        shimmer(300, 300)
+                      )}`}
+                    />
+                  </div>
+                  <div className="p-4">
+                    <span className="text-sm text-gray-600 block mb-2">
+                      {DeSlugify(item.subsection)}
+                    </span>
+                    <h3
+                      className={`text-lg font-semibold line-clamp-2 group-hover:text-[#8D6271] transition-colors ${Poppins700.className}`}
                     >
-                      <h1
-                        className={`text-sm font-medium line-clamp-2  hover:underline  ${Poppins700.className}`}
-                      >
-                        {DeSlugify(item.title)}
-                      </h1>
-                    </Link>
+                      {DeSlugify(item.title)}
+                    </h3>
                   </div>
                 </div>
-              );
-            })}
+              </Link>
+            ))}
           </div>
         </div>{" "}
       </div>
