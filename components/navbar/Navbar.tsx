@@ -8,6 +8,7 @@ import DeSlugify from "@/libs/DeSlugify";
 import { subSections } from "@/libs/Section";
 import { slugify } from "markdown-to-jsx";
 import { Nunito_Sans } from "next/font/google";
+import { useRouter } from "next/navigation";
 // Pacifico
 // Homemade_Apple
 const font = Nunito_Sans({
@@ -197,6 +198,9 @@ function Navbar({
   const [sidebar, setSideBar] = useState(false);
   const [categoryList, setCategoryList] = useState<string[]>([]);
   const [lastElement, setLastElement] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const router = useRouter();
 
   useEffect(() => {
     // console.log(`SLUGGGGG`, decodedslug);
@@ -249,6 +253,15 @@ function Navbar({
     setSideBar(false);
   };
 
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+      setIsSearchOpen(false);
+      setSearchQuery("");
+    }
+  };
+
   return (
     <nav
       className={` w-full z-20 top-0 start-0 fixed bg-[#F0F1F3] h-[72px] md:h-[80px] text-[#000000] ${freight.className}`}
@@ -265,27 +278,7 @@ function Navbar({
               </h1>
             </Link>
           </div>
-          <div className="flex items-center gap-2 ">
-            {/* <button type="submit" title="Button"> */}
-            {/* <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="#000000"
-                  className={`w-8 transform-gpu  duration-500 ${
-                    sidebar ? "rotate-180  " : "rotate-0 "
-                  }`}
-                  onClick={() => {
-                    setSideBar((prev: boolean) => !prev);
-                  }}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18 18 6M6 6l12 12"
-                  />
-                </svg> */}
+          <div className="flex items-center gap-4">
             <a href="/ " className="text-black">
               Home
             </a>{" "}
@@ -295,21 +288,28 @@ function Navbar({
             <a href="/recipes " className="text-black">
               Recipes
             </a>
-            {/* </button> */}
-            {/* <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="size-6"
+            <button
+              type="button"
+              title="SearchBtn"
+              aria-label="Search"
+              className="flex justify-end items-center"
+              onClick={() => setIsSearchOpen(true)}
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-              />
-            </svg> */}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="size-6 text-black"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                />
+              </svg>
+            </button>
           </div>
           {/* <div className="flex justify-end items-center">
             <h1 className="bg-[#0c50e6] w-fit   uppercase tracking-wider text-xs font-semibold py-1 px-1 rounded-full md:text-base md:px-4 md:py-0 2xl:py-2 2xl:px-6 ">
@@ -714,6 +714,53 @@ function Navbar({
           </div>{" "}
         </div> */}
       </div>
+
+      {/* Search Modal */}
+      {isSearchOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-start justify-center pt-20">
+          <div className="bg-white rounded-lg p-6 w-full max-w-2xl mx-4">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className={`text-2xl font-semibold ${freightbig.className}`}>
+                Search Recipes
+              </h2>
+              <button
+                onClick={() => setIsSearchOpen(false)}
+                className="text-gray-500 hover:text-gray-700"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="size-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18 18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+            <form onSubmit={handleSearch} className="flex gap-2">
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search for recipes..."
+                className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8D6271] focus:border-transparent"
+              />
+              <button
+                type="submit"
+                className="px-6 py-2 bg-[#8D6271] text-white rounded-lg hover:bg-[#7a5260] transition-colors"
+              >
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }

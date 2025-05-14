@@ -13,6 +13,7 @@ import DeSlugify from "@/libs/DeSlugify";
 import { slugify } from "markdown-to-jsx";
 import { subSections } from "@/libs/Section";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 import { Pacifico } from "next/font/google";
 import { Nunito_Sans } from "next/font/google";
@@ -175,6 +176,9 @@ function Navbar3({
 }) {
   const [categoryList, setCategoryList] = useState<string[]>([]);
   const [lastElement, setLastElement] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const router = useRouter();
 
   useEffect(() => {
     // console.log(`SLUGGGGG`, decodedslug);
@@ -222,6 +226,15 @@ function Navbar3({
     }
     // console.log(`lastElement`, lastElement);
   }, []);
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+      setIsSearchOpen(false);
+      setSearchQuery("");
+    }
+  };
 
   return (
     <Disclosure as="nav" className="bg-[#F4F2F2]">
@@ -305,12 +318,13 @@ function Navbar3({
                       </a>
                     ))}{" "}
                     <button
-                      // aria-current={item.current ? "page" : undefined}
+                      onClick={() => setIsSearchOpen(true)}
                       className={classNames(
                         "text-black hover:bg-[#8D6271] hover:text-white",
                         "rounded-md px-3 py-2 text-lg  font-bold uppercase tracking-widest"
                       )}
                       id="search-toggle"
+                      aria-label="Search"
                     >
                       SEARCH
                     </button>
@@ -467,20 +481,68 @@ function Navbar3({
                 </DisclosureButton>
               ))}{" "}
               <DisclosureButton
-                // id={item.id}
-                // key={item.name}
-                as="a"
-                // href={item.href}
-                // aria-current={item.current ? "page" : undefined}
+                as="button"
+                onClick={() => setIsSearchOpen(true)}
                 className={classNames(
-                  "text-black hover:bg-[#8D6271] hover:text-white",
+                  "text-black hover:bg-[#8D6271] hover:text-white w-full text-left",
                   `block rounded-md px-3 py-2 text-sm font-medium uppercase tracking-widest`
                 )}
+                aria-label="Search"
               >
-                <button id="search-toggle">Search</button>{" "}
+                Search
               </DisclosureButton>
             </div>
           </DisclosurePanel>
+
+          {/* Search Modal */}
+          {isSearchOpen && (
+            <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-start justify-center pt-20">
+              <div className="bg-white rounded-lg p-6 w-full max-w-2xl mx-4">
+                <div className="flex justify-between items-center mb-4">
+                  <h2
+                    className={`text-2xl font-semibold ${freightbig.className}`}
+                  >
+                    Search Recipes
+                  </h2>
+                  <button
+                    onClick={() => setIsSearchOpen(false)}
+                    className="text-gray-500 hover:text-gray-700"
+                    aria-label="Close search"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="1.5"
+                      stroke="currentColor"
+                      className="size-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M6 18 18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <form onSubmit={handleSearch} className="flex gap-2">
+                  <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder="Search for recipes..."
+                    className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8D6271] focus:border-transparent"
+                  />
+                  <button
+                    type="submit"
+                    className="px-6 py-2 bg-[#8D6271] text-white rounded-lg hover:bg-[#7a5260] transition-colors"
+                  >
+                    Search
+                  </button>
+                </form>
+              </div>
+            </div>
+          )}
         </>
       )}
     </Disclosure>

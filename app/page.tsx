@@ -173,8 +173,40 @@ async function Home({ searchParams }: { searchParams: { pageNo: string } }) {
       <Navbar3 decodedslug={slugs} home={true} />
       <FeaturedPost posts={posts || []} />
 
+      {/* Search Section */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 mt-96 md:mt-20">
+        <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8">
+          <div className="text-center mb-6">
+            <h2
+              className={`text-2xl sm:text-3xl font-bold text-[#8D6271] mb-3 ${Poppins700.className}`}
+            >
+              Find Your Perfect Recipe
+            </h2>
+            <p className={`text-gray-600 ${Poppins400.className}`}>
+              Search through our collection of delicious recipes
+            </p>
+          </div>
+          <form action="/search" method="get" className="max-w-2xl mx-auto">
+            <div className="flex flex-col sm:flex-row gap-3">
+              <input
+                type="text"
+                name="q"
+                placeholder="Search for recipes..."
+                className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8D6271] focus:border-transparent text-base"
+              />
+              <button
+                type="submit"
+                className="px-6 py-3 bg-[#8D6271] text-white rounded-lg hover:bg-[#7a5260] transition-colors text-base font-medium whitespace-nowrap"
+              >
+                Search Recipes
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
       {/* Interactive Featured Categories Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 mt-80 lg:mt-0">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16  lg:mt-0">
         <div className="text-center mb-12">
           <h2
             className={`text-3xl md:text-4xl font-bold text-[#8D6271] mb-4 ${Poppins700.className}`}
@@ -330,85 +362,29 @@ async function Home({ searchParams }: { searchParams: { pageNo: string } }) {
             </Link>
           ))}
         </div>
-
-        {/* Related Content Section */}
-        <div className="mt-16">
-          <div className="text-center mb-12">
-            <h2
-              className={`text-3xl md:text-4xl font-bold text-[#8D6271] mb-4 ${Poppins700.className}`}
-            >
-              Explore More
-            </h2>
-            <p
-              className={`text-lg text-gray-600 max-w-2xl mx-auto ${Poppins400.className}`}
-            >
-              Find inspiration for your next meal
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredCategories.slice(0, 4).map((category, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
-              >
-                <h3
-                  className={`text-lg font-bold text-[#8D6271] mb-3 ${Poppins700.className}`}
-                >
-                  {category.title}
-                </h3>
-                <ul className="space-y-2">
-                  {category.items.slice(0, 3).map((item, itemIndex) => (
-                    <li key={itemIndex}>
-                      <Link
-                        href={`/${category.title.replace(
-                          /\s+/g,
-                          "-"
-                        )}/${item.replace(/\s+/g, "-")}`}
-                        className={`text-gray-600 hover:text-[#8D6271] transition-colors duration-200 ${Poppins400.className}`}
-                      >
-                        {DeSlugify(item)}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  href={`/${category.title.replace(/\s+/g, "-")}`}
-                  className={`inline-flex items-center mt-4 text-[#8D6271] hover:text-[#7A5260] transition-colors duration-200 ${Poppins500.className}`}
-                >
-                  View all
-                  <svg
-                    className="w-4 h-4 ml-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
 
-      <div className="mt-32 md:mt-10 lg:mt-8">
-        <h1
-          className={`text-center text-lg font-semibold tracking-wider ${Poppins700.className}`}
-        >
-          The Latest Recipes
-        </h1>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-gray-50">
+        <div className="text-center mb-12">
+          <h2
+            className={`text-3xl md:text-4xl font-bold text-[#8D6271] mb-4 ${Poppins700.className}`}
+          >
+            Latest Recipes
+          </h2>
+          <p
+            className={`text-lg text-gray-600 max-w-2xl mx-auto ${Poppins400.className}`}
+          >
+            Discover our newest culinary creations
+          </p>
+        </div>
         <BlogList posts={posts || []} />
-        <Paginationblog
-          pageNo={pageNo}
-          totalPages={totalPages}
-          hasNextPage={hasNextPage}
-        />
+        <div className="mt-8">
+          <Paginationblog
+            pageNo={pageNo}
+            totalPages={totalPages}
+            hasNextPage={hasNextPage}
+          />
+        </div>
       </div>
     </>
   );

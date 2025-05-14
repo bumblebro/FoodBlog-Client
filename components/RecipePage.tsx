@@ -131,19 +131,24 @@ const RecipePage = ({ currentPost }: any) => {
         className="w-full max-w-4xl bg-white shadow-lg   border border-gray-300 pb-12"
       >
         {/* Recipe Title */}
-        <div className="bg-black  py-10">
-          <h1
-            className={`text-3xl  text-center   text-[#ffffff] p-name ${Poppins700.className} pb-5 uppercase`}
-          >
-            {DeSlugify(currentPost?.title)}
-          </h1>
-          {/* Recipe Description */}
-          <p
-            className=" text-white text-center italic  text-base p-summary 
-"
-          >
-            {currentPost?.recipedescription}
-          </p>
+        <div
+          className="relative py-20 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url(${currentPost?.imageurl})`,
+          }}
+        >
+          <div className="absolute inset-0 bg-black/60" /> {/* Dark overlay */}
+          <div className="relative z-10">
+            <h1
+              className={`text-3xl text-center text-white p-name ${Poppins700.className} pb-5 uppercase`}
+            >
+              {DeSlugify(currentPost?.title)}
+            </h1>
+            {/* Recipe Description */}
+            <p className="text-white text-center italic text-base p-summary max-w-3xl mx-auto px-4">
+              {currentPost?.recipedescription}
+            </p>
+          </div>
         </div>
 
         {/* Quantity Selector */}
@@ -159,7 +164,7 @@ const RecipePage = ({ currentPost }: any) => {
               }}
               className={`px-5 py-2  text-base  transition-all ${
                 selectedQuantity === qty
-                  ? "bg-[#000000] text-white shadow-md"
+                  ? "bg-[#8D6271] text-white shadow-md"
                   : " text-gray-800 hover:bg-gray-200"
               }`}
             >
@@ -240,7 +245,7 @@ const RecipePage = ({ currentPost }: any) => {
                         type="checkbox"
                         checked={checkedItems[index]}
                         onChange={() => handleCheck(index)}
-                        className="h-4 w-4 text-[#b5651d] checked:bg-[#b5651d] border-[#b5651d] focus:ring-[#b5651d]"
+                        className="h-4 w-4 text-[#8D6271] checked:bg-[#8D6271] border-[#8D6271] focus:ring-[#8D6271]"
                       />
                       <span
                         className="p-ingredient
