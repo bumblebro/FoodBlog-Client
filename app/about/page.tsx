@@ -126,19 +126,19 @@ function page() {
             Meet the Creator
           </h2>
 
-          <Image
+          {/* <Image
             src={imgurl}
             alt="Shreyas M S - Admin of Savory Touch"
             width="200"
             height="200"
             className="my-4"
-          />
+          /> */}
 
           <div className="flex items-center gap-4">
             <div>
-              <p className="mb-4">
+              {/* <p className="mb-4">
                 <strong>Shreyas M S</strong> - Founder of Savory Touch
-              </p>
+              </p> */}
               <p className="mb-4">
                 Hi, I&rsquo;m Shreyas, a self-taught foodie and tech enthusiast.
                 I built Savory Touch to share my love for cooking with the
