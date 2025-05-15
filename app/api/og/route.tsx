@@ -1,5 +1,3 @@
-
-
 // /////OLD
 import { NextRequest, NextResponse } from "next/server";
 import { ImageResponse } from "@vercel/og";
@@ -10,7 +8,6 @@ import DeSlugify from "@/libs/DeSlugify";
 export const runtime = "experimental-edge";
 
 async function loadGoogleFont() {
-
   const url = "https://fonts.googleapis.com/css2?family=Anton+SC&display=swap";
 
   const css = await (await fetch(url)).text();
@@ -41,6 +38,21 @@ async function loadFonts() {
   ).then((res) => res.arrayBuffer());
 
   return { regularFontData, boldFontData, lightFontData };
+}
+
+async function loadGoogleFontWithParameter(font: string, weight: number) {
+  const url = `https://fonts.googleapis.com/css2?family=${font}:wght@${weight}`;
+  const css = await (await fetch(url)).text();
+  const resource = css.match(
+    /src: url\((.+)\) format\('(opentype|truetype)'\)/
+  );
+
+  if (resource) {
+    const response = await fetch(resource[1]);
+    if (response.status == 200) {
+      return await response.arrayBuffer();
+    }
+  }
 }
 
 const phrases = [
@@ -83,22 +95,18 @@ export async function GET(req: NextRequest) {
     <div
       key={"1"}
       style={{
-        height: "100vh", 
+        height: "100vh",
         width: "100%",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "flex-start",
         backgroundColor: theme.background,
-
-       
       }}
     >
       {" "}
-   
       <div
         style={{
-         
           color: theme.text,
           textAlign: "center",
           paddingRight: "10px",
@@ -107,7 +115,7 @@ export async function GET(req: NextRequest) {
           fontWeight: "900",
           fontFamily: "source-sans-pro.black",
           textTransform: "uppercase",
-          lineHeight: "100px", 
+          lineHeight: "100px",
           paddingTop: "20px",
         }}
       >
@@ -115,7 +123,6 @@ export async function GET(req: NextRequest) {
       </div>{" "}
       <div
         style={{
-       
           paddingBottom: "25px",
           color: theme.text,
           textAlign: "center",
@@ -156,7 +163,7 @@ export async function GET(req: NextRequest) {
         height={900}
         width={1000}
         style={{
-          flexGrow: 1, 
+          flexGrow: 1,
           width: "100%",
           objectFit: "cover",
           objectPosition: "center",
@@ -171,7 +178,6 @@ export async function GET(req: NextRequest) {
   return new ImageResponse(randomTemplate, {
     width: 1000,
     height: 2000,
-  
 
     fonts: [
       {
@@ -196,6 +202,13 @@ export async function GET(req: NextRequest) {
         name: "Geist",
         data: await loadGoogleFont(),
         weight: 500,
+      },
+      {
+        name: "titlefont",
+        data:
+          (await loadGoogleFontWithParameter("Bebas+Neue", 400)) ||
+          new ArrayBuffer(0),
+        style: "normal",
       },
     ],
   });
