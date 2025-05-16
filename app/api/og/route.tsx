@@ -318,8 +318,7 @@ export async function GET(req: NextRequest) {
         <div
           style={{
             color: "#fff",
-            fontFamily:
-              "LoversQuarrel, Bebas Neue, Anton, Arial, sans-serif",
+            fontFamily: "LoversQuarrel, Bebas Neue, Anton, Arial, sans-serif",
             fontSize: "60px",
             fontWeight: 700,
             letterSpacing: "2px",
@@ -832,7 +831,7 @@ export async function GET(req: NextRequest) {
           style={{
             color: "#222",
             fontFamily:
-             " 'Caveat', 'Satisfy', 'Pacifico', cursive, Arial, sans-serif",
+              " 'Caveat', 'Satisfy', 'Pacifico', cursive, Arial, sans-serif",
             fontSize: "54px",
             fontWeight: 700,
             textAlign: "center",
@@ -1531,10 +1530,10 @@ export async function GET(req: NextRequest) {
     </div>,
   ];
 
-  // const randomTemplate =
-  //   templates[Math.floor(Math.random() * templates.length)];
+  const randomTemplate =
+    templates[Math.floor(Math.random() * templates.length)];
   // const randomTemplate = templates[templates.length - 1];
-  const randomTemplate = templates[12];
+  // const randomTemplate = templates[12];
 
   return new ImageResponse(randomTemplate, {
     width: 1000,
