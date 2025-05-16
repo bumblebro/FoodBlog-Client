@@ -93,7 +93,7 @@ export async function GET(req: NextRequest) {
   };
   const templates = [
     <div
-      key={"1"}
+      key={"0"}
       style={{
         height: "100vh",
         width: "100%",
@@ -172,7 +172,7 @@ export async function GET(req: NextRequest) {
     </div>,
     // New Pinterest-style template
     <div
-      key={"2"}
+      key={"1"}
       style={{
         height: "100vh",
         width: "100%",
@@ -222,7 +222,7 @@ export async function GET(req: NextRequest) {
           style={{
             color: "#ffffff",
             fontSize: "32px",
-            fontFamily: "source-sans-pro.extralight",
+            fontFamily: "serif",
             textTransform: "uppercase",
             letterSpacing: "2px",
           }}
@@ -232,7 +232,7 @@ export async function GET(req: NextRequest) {
         <div
           style={{
             color: "#ffffff",
-            fontSize: "72px",
+            fontSize: "100px",
             fontFamily: "SoinSansPro-Bold",
             lineHeight: "1.1",
             textTransform: "capitalize",
@@ -265,7 +265,7 @@ export async function GET(req: NextRequest) {
           <div
             style={{
               color: "#ffffff",
-              fontSize: "24px",
+              fontSize: "40px",
               fontFamily: "source-sans-pro.extralight",
             }}
           >
@@ -278,7 +278,7 @@ export async function GET(req: NextRequest) {
 
     // Pinterest-style OG image inspired by user reference
     <div
-      key={"3"}
+      key={"2"}
       style={{
         width: "1000px",
         height: "2000px",
@@ -319,11 +319,11 @@ export async function GET(req: NextRequest) {
           style={{
             color: "#fff",
             fontFamily:
-              "SoinSansPro-Bold, Bebas Neue, Anton, Arial, sans-serif",
-            fontSize: "44px",
+              "LoversQuarrel, Bebas Neue, Anton, Arial, sans-serif",
+            fontSize: "60px",
             fontWeight: 700,
             letterSpacing: "2px",
-            textTransform: "uppercase",
+            textTransform: "capitalize",
             textAlign: "center",
             lineHeight: 1.1,
             marginBottom: "18px",
@@ -365,107 +365,107 @@ export async function GET(req: NextRequest) {
     </div>,
 
     // New template inspired by biryani reference
-    <div
-      key={"4"}
-      style={{
-        width: "1000px",
-        height: "2000px",
-        display: "flex",
-        flexDirection: "column",
-        background: "#fff",
-        position: "relative",
-        overflow: "hidden",
-      }}
-    >
-      {/* Top food image band */}
-      <img
-        src={cover}
-        alt="food-top"
-        style={{
-          width: "100%",
-          height: "900px",
-          objectFit: "cover",
-          objectPosition: "center top",
-          display: "block",
-        }}
-      />
-      {/* White band with three lines of text */}
-      <div
-        style={{
-          width: "100%",
-          background: "#fff",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: 0,
-          height: "200px",
-        }}
-      >
-        {/* First line: orange, bold, all caps */}
-        <div
-          style={{
-            color: "#F89C1D",
-            fontFamily:
-              "titlefont, Bebas Neue, Anton, SoinSansPro-Bold, Arial, sans-serif",
-            fontSize: "60px",
-            fontWeight: 900,
-            letterSpacing: "2px",
-            textTransform: "uppercase",
-            textAlign: "center",
-            lineHeight: 1.1,
-          }}
-        >
-          {DeSlugify(title)}
-        </div>
-        {/* Second line: red, bold, all caps */}
-        <div
-          style={{
-            color: "#D7261E",
-            fontFamily:
-              "titlefont, Bebas Neue, Anton, SoinSansPro-Bold, Arial, sans-serif",
-            fontSize: "60px",
-            fontWeight: 900,
-            letterSpacing: "2px",
-            textTransform: "uppercase",
-            textAlign: "center",
-            lineHeight: 1.1,
-            marginTop: "-8px",
-          }}
-        >
-          {phrases[Math.floor(Math.random() * phrases.length)]}
-        </div>
-        {/* Third line: subtitle, black, smaller */}
-        <div
-          style={{
-            color: "#222",
-            fontFamily: "SoinSansPro-Bold, Arial, sans-serif",
-            fontSize: "32px",
-            fontWeight: 700,
-            textAlign: "center",
-            marginTop: "8px",
-            letterSpacing: "0.5px",
-          }}
-        >
-          savorytouch.com
-        </div>
-      </div>
-      {/* Bottom food image band */}
-      <img
-        src={cover}
-        alt="food-bottom"
-        style={{
-          width: "100%",
-          height: "900px",
-          objectFit: "cover",
-          objectPosition: "center bottom",
-          display: "block",
-        }}
-      />
-    </div>,
+    // <div
+    //   key={"2"}
+    //   style={{
+    //     width: "1000px",
+    //     height: "2000px",
+    //     display: "flex",
+    //     flexDirection: "column",
+    //     background: "#fff",
+    //     position: "relative",
+    //     overflow: "hidden",
+    //   }}
+    // >
+    //   {/* Top food image band */}
+    //   <img
+    //     src={cover}
+    //     alt="food-top"
+    //     style={{
+    //       width: "100%",
+    //       height: "900px",
+    //       objectFit: "cover",
+    //       objectPosition: "center top",
+    //       display: "block",
+    //     }}
+    //   />
+    //   {/* White band with three lines of text */}
+    //   <div
+    //     style={{
+    //       width: "100%",
+    //       background: "#fff",
+    //       display: "flex",
+    //       flexDirection: "column",
+    //       alignItems: "center",
+    //       justifyContent: "center",
+    //       padding: 0,
+    //       height: "200px",
+    //     }}
+    //   >
+    //     {/* First line: orange, bold, all caps */}
+    //     <div
+    //       style={{
+    //         color: "#F89C1D",
+    //         fontFamily:
+    //           "titlefont, Bebas Neue, Anton, SoinSansPro-Bold, Arial, sans-serif",
+    //         fontSize: "60px",
+    //         fontWeight: 900,
+    //         letterSpacing: "2px",
+    //         textTransform: "uppercase",
+    //         textAlign: "center",
+    //         lineHeight: 1.1,
+    //       }}
+    //     >
+    //       {DeSlugify(title)}
+    //     </div>
+    //     {/* Second line: red, bold, all caps */}
+    //     <div
+    //       style={{
+    //         color: "#D7261E",
+    //         fontFamily:
+    //           "titlefont, Bebas Neue, Anton, SoinSansPro-Bold, Arial, sans-serif",
+    //         fontSize: "60px",
+    //         fontWeight: 900,
+    //         letterSpacing: "2px",
+    //         textTransform: "uppercase",
+    //         textAlign: "center",
+    //         lineHeight: 1.1,
+    //         marginTop: "-8px",
+    //       }}
+    //     >
+    //       {phrases[Math.floor(Math.random() * phrases.length)]}
+    //     </div>
+    //     {/* Third line: subtitle, black, smaller */}
+    //     <div
+    //       style={{
+    //         color: "#222",
+    //         fontFamily: "SoinSansPro-Bold, Arial, sans-serif",
+    //         fontSize: "32px",
+    //         fontWeight: 700,
+    //         textAlign: "center",
+    //         marginTop: "8px",
+    //         letterSpacing: "0.5px",
+    //       }}
+    //     >
+    //       savorytouch.com
+    //     </div>
+    //   </div>
+    //   {/* Bottom food image band */}
+    //   <img
+    //     src={cover}
+    //     alt="food-bottom"
+    //     style={{
+    //       width: "100%",
+    //       height: "900px",
+    //       objectFit: "cover",
+    //       objectPosition: "center bottom",
+    //       display: "block",
+    //     }}
+    //   />
+    // </div>,
     // New template inspired by chicken thighs reference
     <div
-      key={"5"}
+      key={"3"}
       style={{
         width: "1000px",
         height: "2000px",
@@ -582,7 +582,7 @@ export async function GET(req: NextRequest) {
     </div>,
     // New template inspired by oats reference
     <div
-      key={"6"}
+      key={"4"}
       style={{
         width: "1000px",
         height: "2000px",
@@ -682,7 +682,7 @@ export async function GET(req: NextRequest) {
     </div>,
     // New template inspired by butter chicken reference
     <div
-      key={"7"}
+      key={"5"}
       style={{
         width: "1000px",
         height: "2000px",
@@ -788,7 +788,7 @@ export async function GET(req: NextRequest) {
     </div>,
     // New template inspired by orange butter chicken reference
     <div
-      key={"8"}
+      key={"6"}
       style={{
         width: "1000px",
         height: "2000px",
@@ -832,7 +832,7 @@ export async function GET(req: NextRequest) {
           style={{
             color: "#222",
             fontFamily:
-              "ogscript, 'Caveat', 'Satisfy', 'Pacifico', cursive, Arial, sans-serif",
+             " 'Caveat', 'Satisfy', 'Pacifico', cursive, Arial, sans-serif",
             fontSize: "54px",
             fontWeight: 700,
             textAlign: "center",
@@ -893,7 +893,7 @@ export async function GET(req: NextRequest) {
     </div>,
     // New template inspired by Poulet Yassa reference
     <div
-      key={"9"}
+      key={"7"}
       style={{
         width: "1000px",
         height: "2000px",
@@ -994,7 +994,7 @@ export async function GET(req: NextRequest) {
     </div>,
     // New template inspired by Butter Chicken reference
     <div
-      key={"10"}
+      key={"8"}
       style={{
         width: "1000px",
         height: "2000px",
@@ -1111,7 +1111,7 @@ export async function GET(req: NextRequest) {
     </div>,
     // New template inspired by Mongolian Chicken reference
     <div
-      key={"11"}
+      key={"9"}
       style={{
         width: "1000px",
         height: "2000px",
@@ -1172,7 +1172,7 @@ export async function GET(req: NextRequest) {
         <div
           style={{
             color: "#fff",
-            fontFamily: "ogfont, Bebas Neue, Arial, sans-serif",
+            fontFamily: "butterscript, Bebas Neue, Arial, sans-serif",
             fontSize: "38px",
             fontWeight: 700,
             textAlign: "center",
@@ -1208,7 +1208,7 @@ export async function GET(req: NextRequest) {
     </div>,
     // New template inspired by Chinese Chicken & Broccoli reference
     <div
-      key={"12"}
+      key={"10"}
       style={{
         width: "1000px",
         height: "2000px",
@@ -1255,11 +1255,11 @@ export async function GET(req: NextRequest) {
         <div
           style={{
             color: "#B6E23A",
-            fontFamily: "ogfont, Bebas Neue, Arial, sans-serif",
+            fontFamily: "butterscript, Bebas Neue, Arial, sans-serif",
             fontSize: "64px",
             fontWeight: 900,
             letterSpacing: "2px",
-            textTransform: "uppercase",
+            textTransform: "capitalize",
             textAlign: "center",
             marginBottom: "8px",
             lineHeight: 1.1,
@@ -1306,7 +1306,7 @@ export async function GET(req: NextRequest) {
     </div>,
     // New template inspired by Szechuan Chicken reference
     <div
-      key={"13"}
+      key={"11"}
       style={{
         width: "1000px",
         height: "2000px",
@@ -1405,7 +1405,7 @@ export async function GET(req: NextRequest) {
     </div>,
     // New template inspired by Crispy Honey Chilli Chicken reference
     <div
-      key={"14"}
+      key={"12"}
       style={{
         width: "1000px",
         height: "2000px",
@@ -1531,9 +1531,10 @@ export async function GET(req: NextRequest) {
     </div>,
   ];
 
-  const randomTemplate =
-    templates[Math.floor(Math.random() * templates.length)];
+  // const randomTemplate =
+  //   templates[Math.floor(Math.random() * templates.length)];
   // const randomTemplate = templates[templates.length - 1];
+  const randomTemplate = templates[12];
 
   return new ImageResponse(randomTemplate, {
     width: 1000,
@@ -1595,6 +1596,20 @@ export async function GET(req: NextRequest) {
         name: "ogscript",
         data:
           (await loadGoogleFontWithParameter("Pacifico", 400)) ||
+          new ArrayBuffer(0),
+        style: "normal",
+      },
+      {
+        name: "lavishly",
+        data:
+          (await loadGoogleFontWithParameter("Lavishly+Yours", 400)) ||
+          new ArrayBuffer(0),
+        style: "normal",
+      },
+      {
+        name: "LoversQuarrel",
+        data:
+          (await loadGoogleFontWithParameter("Lovers+Quarrel", 400)) ||
           new ArrayBuffer(0),
         style: "normal",
       },
