@@ -857,7 +857,7 @@ export async function GET(req: NextRequest) {
           {DeSlugify(title)}
         </div>
         {/* Third line: green pill-shaped site/brand */}
-        <div
+        {/* <div
           style={{
             background: "#21796A",
             borderRadius: "32px",
@@ -875,7 +875,7 @@ export async function GET(req: NextRequest) {
           }}
         >
           savorytouch.com
-        </div>
+        </div> */}
       </div>
       {/* Bottom food image band */}
       <img
