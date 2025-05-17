@@ -26,6 +26,8 @@ import { AutoFillAdStack } from "../Ads/AutoFillAdStack";
 import SideAdComponent2 from "../SideAdComponent2";
 import SideAdComponent3 from "../SideAdComponent3";
 import InternalLinking from "../InternalLinking/InternalLinking";
+import { PinterestIcon, PinterestShareButton } from "react-share";
+import PinComponent from "../PinComponent";
 // import GoogleAdUnit from "../GoogleAdUnit";
 // Poppins
 const Poppins700 = Poppins({
@@ -317,7 +319,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
             <a
               target="_blank"
               href={generatePinterestUrl({
-                pageUrl: siteURL + "/" + DeSlugify(currentPost.slug),
+                pageUrl: siteURL + "/" + currentPost.slug,
                 imageUrl:
                   domain +
                   `/api/og?title=${
@@ -333,6 +335,37 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
               </button>
             </a>
           </div>
+          {/* <div className="flex justify-center my-6">
+            {" "}
+            <a
+              target="_blank"
+              href={generatePinterestUrl({
+                pageUrl: siteURL + "/" + DeSlugify(currentPost.slug),
+                imageUrl:
+                  domain +
+                  `/api/og?title=${
+                    currentPost.title
+                  }&amp;cover=${encodeURIComponent(currentPost.imageurl)}`,
+                description: currentPost.recipedescription,
+              })}
+            >
+              <button
+                className={`px-5 py-2  shadow-md transition-all hover:bg-black text-white bg-[#E60022] duration-400 capitalize ${Poppins700.className}  text-sm `}
+              >
+                📌 Pin Recipe
+              </button>
+            </a>
+          </div> */}
+          {/* <PinComponent
+            url={siteURL + "/" + currentPost.slug}
+            media={
+              domain +
+              `/api/og?title=${
+                currentPost.title
+              }&amp;cover=${encodeURIComponent(currentPost.imageurl)}`
+            }
+            description={currentPost.recipedescription}
+          /> */}
           <DisplayAdUnit format="auto" />
           {currentPost.content?.map((item, i) => {
             const contentItem = item as ContentItem;
