@@ -14,11 +14,33 @@ interface StructuredDataProps {
   recipeDetails?: any;
 }
 
-function timeToISO8601Duration(minutes: number): string {
-  const hours = Math.floor(minutes / 60);
-  const remainingMinutes = minutes % 60;
-  return `PT${hours}H${remainingMinutes}M`;
+function timeToISO8601Duration(seconds: number) {
+  const units = [
+    { symbol: "Y", value: 365 * 24 * 3600 },
+    { symbol: "D", value: 24 * 3600 },
+    { symbol: "H", value: 3600 },
+    { symbol: "M", value: 60 },
+    { symbol: "S", value: 1 },
+  ];
+
+  let duration = "P";
+  let hasTime = false;
+
+  for (const { symbol, value } of units) {
+    const quotient = Math.floor(seconds / value);
+    if (quotient > 0) {
+      seconds -= quotient * value;
+      if (!hasTime && ["H", "M", "S"].includes(symbol)) {
+        duration += "T";
+        hasTime = true;
+      }
+      duration += `${quotient}${symbol}`;
+    }
+  }
+
+  return duration;
 }
+
 
 export default function StructuredData({
   post,
