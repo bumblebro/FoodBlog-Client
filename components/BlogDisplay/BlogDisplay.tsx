@@ -259,24 +259,35 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
             💾 Save Recipe
           </button> */}
           <Buttons />
-          {/* <InArticleAd /> */}
-          {/* <ShareButtons urllink={urllink} imageUrl={imageUrl} /> */}
-          {/* <button className="bg-red-400">
-            {" "}
-            <a
-              href="https://www.pinterest.com/pin/create/button/"
-              data-pin-do="buttonBookmark"
-              target="_blank"
-              rel="noopener"
-            >
-              Pin
-            </a>
-          </button> */}
-          {/* <img
-            className="w-[358px] sm:w-[608px] md:w-[403px] lg:w-[659px] xl:w-[867px] 2xl:w-[835px]"
-            src={imageUrl}
-            alt="ssss"
-          /> */}
+          <div className="flex flex-col items-center my-8 px-4">
+            <div className="max-w-2xl text-center bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-xl border border-purple-100 shadow-sm">
+              <div className="inline-block bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full mb-4 font-medium">
+                🚀 Beta Testing - Try It Now!
+              </div>
+              <h3
+                className={`text-xl font-semibold mb-2 ${Poppins700.className}`}
+              >
+                Transform Any Recipe into an Interactive Cooking Guide
+              </h3>
+              <p className={`text-gray-700 mb-6 ${Poppins400.className}`}>
+                Get step-by-step instructions with timers, animations, and
+                real-time guidance while you cook. Works with any recipe from
+                any website!
+              </p>
+              <a
+                href={`https://guidemyrecipe.com/?url=${encodeURIComponent(
+                  siteURL + "/" + currentPost.slug
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-6 py-3 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105"
+              >
+                <span className={`${Poppins700.className}`}>
+                  Try GuideMyRecipe Free →
+                </span>
+              </a>
+            </div>
+          </div>
           <div className=" flex flex-col gap-2 mx-4 lg:mx-28 mt-8 mb-4">
             <div
               // className=" h-[17rem]  md:h-[21rem] lg:h-[31.5rem] xl:h-[39.5rem] sm:h-[28.5rem] 2xl:h-[38rem] relative w-full object-contain"
