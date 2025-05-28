@@ -447,7 +447,9 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
               </div>
             );
           })}{" "}
-          <DisplayAdUnit format="auto" />
+          {/* <DisplayAdUnit format="auto" /> */}
+          <AdContainerForDesktop />
+          <AdContainerForMobile />
           {currentPost.equipments && currentPost.equipments.length > 0 && (
             <div className="px-6 py-5 bg-white   my-10 border-black border-2 mx-2 md:mx-0 flex flex-col lg:flex-row justify-between items-start lg:items-center">
               <div className="my-auto">
@@ -486,7 +488,9 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
             </AdCode>{" "} */}
           {/* <GoogleAdPcItem key={2 + "ads"} adId={`ad-slot-${2}`} /> */}
           {/* <AdContainerForMobile /> */}
-          <DisplayAdUnit format="auto" />
+          {/* <DisplayAdUnit format="auto" /> */}
+          <AdContainerForDesktop />
+          <AdContainerForMobile />
           <RecipePage currentPost={currentPost} />
           <InternalLinking
             currentPost={currentPost}
@@ -547,8 +551,10 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                 </div>
               </Link>
             ))}
-          </div>
+          </div>{" "}
         </div>{" "}
+        <AdContainerForDesktop />
+        <AdContainerForMobile />
       </div>
       {/* --- Sideeeeee one */}
       <div className="py-8 px-4 md:bg-[#ffffff] xl:pr-0 h-full">

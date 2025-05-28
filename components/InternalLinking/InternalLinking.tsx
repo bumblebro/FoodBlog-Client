@@ -4,6 +4,8 @@ import Image from "next/image";
 import { shimmer, toBase64 } from "@/libs/Shimmer";
 import DeSlugify from "@/libs/DeSlugify";
 import { Poppins } from "next/font/google";
+import AdContainerForDesktop from "../Ads/AdContainerForDesktop";
+import AdContainerForMobile from "../Ads/AdContainerForMobile";
 
 const Poppins700 = Poppins({
   weight: "700",
@@ -79,7 +81,8 @@ export default function InternalLinking({
           ))}
         </div>
       </div>
-
+      <AdContainerForDesktop />
+      <AdContainerForMobile />
       {/* Category Section */}
       <div>
         <h2
@@ -122,7 +125,9 @@ export default function InternalLinking({
             </Link>
           ))}
         </div>
-      </div>
+      </div>{" "}
+      <AdContainerForDesktop />
+      <AdContainerForMobile />
     </div>
   );
 }
