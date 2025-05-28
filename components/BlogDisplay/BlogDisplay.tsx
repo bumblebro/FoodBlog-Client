@@ -259,7 +259,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
             💾 Save Recipe
           </button> */}
           <Buttons />
-          <div className="flex flex-col items-center my-8 px-4">
+          {/* <div className="flex flex-col items-center my-8 px-4">
             <div className="max-w-2xl text-center bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-xl border border-purple-100 shadow-sm">
               <div className="inline-block bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full mb-4 font-medium">
                 🚀 Beta Testing - Try It Now!
@@ -287,7 +287,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
                 </span>
               </a>
             </div>
-          </div>
+          </div> */}
           <div className=" flex flex-col gap-2 mx-4 lg:mx-28 mt-8 mb-4">
             <div
               // className=" h-[17rem]  md:h-[21rem] lg:h-[31.5rem] xl:h-[39.5rem] sm:h-[28.5rem] 2xl:h-[38rem] relative w-full object-contain"
