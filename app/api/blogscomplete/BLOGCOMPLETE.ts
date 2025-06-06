@@ -19,7 +19,7 @@ export default async function BLOGCOMPLETE() {
       recipedescription: true,
       recipedetails: true, // Recipe details for different serving sizes (1X, 2X, 3X, 4X)
       creationDate: true, // Date the blog was created
-      seo: true
+      seo: true,
     },
     orderBy: {
       // Replace 'createdAt' with the actual name of your date field
@@ -28,5 +28,8 @@ export default async function BLOGCOMPLETE() {
 
     // cacheStrategy: { ttl: 86400 },
   });
+
+  await prisma.$disconnect();
+
   return blogs;
 }
