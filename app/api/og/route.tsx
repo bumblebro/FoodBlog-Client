@@ -531,6 +531,32 @@ import DeSlugify from "@/libs/DeSlugify";
 
 export const runtime = "experimental-edge";
 
+const ALLOWED = ["image/jpeg", "image/png"];
+
+function json(status: number, msg: string) {
+  return new Response(JSON.stringify({ error: msg }), {
+    status,
+    headers: { "Content-Type": "application/json; charset=utf-8" },
+  });
+}
+
+async function assertRenderableImage(url: string) {
+  const res = await fetch(url, {
+    method: "GET",
+    redirect: "follow",
+    headers: {
+      // Prefer JPEG/PNG; Squarespace often content-negotiates. :contentReference[oaicite:4]{index=4}
+      Accept: "image/jpeg,image/png;q=0.9,*/*;q=0.1",
+      Range: "bytes=0-1023",
+    },
+  });
+  if (!res.ok)
+    throw new Error(`Image fetch failed: ${res.status} ${res.statusText}`);
+  const type = (res.headers.get("content-type") || "").toLowerCase();
+  if (!ALLOWED.includes(type))
+    throw new Error(`Unsupported image type for OG: ${type}`);
+}
+
 async function loadGoogleFont() {
   // const url = "https://fonts.gogleapis.com/css2?family=Pacifico&display=swap";
   // const url = "https://fonts.googleapis.com/css2?family=Knewave&display=swap";
@@ -609,10 +635,22 @@ export async function GET(req: NextRequest) {
   const num = searchParams.get("num") || "3";
   const isWhiteText = Math.random() < 0.5;
 
+  console.log(`cover image:`, cover);
   const theme = {
     background: "black",
     text: "white",
   };
+
+  try {
+    await assertRenderableImage(cover); // throws on WebP/AVIF/etc.
+  } catch (e: any) {
+    // Don’t render — return a clear error instead of a black image.
+    return json(
+      e.message?.includes("Unsupported") ? 415 : 502,
+      e.message || "Probe failed"
+    );
+  }
+
   const templates = [
     <div
       key={"1"}
