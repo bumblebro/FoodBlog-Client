@@ -641,15 +641,21 @@ export async function GET(req: NextRequest) {
     text: "white",
   };
 
-  try {
-    await assertRenderableImage(cover); // throws on WebP/AVIF/etc.
-  } catch (e: any) {
-    // Don’t render — return a clear error instead of a black image.
-    return json(
-      e.message?.includes("Unsupported") ? 415 : 502,
-      e.message || "Probe failed"
-    );
-  }
+  // try {
+  //   await assertRenderableImage(cover); // throws on WebP/AVIF/etc.
+  // } catch (e: any) {
+  //   // Don’t render — return a clear error instead of a black image.
+  //   return json(
+  //     e.message?.includes("Unsupported") ? 415 : 502,
+  //     e.message || "Probe failed"
+  //   );
+  // }
+
+  const proxied = `${
+    process.env.NEXT_PUBLIC_BASE_API_URL
+  }/api/proxy-image?url=${encodeURIComponent(cover)}`;
+
+  console.log(`proxied cover image:`, proxied);
 
   const templates = [
     <div
@@ -734,7 +740,7 @@ export async function GET(req: NextRequest) {
         }}
       ></div>
       <img
-        src={cover}
+        src={proxied}
         alt="test"
         height={900}
         width={1000}
