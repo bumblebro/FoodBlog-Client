@@ -527,6 +527,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { ImageResponse } from "@vercel/og";
 import { url } from "inspector";
 import DeSlugify from "@/libs/DeSlugify";
+import { validateProxiedImage } from "@/libs/validateImage";
 // import sharp from "sharp";
 
 export const runtime = "experimental-edge";
@@ -656,6 +657,15 @@ export async function GET(req: NextRequest) {
   }/api/proxy-image?url=${encodeURIComponent(cover)}`;
 
   console.log(`proxied cover image:`, proxied);
+
+  try {
+    await validateProxiedImage(proxied);
+  } catch (err: any) {
+    return new Response(JSON.stringify({ error: err.message }), {
+      status: 415,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
 
   const templates = [
     <div
