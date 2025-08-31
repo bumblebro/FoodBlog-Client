@@ -4,8 +4,8 @@ import DeSlugify from "@/libs/DeSlugify";
 import { FoodBlogs } from "@prisma/client";
 import { Feed } from "feed";
 
-export const revalidate = 0; // revalidate at most every sec
-
+// export const revalidate = 0; // revalidate at most every sec
+export const dynamic = "force-dynamic"; // revalidate at most every sec
 const domain =
   process.env.NEXT_PUBLIC_BASE_API_URL?.replace(/^https:/, "http:") || "";
 
