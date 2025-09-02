@@ -2,7 +2,7 @@ import { PrismaClient } from "@prisma/client";
 import DeSlugify from "@/libs/DeSlugify";
 import { Feed } from "feed";
 
-const boardIds = {
+const boardId = {
   Italian: "1004936173041503523", // Italian Recipes
   Mexican: "1004936173041503539", // Mexican Recipes
   Asian: "1004936173041503542", // Asian Recipes
