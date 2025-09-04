@@ -2,6 +2,11 @@ import { PrismaClient } from "@prisma/client";
 import DeSlugify from "@/libs/DeSlugify";
 import { Feed } from "feed";
 
+let prisma: PrismaClient;
+declare const globalThis: { prisma?: PrismaClient };
+if (!globalThis.prisma) globalThis.prisma = new PrismaClient();
+prisma = globalThis.prisma;
+
 const boardId = {
   Italian: "1004936173041503523", // Italian Recipes
   Mexican: "1004936173041503539", // Mexican Recipes
@@ -77,7 +82,7 @@ const count = parseInt(process.env.RANDOMBLOGCOUNT || "6", 10);
 
 export async function GET(request: Request, response: Response) {
   // Fetch random blogs directly using Prisma
-  const prisma = new PrismaClient();
+  // const prisma = new PrismaClient();
   const totalBlogs = await prisma.foodBlogs.count();
   let blogs = [];
   if (totalBlogs <= count) {
