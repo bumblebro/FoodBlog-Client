@@ -28,6 +28,7 @@ import SideAdComponent3 from "../SideAdComponent3";
 import InternalLinking from "../InternalLinking/InternalLinking";
 import { PinterestIcon, PinterestShareButton } from "react-share";
 import PinComponent from "../PinComponent";
+import AffiliateComponent from "../AffiliateComponent";
 // import GoogleAdUnit from "../GoogleAdUnit";
 // Poppins
 const Poppins700 = Poppins({
@@ -191,10 +192,11 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
               </h1>
             </Link>
             <h1
-              className={`text-2xl mx-4 xl:mx-0  border-b-[0.1px] pb-4 mb-6 border-gray-500  uppercase sm:text-[25px] md:text-[30px] lg:text-[35px] xl:pb-6 ${Poppins700.className} `}
+              className={`text-2xl mx-4 xl:mx-0  border-b-[0.1px] pb-4 mb-2 border-gray-500  uppercase sm:text-[25px] md:text-[30px] lg:text-[35px] xl:pb-6 ${Poppins700.className} `}
             >
               {DeSlugify(decodedslug[decodedslug.length - 1])}
-            </h1>{" "}
+            </h1>
+
             <div className="lg:flex lg:pb-4">
               <div className="mx-4 text-xs  flex flex-col gap-2 pb-4 xl:mx-0">
                 <div className="font-semibold flex gap-1">
@@ -377,6 +379,7 @@ function BlogDisplay({ decodedslug, currentPost, posts, latposts }: BlogDisp) {
             }
             description={currentPost.recipedescription}
           /> */}
+          <AffiliateComponent />
           <DisplayAdUnit format="auto" />
           {currentPost.content?.map((item, i) => {
             const contentItem = item as ContentItem;
