@@ -61,7 +61,8 @@ const slugs = [
   "Special-Occasions",
 ];
 
-export const revalidate = 86400;
+export const dynamic = 'force-dynamic';
+// export const revalidate = 86400; // remove or comment this
 
 export async function generateStaticParams() {
   const response = await GETBLOG({ pageNo: "1" });
