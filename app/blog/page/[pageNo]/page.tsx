@@ -64,6 +64,8 @@ const slugs = [
 export const dynamic = 'force-dynamic';
 // export const revalidate = 86400; // remove or comment this
 
+
+/*
 export async function generateStaticParams() {
   const response = await GETBLOG({ pageNo: "1" });
   const totalpage = response.metaData.totalPages;
@@ -76,6 +78,8 @@ export async function generateStaticParams() {
   // console.log(`blogpageslug`, arr.length);
   return arr;
 }
+
+*/
 
 export async function generateMetadata({ params }: params): Promise<Metadata> {
   return {
