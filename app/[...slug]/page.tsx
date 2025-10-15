@@ -40,7 +40,8 @@ type SEOType = {
   secondaryKeywords: string[];
 };
 
-export const revalidate = 86400;
+export const dynamic = 'force-dynamic';
+// export const revalidate = 86400; // remove or comment this
 
 function timeToISO8601Duration(seconds: number) {
   const units = [
