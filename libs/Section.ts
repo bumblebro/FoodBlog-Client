@@ -433,4 +433,7 @@ export const subSections = {
     Potluck: ["Casseroles", "Dips", "Brownies", "Deviled-Eggs"],
     "Game-Day": ["Wings", "Nachos", "Sliders", "Beer-Pretzels"],
   },
+  Others: {
+    Others: ["Others"],
+  },
 };
