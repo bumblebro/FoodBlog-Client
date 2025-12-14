@@ -47,7 +47,7 @@ export default function RootLayout({
           ></Script>
         )} */}
         <AdsenseScript />
-        <script
+      {/*  <script
           data-grow-initializer=""
           dangerouslySetInnerHTML={{
             __html: `
@@ -66,7 +66,7 @@ export default function RootLayout({
       })();
     `,
           }}
-        />
+        /> */}
       </head>
       <body className={inter.className}>
         {/* {process.env.NODE_ENV == "production" && (
